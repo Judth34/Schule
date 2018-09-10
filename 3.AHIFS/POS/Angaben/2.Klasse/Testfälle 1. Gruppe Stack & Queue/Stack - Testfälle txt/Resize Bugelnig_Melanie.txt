@@ -1,0 +1,35 @@
+
+          private static bool RunTestCaseResize()     //Melanie Bugelnig
+        {
+            int newCapacity = 5;
+            SimpleStack s1 = new SimpleStack(newCapacity);
+            bool result=true;
+            int counter;
+
+            for(counter=0; counter < newCapacity; counter++)
+            {
+                s1.Push(counter);
+            }
+
+            newCapacity = 10;
+
+            s1.Resize(newCapacity);
+            
+            for(; counter < newCapacity; counter++)
+            {
+                s1.Push(counter);
+        
+            }
+
+            counter--;
+
+                if (s1.Pop()!=counter)
+                {
+                   result = false;
+                }
+
+                counter--;
+            
+
+            return result;
+        }

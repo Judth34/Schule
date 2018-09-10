@@ -1,0 +1,18 @@
+static bool TestCase_GetElement(SimpleStack stack1) // Julian Blaschke
+        {
+            if ((stack1.IsEmpty() == true) && (stack1.GetElement() != 0))
+            {
+                return false;
+
+            }
+
+            stack1.Push(13);
+           
+            if (!(stack1.GetElement() == 13))
+            {
+                return false;
+            }
+
+
+            return true;
+        }

@@ -1,0 +1,16 @@
+F:\2.Schuljahr\POS_PLF02_Verbesserung\SortedStack_Solition1\SortedStack_Solition1\bin\Debug\SortedStack_Solition1.exe.config
+K:\2.Schuljahr\POS_PLF02_Verbesserung\SortedStack_Solition1\SortedStack_Solition1\bin\Debug\SortedStack_Solition1.exe.config
+K:\2.Schuljahr\POS_PLF02_Verbesserung\SortedStack_Solition1\SortedStack_Solition1\bin\Debug\SortedStack_Solition1.exe
+K:\2.Schuljahr\POS_PLF02_Verbesserung\SortedStack_Solition1\SortedStack_Solition1\bin\Debug\SortedStack_Solition1.pdb
+K:\2.Schuljahr\POS_PLF02_Verbesserung\SortedStack_Solition1\SortedStack_Solition1\obj\Debug\SortedStack_Solition1.csprojResolveAssemblyReference.cache
+K:\2.Schuljahr\POS_PLF02_Verbesserung\SortedStack_Solition1\SortedStack_Solition1\obj\Debug\SortedStack_Solition1.exe
+K:\2.Schuljahr\POS_PLF02_Verbesserung\SortedStack_Solition1\SortedStack_Solition1\obj\Debug\SortedStack_Solition1.pdb
+D:\KONTROLLE\POS 2A\013 OrderedStack 3erStrategie\Rajic_Kristian\SortedStack_Solition1\SortedStack_Solition1\bin\Debug\SortedStack_Solition1.exe.config
+D:\KONTROLLE\POS 2A\013 OrderedStack 3erStrategie\Rajic_Kristian\SortedStack_Solition1\SortedStack_Solition1\obj\Debug\SortedStack_Solition1.exe
+D:\KONTROLLE\POS 2A\013 OrderedStack 3erStrategie\Rajic_Kristian\SortedStack_Solition1\SortedStack_Solition1\obj\Debug\SortedStack_Solition1.pdb
+\\gandalf\Kommunikationschueler\2AHIFS\POS\HÜDurchspracheSortedStack 3erStrat\SortedStack_Solition1\SortedStack_Solition1\bin\Debug\SortedStack_Solition1.exe.config
+\\gandalf\Kommunikationschueler\2AHIFS\POS\HÜDurchspracheSortedStack 3erStrat\SortedStack_Solition1\SortedStack_Solition1\obj\Debug\SortedStack_Solition1.exe
+\\gandalf\Kommunikationschueler\2AHIFS\POS\HÜDurchspracheSortedStack 3erStrat\SortedStack_Solition1\SortedStack_Solition1\obj\Debug\SortedStack_Solition1.pdb
+\\gandalf\Kommunikationschueler\2AHIFS\POS\HÜDurchspracheSortedStack 3erStrat\SortedStack_Solition1\SortedStack_Solition1\bin\Debug\SortedStack_Solition1.exe
+\\gandalf\Kommunikationschueler\2AHIFS\POS\HÜDurchspracheSortedStack 3erStrat\SortedStack_Solition1\SortedStack_Solition1\bin\Debug\SortedStack_Solition1.pdb
+\\gandalf\Kommunikationschueler\2AHIFS\POS\HÜDurchspracheSortedStack 3erStrat\SortedStack_Solition1\SortedStack_Solition1\obj\Debug\SortedStack_Solition1.csprojResolveAssemblyReference.cache

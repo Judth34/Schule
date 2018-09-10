@@ -1,0 +1,8 @@
+
+$creds= Get-Credential
+
+$mnet = New-Object -ComObject WScript.Network
+$mnet.MapNetworkDrive('k:','\\demeter7\share',0,$creds.UserName,$creds.GetNetworkCredential().Password)
+
+$net = new-Object -com WScript.Network
+$net.AddWindowsPrinterConnection('\\demeter7\drucker-edv3')

@@ -1,0 +1,10 @@
+C:\Users\brescham\Desktop\04_Breschan_Moritz\Datastructures\bin\Debug\Datastructures.dll
+C:\Users\brescham\Desktop\04_Breschan_Moritz\Datastructures\bin\Debug\Datastructures.pdb
+C:\Users\brescham\Desktop\04_Breschan_Moritz\Datastructures\obj\Debug\Datastructures LIB.csprojResolveAssemblyReference.cache
+C:\Users\brescham\Desktop\04_Breschan_Moritz\Datastructures\obj\Debug\Datastructures.dll
+C:\Users\brescham\Desktop\04_Breschan_Moritz\Datastructures\obj\Debug\Datastructures.pdb
+D:\KONTROLLE\LAST PLF 2A\04_Breschan_Moritz\04_Breschan_Moritz\Datastructures\bin\Debug\Datastructures.dll
+D:\KONTROLLE\LAST PLF 2A\04_Breschan_Moritz\04_Breschan_Moritz\Datastructures\bin\Debug\Datastructures.pdb
+D:\KONTROLLE\LAST PLF 2A\04_Breschan_Moritz\04_Breschan_Moritz\Datastructures\obj\Debug\Datastructures LIB.csprojResolveAssemblyReference.cache
+D:\KONTROLLE\LAST PLF 2A\04_Breschan_Moritz\04_Breschan_Moritz\Datastructures\obj\Debug\Datastructures.dll
+D:\KONTROLLE\LAST PLF 2A\04_Breschan_Moritz\04_Breschan_Moritz\Datastructures\obj\Debug\Datastructures.pdb

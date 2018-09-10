@@ -1,0 +1,15 @@
+C:\Users\Andii\Documents\HTL\ConsoleApplication1\ConsoleApplication1\bin\Debug\ConsoleApplication1.exe.config
+C:\Users\Andii\Documents\HTL\ConsoleApplication1\ConsoleApplication1\bin\Debug\ConsoleApplication1.exe
+C:\Users\Andii\Documents\HTL\ConsoleApplication1\ConsoleApplication1\bin\Debug\ConsoleApplication1.pdb
+C:\Users\Andii\Documents\HTL\ConsoleApplication1\ConsoleApplication1\obj\Debug\ConsoleApplication1.csprojResolveAssemblyReference.cache
+C:\Users\Andii\Documents\HTL\ConsoleApplication1\ConsoleApplication1\obj\Debug\ConsoleApplication1.exe
+C:\Users\Andii\Documents\HTL\ConsoleApplication1\ConsoleApplication1\obj\Debug\ConsoleApplication1.pdb
+C:\Users\Andii\Documents\HTL 2.Klasse\POS 2AHIFS\ConsoleApplication1\ConsoleApplication1\bin\Debug\ConsoleApplication1.exe.config
+C:\Users\Andii\Documents\HTL 2.Klasse\POS 2AHIFS\ConsoleApplication1\ConsoleApplication1\obj\Debug\ConsoleApplication1.exe
+C:\Users\Andii\Documents\HTL 2.Klasse\POS 2AHIFS\ConsoleApplication1\ConsoleApplication1\obj\Debug\ConsoleApplication1.pdb
+C:\Users\Andii\Documents\HTL 2.Klasse\POS 2AHIFS\ConsoleApplication1\ConsoleApplication1\bin\Debug\ConsoleApplication1.exe
+C:\Users\Andii\Documents\HTL 2.Klasse\POS 2AHIFS\ConsoleApplication1\ConsoleApplication1\bin\Debug\ConsoleApplication1.pdb
+C:\Users\Andii\Documents\HTL 2.Klasse\POS 2AHIFS\ConsoleApplication1\ConsoleApplication1\obj\Debug\ConsoleApplication1.csprojResolveAssemblyReference.cache
+C:\Users\Andii\Documents\Schule\HTL 2.Klasse\POS 2AHIFS\Programme\ConsoleApplication1\ConsoleApplication1\bin\Debug\ConsoleApplication1.exe.config
+C:\Users\Andii\Documents\Schule\HTL 2.Klasse\POS 2AHIFS\Programme\ConsoleApplication1\ConsoleApplication1\obj\Debug\ConsoleApplication1.exe
+C:\Users\Andii\Documents\Schule\HTL 2.Klasse\POS 2AHIFS\Programme\ConsoleApplication1\ConsoleApplication1\obj\Debug\ConsoleApplication1.pdb

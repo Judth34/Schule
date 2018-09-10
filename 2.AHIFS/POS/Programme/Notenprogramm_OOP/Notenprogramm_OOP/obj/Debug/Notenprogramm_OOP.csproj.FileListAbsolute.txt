@@ -1,0 +1,18 @@
+C:\Users\Andii\Documents\HTL 2.Klasse\Notenprogramm_OOP\Notenprogramm_OOP\bin\Debug\Notenprogramm_OOP.exe.config
+C:\Users\Andii\Documents\HTL 2.Klasse\Notenprogramm_OOP\Notenprogramm_OOP\obj\Debug\Notenprogramm_OOP.csprojResolveAssemblyReference.cache
+C:\Users\Andii\Documents\HTL 2.Klasse\Notenprogramm_OOP\Notenprogramm_OOP\bin\Debug\Notenprogramm_OOP.exe
+C:\Users\Andii\Documents\HTL 2.Klasse\Notenprogramm_OOP\Notenprogramm_OOP\bin\Debug\Notenprogramm_OOP.pdb
+C:\Users\Andii\Documents\HTL 2.Klasse\Notenprogramm_OOP\Notenprogramm_OOP\obj\Debug\Notenprogramm_OOP.exe
+C:\Users\Andii\Documents\HTL 2.Klasse\Notenprogramm_OOP\Notenprogramm_OOP\obj\Debug\Notenprogramm_OOP.pdb
+C:\Users\Andii\Documents\HTL 2.Klasse\POS 2AHIFS\Programme\Notenprogramm_OOP\Notenprogramm_OOP\bin\Debug\Notenprogramm_OOP.exe.config
+C:\Users\Andii\Documents\HTL 2.Klasse\POS 2AHIFS\Programme\Notenprogramm_OOP\Notenprogramm_OOP\obj\Debug\Notenprogramm_OOP.exe
+C:\Users\Andii\Documents\HTL 2.Klasse\POS 2AHIFS\Programme\Notenprogramm_OOP\Notenprogramm_OOP\obj\Debug\Notenprogramm_OOP.pdb
+C:\Users\Andii\Documents\HTL 2.Klasse\POS 2AHIFS\Programme\Notenprogramm_OOP\Notenprogramm_OOP\bin\Debug\Notenprogramm_OOP.exe
+C:\Users\Andii\Documents\HTL 2.Klasse\POS 2AHIFS\Programme\Notenprogramm_OOP\Notenprogramm_OOP\bin\Debug\Notenprogramm_OOP.pdb
+C:\Users\Andii\Documents\HTL 2.Klasse\POS 2AHIFS\Programme\Notenprogramm_OOP\Notenprogramm_OOP\obj\Debug\Notenprogramm_OOP.csprojResolveAssemblyReference.cache
+C:\Users\Andii\Documents\Schule\HTL 2.Klasse\POS 2AHIFS\Programme\Notenprogramm_OOP\Notenprogramm_OOP\bin\Debug\Notenprogramm_OOP.exe.config
+C:\Users\Andii\Documents\Schule\HTL 2.Klasse\POS 2AHIFS\Programme\Notenprogramm_OOP\Notenprogramm_OOP\obj\Debug\Notenprogramm_OOP.exe
+C:\Users\Andii\Documents\Schule\HTL 2.Klasse\POS 2AHIFS\Programme\Notenprogramm_OOP\Notenprogramm_OOP\obj\Debug\Notenprogramm_OOP.pdb
+C:\Users\Andii\Documents\Schule\HTL 2.Klasse\POS 2AHIFS\Programme\Notenprogramm_OOP\Notenprogramm_OOP\bin\Debug\Notenprogramm_OOP.exe
+C:\Users\Andii\Documents\Schule\HTL 2.Klasse\POS 2AHIFS\Programme\Notenprogramm_OOP\Notenprogramm_OOP\bin\Debug\Notenprogramm_OOP.pdb
+C:\Users\Andii\Documents\Schule\HTL 2.Klasse\POS 2AHIFS\Programme\Notenprogramm_OOP\Notenprogramm_OOP\obj\Debug\Notenprogramm_OOP.csprojResolveAssemblyReference.cache

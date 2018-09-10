@@ -1,0 +1,19 @@
+D:\!!!!!!!!!!!!!!!! POS PLF !!!!!!!!!!!!!!!!!!!!!\07_Fahrngruber_Samuel\PLFConsoleInterface\bin\Debug\PLFConsoleInterface.exe.config
+D:\!!!!!!!!!!!!!!!! POS PLF !!!!!!!!!!!!!!!!!!!!!\07_Fahrngruber_Samuel\PLFConsoleInterface\bin\Debug\PLFConsoleInterface.exe
+D:\!!!!!!!!!!!!!!!! POS PLF !!!!!!!!!!!!!!!!!!!!!\07_Fahrngruber_Samuel\PLFConsoleInterface\bin\Debug\PLFConsoleInterface.pdb
+D:\!!!!!!!!!!!!!!!! POS PLF !!!!!!!!!!!!!!!!!!!!!\07_Fahrngruber_Samuel\PLFConsoleInterface\obj\Debug\PLFConsoleInterface.exe
+D:\!!!!!!!!!!!!!!!! POS PLF !!!!!!!!!!!!!!!!!!!!!\07_Fahrngruber_Samuel\PLFConsoleInterface\obj\Debug\PLFConsoleInterface.pdb
+D:\!!!!!!!!!!!!!!!! POS PLF !!!!!!!!!!!!!!!!!!!!!\07_Fahrngruber_Samuel\PLFConsoleInterface\bin\Debug\PLFClassLibrary.dll
+D:\!!!!!!!!!!!!!!!! POS PLF !!!!!!!!!!!!!!!!!!!!!\07_Fahrngruber_Samuel\PLFConsoleInterface\bin\Debug\PLFClassLibrary.pdb
+D:\!!!!!!!!!!!!!!!! POS PLF !!!!!!!!!!!!!!!!!!!!!\07_Fahrngruber_Samuel\PLFConsoleInterface\obj\Debug\PLFConsoleInterface.csprojResolveAssemblyReference.cache
+D:\KONTROLLE\LAST PLF 2A\07_Fahrngruber_Samuel\07_Fahrngruber_Samuel\PLFConsoleInterface\bin\Debug\PLFConsoleInterface.exe.config
+D:\KONTROLLE\LAST PLF 2A\07_Fahrngruber_Samuel\07_Fahrngruber_Samuel\PLFConsoleInterface\obj\Debug\PLFConsoleInterface.exe
+D:\KONTROLLE\LAST PLF 2A\07_Fahrngruber_Samuel\07_Fahrngruber_Samuel\PLFConsoleInterface\obj\Debug\PLFConsoleInterface.pdb
+D:\KONTROLLE\LAST PLF 2A\07_Fahrngruber_Samuel\07_Fahrngruber_Samuel\PLFConsoleInterface\bin\Debug\PLFConsoleInterface.exe
+D:\KONTROLLE\LAST PLF 2A\07_Fahrngruber_Samuel\07_Fahrngruber_Samuel\PLFConsoleInterface\bin\Debug\PLFConsoleInterface.pdb
+D:\KONTROLLE\LAST PLF 2A\07_Fahrngruber_Samuel\07_Fahrngruber_Samuel\PLFConsoleInterface\bin\Debug\PLFClassLibrary.dll
+D:\KONTROLLE\LAST PLF 2A\07_Fahrngruber_Samuel\07_Fahrngruber_Samuel\PLFConsoleInterface\bin\Debug\PLFClassLibrary.pdb
+D:\KONTROLLE\LAST PLF 2A\07_Fahrngruber_Samuel\07_Fahrngruber_Samuel\PLFConsoleInterface\obj\Debug\PLFConsoleInterface.csprojResolveAssemblyReference.cache
+\\gandalf.htl-villach.at\Kommunikationschueler\2AHIFS\POS\LAST PLF 2A\ERLEDIGT\07_Fahrngruber_Samuel\07_Fahrngruber_Samuel\PLFConsoleInterface\bin\Debug\PLFConsoleInterface.exe.config
+\\gandalf.htl-villach.at\Kommunikationschueler\2AHIFS\POS\LAST PLF 2A\ERLEDIGT\07_Fahrngruber_Samuel\07_Fahrngruber_Samuel\PLFConsoleInterface\obj\Debug\PLFConsoleInterface.exe
+\\gandalf.htl-villach.at\Kommunikationschueler\2AHIFS\POS\LAST PLF 2A\ERLEDIGT\07_Fahrngruber_Samuel\07_Fahrngruber_Samuel\PLFConsoleInterface\obj\Debug\PLFConsoleInterface.pdb

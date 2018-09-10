@@ -1,0 +1,34 @@
+static bool TestCaseCopy()
+        {
+            int capacity = 100;
+            int numberOfElements = 50;
+            bool result = false;
+            SimpleQueue q1 = new SimpleQueue(capacity);
+            SimpleQueue q2;
+            int idx;
+            for (idx = 0; idx < numberOfElements; idx++)
+            {
+                q1.Enqueue(idx);
+            }
+            q2 = q1.Copy();
+            if (q1 != q2)
+            {
+                result = true;
+            }
+            while (result == true && idx > 0)
+            {
+                try
+                {
+                    if (q1.Dequeue() != q2.Dequeue())
+                    {
+                        result = false;
+                    }
+                }
+                catch
+                {
+                    result = false;
+                }
+                idx--;
+            }
+            return result;
+        }

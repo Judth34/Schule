@@ -1,0 +1,9 @@
+C:\Users\Andii\Documents\HTL\parameter\parameter\bin\Debug\parameter.exe.config
+C:\Users\Andii\Documents\HTL\parameter\parameter\obj\Debug\parameter.csprojResolveAssemblyReference.cache
+C:\Users\Andii\Documents\HTL\parameter\parameter\bin\Debug\parameter.exe
+C:\Users\Andii\Documents\HTL\parameter\parameter\bin\Debug\parameter.pdb
+C:\Users\Andii\Documents\HTL\parameter\parameter\obj\Debug\parameter.exe
+C:\Users\Andii\Documents\HTL\parameter\parameter\obj\Debug\parameter.pdb
+C:\Users\Andii\Documents\HTL 2.Klasse\POS 2AHIFS\parameter\parameter\bin\Debug\parameter.exe.config
+C:\Users\Andii\Documents\HTL 2.Klasse\POS 2AHIFS\parameter\parameter\obj\Debug\parameter.exe
+C:\Users\Andii\Documents\HTL 2.Klasse\POS 2AHIFS\parameter\parameter\obj\Debug\parameter.pdb

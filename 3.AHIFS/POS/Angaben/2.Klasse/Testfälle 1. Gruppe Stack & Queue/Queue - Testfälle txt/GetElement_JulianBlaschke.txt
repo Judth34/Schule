@@ -1,0 +1,20 @@
+static bool TestCase_GetElement() // Julian Blaschke
+        {
+	    SimpleQueue queue1 = new SimpleQueue(10);
+		int wert = 13;
+            if ((queue1.IsEmpty() == true) && (queue1.GetElement() != 0))
+            {
+                return false;
+
+            }
+
+            queue1.Push(wert);
+
+            if (!(queue1.GetElement() == wert))
+            {
+                return false;
+            }
+
+
+            return true;
+        }

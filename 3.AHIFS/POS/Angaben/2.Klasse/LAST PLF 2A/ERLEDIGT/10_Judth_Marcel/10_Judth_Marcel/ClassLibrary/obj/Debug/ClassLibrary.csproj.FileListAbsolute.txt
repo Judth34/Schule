@@ -1,0 +1,10 @@
+C:\Users\Marcel\Desktop\10_Judth_Marcel\ClassLibrary\bin\Debug\ClassLibrary.dll
+C:\Users\Marcel\Desktop\10_Judth_Marcel\ClassLibrary\bin\Debug\ClassLibrary.pdb
+C:\Users\Marcel\Desktop\10_Judth_Marcel\ClassLibrary\obj\Debug\ClassLibrary.csprojResolveAssemblyReference.cache
+C:\Users\Marcel\Desktop\10_Judth_Marcel\ClassLibrary\obj\Debug\ClassLibrary.dll
+C:\Users\Marcel\Desktop\10_Judth_Marcel\ClassLibrary\obj\Debug\ClassLibrary.pdb
+D:\KONTROLLE\LAST PLF 2A\10_Judth_Marcel\10_Judth_Marcel\ClassLibrary\bin\Debug\ClassLibrary.dll
+D:\KONTROLLE\LAST PLF 2A\10_Judth_Marcel\10_Judth_Marcel\ClassLibrary\bin\Debug\ClassLibrary.pdb
+D:\KONTROLLE\LAST PLF 2A\10_Judth_Marcel\10_Judth_Marcel\ClassLibrary\obj\Debug\ClassLibrary.csprojResolveAssemblyReference.cache
+D:\KONTROLLE\LAST PLF 2A\10_Judth_Marcel\10_Judth_Marcel\ClassLibrary\obj\Debug\ClassLibrary.dll
+D:\KONTROLLE\LAST PLF 2A\10_Judth_Marcel\10_Judth_Marcel\ClassLibrary\obj\Debug\ClassLibrary.pdb

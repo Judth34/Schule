@@ -1,0 +1,9 @@
+C:\Users\Andii\Documents\HTL\Konvertieren\Konvertieren\bin\Debug\Konvertieren.exe.config
+C:\Users\Andii\Documents\HTL\Konvertieren\Konvertieren\bin\Debug\Konvertieren.exe
+C:\Users\Andii\Documents\HTL\Konvertieren\Konvertieren\bin\Debug\Konvertieren.pdb
+C:\Users\Andii\Documents\HTL\Konvertieren\Konvertieren\obj\Debug\Konvertieren.csprojResolveAssemblyReference.cache
+C:\Users\Andii\Documents\HTL\Konvertieren\Konvertieren\obj\Debug\Konvertieren.exe
+C:\Users\Andii\Documents\HTL\Konvertieren\Konvertieren\obj\Debug\Konvertieren.pdb
+C:\Users\Andii\Documents\Schule\HTL 2.Klasse\POS 2AHIFS\Programme\Konvertieren\Konvertieren\bin\Debug\Konvertieren.exe.config
+C:\Users\Andii\Documents\Schule\HTL 2.Klasse\POS 2AHIFS\Programme\Konvertieren\Konvertieren\obj\Debug\Konvertieren.exe
+C:\Users\Andii\Documents\Schule\HTL 2.Klasse\POS 2AHIFS\Programme\Konvertieren\Konvertieren\obj\Debug\Konvertieren.pdb

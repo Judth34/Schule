@@ -1,0 +1,22 @@
+C:\Users\Andii\Documents\Schule\HTL 2.Klasse\POS 2AHIFS\Programme\SchuelerSortieren\PupilSorterGUI\bin\Debug\PupilSorterGUI.exe.config
+C:\Users\Andii\Documents\Schule\HTL 2.Klasse\POS 2AHIFS\Programme\SchuelerSortieren\PupilSorterGUI\bin\Debug\PupilSorterGUI.exe
+C:\Users\Andii\Documents\Schule\HTL 2.Klasse\POS 2AHIFS\Programme\SchuelerSortieren\PupilSorterGUI\bin\Debug\PupilSorterGUI.pdb
+C:\Users\Andii\Documents\Schule\HTL 2.Klasse\POS 2AHIFS\Programme\SchuelerSortieren\PupilSorterGUI\obj\Debug\PupilSorterGUI.csprojResolveAssemblyReference.cache
+C:\Users\Andii\Documents\Schule\HTL 2.Klasse\POS 2AHIFS\Programme\SchuelerSortieren\PupilSorterGUI\obj\Debug\MainWindow.g.cs
+C:\Users\Andii\Documents\Schule\HTL 2.Klasse\POS 2AHIFS\Programme\SchuelerSortieren\PupilSorterGUI\obj\Debug\App.g.cs
+C:\Users\Andii\Documents\Schule\HTL 2.Klasse\POS 2AHIFS\Programme\SchuelerSortieren\PupilSorterGUI\obj\Debug\PupilSorterGUI_MarkupCompile.cache
+C:\Users\Andii\Documents\Schule\HTL 2.Klasse\POS 2AHIFS\Programme\SchuelerSortieren\PupilSorterGUI\obj\Debug\PupilSorterGUI_MarkupCompile.lref
+C:\Users\Andii\Documents\Schule\HTL 2.Klasse\POS 2AHIFS\Programme\SchuelerSortieren\PupilSorterGUI\obj\Debug\MainWindow.baml
+C:\Users\Andii\Documents\Schule\HTL 2.Klasse\POS 2AHIFS\Programme\SchuelerSortieren\PupilSorterGUI\obj\Debug\PupilSorterGUI.g.resources
+C:\Users\Andii\Documents\Schule\HTL 2.Klasse\POS 2AHIFS\Programme\SchuelerSortieren\PupilSorterGUI\obj\Debug\PupilSorterGUI.Properties.Resources.resources
+C:\Users\Andii\Documents\Schule\HTL 2.Klasse\POS 2AHIFS\Programme\SchuelerSortieren\PupilSorterGUI\obj\Debug\PupilSorterGUI.csproj.GenerateResource.Cache
+C:\Users\Andii\Documents\Schule\HTL 2.Klasse\POS 2AHIFS\Programme\SchuelerSortieren\PupilSorterGUI\obj\Debug\PupilSorterGUI.exe
+C:\Users\Andii\Documents\Schule\HTL 2.Klasse\POS 2AHIFS\Programme\SchuelerSortieren\PupilSorterGUI\obj\Debug\PupilSorterGUI.pdb
+C:\Users\Andii\Documents\Schule\HTL 2.Klasse\POS 2AHIFS\Programme\SchuelerSortieren\PupilSorterGUI\bin\Debug\PupilSorter.dll
+C:\Users\Andii\Documents\Schule\HTL 2.Klasse\POS 2AHIFS\Programme\SchuelerSortieren\PupilSorterGUI\bin\Debug\PupilSorter.pdb
+C:\Users\Andii\Documents\Schule\HTL 2.Klasse\POS\Programme\SchuelerSortieren\PupilSorterGUI\bin\Debug\PupilSorterGUI.exe.config
+C:\Users\Andii\Documents\Schule\HTL 2.Klasse\POS\Programme\SchuelerSortieren\PupilSorterGUI\obj\Debug\PupilSorterGUI.exe
+C:\Users\Andii\Documents\Schule\HTL 2.Klasse\POS\Programme\SchuelerSortieren\PupilSorterGUI\obj\Debug\PupilSorterGUI.pdb
+C:\Users\Marcel Judth\Documents\Schule\Old_POS\Programme\SchuelerSortieren\PupilSorterGUI\bin\Debug\PupilSorterGUI.exe.config
+C:\Users\Marcel Judth\Documents\Schule\Old_POS\Programme\SchuelerSortieren\PupilSorterGUI\obj\Debug\PupilSorterGUI.exe
+C:\Users\Marcel Judth\Documents\Schule\Old_POS\Programme\SchuelerSortieren\PupilSorterGUI\obj\Debug\PupilSorterGUI.pdb

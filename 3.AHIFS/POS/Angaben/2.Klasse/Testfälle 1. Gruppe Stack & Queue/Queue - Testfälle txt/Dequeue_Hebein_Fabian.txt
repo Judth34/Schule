@@ -1,0 +1,35 @@
+        private static bool TestCase_Dequeue()     //Hebein Fabian
+        {
+		bool status = true;
+		int size = 5;
+		int idx;
+		SimpleQueue q1 = new SimpleQueue(size);
+            
+            for( idx = 0; idx < size; idx++)
+            {
+                q1.Enqueue(idx);
+            }
+            idx = 0;
+            while(idx < size && status == true)
+            {
+                if(q1.Dequeue() != idx)
+                {
+                    status = false;
+                }
+                idx++;
+            }
+            if(status == true)
+            {
+                try
+                {
+                    status = false;
+                    q1.Dequeue();
+                }
+                catch
+                {
+                    status = true;
+                }
+            }
+
+            return status;
+        }

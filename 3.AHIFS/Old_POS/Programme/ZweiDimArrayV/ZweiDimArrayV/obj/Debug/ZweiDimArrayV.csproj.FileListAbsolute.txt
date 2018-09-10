@@ -1,0 +1,6 @@
+C:\Users\Andii\Documents\Schule\HTL 2.Klasse\POS 2AHIFS\Programme\ZweiDimArrayV\ZweiDimArrayV\bin\Debug\ZweiDimArrayV.exe.config
+C:\Users\Andii\Documents\Schule\HTL 2.Klasse\POS 2AHIFS\Programme\ZweiDimArrayV\ZweiDimArrayV\bin\Debug\ZweiDimArrayV.exe
+C:\Users\Andii\Documents\Schule\HTL 2.Klasse\POS 2AHIFS\Programme\ZweiDimArrayV\ZweiDimArrayV\bin\Debug\ZweiDimArrayV.pdb
+C:\Users\Andii\Documents\Schule\HTL 2.Klasse\POS 2AHIFS\Programme\ZweiDimArrayV\ZweiDimArrayV\obj\Debug\ZweiDimArrayV.csprojResolveAssemblyReference.cache
+C:\Users\Andii\Documents\Schule\HTL 2.Klasse\POS 2AHIFS\Programme\ZweiDimArrayV\ZweiDimArrayV\obj\Debug\ZweiDimArrayV.exe
+C:\Users\Andii\Documents\Schule\HTL 2.Klasse\POS 2AHIFS\Programme\ZweiDimArrayV\ZweiDimArrayV\obj\Debug\ZweiDimArrayV.pdb

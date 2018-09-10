@@ -1,0 +1,37 @@
+//red
+      digitalWrite(10,HIGH);
+      delay(2000);
+      digitalWrite(10,LOW);
+
+//yellow      
+      digitalWrite(11,HIGH);
+      delay(2000);
+      digitalWrite(11,LOW);
+           
+//green
+      digitalWrite(12,HIGH);
+      delay(2000);
+      digitalWrite(12,LOW);
+      delay(200);
+      digitalWrite(12,HIGH);
+      delay(200);
+      digitalWrite(12,LOW);
+      delay(200);
+      digitalWrite(12,HIGH);
+      delay(200);
+      digitalWrite(12,LOW);
+      delay(200);
+      digitalWrite(12,HIGH);
+      delay(200);
+      digitalWrite(12,LOW);
+      delay(200);
+      digitalWrite(12,HIGH);
+      delay(200);
+      digitalWrite(12,LOW);
+      
+//yellow
+      
+      digitalWrite(11,HIGH);
+      delay(2000);
+      digitalWrite(11,LOW);
+      delay(200);

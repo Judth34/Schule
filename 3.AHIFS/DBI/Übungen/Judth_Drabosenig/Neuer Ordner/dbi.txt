@@ -1,0 +1,64 @@
+
+
+CREATE TABLE Messe
+(
+   M VARCHAR2(100),
+   Datum VARCHAR2(100),
+   Titel VARCHAR2(100),
+   CONSTRAINT pk_Messe PRIMARY KEY (M);
+)
+
+
+CREATE TABLE nimmtTeil
+(  
+   Funktion VARCHAR2(100),
+   CONSTRAINT fk_Messe(M) REFERENCES Messe,
+   CONSTRAINT fk_Pf(P) REFERENCES Pfarrmitglied;
+)
+
+
+CREATE TABLE Pfarrmitglied
+(
+   P VARCHAR2(100),
+   Name VARCHAR2(100),
+   Rang VARCHAR2(100),
+   KName VARCHAR2(100),
+   CONSTRAINT KName(KName) REFERENCES Kirche,
+   CONSTRAINT Pfarrmitglied PRIMARY KEY (P);
+)
+
+
+CREATE TABLE Kirche
+(
+   KName VARCHAR2(100),
+   Religion VARCHAR2(100),
+   Baujahr VARCHAR2(100),
+   
+   Pfarrer VARCHAR2(100),
+   Messner VARCHAR2(100),
+   CONSTRAINT D(D) REFERENCES Dorf,
+   PRIMARY KEY (KNAME)
+)
+
+
+CREATE TABLE Dorf
+(  
+   D VARCHAR2(500),
+   Name VARCHAR2(500),
+   PRIMARY KEY (D)
+)
+
+
+INSERT INTO nimmtTeil VALUES ();
+
+
+SELECT * 
+FROM Messe;
+SELECT * 
+FROM nimmtTeil;
+SELECT * 
+FROM Pfarrmitglied;
+SELECT * 
+FROM Kirche;
+SELECT * 
+FROM Dorf;

@@ -1,0 +1,17 @@
+ static bool TestFall_IsEmpty_Kopeinig_Marcel()
+        {
+            bool result = false;
+            Stack TestStack = new Stack(3);
+            result = TestStack.IsEmpty();
+            if (result == true)
+            {
+                TestStack.Push(6);
+                result = TestStack.IsEmpty();
+                if (result == false)
+                {
+                    result = true;
+                }
+            }
+            return result;
+
+        }

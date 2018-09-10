@@ -1,0 +1,10 @@
+C:\Users\Andii\Documents\HTL\Parameter Übung\Parameter Übung\bin\Debug\Parameter Übung.exe.config
+C:\Users\Andii\Documents\HTL\Parameter Übung\Parameter Übung\obj\Debug\Parameter Übung.csprojResolveAssemblyReference.cache
+C:\Users\Andii\Documents\HTL\Parameter Übung\Parameter Übung\bin\Debug\Parameter Übung.exe
+C:\Users\Andii\Documents\HTL\Parameter Übung\Parameter Übung\bin\Debug\Parameter Übung.pdb
+C:\Users\Andii\Documents\HTL\Parameter Übung\Parameter Übung\obj\Debug\Parameter Übung.exe
+C:\Users\Andii\Documents\HTL\Parameter Übung\Parameter Übung\obj\Debug\Parameter Übung.pdb
+C:\Users\Andii\Documents\HTL 2.Klasse\POS 2AHIFS\Parameter Übung\Parameter Übung\bin\Debug\Parameter Übung.exe.config
+C:\Users\Andii\Documents\HTL 2.Klasse\POS 2AHIFS\Parameter Übung\Parameter Übung\obj\Debug\Parameter Übung.exe
+C:\Users\Andii\Documents\HTL 2.Klasse\POS 2AHIFS\Parameter Übung\Parameter Übung\obj\Debug\Parameter Übung.pdb
+C:\Users\Andii\Documents\HTL 2.Klasse\POS 2AHIFS\Parameter Übung\Parameter Übung\obj\Debug\Parameter Übung.csprojResolveAssemblyReference.cache

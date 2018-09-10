@@ -1,0 +1,14 @@
+C:\Users\brescham\Desktop\04_Breschan_Moritz\FileLoader\bin\Debug\FileLoader.dll
+C:\Users\brescham\Desktop\04_Breschan_Moritz\FileLoader\bin\Debug\FileLoader.pdb
+C:\Users\brescham\Desktop\04_Breschan_Moritz\FileLoader\obj\Debug\FileLoader.csprojResolveAssemblyReference.cache
+C:\Users\brescham\Desktop\04_Breschan_Moritz\FileLoader\obj\Debug\FileLoader.dll
+C:\Users\brescham\Desktop\04_Breschan_Moritz\FileLoader\obj\Debug\FileLoader.pdb
+C:\Users\brescham\Desktop\04_Breschan_Moritz\FileLoader\bin\Debug\Datastructures.dll
+C:\Users\brescham\Desktop\04_Breschan_Moritz\FileLoader\bin\Debug\Datastructures.pdb
+D:\KONTROLLE\LAST PLF 2A\04_Breschan_Moritz\04_Breschan_Moritz\FileLoader\bin\Debug\FileLoader.dll
+D:\KONTROLLE\LAST PLF 2A\04_Breschan_Moritz\04_Breschan_Moritz\FileLoader\bin\Debug\FileLoader.pdb
+D:\KONTROLLE\LAST PLF 2A\04_Breschan_Moritz\04_Breschan_Moritz\FileLoader\bin\Debug\Datastructures.dll
+D:\KONTROLLE\LAST PLF 2A\04_Breschan_Moritz\04_Breschan_Moritz\FileLoader\bin\Debug\Datastructures.pdb
+D:\KONTROLLE\LAST PLF 2A\04_Breschan_Moritz\04_Breschan_Moritz\FileLoader\obj\Debug\FileLoader.csprojResolveAssemblyReference.cache
+D:\KONTROLLE\LAST PLF 2A\04_Breschan_Moritz\04_Breschan_Moritz\FileLoader\obj\Debug\FileLoader.dll
+D:\KONTROLLE\LAST PLF 2A\04_Breschan_Moritz\04_Breschan_Moritz\FileLoader\obj\Debug\FileLoader.pdb

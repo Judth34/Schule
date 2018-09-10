@@ -1,0 +1,9 @@
+C:\Users\Andii\Documents\Schule\HTL 2.Klasse\POS 2AHIFS\Programme\dataStructures\dataStructures\bin\Debug\dataStructures.exe.config
+C:\Users\Andii\Documents\Schule\HTL 2.Klasse\POS 2AHIFS\Programme\dataStructures\dataStructures\bin\Debug\dataStructures.exe
+C:\Users\Andii\Documents\Schule\HTL 2.Klasse\POS 2AHIFS\Programme\dataStructures\dataStructures\bin\Debug\dataStructures.pdb
+C:\Users\Andii\Documents\Schule\HTL 2.Klasse\POS 2AHIFS\Programme\dataStructures\dataStructures\obj\Debug\dataStructures.csprojResolveAssemblyReference.cache
+C:\Users\Andii\Documents\Schule\HTL 2.Klasse\POS 2AHIFS\Programme\dataStructures\dataStructures\obj\Debug\dataStructures.exe
+C:\Users\Andii\Documents\Schule\HTL 2.Klasse\POS 2AHIFS\Programme\dataStructures\dataStructures\obj\Debug\dataStructures.pdb
+E:\Schule\Old_POS\Programme\dataStructures\dataStructures\bin\Debug\dataStructures.exe.config
+E:\Schule\Old_POS\Programme\dataStructures\dataStructures\obj\Debug\dataStructures.exe
+E:\Schule\Old_POS\Programme\dataStructures\dataStructures\obj\Debug\dataStructures.pdb

@@ -1,0 +1,27 @@
+	 _______________________________________________________________________________________________
+	|							|					|
+	|     > class: SimpleStack				|	Name				|
+	|							|					|
+	|	bool IsEmpty()					|	Andreas Drabosenig	S/X	|
+	|	bool IsFull()					|	Nicolas Gragger		S/Q	|
+	|	int GetElement()				|	Julian Blaschke		S/Q	|
+	|	void Push(int)					|	Valon Berisa		S/-	|
+	|	int Pop()					|	Fabian Hebein		S/-	|
+	|	int Find(int) -> Anzahl der Übereinstimmungen	|	Moritz Breschan		S/Q	|
+	|	void Resize(int)				|	Melanie Bugelnig	X/X	|
+	|	SimpleStack Copy()				|	Samuel Fahrngruber	S/Q	|
+	|	SimpleStack Merge(SimpleStack)			|	Nico Kandut		S/Q	|
+	|							|					|
+	|							|					|
+	|							|					|
+	|     > class: SimpleQueue				|					|
+	|							|					|
+	|	void Enqueue(int)				|	Marcel Judth		-/Q	|
+	|	int Dequeue()					|	Zelimkhan Arsoev	-/X	|
+	|_______________________________________________________|_______________________________________|
+	|							|					|
+	|	S...Stackteil existiert				|	Fehlt von:			|
+	|	Q...Queueteil existiert				|	 ~Arsoev			|
+	|	-...nicht verlangt				|	 ~Drabosenig			|
+	|	X...noch ausständig				|	 ~Bugelnig			|
+	|_______________________________________________________|_______________________________________|

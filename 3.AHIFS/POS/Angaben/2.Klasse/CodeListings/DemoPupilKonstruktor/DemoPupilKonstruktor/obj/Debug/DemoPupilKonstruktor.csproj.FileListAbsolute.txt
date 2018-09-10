@@ -1,0 +1,6 @@
+D:\DemoPupilKonstruktor\DemoPupilKonstruktor\bin\Debug\DemoPupilKonstruktor.exe.config
+D:\DemoPupilKonstruktor\DemoPupilKonstruktor\bin\Debug\DemoPupilKonstruktor.exe
+D:\DemoPupilKonstruktor\DemoPupilKonstruktor\bin\Debug\DemoPupilKonstruktor.pdb
+D:\DemoPupilKonstruktor\DemoPupilKonstruktor\obj\Debug\DemoPupilKonstruktor.csprojResolveAssemblyReference.cache
+D:\DemoPupilKonstruktor\DemoPupilKonstruktor\obj\Debug\DemoPupilKonstruktor.exe
+D:\DemoPupilKonstruktor\DemoPupilKonstruktor\obj\Debug\DemoPupilKonstruktor.pdb

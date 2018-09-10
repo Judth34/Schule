@@ -1,0 +1,6 @@
+C:\Users\Andii\Documents\HTL 2.Klasse\GGT222\GGT222\bin\Debug\GGT222.exe.config
+C:\Users\Andii\Documents\HTL 2.Klasse\GGT222\GGT222\bin\Debug\GGT222.exe
+C:\Users\Andii\Documents\HTL 2.Klasse\GGT222\GGT222\bin\Debug\GGT222.pdb
+C:\Users\Andii\Documents\HTL 2.Klasse\GGT222\GGT222\obj\Debug\GGT222.exe
+C:\Users\Andii\Documents\HTL 2.Klasse\GGT222\GGT222\obj\Debug\GGT222.pdb
+C:\Users\Andii\Documents\HTL 2.Klasse\GGT222\GGT222\obj\Debug\GGT222.csprojResolveAssemblyReference.cache

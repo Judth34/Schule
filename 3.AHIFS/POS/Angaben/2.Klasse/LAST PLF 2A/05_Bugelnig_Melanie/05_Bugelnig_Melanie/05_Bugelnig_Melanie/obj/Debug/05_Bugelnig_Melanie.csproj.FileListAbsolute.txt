@@ -1,0 +1,3 @@
+C:\Users\bugelni1\Desktop\05_Bugelnig_Melanie\05_Bugelnig_Melanie\bin\Debug\05_Bugelnig_Melanie.exe.config
+D:\KONTROLLE\LAST PLF 2A\05_Bugelnig_Melanie\05_Bugelnig_Melanie\05_Bugelnig_Melanie\bin\Debug\05_Bugelnig_Melanie.exe.config
+\\gandalf.htl-villach.at\Kommunikationschueler\2AHIFS\POS\LAST PLF 2A\05_Bugelnig_Melanie\05_Bugelnig_Melanie\05_Bugelnig_Melanie\bin\Debug\05_Bugelnig_Melanie.exe.config

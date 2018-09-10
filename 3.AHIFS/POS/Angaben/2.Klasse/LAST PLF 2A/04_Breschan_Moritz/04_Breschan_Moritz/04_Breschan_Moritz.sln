@@ -1,0 +1,34 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 14
+VisualStudioVersion = 14.0.23107.0
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "04_Breschan_Moritz", "04_Breschan_Moritz\04_Breschan_Moritz.csproj", "{84D20DFE-E8E5-45C0-AD0A-8F0895CFDE64}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Datastructures LIB", "Datastructures\Datastructures LIB.csproj", "{0064C07E-38AB-45F5-A5D2-537F2F9C61FC}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "FileLoader", "FileLoader\FileLoader.csproj", "{8B5DEEC3-0E10-433B-90F0-4E45E54AE6D9}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{84D20DFE-E8E5-45C0-AD0A-8F0895CFDE64}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{84D20DFE-E8E5-45C0-AD0A-8F0895CFDE64}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{84D20DFE-E8E5-45C0-AD0A-8F0895CFDE64}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{84D20DFE-E8E5-45C0-AD0A-8F0895CFDE64}.Release|Any CPU.Build.0 = Release|Any CPU
+		{0064C07E-38AB-45F5-A5D2-537F2F9C61FC}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{0064C07E-38AB-45F5-A5D2-537F2F9C61FC}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{0064C07E-38AB-45F5-A5D2-537F2F9C61FC}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{0064C07E-38AB-45F5-A5D2-537F2F9C61FC}.Release|Any CPU.Build.0 = Release|Any CPU
+		{8B5DEEC3-0E10-433B-90F0-4E45E54AE6D9}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{8B5DEEC3-0E10-433B-90F0-4E45E54AE6D9}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{8B5DEEC3-0E10-433B-90F0-4E45E54AE6D9}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{8B5DEEC3-0E10-433B-90F0-4E45E54AE6D9}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+EndGlobal

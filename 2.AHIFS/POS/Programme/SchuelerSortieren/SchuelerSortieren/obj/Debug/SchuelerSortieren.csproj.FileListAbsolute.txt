@@ -1,0 +1,9 @@
+C:\Users\Andii\Documents\Schule\HTL 2.Klasse\POS 2AHIFS\Programme\SchuelerSortieren\SchuelerSortieren\bin\Debug\SchuelerSortieren.exe.config
+C:\Users\Andii\Documents\Schule\HTL 2.Klasse\POS 2AHIFS\Programme\SchuelerSortieren\SchuelerSortieren\bin\Debug\SchuelerSortieren.exe
+C:\Users\Andii\Documents\Schule\HTL 2.Klasse\POS 2AHIFS\Programme\SchuelerSortieren\SchuelerSortieren\bin\Debug\SchuelerSortieren.pdb
+C:\Users\Andii\Documents\Schule\HTL 2.Klasse\POS 2AHIFS\Programme\SchuelerSortieren\SchuelerSortieren\obj\Debug\SchuelerSortieren.csprojResolveAssemblyReference.cache
+C:\Users\Andii\Documents\Schule\HTL 2.Klasse\POS 2AHIFS\Programme\SchuelerSortieren\SchuelerSortieren\obj\Debug\SchuelerSortieren.exe
+C:\Users\Andii\Documents\Schule\HTL 2.Klasse\POS 2AHIFS\Programme\SchuelerSortieren\SchuelerSortieren\obj\Debug\SchuelerSortieren.pdb
+C:\Users\Andii\Documents\Schule\HTL 2.Klasse\POS 2AHIFS\Programme\SchuelerSortieren\SchuelerSortieren\bin\Debug\data\BasisFuerSchuelerlisteExport.csv
+C:\Users\Andii\Documents\Schule\HTL 2.Klasse\POS 2AHIFS\Programme\SchuelerSortieren\SchuelerSortieren\bin\Debug\PupilSorter.dll
+C:\Users\Andii\Documents\Schule\HTL 2.Klasse\POS 2AHIFS\Programme\SchuelerSortieren\SchuelerSortieren\bin\Debug\PupilSorter.pdb

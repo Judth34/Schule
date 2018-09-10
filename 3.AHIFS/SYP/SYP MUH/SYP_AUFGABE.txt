@@ -1,0 +1,6 @@
+Template suchen
+Menü bauen 
+Artikel zu erzeugen
+
+Lokalen Webserver installieren
+XAMP downloaden + JOOMLA 3.2              htdocs (in XAMP ordner) --> Joomla

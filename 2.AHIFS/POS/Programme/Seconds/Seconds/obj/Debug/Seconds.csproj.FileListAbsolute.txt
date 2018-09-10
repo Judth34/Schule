@@ -1,0 +1,6 @@
+C:\Users\Andii\Documents\HTL 2.Klasse\Seconds\Seconds\bin\Debug\Seconds.exe.config
+C:\Users\Andii\Documents\HTL 2.Klasse\Seconds\Seconds\bin\Debug\Seconds.exe
+C:\Users\Andii\Documents\HTL 2.Klasse\Seconds\Seconds\bin\Debug\Seconds.pdb
+C:\Users\Andii\Documents\HTL 2.Klasse\Seconds\Seconds\obj\Debug\Seconds.csprojResolveAssemblyReference.cache
+C:\Users\Andii\Documents\HTL 2.Klasse\Seconds\Seconds\obj\Debug\Seconds.exe
+C:\Users\Andii\Documents\HTL 2.Klasse\Seconds\Seconds\obj\Debug\Seconds.pdb

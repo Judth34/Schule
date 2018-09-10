@@ -1,0 +1,19 @@
+static bool TestFall_IsFull_Rajic_Kristian()
+        {
+            bool result = false;
+            SimpleQueue TestStack = new SimpleQueue(2);
+            TestStack.Enqueue(5);
+            TestStack.Enqueue(4);
+            result = TestStack.IsFull();
+            if (result == true)
+            {
+                TestStack.Dequeue();
+                result = TestStack.IsFull();
+                if (result == false)
+                {
+                    result = true;
+                }
+            }
+            return result;
+
+        }

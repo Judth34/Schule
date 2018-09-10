@@ -1,0 +1,29 @@
+static bool TestCasePop()            //Hebein Fabian
+        {
+            int zahl = 5;
+            int stacksize = 20;
+            SimpleStack TestStack = new SimpleStack(stacksize);
+            bool status = true;
+
+            TestStack.Push(zahl);
+            if (TestStack.Pop() != zahl)
+                status = false;
+            else
+            {
+                if (TestStack.IsEmpty())
+                {
+                    status = false;
+                    try
+                    {
+                        TestStack.Pop();
+                    }
+                    catch
+                    {
+                        status = true;
+                    }
+                }
+            }
+
+            return status;
+
+        }

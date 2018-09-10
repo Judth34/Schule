@@ -1,0 +1,170 @@
+
+static bool TestCase_Find()  //Moritz Breschan
+        {
+            bool rgw = true;
+            SimpleStack s1 = new SimpleStack(20);
+            int counter = 0;
+            for (counter = 0; counter < 10; counter++)
+            {
+                s1.Push(counter);
+            }
+            for (counter = 9; counter >= 0; counter--)
+            {
+                s1.Push(counter);
+            }
+            counter = 0;
+            while(counter<10&&rgw)
+            {
+                if (s1.Find(counter) != 2)
+                {
+                    rgw = false;
+                }
+                counter++;
+            }
+            return rgw;
+        }
+        
+        private static bool Testcase_Merge()	//Kandut Nico
+        {
+            bool result = false;
+            Stack SimpleStack01 = new Stack(7);
+            Stack SimpleStack02 = new Stack(3);
+            Stack ResultingStack;
+
+            ResultingStack = SimpleStack01.Merge(SimpleStack02);
+
+            if (
+                (SimpleStack01.GetLastElement() == SimpleStack02.GetLastElement()) &&
+                (ResultingStack.CurrentStackSize == SimpleStack01.CurrentStackSize + SimpleStack02.CurrentStackSize) &&
+                (ResultingStack.MaxStackSize == SimpleStack01.MaxStackSize + SimpleStack02.MaxStackSize)  
+               )
+            {
+                result = true;
+            }
+
+            return result;
+        }
+        
+static bool TestCaseCopy()	//Samuel Fahrngruber
+        {
+            int capacity = 100;
+            int numberOfElements = 50;
+            bool result = false;
+            SimpleStack s1 = new SimpleStack(capacity);
+            SimpleStack s2;
+            int idx;
+            for (idx = 0; idx < numberOfElements; idx++)
+            {
+                s1.Push(idx);
+            }
+            s2 = s1.Copy();
+            if (s1 != s2)
+            {
+                result = true;
+            }
+            if (s1.data != s2.data)
+            {
+                result = true;
+            }
+            while (result == true && idx > 0)
+            {
+                try
+                {
+                    if (s1.Pop() != s2.Pop())
+                    {
+                        result = false;
+                    }
+                }
+                catch
+                {
+                    result = false;
+                }
+                idx--;
+            }
+            return result;
+        }
+
+        static bool TestCaseCopy() // Nicolas Gragger
+        {
+            SimpleStack stackIsFull = new SimpleStack(1);
+            SimpleQueue queueIsFull = new SimpleQueue(1);
+            bool result = true;
+            if (stackIsFull.IsFull())
+            {
+                result = false;
+            }
+            stackIsFull.Push(5);
+            if (!stackIsFull.IsFull())
+            {
+                result = false;
+            }
+            if(queueIsFull.IsFull())
+            {
+                result = false;
+            }
+            queueIsFull.EnQueue(5);
+            if (!queueIsFull.IsFull())
+            {
+                result = false;
+            }
+            return result;
+        }
+public static bool Test_01_Push() // Berisa Valon 
+        {
+
+            int wert = 5;
+            int size = 4;
+            bool rgw = false;
+            Stack s1 = new Stack(size);
+
+            try
+            {
+                s1.Push(wert);
+                Console.WriteLine("Push hat funktioniert. Der Wert ist : " + wert);
+                rgw = true;      
+            }
+            catch (Exception ex)
+            {
+                Console.WriteLine(ex.Message);
+            }
+
+            return rgw;
+        }
+
+static bool TestCasePop()            //Hebein Fabian
+        {
+	    Stack Stack1 = new Stack(10);
+            bool status = true;
+
+            int zahl = 5;
+
+            Stack1.Push(zahl);
+            if (Stack1.Pop() != zahl)
+                status = false;
+            else
+            {
+                if (Stack1.IsEmpty())
+                {
+                    status = false;
+                    try
+                    {
+                        Stack1.Pop();
+                    }
+                    catch
+                    {
+                        status = true;
+                    }
+                }
+            }
+
+            return status;
+
+        }
+
+private static bool RunTestCaseResize()     //Bugelnig Melanie
+        {
+            SimpleStack s1 = new SimpleStack();
+            int newCapacity=1000;
+
+            return s1.Resize(newCapacity);
+        }

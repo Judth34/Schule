@@ -1,0 +1,9 @@
+C:\Users\Andii\Documents\Schule\HTL 2.Klasse\POS 2AHIFS\Programme\Rekursion\Rekursion\bin\Debug\Rekursion.exe.config
+C:\Users\Andii\Documents\Schule\HTL 2.Klasse\POS 2AHIFS\Programme\Rekursion\Rekursion\bin\Debug\Rekursion.exe
+C:\Users\Andii\Documents\Schule\HTL 2.Klasse\POS 2AHIFS\Programme\Rekursion\Rekursion\bin\Debug\Rekursion.pdb
+C:\Users\Andii\Documents\Schule\HTL 2.Klasse\POS 2AHIFS\Programme\Rekursion\Rekursion\obj\Debug\Rekursion.csprojResolveAssemblyReference.cache
+C:\Users\Andii\Documents\Schule\HTL 2.Klasse\POS 2AHIFS\Programme\Rekursion\Rekursion\obj\Debug\Rekursion.exe
+C:\Users\Andii\Documents\Schule\HTL 2.Klasse\POS 2AHIFS\Programme\Rekursion\Rekursion\obj\Debug\Rekursion.pdb
+E:\Schule\Old_POS\Programme\Rekursion\Rekursion\bin\Debug\Rekursion.exe.config
+E:\Schule\Old_POS\Programme\Rekursion\Rekursion\obj\Debug\Rekursion.exe
+E:\Schule\Old_POS\Programme\Rekursion\Rekursion\obj\Debug\Rekursion.pdb

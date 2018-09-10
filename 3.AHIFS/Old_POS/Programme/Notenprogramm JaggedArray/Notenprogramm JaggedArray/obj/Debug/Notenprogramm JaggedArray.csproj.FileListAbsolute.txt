@@ -1,0 +1,15 @@
+C:\Users\Andii\Documents\HTL 2.Klasse\Notenprogramm JaggedArray\Notenprogramm JaggedArray\bin\Debug\Notenprogramm JaggedArray.exe.config
+C:\Users\Andii\Documents\HTL 2.Klasse\Notenprogramm JaggedArray\Notenprogramm JaggedArray\bin\Debug\Notenprogramm JaggedArray.exe
+C:\Users\Andii\Documents\HTL 2.Klasse\Notenprogramm JaggedArray\Notenprogramm JaggedArray\bin\Debug\Notenprogramm JaggedArray.pdb
+C:\Users\Andii\Documents\HTL 2.Klasse\Notenprogramm JaggedArray\Notenprogramm JaggedArray\obj\Debug\Notenprogramm JaggedArray.csprojResolveAssemblyReference.cache
+C:\Users\Andii\Documents\HTL 2.Klasse\Notenprogramm JaggedArray\Notenprogramm JaggedArray\obj\Debug\Notenprogramm JaggedArray.exe
+C:\Users\Andii\Documents\HTL 2.Klasse\Notenprogramm JaggedArray\Notenprogramm JaggedArray\obj\Debug\Notenprogramm JaggedArray.pdb
+C:\Users\Andii\Documents\HTL 2.Klasse\POS 2AHIFS\Programme\Notenprogramm JaggedArray\Notenprogramm JaggedArray\bin\Debug\Notenprogramm JaggedArray.exe.config
+C:\Users\Andii\Documents\HTL 2.Klasse\POS 2AHIFS\Programme\Notenprogramm JaggedArray\Notenprogramm JaggedArray\obj\Debug\Notenprogramm JaggedArray.exe
+C:\Users\Andii\Documents\HTL 2.Klasse\POS 2AHIFS\Programme\Notenprogramm JaggedArray\Notenprogramm JaggedArray\obj\Debug\Notenprogramm JaggedArray.pdb
+C:\Users\Andii\Documents\Schule\HTL 2.Klasse\POS 2AHIFS\Programme\Notenprogramm JaggedArray\Notenprogramm JaggedArray\bin\Debug\Notenprogramm JaggedArray.exe.config
+C:\Users\Andii\Documents\Schule\HTL 2.Klasse\POS 2AHIFS\Programme\Notenprogramm JaggedArray\Notenprogramm JaggedArray\obj\Debug\Notenprogramm JaggedArray.exe
+C:\Users\Andii\Documents\Schule\HTL 2.Klasse\POS 2AHIFS\Programme\Notenprogramm JaggedArray\Notenprogramm JaggedArray\obj\Debug\Notenprogramm JaggedArray.pdb
+C:\Users\Andii\Documents\Schule\HTL 2.Klasse\POS 2AHIFS\Programme\Notenprogramm JaggedArray\Notenprogramm JaggedArray\bin\Debug\Notenprogramm JaggedArray.exe
+C:\Users\Andii\Documents\Schule\HTL 2.Klasse\POS 2AHIFS\Programme\Notenprogramm JaggedArray\Notenprogramm JaggedArray\bin\Debug\Notenprogramm JaggedArray.pdb
+C:\Users\Andii\Documents\Schule\HTL 2.Klasse\POS 2AHIFS\Programme\Notenprogramm JaggedArray\Notenprogramm JaggedArray\obj\Debug\Notenprogramm JaggedArray.csprojResolveAssemblyReference.cache

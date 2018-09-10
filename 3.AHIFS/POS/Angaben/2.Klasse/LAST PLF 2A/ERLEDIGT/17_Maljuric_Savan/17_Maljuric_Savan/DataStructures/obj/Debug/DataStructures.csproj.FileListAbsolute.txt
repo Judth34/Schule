@@ -1,0 +1,10 @@
+E:\POS 2015-16\17_Maljuric_Savan\DataStructures\bin\Debug\DataStructures.dll
+E:\POS 2015-16\17_Maljuric_Savan\DataStructures\bin\Debug\DataStructures.pdb
+E:\POS 2015-16\17_Maljuric_Savan\DataStructures\obj\Debug\DataStructures.dll
+E:\POS 2015-16\17_Maljuric_Savan\DataStructures\obj\Debug\DataStructures.pdb
+E:\POS 2015-16\17_Maljuric_Savan\DataStructures\obj\Debug\DataStructures.csprojResolveAssemblyReference.cache
+\\gandalf\Kommunikationschueler\2AHIFS\POS\LAST PLF 2A\ERLEDIGT\17_Maljuric_Savan\17_Maljuric_Savan\DataStructures\bin\Debug\DataStructures.dll
+\\gandalf\Kommunikationschueler\2AHIFS\POS\LAST PLF 2A\ERLEDIGT\17_Maljuric_Savan\17_Maljuric_Savan\DataStructures\bin\Debug\DataStructures.pdb
+\\gandalf\Kommunikationschueler\2AHIFS\POS\LAST PLF 2A\ERLEDIGT\17_Maljuric_Savan\17_Maljuric_Savan\DataStructures\obj\Debug\DataStructures.csprojResolveAssemblyReference.cache
+\\gandalf\Kommunikationschueler\2AHIFS\POS\LAST PLF 2A\ERLEDIGT\17_Maljuric_Savan\17_Maljuric_Savan\DataStructures\obj\Debug\DataStructures.dll
+\\gandalf\Kommunikationschueler\2AHIFS\POS\LAST PLF 2A\ERLEDIGT\17_Maljuric_Savan\17_Maljuric_Savan\DataStructures\obj\Debug\DataStructures.pdb

@@ -1,0 +1,48 @@
+CREATE TABLE Flugzeug
+(
+
+   FZ INTEGER,
+   Baujahr VARCHAR2(500),
+   maxseatcap INTEGER,
+   PRIMARY KEY (FZ)
+);
+
+CREATE TABLE tatsaechlichFlug
+(
+   F INTEGER,
+   Datum VARCHAR2(500),
+   PRIMARY KEY (F)
+);
+CREATE TABLE Flugangebot
+(
+   F INTEGER,
+   FlugTageUndZeiten VARCHAR2(500),
+   PRIMARY KEY (F)
+);
+CREATE TABLE Passagier
+(
+   P INTEGER,
+   Name VARCHAR2(500),
+   GebDatum VARCHAR2(500),
+   PRIMARY KEY (P)
+);
+CREATE TABLE Flughafen
+(
+   FH INTEGER,
+   Bez VARCHAR2(500),
+   Internatialcode VARCHAR2(500),
+   PRIMARY KEY (FH)
+);
+
+INSERT INTO Flugzeug VALUES (1,1999,260);INSERT INTO Flugzeug VALUES (1,1999,260);
+
+SELECT * 
+FROM Flugzeug;
+SELECT * 
+FROM tatsaechlichFlug;
+SELECT * 
+FROM Flugangebot;
+SELECT * 
+FROM Passagier;
+SELECT * 
+FROM Flughafen;

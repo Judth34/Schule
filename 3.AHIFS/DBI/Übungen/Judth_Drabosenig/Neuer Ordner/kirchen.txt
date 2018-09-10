@@ -1,0 +1,68 @@
+DROP TABLE dorf CASCADE CONSTRAINTS;
+DROP TABLE kirche CASCADE CONSTRAINTS;
+DROP TABLE pfarrmitglied CASCADE CONSTRAINTS;
+DROP TABLE messe CASCADE CONSTRAINTS;
+DROP TABLE nimmtteil CASCADE CONSTRAINTS;
+
+CREATE TABLE dorf(
+	id INTEGER,
+	name VARCHAR2(500),
+
+	CONSTRAINT pk_dorf PRIMARY KEY(id)
+);
+CREATE TABLE pfarrmitglied(
+	id INTEGER,
+	name VARCHAR(500),
+	rang VARCHAR(500),
+	idKircheMinistrant INTEGER,
+	
+	CONSTRAINT pk_pfarrmitglied PRIMARY KEY(id)
+);
+CREATE TABLE kirche(
+	id INTEGER,
+	name VARCHAR2(500),
+	year VARCHAR2(4),
+	dorf INTEGER,
+	pfarrer INTEGER,
+	messner INTEGER,
+	
+	CONSTRAINT pk_kirche PRIMARY KEY(id),
+	CONSTRAINT fk_dorf FOREIGN KEY(dorf) REFERENCES dorf(id),
+	CONSTRAINT fk_pfarrer FOREIGN KEY(pfarrer) REFERENCES pfarrmitglied(id),
+	CONSTRAINT fk_messner FOREIGN KEY(messner) REFERENCES pfarrmitglied(id),
+	CONSTRAINT fk_pfarrermessner CHECK(pfarrer != messner)
+);
+CREATE TABLE messe(
+	id INTEGER,
+	datum DATE,
+	titel VARCHAR2(500),
+
+	CONSTRAINT pk_messe PRIMARY KEY(id)
+);
+CREATE TABLE nimmtteil(
+	messe INTEGER,
+	pfarrmitglied INTEGER,
+	aufgabe VARCHAR2(500),
+	
+	CONSTRAINT pk_nimmtteil PRIMARY KEY(messe,pfarrmitglied),
+	CONSTRAINT fk_messe FOREIGN KEY(messe) REFERENCES messe(id),
+	CONSTRAINT fk_pfarrmitglied FOREIGN KEY(pfarrmitglied) REFERENCES pfarrmitglied(id)
+);
+ALTER TABLE pfarrmitglied 
+	ADD CONSTRAINT fk_ministrant FOREIGN KEY(idKircheMinistrant) REFERENCES kirche(id);
+
+ALTER TABLE pfarrmitglied DISABLE CONSTRAINT fk_ministrant;
+
+INSERT INTO dorf VALUES(01, 'Kofl');
+
+INSERT INTO pfarrmitglied VALUES(01, 'Reinhold', 'Messner', NULL);
+INSERT INTO pfarrmitglied VALUES(02, 'Reinhard', 'Pfarrer', NULL);
+
+INSERT INTO kirche VALUES(01, 'Maria im Dorn', '1945',01, 02, 01);
+
+INSERT INTO pfarrmitglied VALUES(03, 'Benni', 'Ministrant', 01);
+
+INSERT INTO nimmtteil  VALUES(01, 02, 'Pfarrer sein');
+
+ALTER TABLE pfarrmitglied ENABLE CONSTRAINT fk_ministrant;
+

@@ -1,0 +1,12 @@
+C:\Users\Andii\Documents\Schule\HTL 2.Klasse\POS 2AHIFS\Programme\PLF_Verbesserung\PopSort\Pop_Sort\Pop_Sort\bin\Debug\Pop_Sort.exe.config
+C:\Users\Andii\Documents\Schule\HTL 2.Klasse\POS 2AHIFS\Programme\PLF_Verbesserung\PopSort\Pop_Sort\Pop_Sort\bin\Debug\Pop_Sort.exe
+C:\Users\Andii\Documents\Schule\HTL 2.Klasse\POS 2AHIFS\Programme\PLF_Verbesserung\PopSort\Pop_Sort\Pop_Sort\bin\Debug\Pop_Sort.pdb
+C:\Users\Andii\Documents\Schule\HTL 2.Klasse\POS 2AHIFS\Programme\PLF_Verbesserung\PopSort\Pop_Sort\Pop_Sort\obj\Debug\Pop_Sort.csprojResolveAssemblyReference.cache
+C:\Users\Andii\Documents\Schule\HTL 2.Klasse\POS 2AHIFS\Programme\PLF_Verbesserung\PopSort\Pop_Sort\Pop_Sort\obj\Debug\Pop_Sort.exe
+C:\Users\Andii\Documents\Schule\HTL 2.Klasse\POS 2AHIFS\Programme\PLF_Verbesserung\PopSort\Pop_Sort\Pop_Sort\obj\Debug\Pop_Sort.pdb
+C:\Users\Andii\Documents\Schule\HTL 2.Klasse\POS 2AHIFS\Programme\PLF_Verbesserung\PopSort\Pop_Sort_Search_Min\Pop_Sort\bin\Debug\Pop_Sort.exe.config
+C:\Users\Andii\Documents\Schule\HTL 2.Klasse\POS 2AHIFS\Programme\PLF_Verbesserung\PopSort\Pop_Sort_Search_Min\Pop_Sort\obj\Debug\Pop_Sort.exe
+C:\Users\Andii\Documents\Schule\HTL 2.Klasse\POS 2AHIFS\Programme\PLF_Verbesserung\PopSort\Pop_Sort_Search_Min\Pop_Sort\obj\Debug\Pop_Sort.pdb
+C:\Users\Andii\Documents\Schule\HTL 2.Klasse\POS 2AHIFS\Programme\PLF_Verbesserung\PopSort\Pop_Sort_Search_Min\Pop_Sort\bin\Debug\Pop_Sort.exe
+C:\Users\Andii\Documents\Schule\HTL 2.Klasse\POS 2AHIFS\Programme\PLF_Verbesserung\PopSort\Pop_Sort_Search_Min\Pop_Sort\bin\Debug\Pop_Sort.pdb
+C:\Users\Andii\Documents\Schule\HTL 2.Klasse\POS 2AHIFS\Programme\PLF_Verbesserung\PopSort\Pop_Sort_Search_Min\Pop_Sort\obj\Debug\Pop_Sort.csprojResolveAssemblyReference.cache

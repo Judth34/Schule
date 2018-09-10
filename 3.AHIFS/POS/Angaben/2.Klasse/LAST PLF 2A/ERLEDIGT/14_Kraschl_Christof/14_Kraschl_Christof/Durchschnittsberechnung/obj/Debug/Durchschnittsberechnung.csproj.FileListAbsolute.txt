@@ -1,0 +1,10 @@
+c:\users\kraschlc\documents\visual studio 2015\Projects\14_Kraschl_Christof\Durchschnittsberechnung\bin\Debug\Durchschnittsberechnung.dll
+c:\users\kraschlc\documents\visual studio 2015\Projects\14_Kraschl_Christof\Durchschnittsberechnung\bin\Debug\Durchschnittsberechnung.pdb
+c:\users\kraschlc\documents\visual studio 2015\Projects\14_Kraschl_Christof\Durchschnittsberechnung\obj\Debug\Durchschnittsberechnung.csprojResolveAssemblyReference.cache
+c:\users\kraschlc\documents\visual studio 2015\Projects\14_Kraschl_Christof\Durchschnittsberechnung\obj\Debug\Durchschnittsberechnung.dll
+c:\users\kraschlc\documents\visual studio 2015\Projects\14_Kraschl_Christof\Durchschnittsberechnung\obj\Debug\Durchschnittsberechnung.pdb
+D:\KONTROLLE\LAST PLF 2A\14_Kraschl_Christof\14_Kraschl_Christof\Durchschnittsberechnung\bin\Debug\Durchschnittsberechnung.dll
+D:\KONTROLLE\LAST PLF 2A\14_Kraschl_Christof\14_Kraschl_Christof\Durchschnittsberechnung\bin\Debug\Durchschnittsberechnung.pdb
+D:\KONTROLLE\LAST PLF 2A\14_Kraschl_Christof\14_Kraschl_Christof\Durchschnittsberechnung\obj\Debug\Durchschnittsberechnung.csprojResolveAssemblyReference.cache
+D:\KONTROLLE\LAST PLF 2A\14_Kraschl_Christof\14_Kraschl_Christof\Durchschnittsberechnung\obj\Debug\Durchschnittsberechnung.dll
+D:\KONTROLLE\LAST PLF 2A\14_Kraschl_Christof\14_Kraschl_Christof\Durchschnittsberechnung\obj\Debug\Durchschnittsberechnung.pdb

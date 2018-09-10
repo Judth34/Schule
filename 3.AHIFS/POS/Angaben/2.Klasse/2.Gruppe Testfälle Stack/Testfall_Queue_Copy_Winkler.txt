@@ -1,0 +1,19 @@
+private static bool testfall_Copy_Christian_Winkler(SimpleQueue firstQueue, SimpleQueue secondQueue, int groesseQueue, int startnumber)
+{
+    int boolCounter = 0;
+    bool result = false;
+    fillQueue(firstQueue, groesseQueue, startnumber);
+    secondQueue = firstQueue.Copy();
+    for (int StackIdx = 0; StackIdx < groesseQueue; StackIdx++)
+    {
+        if (firstQueue.getQueue()[StackIdx] == secondQueue.getQueue()[StackIdx])
+        {
+            boolCounter++;
+        }
+    }
+    if (boolCounter == groesseQueue)
+    {
+        result = true;
+    }
+    return result;
+}

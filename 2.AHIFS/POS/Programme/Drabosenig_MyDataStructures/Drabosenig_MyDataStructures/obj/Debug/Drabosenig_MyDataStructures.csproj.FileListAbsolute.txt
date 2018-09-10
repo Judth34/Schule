@@ -1,0 +1,11 @@
+C:\Users\Andii\Documents\Schule\HTL 2.Klasse\POS 2AHIFS\Programme\Drabosenig_MyDataStructures\Drabosenig_MyDataStructures\bin\Debug\Drabosenig_MyDataStructures.exe.config
+C:\Users\Andii\Documents\Schule\HTL 2.Klasse\POS 2AHIFS\Programme\Drabosenig_MyDataStructures\Drabosenig_MyDataStructures\bin\Debug\Drabosenig_MyDataStructures.exe
+C:\Users\Andii\Documents\Schule\HTL 2.Klasse\POS 2AHIFS\Programme\Drabosenig_MyDataStructures\Drabosenig_MyDataStructures\bin\Debug\Drabosenig_MyDataStructures.pdb
+C:\Users\Andii\Documents\Schule\HTL 2.Klasse\POS 2AHIFS\Programme\Drabosenig_MyDataStructures\Drabosenig_MyDataStructures\bin\Debug\MyDataStructuresLIB.dll
+C:\Users\Andii\Documents\Schule\HTL 2.Klasse\POS 2AHIFS\Programme\Drabosenig_MyDataStructures\Drabosenig_MyDataStructures\bin\Debug\MyDataStructuresLIB.pdb
+C:\Users\Andii\Documents\Schule\HTL 2.Klasse\POS 2AHIFS\Programme\Drabosenig_MyDataStructures\Drabosenig_MyDataStructures\obj\Debug\Drabosenig_MyDataStructures.csprojResolveAssemblyReference.cache
+C:\Users\Andii\Documents\Schule\HTL 2.Klasse\POS 2AHIFS\Programme\Drabosenig_MyDataStructures\Drabosenig_MyDataStructures\obj\Debug\Drabosenig_MyDataStructures.exe
+C:\Users\Andii\Documents\Schule\HTL 2.Klasse\POS 2AHIFS\Programme\Drabosenig_MyDataStructures\Drabosenig_MyDataStructures\obj\Debug\Drabosenig_MyDataStructures.pdb
+E:\Schule\Old_POS\Programme\Drabosenig_MyDataStructures\Drabosenig_MyDataStructures\bin\Debug\Drabosenig_MyDataStructures.exe.config
+E:\Schule\Old_POS\Programme\Drabosenig_MyDataStructures\Drabosenig_MyDataStructures\obj\Debug\Drabosenig_MyDataStructures.exe
+E:\Schule\Old_POS\Programme\Drabosenig_MyDataStructures\Drabosenig_MyDataStructures\obj\Debug\Drabosenig_MyDataStructures.pdb

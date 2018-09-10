@@ -1,0 +1,24 @@
+static bool TestCaseFind()  //Moritz Breschan
+        {
+            bool rgw = true;
+            Queue.s1 = new Queue(20);
+            int counter = 0;
+            for (counter = 0; counter < 10; counter++)
+            {
+                s1.Enqueue(counter);
+            }
+            for (counter = 9; counter >= 0; counter--)
+            {
+                s1.Enqueue(counter);
+            }
+            counter = 0;
+            while(counter<10&&rgw)
+            {
+                if (s1.Find(counter) != 2)
+                {
+                    rgw = false;
+                }
+                counter++;
+            }
+            return rgw;
+        }

@@ -1,0 +1,9 @@
+E:\Schule\Old_POS\Programme\Binary Tree\Binary Tree\bin\Debug\Binary Tree.exe.config
+E:\Schule\Old_POS\Programme\Binary Tree\Binary Tree\bin\Debug\Binary Tree.exe
+E:\Schule\Old_POS\Programme\Binary Tree\Binary Tree\bin\Debug\Binary Tree.pdb
+E:\Schule\Old_POS\Programme\Binary Tree\Binary Tree\obj\Debug\Binary Tree.csprojResolveAssemblyReference.cache
+E:\Schule\Old_POS\Programme\Binary Tree\Binary Tree\obj\Debug\Binary Tree.exe
+E:\Schule\Old_POS\Programme\Binary Tree\Binary Tree\obj\Debug\Binary Tree.pdb
+C:\Users\Marcel Judth\Documents\Schule\3.AHIFS\Old_POS\Programme\Binary Tree\Binary Tree\bin\Debug\Binary Tree.exe.config
+C:\Users\Marcel Judth\Documents\Schule\3.AHIFS\Old_POS\Programme\Binary Tree\Binary Tree\obj\Debug\Binary Tree.exe
+C:\Users\Marcel Judth\Documents\Schule\3.AHIFS\Old_POS\Programme\Binary Tree\Binary Tree\obj\Debug\Binary Tree.pdb

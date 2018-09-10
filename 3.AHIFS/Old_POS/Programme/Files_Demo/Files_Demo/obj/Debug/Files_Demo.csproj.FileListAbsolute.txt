@@ -1,0 +1,12 @@
+C:\Users\Andii\Documents\Schule\HTL 2.Klasse\POS 2AHIFS\Programme\Files_Demo\Files_Demo\bin\Debug\Files_Demo.exe.config
+C:\Users\Andii\Documents\Schule\HTL 2.Klasse\POS 2AHIFS\Programme\Files_Demo\Files_Demo\bin\Debug\Files_Demo.exe
+C:\Users\Andii\Documents\Schule\HTL 2.Klasse\POS 2AHIFS\Programme\Files_Demo\Files_Demo\bin\Debug\Files_Demo.pdb
+C:\Users\Andii\Documents\Schule\HTL 2.Klasse\POS 2AHIFS\Programme\Files_Demo\Files_Demo\obj\Debug\Files_Demo.csprojResolveAssemblyReference.cache
+C:\Users\Andii\Documents\Schule\HTL 2.Klasse\POS 2AHIFS\Programme\Files_Demo\Files_Demo\obj\Debug\Files_Demo.exe
+C:\Users\Andii\Documents\Schule\HTL 2.Klasse\POS 2AHIFS\Programme\Files_Demo\Files_Demo\obj\Debug\Files_Demo.pdb
+C:\Users\Andii\Documents\Schule\HTL 2.Klasse\POS\Programme\Files_Demo\Files_Demo\bin\Debug\Files_Demo.exe.config
+C:\Users\Andii\Documents\Schule\HTL 2.Klasse\POS\Programme\Files_Demo\Files_Demo\obj\Debug\Files_Demo.exe
+C:\Users\Andii\Documents\Schule\HTL 2.Klasse\POS\Programme\Files_Demo\Files_Demo\obj\Debug\Files_Demo.pdb
+C:\Users\Marcel Judth\Documents\Schule\Old_POS\Programme\Files_Demo\Files_Demo\bin\Debug\Files_Demo.exe.config
+C:\Users\Marcel Judth\Documents\Schule\Old_POS\Programme\Files_Demo\Files_Demo\obj\Debug\Files_Demo.exe
+C:\Users\Marcel Judth\Documents\Schule\Old_POS\Programme\Files_Demo\Files_Demo\obj\Debug\Files_Demo.pdb

@@ -1,0 +1,8 @@
+C:\Users\Andii\Desktop\HashTableProject\HashTableProject\bin\Debug\HashTableProject.exe.config
+C:\Users\Andii\Desktop\HashTableProject\HashTableProject\bin\Debug\HashTableProject.exe
+C:\Users\Andii\Desktop\HashTableProject\HashTableProject\bin\Debug\HashTableProject.pdb
+C:\Users\Andii\Desktop\HashTableProject\HashTableProject\bin\Debug\HashTableProjectLIB.dll
+C:\Users\Andii\Desktop\HashTableProject\HashTableProject\bin\Debug\HashTableProjectLIB.pdb
+C:\Users\Andii\Desktop\HashTableProject\HashTableProject\obj\Debug\HashTableProject.csprojResolveAssemblyReference.cache
+C:\Users\Andii\Desktop\HashTableProject\HashTableProject\obj\Debug\HashTableProject.exe
+C:\Users\Andii\Desktop\HashTableProject\HashTableProject\obj\Debug\HashTableProject.pdb

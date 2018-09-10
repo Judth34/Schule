@@ -1,0 +1,10 @@
+static bool TestCase_IsEmpty()  //Andreas Drabosenig
+        {
+            bool result = false;
+            SimpleQueue q1 = new SimpleQueue();
+            if(q1.IsEmpty() == true)
+            {
+                result = true;
+            }
+            return result;
+        }

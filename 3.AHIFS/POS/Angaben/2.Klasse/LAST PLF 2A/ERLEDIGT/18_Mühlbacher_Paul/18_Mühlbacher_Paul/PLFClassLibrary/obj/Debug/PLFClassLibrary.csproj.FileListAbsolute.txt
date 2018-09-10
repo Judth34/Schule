@@ -1,0 +1,5 @@
+E:\18_Mühlbacher_Paul\PLFClassLibrary\bin\Debug\PLFClassLibrary.dll
+E:\18_Mühlbacher_Paul\PLFClassLibrary\bin\Debug\PLFClassLibrary.pdb
+E:\18_Mühlbacher_Paul\PLFClassLibrary\obj\Debug\PLFClassLibrary.csprojResolveAssemblyReference.cache
+E:\18_Mühlbacher_Paul\PLFClassLibrary\obj\Debug\PLFClassLibrary.dll
+E:\18_Mühlbacher_Paul\PLFClassLibrary\obj\Debug\PLFClassLibrary.pdb

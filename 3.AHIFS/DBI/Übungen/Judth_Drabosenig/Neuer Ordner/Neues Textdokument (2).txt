@@ -1,0 +1,197 @@
+import java.time.LocalDate;
+
+
+public class Trolly {
+	final int MAX = 5;
+	Thing [] arrThings;
+	EnumTrolly type;
+	String errorMessage;
+	Thing currentThing;
+	int currentNextnumber = 0;
+	int currenThings = 0;
+	
+	public Trolly(EnumTrolly type) {
+		super();
+		this.type = type;
+		geneateArrThings();
+		currenThings = 0;
+		currentNextnumber=0;
+	}
+	
+
+	
+	public int getTotalQty(){
+		int result = 0;
+		if(arrThings != null){
+			for( int x = 0; x < arrThings.length; x++ )
+			{
+				if( arrThings[x] != null){
+					result += arrThings[x].getQty();	
+				}
+			}			
+		}
+
+		return result;
+	}
+	public int getTotalPrice(){
+		int result = 0;
+		if(arrThings != null){
+			for( Thing x:arrThings)
+			{
+				if( x != null){
+					result += x.getPrice() * x.getQty();	
+				}
+			}			
+		}
+		return result;
+	}
+
+	@Override
+	public String toString() {
+		return " supermarket.Trolly is " + type + ", with  "
+				 + getNumberOfThingsOfSpeciefiedType(new LightThing()) + "  Light Things and  "+ getNumberOfThingsOfSpeciefiedType(new HeavyThing()) + "  Heavy Things";   
+	}
+	public void addThing (Thing newThing){
+		if (currenThings == MAX){
+			errorMessage ="Trolly is full";
+		}
+		else{
+			arrThings[currenThings] = newThing;
+			currentThing = newThing;
+			currenThings++;
+		}
+		
+	}
+	public Thing getFirst (){
+		currentNextnumber =1;
+		
+		return arrThings[0];
+	}	
+	public Thing getNext (){
+		Thing result;
+		if(currentNextnumber < 5){
+			result=  arrThings[currentNextnumber];
+			currentNextnumber++;
+			return result;
+		}
+		else
+			return null;
+		
+	}
+
+	public String getErrorMessage() {
+		return errorMessage;
+	}
+
+	public void geneateArrThings(){
+		arrThings = new Thing [MAX];
+	}
+	public int getNumberOfThingsOfSpeciefiedType(Thing thing){
+		
+		int result = 0;
+		if (arrThings == null)
+			return 0;
+		if(thing.getClass().getName() == "HeavyThing")
+		for( Thing x:arrThings){
+			if(x != null){
+				if (x.getClass().getName() == "HeavyThing"){
+				 result++;
+			}
+		}
+			
+		}
+		else{
+			for( Thing x:arrThings){
+				if(x != null){
+					if (x.getClass().getName() == "LightThing"){
+					 result++;
+				}
+			}
+			}
+		}
+		
+		return result;
+	
+	}
+	public int getNumberOfEntriesInArray (){
+		return currenThings;
+	}
+	
+	boolean isInTrolly(Thing thing) {
+		boolean result = false;
+		for( Thing x:arrThings){
+			if(x != null){
+				if (x.getClass().getName() == thing.getClass().getName()){
+				 if (x.getName() == thing.getName())
+					 result = true;
+				}
+				
+			}
+			
+		}
+		return result;
+	}
+	
+	public void removeThing(Thing thing) {
+		int i;
+		if (isInTrolly(thing)){
+			for( i=0;i<arrThings.length;i++){
+				if(arrThings[i] != null){
+					if (arrThings[i].getClass().getName() == thing.getClass().getName()){
+					 if (arrThings[i].getName() == thing.getName()){
+						 for (int x = i;x<arrThings.length-1;x++){
+							 arrThings[x] = arrThings[x+1];
+						 }
+					 }
+					}
+				}
+			}
+		 }
+	}
+
+	public String calculateGain() {
+		String result = "today is "+ LocalDate.now().getDayOfWeek().toString() +", nothing appropriate in trolly (see protocol) ";
+
+		for( Thing x:arrThings){
+			if(x != null){
+				if (getNumberOfThingsOfSpeciefiedType(new HeavyThing()) <= 1){
+				if (x.getClass().getName() == "LightThing"){
+					if (((LightThing) x).getBestbefore().getDayOfWeek() == LocalDate.now().getDayOfWeek()){
+						result = "YOU WON! today is " + LocalDate.now().getDayOfWeek().toString() + ", " + toString();
+					}
+				
+				}
+				}
+			}
+		}
+		return result;
+	}
+	public void sortTrolly (EnumThingSort sortedby,boolean reverse){
+		
+		if (sortedby == EnumThingSort.BY_NAME)
+		
+	}
+	
+}
+
+public void printTrollly(EnumThingSort sortedby, boolean reverse)
+	{
+		if(sortedby == EnumThingSort.BY_NAME)
+		{
+			for(int j=0; j<arrThings.length;j++)
+			 {
+			     for (int i=j+1 ; i<arrThings.length-1; i++)
+			     {
+			         if(arrThings[i].getName().compareTo(arrThings[j].getName())<0)
+			         {
+			             Thing temp= arrThings[j];
+			             arrThings[j]= arrThings[i]; 
+			             arrThings[i]= temp;
+
+
+			         }
+			     }
+
+			 }
+		}
+	}

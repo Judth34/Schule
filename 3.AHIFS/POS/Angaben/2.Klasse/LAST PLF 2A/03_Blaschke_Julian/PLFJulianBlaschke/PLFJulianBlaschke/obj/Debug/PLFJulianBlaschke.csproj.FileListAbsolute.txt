@@ -1,0 +1,16 @@
+C:\Users\Julian\Desktop\POS\PLFJulianBlaschke\PLFJulianBlaschke\bin\Debug\PLFJulianBlaschke.exe.config
+C:\Users\Julian\Desktop\POS\PLFJulianBlaschke\PLFJulianBlaschke\bin\Debug\PLFJulianBlaschke.exe
+C:\Users\Julian\Desktop\POS\PLFJulianBlaschke\PLFJulianBlaschke\bin\Debug\PLFJulianBlaschke.pdb
+C:\Users\Julian\Desktop\POS\PLFJulianBlaschke\PLFJulianBlaschke\obj\Debug\PLFJulianBlaschke.csprojResolveAssemblyReference.cache
+C:\Users\Julian\Desktop\POS\PLFJulianBlaschke\PLFJulianBlaschke\obj\Debug\PLFJulianBlaschke.exe
+C:\Users\Julian\Desktop\POS\PLFJulianBlaschke\PLFJulianBlaschke\obj\Debug\PLFJulianBlaschke.pdb
+C:\Users\Julian\Desktop\POS\PLFJulianBlaschke\PLFJulianBlaschke\bin\Debug\CLBTreeList.dll
+C:\Users\Julian\Desktop\POS\PLFJulianBlaschke\PLFJulianBlaschke\bin\Debug\CLBTreeList.pdb
+D:\KONTROLLE\LAST PLF 2A\03_Blaschke_Julian\PLFJulianBlaschke\PLFJulianBlaschke\bin\Debug\PLFJulianBlaschke.exe.config
+D:\KONTROLLE\LAST PLF 2A\03_Blaschke_Julian\PLFJulianBlaschke\PLFJulianBlaschke\obj\Debug\PLFJulianBlaschke.exe
+D:\KONTROLLE\LAST PLF 2A\03_Blaschke_Julian\PLFJulianBlaschke\PLFJulianBlaschke\obj\Debug\PLFJulianBlaschke.pdb
+D:\KONTROLLE\LAST PLF 2A\03_Blaschke_Julian\PLFJulianBlaschke\PLFJulianBlaschke\bin\Debug\PLFJulianBlaschke.exe
+D:\KONTROLLE\LAST PLF 2A\03_Blaschke_Julian\PLFJulianBlaschke\PLFJulianBlaschke\bin\Debug\PLFJulianBlaschke.pdb
+D:\KONTROLLE\LAST PLF 2A\03_Blaschke_Julian\PLFJulianBlaschke\PLFJulianBlaschke\bin\Debug\CLBTreeList.dll
+D:\KONTROLLE\LAST PLF 2A\03_Blaschke_Julian\PLFJulianBlaschke\PLFJulianBlaschke\bin\Debug\CLBTreeList.pdb
+D:\KONTROLLE\LAST PLF 2A\03_Blaschke_Julian\PLFJulianBlaschke\PLFJulianBlaschke\obj\Debug\PLFJulianBlaschke.csprojResolveAssemblyReference.cache

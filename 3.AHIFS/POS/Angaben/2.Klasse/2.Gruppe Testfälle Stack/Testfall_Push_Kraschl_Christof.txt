@@ -1,0 +1,23 @@
+        static bool Testfall_Push_Kraschl_Christof()
+        {
+            bool kontrolle = true;
+            int testMax = 51;
+            int test = 0;
+            SimpleStack stack = new SimpleStack(testMax);
+
+            for(int idx = 0; idx < testMax; idx++)
+            {
+                stack.Push(idx);
+            }
+
+            for (int idx = testMax; idx > 0; idx--)
+            {
+                test = stack.Pop();
+                if(test != idx - 1)
+                {
+                    kontrolle = false;
+                }
+            }
+
+            return kontrolle;
+        }

@@ -1,0 +1,5 @@
+C:\Users\Andii\Documents\Schule\HTL 2.Klasse\POS 2AHIFS\Programme\SchuelerSortieren\PupilSorter\bin\Debug\PupilSorter.dll
+C:\Users\Andii\Documents\Schule\HTL 2.Klasse\POS 2AHIFS\Programme\SchuelerSortieren\PupilSorter\bin\Debug\PupilSorter.pdb
+C:\Users\Andii\Documents\Schule\HTL 2.Klasse\POS 2AHIFS\Programme\SchuelerSortieren\PupilSorter\obj\Debug\PupilSorter.csprojResolveAssemblyReference.cache
+C:\Users\Andii\Documents\Schule\HTL 2.Klasse\POS 2AHIFS\Programme\SchuelerSortieren\PupilSorter\obj\Debug\PupilSorter.dll
+C:\Users\Andii\Documents\Schule\HTL 2.Klasse\POS 2AHIFS\Programme\SchuelerSortieren\PupilSorter\obj\Debug\PupilSorter.pdb

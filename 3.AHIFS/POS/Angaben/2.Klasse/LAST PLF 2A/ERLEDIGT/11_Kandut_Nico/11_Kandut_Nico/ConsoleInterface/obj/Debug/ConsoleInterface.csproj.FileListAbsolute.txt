@@ -1,0 +1,19 @@
+C:\Users\kandutn\Desktop\11_Kandut_Nico\ConsoleInterface\bin\Debug\ConsoleInterface.exe.config
+C:\Users\kandutn\Desktop\11_Kandut_Nico\ConsoleInterface\bin\Debug\ConsoleInterface.exe
+C:\Users\kandutn\Desktop\11_Kandut_Nico\ConsoleInterface\bin\Debug\ConsoleInterface.pdb
+C:\Users\kandutn\Desktop\11_Kandut_Nico\ConsoleInterface\bin\Debug\ClassLibrary.dll
+C:\Users\kandutn\Desktop\11_Kandut_Nico\ConsoleInterface\bin\Debug\ClassLibrary.pdb
+C:\Users\kandutn\Desktop\11_Kandut_Nico\ConsoleInterface\obj\Debug\ConsoleInterface.csprojResolveAssemblyReference.cache
+C:\Users\kandutn\Desktop\11_Kandut_Nico\ConsoleInterface\obj\Debug\ConsoleInterface.exe
+C:\Users\kandutn\Desktop\11_Kandut_Nico\ConsoleInterface\obj\Debug\ConsoleInterface.pdb
+D:\KONTROLLE\LAST PLF 2A\11_Kandut_Nico\11_Kandut_Nico\ConsoleInterface\bin\Debug\ConsoleInterface.exe.config
+D:\KONTROLLE\LAST PLF 2A\11_Kandut_Nico\11_Kandut_Nico\ConsoleInterface\obj\Debug\ConsoleInterface.exe
+D:\KONTROLLE\LAST PLF 2A\11_Kandut_Nico\11_Kandut_Nico\ConsoleInterface\obj\Debug\ConsoleInterface.pdb
+D:\KONTROLLE\LAST PLF 2A\11_Kandut_Nico\11_Kandut_Nico\ConsoleInterface\bin\Debug\ConsoleInterface.exe
+D:\KONTROLLE\LAST PLF 2A\11_Kandut_Nico\11_Kandut_Nico\ConsoleInterface\bin\Debug\ConsoleInterface.pdb
+D:\KONTROLLE\LAST PLF 2A\11_Kandut_Nico\11_Kandut_Nico\ConsoleInterface\bin\Debug\ClassLibrary.dll
+D:\KONTROLLE\LAST PLF 2A\11_Kandut_Nico\11_Kandut_Nico\ConsoleInterface\bin\Debug\ClassLibrary.pdb
+D:\KONTROLLE\LAST PLF 2A\11_Kandut_Nico\11_Kandut_Nico\ConsoleInterface\obj\Debug\ConsoleInterface.csprojResolveAssemblyReference.cache
+\\gandalf\Kommunikationschueler\2AHIFS\POS\LAST PLF 2A\ERLEDIGT\11_Kandut_Nico\11_Kandut_Nico\ConsoleInterface\bin\Debug\ConsoleInterface.exe.config
+\\gandalf\Kommunikationschueler\2AHIFS\POS\LAST PLF 2A\ERLEDIGT\11_Kandut_Nico\11_Kandut_Nico\ConsoleInterface\obj\Debug\ConsoleInterface.exe
+\\gandalf\Kommunikationschueler\2AHIFS\POS\LAST PLF 2A\ERLEDIGT\11_Kandut_Nico\11_Kandut_Nico\ConsoleInterface\obj\Debug\ConsoleInterface.pdb

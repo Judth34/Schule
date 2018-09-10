@@ -1,0 +1,53 @@
+Merge - Kandut_Nico
+
+ private static bool Testcase_Merge()
+        {
+            bool result = true;
+            int testwert;
+            Stack SimpleStack01;
+            Stack SimpleStack02;
+            Stack ResultingStack;
+            int idxCounter = 0;
+
+            testwert = 3;
+            SimpleStack01 = new Stack(testwert + 4);
+            SimpleStack02 = new Stack(testwert);
+
+            for (idxCounter = 0; idxCounter < testwert - 1; idxCounter++)
+            {
+                SimpleStack01.Push(idxCounter);
+                SimpleStack02.Push(idxCounter + 10);
+            }
+
+            ResultingStack = SimpleStack01.Merge(SimpleStack02);
+
+            idxCounter = 0;
+
+            try
+            {
+                while (result && idxCounter > testwert)
+                {
+                    if (ResultingStack.Pop() != SimpleStack02.Pop())
+                    {
+                        result = false;
+                    }
+                    idxCounter--;
+                }
+                
+                while (result && idxCounter > 0)
+                {
+
+                    if (ResultingStack.Pop() != SimpleStack01.Pop())
+                    {
+                        result = false;
+                    }
+                    idxCounter--;
+                }
+            }
+            catch
+            {
+                result = false;
+            }
+
+            return result;
+        }

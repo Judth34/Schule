@@ -1,0 +1,5 @@
+C:\Users\kandutn\Desktop\11_Kandut_Nico\ClassLibrary\bin\Debug\ClassLibrary.dll
+C:\Users\kandutn\Desktop\11_Kandut_Nico\ClassLibrary\bin\Debug\ClassLibrary.pdb
+C:\Users\kandutn\Desktop\11_Kandut_Nico\ClassLibrary\obj\Debug\ClassLibrary.csprojResolveAssemblyReference.cache
+C:\Users\kandutn\Desktop\11_Kandut_Nico\ClassLibrary\obj\Debug\ClassLibrary.dll
+C:\Users\kandutn\Desktop\11_Kandut_Nico\ClassLibrary\obj\Debug\ClassLibrary.pdb

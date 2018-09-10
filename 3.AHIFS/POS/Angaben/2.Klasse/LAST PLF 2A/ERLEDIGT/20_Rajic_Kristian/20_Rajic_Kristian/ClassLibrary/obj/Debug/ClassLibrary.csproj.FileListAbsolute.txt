@@ -1,0 +1,5 @@
+F:\2.Schuljahr\Rajic_PLF04\20_Rajic_Kristian\ClassLibrary\bin\Debug\ClassLibrary.dll
+F:\2.Schuljahr\Rajic_PLF04\20_Rajic_Kristian\ClassLibrary\bin\Debug\ClassLibrary.pdb
+F:\2.Schuljahr\Rajic_PLF04\20_Rajic_Kristian\ClassLibrary\obj\Debug\ClassLibrary.csprojResolveAssemblyReference.cache
+F:\2.Schuljahr\Rajic_PLF04\20_Rajic_Kristian\ClassLibrary\obj\Debug\ClassLibrary.dll
+F:\2.Schuljahr\Rajic_PLF04\20_Rajic_Kristian\ClassLibrary\obj\Debug\ClassLibrary.pdb

@@ -1,0 +1,15 @@
+        static bool TestCase_IsFull()   //Gragger Nicolas
+        {
+            SimpleStack stackIsFull = new SimpleStack(1);
+            bool result = true;
+            if (stackIsFull.IsFull())
+            {
+                result = false;
+            }
+            stackIsFull.Push(5);
+            if (!stackIsFull.IsFull())
+            {
+                result = false;
+            }
+            return result;
+        }

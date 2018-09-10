@@ -1,0 +1,6 @@
+C:\Users\Andii\Documents\Schule\HTL 2.Klasse\POS 2AHIFS\Programme\Verlinkte_Liste\Verlinkte_Liste\bin\Debug\Verlinkte_Liste.exe.config
+C:\Users\Andii\Documents\Schule\HTL 2.Klasse\POS 2AHIFS\Programme\Verlinkte_Liste\Verlinkte_Liste\bin\Debug\Verlinkte_Liste.exe
+C:\Users\Andii\Documents\Schule\HTL 2.Klasse\POS 2AHIFS\Programme\Verlinkte_Liste\Verlinkte_Liste\bin\Debug\Verlinkte_Liste.pdb
+C:\Users\Andii\Documents\Schule\HTL 2.Klasse\POS 2AHIFS\Programme\Verlinkte_Liste\Verlinkte_Liste\obj\Debug\Verlinkte_Liste.csprojResolveAssemblyReference.cache
+C:\Users\Andii\Documents\Schule\HTL 2.Klasse\POS 2AHIFS\Programme\Verlinkte_Liste\Verlinkte_Liste\obj\Debug\Verlinkte_Liste.exe
+C:\Users\Andii\Documents\Schule\HTL 2.Klasse\POS 2AHIFS\Programme\Verlinkte_Liste\Verlinkte_Liste\obj\Debug\Verlinkte_Liste.pdb

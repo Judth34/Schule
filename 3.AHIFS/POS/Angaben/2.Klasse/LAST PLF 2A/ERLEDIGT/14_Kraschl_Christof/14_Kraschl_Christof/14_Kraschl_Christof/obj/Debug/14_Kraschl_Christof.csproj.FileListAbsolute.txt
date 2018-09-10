@@ -1,0 +1,16 @@
+c:\users\kraschlc\documents\visual studio 2015\Projects\14_Kraschl_Christof\14_Kraschl_Christof\bin\Debug\14_Kraschl_Christof.exe.config
+c:\users\kraschlc\documents\visual studio 2015\Projects\14_Kraschl_Christof\14_Kraschl_Christof\bin\Debug\14_Kraschl_Christof.exe
+c:\users\kraschlc\documents\visual studio 2015\Projects\14_Kraschl_Christof\14_Kraschl_Christof\bin\Debug\14_Kraschl_Christof.pdb
+c:\users\kraschlc\documents\visual studio 2015\Projects\14_Kraschl_Christof\14_Kraschl_Christof\bin\Debug\Durchschnittsberechnung.dll
+c:\users\kraschlc\documents\visual studio 2015\Projects\14_Kraschl_Christof\14_Kraschl_Christof\bin\Debug\Durchschnittsberechnung.pdb
+c:\users\kraschlc\documents\visual studio 2015\Projects\14_Kraschl_Christof\14_Kraschl_Christof\obj\Debug\14_Kraschl_Christof.csprojResolveAssemblyReference.cache
+c:\users\kraschlc\documents\visual studio 2015\Projects\14_Kraschl_Christof\14_Kraschl_Christof\obj\Debug\14_Kraschl_Christof.exe
+c:\users\kraschlc\documents\visual studio 2015\Projects\14_Kraschl_Christof\14_Kraschl_Christof\obj\Debug\14_Kraschl_Christof.pdb
+D:\KONTROLLE\LAST PLF 2A\14_Kraschl_Christof\14_Kraschl_Christof\14_Kraschl_Christof\bin\Debug\14_Kraschl_Christof.exe.config
+D:\KONTROLLE\LAST PLF 2A\14_Kraschl_Christof\14_Kraschl_Christof\14_Kraschl_Christof\obj\Debug\14_Kraschl_Christof.exe
+D:\KONTROLLE\LAST PLF 2A\14_Kraschl_Christof\14_Kraschl_Christof\14_Kraschl_Christof\obj\Debug\14_Kraschl_Christof.pdb
+D:\KONTROLLE\LAST PLF 2A\14_Kraschl_Christof\14_Kraschl_Christof\14_Kraschl_Christof\bin\Debug\14_Kraschl_Christof.exe
+D:\KONTROLLE\LAST PLF 2A\14_Kraschl_Christof\14_Kraschl_Christof\14_Kraschl_Christof\bin\Debug\14_Kraschl_Christof.pdb
+D:\KONTROLLE\LAST PLF 2A\14_Kraschl_Christof\14_Kraschl_Christof\14_Kraschl_Christof\bin\Debug\Durchschnittsberechnung.dll
+D:\KONTROLLE\LAST PLF 2A\14_Kraschl_Christof\14_Kraschl_Christof\14_Kraschl_Christof\bin\Debug\Durchschnittsberechnung.pdb
+D:\KONTROLLE\LAST PLF 2A\14_Kraschl_Christof\14_Kraschl_Christof\14_Kraschl_Christof\obj\Debug\14_Kraschl_Christof.csprojResolveAssemblyReference.cache

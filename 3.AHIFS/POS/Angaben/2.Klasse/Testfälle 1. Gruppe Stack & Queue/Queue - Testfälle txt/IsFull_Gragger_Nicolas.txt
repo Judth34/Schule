@@ -1,0 +1,15 @@
+        static bool TestCase_IsFull()   //Gragger Nicolas
+        {
+            SimpleQueue queueIsFull = new SimpleQueue(1);
+            bool result = true;
+            if (queueIsFull.IsFull())
+            {
+                result = false;
+            }
+            queueIsFull.Enqueue(5);
+            if (!queueIsFull.IsFull())
+            {
+                result = false;
+            }
+            return result;
+        }

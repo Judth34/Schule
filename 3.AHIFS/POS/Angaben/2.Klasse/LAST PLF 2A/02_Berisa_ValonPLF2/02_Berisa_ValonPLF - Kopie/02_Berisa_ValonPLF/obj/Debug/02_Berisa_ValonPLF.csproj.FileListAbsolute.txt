@@ -1,0 +1,33 @@
+C:\Users\schueler\Desktop\02_Berisa_ValonPLF\02_Berisa_ValonPLF\bin\Debug\02_Berisa_ValonPLF.exe.config
+C:\Users\schueler\Desktop\02_Berisa_ValonPLF\02_Berisa_ValonPLF\bin\Debug\02_Berisa_ValonPLF.exe
+C:\Users\schueler\Desktop\02_Berisa_ValonPLF\02_Berisa_ValonPLF\bin\Debug\02_Berisa_ValonPLF.pdb
+C:\Users\schueler\Desktop\02_Berisa_ValonPLF\02_Berisa_ValonPLF\obj\Debug\02_Berisa_ValonPLF.csprojResolveAssemblyReference.cache
+C:\Users\schueler\Desktop\02_Berisa_ValonPLF\02_Berisa_ValonPLF\obj\Debug\02_Berisa_ValonPLF.exe
+C:\Users\schueler\Desktop\02_Berisa_ValonPLF\02_Berisa_ValonPLF\obj\Debug\02_Berisa_ValonPLF.pdb
+C:\Users\schueler\Desktop\02_Berisa_ValonPLF - Kopie\02_Berisa_ValonPLF\bin\Debug\02_Berisa_ValonPLF.exe.config
+C:\Users\schueler\Desktop\02_Berisa_ValonPLF - Kopie\02_Berisa_ValonPLF\obj\Debug\02_Berisa_ValonPLF.exe
+C:\Users\schueler\Desktop\02_Berisa_ValonPLF - Kopie\02_Berisa_ValonPLF\obj\Debug\02_Berisa_ValonPLF.pdb
+C:\Users\schueler\Desktop\02_Berisa_ValonPLF - Kopie\02_Berisa_ValonPLF\obj\Debug\02_Berisa_ValonPLF.csprojResolveAssemblyReference.cache
+C:\Users\schueler\Desktop\02_Berisa_ValonPLF - Kopie\02_Berisa_ValonPLF\bin\Debug\02_Berisa_ValonPLF.exe
+C:\Users\schueler\Desktop\02_Berisa_ValonPLF - Kopie\02_Berisa_ValonPLF\bin\Debug\02_Berisa_ValonPLF.pdb
+C:\Users\schueler\Desktop\02_Berisa_ValonPLF - Kopie\02_Berisa_ValonPLF\bin\Debug\DataStructure.dll
+C:\Users\schueler\Desktop\02_Berisa_ValonPLF - Kopie\02_Berisa_ValonPLF\bin\Debug\DataStructure.pdb
+D:\KONTROLLE\LAST PLF 2A\02_Berisa_ValonPLF2\02_Berisa_ValonPLF - Kopie\02_Berisa_ValonPLF\bin\Debug\02_Berisa_ValonPLF.exe.config
+D:\KONTROLLE\LAST PLF 2A\02_Berisa_ValonPLF2\02_Berisa_ValonPLF - Kopie\02_Berisa_ValonPLF\obj\Debug\02_Berisa_ValonPLF.exe
+D:\KONTROLLE\LAST PLF 2A\02_Berisa_ValonPLF2\02_Berisa_ValonPLF - Kopie\02_Berisa_ValonPLF\obj\Debug\02_Berisa_ValonPLF.pdb
+D:\KONTROLLE\LAST PLF 2A\02_Berisa_ValonPLF2\02_Berisa_ValonPLF - Kopie\02_Berisa_ValonPLF\bin\Debug\02_Berisa_ValonPLF.exe
+D:\KONTROLLE\LAST PLF 2A\02_Berisa_ValonPLF2\02_Berisa_ValonPLF - Kopie\02_Berisa_ValonPLF\bin\Debug\02_Berisa_ValonPLF.pdb
+D:\KONTROLLE\LAST PLF 2A\02_Berisa_ValonPLF2\02_Berisa_ValonPLF - Kopie\02_Berisa_ValonPLF\bin\Debug\DataStructure.dll
+D:\KONTROLLE\LAST PLF 2A\02_Berisa_ValonPLF2\02_Berisa_ValonPLF - Kopie\02_Berisa_ValonPLF\bin\Debug\DataStructure.pdb
+D:\KONTROLLE\LAST PLF 2A\02_Berisa_ValonPLF2\02_Berisa_ValonPLF - Kopie\02_Berisa_ValonPLF\obj\Debug\02_Berisa_ValonPLF.csprojResolveAssemblyReference.cache
+\\gandalf\Kommunikationschueler\2AHIFS\POS\LAST PLF 2A\02_Berisa_ValonPLF2\02_Berisa_ValonPLF - Kopie\02_Berisa_ValonPLF\bin\Debug\02_Berisa_ValonPLF.exe.config
+\\gandalf\Kommunikationschueler\2AHIFS\POS\LAST PLF 2A\02_Berisa_ValonPLF2\02_Berisa_ValonPLF - Kopie\02_Berisa_ValonPLF\obj\Debug\02_Berisa_ValonPLF.exe
+\\gandalf\Kommunikationschueler\2AHIFS\POS\LAST PLF 2A\02_Berisa_ValonPLF2\02_Berisa_ValonPLF - Kopie\02_Berisa_ValonPLF\obj\Debug\02_Berisa_ValonPLF.pdb
+\\gandalf\Kommunikationschueler\2AHIFS\POS\LAST PLF 2A\02_Berisa_ValonPLF2\02_Berisa_ValonPLF - Kopie\02_Berisa_ValonPLF\bin\Debug\02_Berisa_ValonPLF.exe
+\\gandalf\Kommunikationschueler\2AHIFS\POS\LAST PLF 2A\02_Berisa_ValonPLF2\02_Berisa_ValonPLF - Kopie\02_Berisa_ValonPLF\bin\Debug\02_Berisa_ValonPLF.pdb
+\\gandalf\Kommunikationschueler\2AHIFS\POS\LAST PLF 2A\02_Berisa_ValonPLF2\02_Berisa_ValonPLF - Kopie\02_Berisa_ValonPLF\bin\Debug\DataStructure.dll
+\\gandalf\Kommunikationschueler\2AHIFS\POS\LAST PLF 2A\02_Berisa_ValonPLF2\02_Berisa_ValonPLF - Kopie\02_Berisa_ValonPLF\bin\Debug\DataStructure.pdb
+\\gandalf\Kommunikationschueler\2AHIFS\POS\LAST PLF 2A\02_Berisa_ValonPLF2\02_Berisa_ValonPLF - Kopie\02_Berisa_ValonPLF\obj\Debug\02_Berisa_ValonPLF.csprojResolveAssemblyReference.cache
+\\gandalf.htl-villach.at\Kommunikationschueler\2AHIFS\POS\LAST PLF 2A\02_Berisa_ValonPLF2\02_Berisa_ValonPLF - Kopie\02_Berisa_ValonPLF\bin\Debug\02_Berisa_ValonPLF.exe.config
+\\gandalf.htl-villach.at\Kommunikationschueler\2AHIFS\POS\LAST PLF 2A\02_Berisa_ValonPLF2\02_Berisa_ValonPLF - Kopie\02_Berisa_ValonPLF\obj\Debug\02_Berisa_ValonPLF.exe
+\\gandalf.htl-villach.at\Kommunikationschueler\2AHIFS\POS\LAST PLF 2A\02_Berisa_ValonPLF2\02_Berisa_ValonPLF - Kopie\02_Berisa_ValonPLF\obj\Debug\02_Berisa_ValonPLF.pdb

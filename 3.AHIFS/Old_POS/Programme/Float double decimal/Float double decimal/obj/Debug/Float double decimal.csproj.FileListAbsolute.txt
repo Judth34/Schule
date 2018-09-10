@@ -1,0 +1,5 @@
+C:\Users\Andii\Documents\HTL\Float double decimal\Float double decimal\bin\Debug\Float double decimal.exe.config
+C:\Users\Andii\Documents\HTL\Float double decimal\Float double decimal\bin\Debug\Float double decimal.exe
+C:\Users\Andii\Documents\HTL\Float double decimal\Float double decimal\bin\Debug\Float double decimal.pdb
+C:\Users\Andii\Documents\HTL\Float double decimal\Float double decimal\obj\Debug\Float double decimal.exe
+C:\Users\Andii\Documents\HTL\Float double decimal\Float double decimal\obj\Debug\Float double decimal.pdb

@@ -1,0 +1,24 @@
+C:\Users\Andii\Documents\HTL\Concat\Concat\bin\Debug\Concat.exe.config
+C:\Users\Andii\Documents\HTL\Concat\Concat\obj\Debug\Concat.csprojResolveAssemblyReference.cache
+C:\Users\Andii\Documents\HTL\Concat\Concat\bin\Debug\Concat.exe
+C:\Users\Andii\Documents\HTL\Concat\Concat\bin\Debug\Concat.pdb
+C:\Users\Andii\Documents\HTL\Concat\Concat\obj\Debug\Concat.exe
+C:\Users\Andii\Documents\HTL\Concat\Concat\obj\Debug\Concat.pdb
+C:\Users\Andii\Documents\HTL\POS 2AHIFS\Concat\Concat\bin\Debug\Concat.exe.config
+C:\Users\Andii\Documents\HTL\POS 2AHIFS\Concat\Concat\obj\Debug\Concat.exe
+C:\Users\Andii\Documents\HTL\POS 2AHIFS\Concat\Concat\obj\Debug\Concat.pdb
+C:\Users\Andii\Documents\HTL\POS 2AHIFS\Concat\Concat\bin\Debug\Concat.exe
+C:\Users\Andii\Documents\HTL\POS 2AHIFS\Concat\Concat\bin\Debug\Concat.pdb
+C:\Users\Andii\Documents\HTL\POS 2AHIFS\Concat\Concat\obj\Debug\Concat.csprojResolveAssemblyReference.cache
+C:\Users\Andii\Documents\HTL 2.Klasse\POS 2AHIFS\Programme\Concat\Concat\bin\Debug\Concat.exe.config
+C:\Users\Andii\Documents\HTL 2.Klasse\POS 2AHIFS\Programme\Concat\Concat\obj\Debug\Concat.exe
+C:\Users\Andii\Documents\HTL 2.Klasse\POS 2AHIFS\Programme\Concat\Concat\obj\Debug\Concat.pdb
+C:\Users\Andii\Documents\HTL 2.Klasse\POS 2AHIFS\Programme\Concat\Concat\bin\Debug\Concat.exe
+C:\Users\Andii\Documents\HTL 2.Klasse\POS 2AHIFS\Programme\Concat\Concat\bin\Debug\Concat.pdb
+C:\Users\Andii\Documents\HTL 2.Klasse\POS 2AHIFS\Programme\Concat\Concat\obj\Debug\Concat.csprojResolveAssemblyReference.cache
+C:\Users\Andii\Documents\Schule\HTL 2.Klasse\POS 2AHIFS\Programme\Concat\Concat\bin\Debug\Concat.exe.config
+C:\Users\Andii\Documents\Schule\HTL 2.Klasse\POS 2AHIFS\Programme\Concat\Concat\obj\Debug\Concat.exe
+C:\Users\Andii\Documents\Schule\HTL 2.Klasse\POS 2AHIFS\Programme\Concat\Concat\obj\Debug\Concat.pdb
+C:\Users\Andii\Documents\Schule\HTL 2.Klasse\POS 2AHIFS\Programme\Concat\Concat\bin\Debug\Concat.exe
+C:\Users\Andii\Documents\Schule\HTL 2.Klasse\POS 2AHIFS\Programme\Concat\Concat\bin\Debug\Concat.pdb
+C:\Users\Andii\Documents\Schule\HTL 2.Klasse\POS 2AHIFS\Programme\Concat\Concat\obj\Debug\Concat.csprojResolveAssemblyReference.cache

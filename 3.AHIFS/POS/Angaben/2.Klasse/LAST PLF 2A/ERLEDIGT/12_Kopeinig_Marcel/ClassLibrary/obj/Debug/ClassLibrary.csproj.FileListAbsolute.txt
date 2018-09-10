@@ -1,0 +1,10 @@
+G:\BaumV1\ClassLibrary\bin\Debug\ClassLibrary.dll
+G:\BaumV1\ClassLibrary\bin\Debug\ClassLibrary.pdb
+G:\BaumV1\ClassLibrary\obj\Debug\ClassLibrary.dll
+G:\BaumV1\ClassLibrary\obj\Debug\ClassLibrary.pdb
+G:\BaumV1\ClassLibrary\obj\Debug\ClassLibrary.csprojResolveAssemblyReference.cache
+E:\BaumV1\ClassLibrary\bin\Debug\ClassLibrary.dll
+E:\BaumV1\ClassLibrary\bin\Debug\ClassLibrary.pdb
+E:\BaumV1\ClassLibrary\obj\Debug\ClassLibrary.csprojResolveAssemblyReference.cache
+E:\BaumV1\ClassLibrary\obj\Debug\ClassLibrary.dll
+E:\BaumV1\ClassLibrary\obj\Debug\ClassLibrary.pdb

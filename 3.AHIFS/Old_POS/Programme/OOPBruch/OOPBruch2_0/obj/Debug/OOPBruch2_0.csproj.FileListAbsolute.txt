@@ -1,0 +1,18 @@
+C:\Users\Andii\Documents\HTL 2.Klasse\OOPBruch2_0\OOPBruch2_0\bin\Debug\OOPBruch2_0.exe.config
+C:\Users\Andii\Documents\HTL 2.Klasse\OOPBruch2_0\OOPBruch2_0\obj\Debug\OOPBruch2_0.csprojResolveAssemblyReference.cache
+C:\Users\Andii\Documents\HTL 2.Klasse\OOPBruch2_0\OOPBruch2_0\bin\Debug\OOPBruch2_0.exe
+C:\Users\Andii\Documents\HTL 2.Klasse\OOPBruch2_0\OOPBruch2_0\bin\Debug\OOPBruch2_0.pdb
+C:\Users\Andii\Documents\HTL 2.Klasse\OOPBruch2_0\OOPBruch2_0\obj\Debug\OOPBruch2_0.exe
+C:\Users\Andii\Documents\HTL 2.Klasse\OOPBruch2_0\OOPBruch2_0\obj\Debug\OOPBruch2_0.pdb
+C:\Users\Andii\Documents\HTL 2.Klasse\OOPBruch\OOPBruch2_0\bin\Debug\OOPBruch2_0.exe.config
+C:\Users\Andii\Documents\HTL 2.Klasse\OOPBruch\OOPBruch2_0\obj\Debug\OOPBruch2_0.exe
+C:\Users\Andii\Documents\HTL 2.Klasse\OOPBruch\OOPBruch2_0\obj\Debug\OOPBruch2_0.pdb
+C:\Users\Andii\Documents\HTL 2.Klasse\OOPBruch\OOPBruch2_0\bin\Debug\OOPBruch2_0.exe
+C:\Users\Andii\Documents\HTL 2.Klasse\OOPBruch\OOPBruch2_0\bin\Debug\OOPBruch2_0.pdb
+C:\Users\Andii\Documents\HTL 2.Klasse\OOPBruch\OOPBruch2_0\obj\Debug\OOPBruch2_0.csprojResolveAssemblyReference.cache
+C:\Users\Andii\Documents\Schule\HTL 2.Klasse\POS 2AHIFS\Programme\OOPBruch\OOPBruch2_0\bin\Debug\OOPBruch2_0.exe.config
+C:\Users\Andii\Documents\Schule\HTL 2.Klasse\POS 2AHIFS\Programme\OOPBruch\OOPBruch2_0\obj\Debug\OOPBruch2_0.exe
+C:\Users\Andii\Documents\Schule\HTL 2.Klasse\POS 2AHIFS\Programme\OOPBruch\OOPBruch2_0\obj\Debug\OOPBruch2_0.pdb
+C:\Users\Andii\Documents\Schule\HTL 2.Klasse\POS 2AHIFS\Programme\OOPBruch\OOPBruch2_0\bin\Debug\OOPBruch2_0.exe
+C:\Users\Andii\Documents\Schule\HTL 2.Klasse\POS 2AHIFS\Programme\OOPBruch\OOPBruch2_0\bin\Debug\OOPBruch2_0.pdb
+C:\Users\Andii\Documents\Schule\HTL 2.Klasse\POS 2AHIFS\Programme\OOPBruch\OOPBruch2_0\obj\Debug\OOPBruch2_0.csprojResolveAssemblyReference.cache

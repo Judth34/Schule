@@ -1,0 +1,27 @@
+static bool Testfall_Resize_Muehlbacher()
+        {
+            SimpleQueue testQueue = new SimpleQueue(10);
+            bool result = false;
+
+            for(int idx = 1; idx <= 4; idx++)
+            {
+                testQueue.Enqueue(idx);
+            }
+
+            try
+            {
+                testQueue.Resize(10);
+                testQueue.Resize(15);
+                testQueue.Resize(4);
+                testQueue.Resize(2);
+            }
+            catch
+            {
+                if(testQueue.Size == 4)
+                {
+                    result = true;
+                }
+            }
+
+            return result;
+        }

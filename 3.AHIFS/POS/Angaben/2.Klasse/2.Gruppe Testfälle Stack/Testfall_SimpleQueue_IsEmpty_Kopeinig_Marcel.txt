@@ -1,0 +1,17 @@
+static bool TestFall_IsEmpty_Kopeinig_Marcel()
+        {
+            bool result = false;
+            SimpleQueue TestQueue = new SimpleQueue(3);
+            result = TestQueue.IsEmpty();
+            if (result == true)
+            {
+                TestQueue.EnQueue(6);
+                result = TestQueue.IsEmpty();
+                if (result == false)
+                {
+                    result = true;
+                }
+            }
+            return result;
+
+        }

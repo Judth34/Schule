@@ -1,0 +1,12 @@
+static bool Testfall_pop_CoraKumnig(SimpleStack s1)
+        {
+            bool erg = false;
+
+            s1.Push(5);
+            if (s1.Pop()==5)
+            {
+                erg = true;
+            }
+
+            return erg;
+        }

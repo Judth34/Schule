@@ -1,0 +1,93 @@
+bool fussg = false;
+void setup() {
+  // put your setup code here, to run once:
+  pinMode(8,OUTPUT); //gruen
+  pinMode(9,OUTPUT); //gelb
+  pinMode(10,OUTPUT); //rot
+  pinMode(7,INPUT_PULLUP); //pullup für Taster
+  attachInterrupt(4,fussganger,FALLING);
+}
+
+void loop() {
+  // put your main code here, to run repeatedly:
+  fussg = false;
+    if(fussg = true)
+    {   
+    digitalWrite(9,HIGH);
+    delay(2000);
+    
+    digitalWrite(10,LOW);
+    digitalWrite(9,LOW);
+    digitalWrite(8,HIGH);
+    delay(2000);
+    
+    }
+    
+    if(fussg = true)
+    {
+    digitalWrite(8,LOW);
+    delay(600);
+    digitalWrite(8,HIGH);
+    delay(600);
+    digitalWrite(8,LOW);
+    delay(600);
+    digitalWrite(8,HIGH);
+    delay(600);
+    digitalWrite(8,LOW);
+    delay(600);
+    digitalWrite(8,HIGH);
+    delay(600);
+    digitalWrite(8,LOW);
+    delay(600);
+    digitalWrite(8,HIGH);
+    delay(600);
+    digitalWrite(8,LOW);
+    
+    
+    digitalWrite(9,HIGH);
+    delay(2000);
+    digitalWrite(9,LOW);
+    digitalWrite(10,HIGH);
+    delay(2000);
+    fussg = false;
+    }
+}
+
+void fussganger()
+{  if(fussg == false)
+  {
+    fussg=true;
+  }
+    
+}
+
+if(counter > oldcounter){
+    Serial.print(interruptTime);
+    oldcounter = counter;
+  } unsigned long interruptTime = 0;
+int counter = 0;
+int oldcounter = 0;
+int Delay = 20;
+
+void setup() {
+  pinMode(6,INPUT_PULLUP);
+  Serial.begin(9600);
+  attachInterrupt(digitalPinToInterrupt(6),myInterruptfunction,FALLING);
+}
+
+void loop() {
+
+  if(millis() - interruptTime > Delay){
+    attachInterrupt(digitalPinToInterrupt(6),myInterruptfunction,FALLING);
+  }
+  if(counter > oldcounter){
+    Serial.print(counter);
+    oldcounter = counter;
+  } 
+}
+
+void myInterruptfunction(){
+  detachInterrupt(digitalPinToInterrupt(6));
+  interruptTime = millis();
+  counter++;
+}

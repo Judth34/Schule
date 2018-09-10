@@ -1,0 +1,27 @@
+ static bool Testfall_Resize_Muehlbacher()
+        {
+            SimpleStack testStack = new SimpleStack(10);
+            bool result = false;
+
+            for (int idx = 1; idx <= 4; idx++)
+            {
+                testStack.Push(idx);
+            }
+
+            try
+            {
+                testStack.Resize(10);
+                testStack.Resize(15);
+                testStack.Resize(4);
+                testStack.Resize(2);
+            }
+            catch
+            {
+                if (testStack.Size == 4)
+                {
+                    result = true;
+                }
+            }
+
+            return result;
+        }

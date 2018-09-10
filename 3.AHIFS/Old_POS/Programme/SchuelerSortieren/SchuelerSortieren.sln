@@ -1,0 +1,34 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 14
+VisualStudioVersion = 14.0.23107.0
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SchuelerSortieren", "SchuelerSortieren\SchuelerSortieren.csproj", "{320068E4-64E9-4642-B65E-932166213FE0}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "PupilSorterLIB", "PupilSorter\PupilSorterLIB.csproj", "{EABD5042-5FD3-4EB3-93D3-24A894F8AA84}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "PupilSorterGUI", "PupilSorterGUI\PupilSorterGUI.csproj", "{5CCF3F4A-D36D-4929-AB9C-5FC7678A0C3B}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{320068E4-64E9-4642-B65E-932166213FE0}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{320068E4-64E9-4642-B65E-932166213FE0}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{320068E4-64E9-4642-B65E-932166213FE0}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{320068E4-64E9-4642-B65E-932166213FE0}.Release|Any CPU.Build.0 = Release|Any CPU
+		{EABD5042-5FD3-4EB3-93D3-24A894F8AA84}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{EABD5042-5FD3-4EB3-93D3-24A894F8AA84}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{EABD5042-5FD3-4EB3-93D3-24A894F8AA84}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{EABD5042-5FD3-4EB3-93D3-24A894F8AA84}.Release|Any CPU.Build.0 = Release|Any CPU
+		{5CCF3F4A-D36D-4929-AB9C-5FC7678A0C3B}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{5CCF3F4A-D36D-4929-AB9C-5FC7678A0C3B}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{5CCF3F4A-D36D-4929-AB9C-5FC7678A0C3B}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{5CCF3F4A-D36D-4929-AB9C-5FC7678A0C3B}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+EndGlobal

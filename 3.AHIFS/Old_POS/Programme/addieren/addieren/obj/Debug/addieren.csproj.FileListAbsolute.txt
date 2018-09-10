@@ -1,0 +1,24 @@
+C:\Users\Andii\Documents\HTL\addieren\addieren\bin\Debug\addieren.exe.config
+C:\Users\Andii\Documents\HTL\addieren\addieren\obj\Debug\addieren.csprojResolveAssemblyReference.cache
+C:\Users\Andii\Documents\HTL\addieren\addieren\bin\Debug\addieren.exe
+C:\Users\Andii\Documents\HTL\addieren\addieren\bin\Debug\addieren.pdb
+C:\Users\Andii\Documents\HTL\addieren\addieren\obj\Debug\addieren.exe
+C:\Users\Andii\Documents\HTL\addieren\addieren\obj\Debug\addieren.pdb
+C:\Users\Andii\Documents\HTL\POS 2AHIFS\addieren\addieren\bin\Debug\addieren.exe.config
+C:\Users\Andii\Documents\HTL\POS 2AHIFS\addieren\addieren\obj\Debug\addieren.exe
+C:\Users\Andii\Documents\HTL\POS 2AHIFS\addieren\addieren\obj\Debug\addieren.pdb
+C:\Users\Andii\Documents\HTL 2.Klasse\POS 2AHIFS\Programme\addieren\addieren\bin\Debug\addieren.exe.config
+C:\Users\Andii\Documents\HTL 2.Klasse\POS 2AHIFS\Programme\addieren\addieren\obj\Debug\addieren.exe
+C:\Users\Andii\Documents\HTL 2.Klasse\POS 2AHIFS\Programme\addieren\addieren\obj\Debug\addieren.pdb
+C:\Users\Andii\Documents\HTL 2.Klasse\POS 2AHIFS\Programme\addieren\addieren\bin\Debug\addieren.exe
+C:\Users\Andii\Documents\HTL 2.Klasse\POS 2AHIFS\Programme\addieren\addieren\bin\Debug\addieren.pdb
+C:\Users\Andii\Documents\HTL 2.Klasse\POS 2AHIFS\Programme\addieren\addieren\obj\Debug\addieren.csprojResolveAssemblyReference.cache
+C:\Users\Andii\Documents\Schule\HTL 2.Klasse\POS 2AHIFS\Programme\addieren\addieren\bin\Debug\addieren.exe.config
+C:\Users\Andii\Documents\Schule\HTL 2.Klasse\POS 2AHIFS\Programme\addieren\addieren\obj\Debug\addieren.exe
+C:\Users\Andii\Documents\Schule\HTL 2.Klasse\POS 2AHIFS\Programme\addieren\addieren\obj\Debug\addieren.pdb
+C:\Users\Andii\Documents\Schule\HTL 2.Klasse\POS 2AHIFS\Programme\addieren\addieren\bin\Debug\addieren.exe
+C:\Users\Andii\Documents\Schule\HTL 2.Klasse\POS 2AHIFS\Programme\addieren\addieren\bin\Debug\addieren.pdb
+C:\Users\Andii\Documents\Schule\HTL 2.Klasse\POS 2AHIFS\Programme\addieren\addieren\obj\Debug\addieren.csprojResolveAssemblyReference.cache
+C:\Users\Marcel Judth\Documents\Schule\3.AHIFS\Old_POS\Programme\addieren\addieren\bin\Debug\addieren.exe.config
+C:\Users\Marcel Judth\Documents\Schule\3.AHIFS\Old_POS\Programme\addieren\addieren\obj\Debug\addieren.exe
+C:\Users\Marcel Judth\Documents\Schule\3.AHIFS\Old_POS\Programme\addieren\addieren\obj\Debug\addieren.pdb

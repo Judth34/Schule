@@ -1,0 +1,18 @@
+C:\Users\Andii\Documents\HTL 2.Klasse\Stack_OOP\Stack_OOP\bin\Debug\Stack_OOP.exe.config
+C:\Users\Andii\Documents\HTL 2.Klasse\Stack_OOP\Stack_OOP\bin\Debug\Stack_OOP.exe
+C:\Users\Andii\Documents\HTL 2.Klasse\Stack_OOP\Stack_OOP\bin\Debug\Stack_OOP.pdb
+C:\Users\Andii\Documents\HTL 2.Klasse\Stack_OOP\Stack_OOP\obj\Debug\Stack_OOP.csprojResolveAssemblyReference.cache
+C:\Users\Andii\Documents\HTL 2.Klasse\Stack_OOP\Stack_OOP\obj\Debug\Stack_OOP.exe
+C:\Users\Andii\Documents\HTL 2.Klasse\Stack_OOP\Stack_OOP\obj\Debug\Stack_OOP.pdb
+C:\Users\Andii\Documents\HTL 2.Klasse\Andreas Drabosenig\Stack_OOP\Stack_OOP\bin\Debug\Stack_OOP.exe.config
+C:\Users\Andii\Documents\HTL 2.Klasse\Andreas Drabosenig\Stack_OOP\Stack_OOP\obj\Debug\Stack_OOP.exe
+C:\Users\Andii\Documents\HTL 2.Klasse\Andreas Drabosenig\Stack_OOP\Stack_OOP\obj\Debug\Stack_OOP.pdb
+C:\Users\Andii\Documents\HTL 2.Klasse\Andreas Drabosenig\Stack_OOP\Stack_OOP\bin\Debug\Stack_OOP.exe
+C:\Users\Andii\Documents\HTL 2.Klasse\Andreas Drabosenig\Stack_OOP\Stack_OOP\bin\Debug\Stack_OOP.pdb
+C:\Users\Andii\Documents\HTL 2.Klasse\Andreas Drabosenig\Stack_OOP\Stack_OOP\obj\Debug\Stack_OOP.csprojResolveAssemblyReference.cache
+C:\Users\Andii\Documents\Schule\HTL 2.Klasse\POS 2AHIFS\Programme\Stack_OOP\Stack_OOP\bin\Debug\Stack_OOP.exe.config
+C:\Users\Andii\Documents\Schule\HTL 2.Klasse\POS 2AHIFS\Programme\Stack_OOP\Stack_OOP\obj\Debug\Stack_OOP.exe
+C:\Users\Andii\Documents\Schule\HTL 2.Klasse\POS 2AHIFS\Programme\Stack_OOP\Stack_OOP\obj\Debug\Stack_OOP.pdb
+C:\Users\Andii\Documents\Schule\HTL 2.Klasse\POS 2AHIFS\Programme\Stack_OOP\Stack_OOP\obj\Debug\Stack_OOP.csprojResolveAssemblyReference.cache
+C:\Users\Andii\Documents\Schule\HTL 2.Klasse\POS 2AHIFS\Programme\Stack_OOP\Stack_OOP\bin\Debug\Stack_OOP.exe
+C:\Users\Andii\Documents\Schule\HTL 2.Klasse\POS 2AHIFS\Programme\Stack_OOP\Stack_OOP\bin\Debug\Stack_OOP.pdb

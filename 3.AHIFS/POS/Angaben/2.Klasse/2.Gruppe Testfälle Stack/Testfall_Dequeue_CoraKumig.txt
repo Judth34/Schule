@@ -1,0 +1,13 @@
+ static bool Testfall_Dequeue_CoraKumnig(SimpleQueue q1)
+        {
+            bool erg = false;
+
+            q1.Enqueue(5);
+            q1.Enqueue(4);
+            if (q1.Dequeue() == 5)
+            {
+                erg = true;
+            }
+
+            return erg;
+        }

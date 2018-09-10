@@ -1,0 +1,5 @@
+D:\!!!!!!!!!!!!!!!! POS PLF !!!!!!!!!!!!!!!!!!!!!\07_Fahrngruber_Samuel\PLFClassLibrary\bin\Debug\PLFClassLibrary.dll
+D:\!!!!!!!!!!!!!!!! POS PLF !!!!!!!!!!!!!!!!!!!!!\07_Fahrngruber_Samuel\PLFClassLibrary\bin\Debug\PLFClassLibrary.pdb
+D:\!!!!!!!!!!!!!!!! POS PLF !!!!!!!!!!!!!!!!!!!!!\07_Fahrngruber_Samuel\PLFClassLibrary\obj\Debug\PLFClassLibrary.csprojResolveAssemblyReference.cache
+D:\!!!!!!!!!!!!!!!! POS PLF !!!!!!!!!!!!!!!!!!!!!\07_Fahrngruber_Samuel\PLFClassLibrary\obj\Debug\PLFClassLibrary.dll
+D:\!!!!!!!!!!!!!!!! POS PLF !!!!!!!!!!!!!!!!!!!!!\07_Fahrngruber_Samuel\PLFClassLibrary\obj\Debug\PLFClassLibrary.pdb

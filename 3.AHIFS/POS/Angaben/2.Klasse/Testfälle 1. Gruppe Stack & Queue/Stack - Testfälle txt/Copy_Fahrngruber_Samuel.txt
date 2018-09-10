@@ -1,0 +1,34 @@
+        static bool TestCaseCopy()
+        {
+            int capacity = 100;
+            int numberOfElements = 50;
+            bool result = false;
+            SimpleStack s1 = new SimpleStack(capacity);
+            SimpleStack s2;
+            int idx;
+            for (idx = 0; idx < numberOfElements; idx++)
+            {
+                s1.Push(idx);
+            }
+            s2 = s1.Copy();
+            if (s1 != s2)
+            {
+                result = true;
+            }
+            while (result == true && idx > 0)
+            {
+                try
+                {
+                    if (s1.Pop() != s2.Pop())
+                    {
+                        result = false;
+                    }
+                }
+                catch
+                {
+                    result = false;
+                }
+                idx--;
+            }
+            return result;
+        }

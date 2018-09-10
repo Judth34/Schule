@@ -1,0 +1,18 @@
+C:\Users\Andii\Documents\HTL 2.Klasse\Auto_Beispiel\Auto_Beispiel\bin\Debug\Auto_Beispiel.exe.config
+C:\Users\Andii\Documents\HTL 2.Klasse\Auto_Beispiel\Auto_Beispiel\obj\Debug\Auto_Beispiel.csprojResolveAssemblyReference.cache
+C:\Users\Andii\Documents\HTL 2.Klasse\Auto_Beispiel\Auto_Beispiel\bin\Debug\Auto_Beispiel.exe
+C:\Users\Andii\Documents\HTL 2.Klasse\Auto_Beispiel\Auto_Beispiel\bin\Debug\Auto_Beispiel.pdb
+C:\Users\Andii\Documents\HTL 2.Klasse\Auto_Beispiel\Auto_Beispiel\obj\Debug\Auto_Beispiel.exe
+C:\Users\Andii\Documents\HTL 2.Klasse\Auto_Beispiel\Auto_Beispiel\obj\Debug\Auto_Beispiel.pdb
+C:\Users\Andii\Documents\HTL 2.Klasse\POS 2AHIFS\Programme\Auto_Beispiel\Auto_Beispiel\bin\Debug\Auto_Beispiel.exe.config
+C:\Users\Andii\Documents\HTL 2.Klasse\POS 2AHIFS\Programme\Auto_Beispiel\Auto_Beispiel\obj\Debug\Auto_Beispiel.exe
+C:\Users\Andii\Documents\HTL 2.Klasse\POS 2AHIFS\Programme\Auto_Beispiel\Auto_Beispiel\obj\Debug\Auto_Beispiel.pdb
+C:\Users\Andii\Documents\HTL 2.Klasse\POS 2AHIFS\Programme\Auto_Beispiel\Auto_Beispiel\obj\Debug\Auto_Beispiel.csprojResolveAssemblyReference.cache
+C:\Users\Andii\Documents\HTL 2.Klasse\POS 2AHIFS\Programme\Auto_Beispiel\Auto_Beispiel\bin\Debug\Auto_Beispiel.exe
+C:\Users\Andii\Documents\HTL 2.Klasse\POS 2AHIFS\Programme\Auto_Beispiel\Auto_Beispiel\bin\Debug\Auto_Beispiel.pdb
+E:\Schule\Old_POS\Programme\Auto_Beispiel\Auto_Beispiel\bin\Debug\Auto_Beispiel.exe.config
+E:\Schule\Old_POS\Programme\Auto_Beispiel\Auto_Beispiel\obj\Debug\Auto_Beispiel.exe
+E:\Schule\Old_POS\Programme\Auto_Beispiel\Auto_Beispiel\obj\Debug\Auto_Beispiel.pdb
+E:\Schule\Old_POS\Programme\Auto_Beispiel\Auto_Beispiel\bin\Debug\Auto_Beispiel.exe
+E:\Schule\Old_POS\Programme\Auto_Beispiel\Auto_Beispiel\bin\Debug\Auto_Beispiel.pdb
+E:\Schule\Old_POS\Programme\Auto_Beispiel\Auto_Beispiel\obj\Debug\Auto_Beispiel.csprojResolveAssemblyReference.cache

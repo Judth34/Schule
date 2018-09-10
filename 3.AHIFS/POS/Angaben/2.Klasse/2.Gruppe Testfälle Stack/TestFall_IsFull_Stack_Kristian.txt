@@ -1,0 +1,19 @@
+static bool TestFall_IsFull_Rajic_Kristian()
+        {
+            bool result = false;
+            SimpleStack TestStack = new SimpleStack(2);
+            TestStack.Push(5);
+            TestStack.Push(4);
+            result = TestStack.IsFull();
+            if(result == true)
+            {
+                TestStack.Pop();
+                result = TestStack.IsFull();
+                if(result == false)
+                {
+                    result = true;
+                }
+            }
+            return result;
+
+        }

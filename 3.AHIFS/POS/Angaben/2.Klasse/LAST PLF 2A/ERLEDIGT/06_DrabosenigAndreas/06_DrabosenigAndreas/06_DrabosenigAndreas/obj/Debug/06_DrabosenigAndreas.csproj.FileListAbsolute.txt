@@ -1,0 +1,14 @@
+C:\Users\Andii\Desktop\06_DrabosenigAndreas\06_DrabosenigAndreas\bin\Debug\06_DrabosenigAndreas.exe.config
+C:\Users\Andii\Desktop\06_DrabosenigAndreas\06_DrabosenigAndreas\bin\Debug\06_DrabosenigAndreas.exe
+C:\Users\Andii\Desktop\06_DrabosenigAndreas\06_DrabosenigAndreas\bin\Debug\06_DrabosenigAndreas.pdb
+C:\Users\Andii\Desktop\06_DrabosenigAndreas\06_DrabosenigAndreas\bin\Debug\ClassLibrary.dll
+C:\Users\Andii\Desktop\06_DrabosenigAndreas\06_DrabosenigAndreas\bin\Debug\ClassLibrary.pdb
+C:\Users\Andii\Desktop\06_DrabosenigAndreas\06_DrabosenigAndreas\obj\Debug\06_DrabosenigAndreas.csprojResolveAssemblyReference.cache
+C:\Users\Andii\Desktop\06_DrabosenigAndreas\06_DrabosenigAndreas\obj\Debug\06_DrabosenigAndreas.exe
+C:\Users\Andii\Desktop\06_DrabosenigAndreas\06_DrabosenigAndreas\obj\Debug\06_DrabosenigAndreas.pdb
+D:\KONTROLLE\LAST PLF 2A\06_DrabosenigAndreas\06_DrabosenigAndreas\06_DrabosenigAndreas\bin\Debug\06_DrabosenigAndreas.exe.config
+D:\KONTROLLE\LAST PLF 2A\06_DrabosenigAndreas\06_DrabosenigAndreas\06_DrabosenigAndreas\obj\Debug\06_DrabosenigAndreas.exe
+D:\KONTROLLE\LAST PLF 2A\06_DrabosenigAndreas\06_DrabosenigAndreas\06_DrabosenigAndreas\obj\Debug\06_DrabosenigAndreas.pdb
+D:\KONTROLLE\LAST PLF 2A\ERLEDIGT\06_DrabosenigAndreas\06_DrabosenigAndreas\06_DrabosenigAndreas\bin\Debug\06_DrabosenigAndreas.exe.config
+D:\KONTROLLE\LAST PLF 2A\ERLEDIGT\06_DrabosenigAndreas\06_DrabosenigAndreas\06_DrabosenigAndreas\obj\Debug\06_DrabosenigAndreas.exe
+D:\KONTROLLE\LAST PLF 2A\ERLEDIGT\06_DrabosenigAndreas\06_DrabosenigAndreas\06_DrabosenigAndreas\obj\Debug\06_DrabosenigAndreas.pdb

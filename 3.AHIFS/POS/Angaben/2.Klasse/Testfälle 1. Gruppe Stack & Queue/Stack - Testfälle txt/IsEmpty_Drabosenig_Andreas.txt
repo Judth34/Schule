@@ -1,0 +1,10 @@
+static bool TestCase_IsEmpty()  //Andreas Drabosenig
+        {
+            bool result = false;
+            SimpleStack s1 = new SimpleStack();
+            if(s1.IsEmpty() == true)
+            {
+                result = true;
+            }
+            return result;
+        }

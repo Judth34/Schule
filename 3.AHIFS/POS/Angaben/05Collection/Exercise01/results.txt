@@ -1,0 +1,4 @@
+Austria-Germany,2:3
+Spain-Austria,3:1
+Germany-Spain,2:2
+Spain-Sweden,2:1

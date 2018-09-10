@@ -1,0 +1,9 @@
+D:\DemoPupilKonstruktor\DemoPupilKonstruktor\bin\Debug\DemoPupilKonstruktor.exe.config
+D:\DemoPupilKonstruktor\DemoPupilKonstruktor\bin\Debug\DemoPupilKonstruktor.exe
+D:\DemoPupilKonstruktor\DemoPupilKonstruktor\bin\Debug\DemoPupilKonstruktor.pdb
+D:\DemoPupilKonstruktor\DemoPupilKonstruktor\obj\Debug\DemoPupilKonstruktor.csprojResolveAssemblyReference.cache
+D:\DemoPupilKonstruktor\DemoPupilKonstruktor\obj\Debug\DemoPupilKonstruktor.exe
+D:\DemoPupilKonstruktor\DemoPupilKonstruktor\obj\Debug\DemoPupilKonstruktor.pdb
+\\212.152.179.122\Kommunikationschueler\2AHIFS\POS\CodeListings\DemoPupilKonstruktorMitDestruktor\DemoPupilKonstruktor\bin\Debug\DemoPupilKonstruktor.exe.config
+\\212.152.179.122\Kommunikationschueler\2AHIFS\POS\CodeListings\DemoPupilKonstruktorMitDestruktor\DemoPupilKonstruktor\obj\Debug\DemoPupilKonstruktor.exe
+\\212.152.179.122\Kommunikationschueler\2AHIFS\POS\CodeListings\DemoPupilKonstruktorMitDestruktor\DemoPupilKonstruktor\obj\Debug\DemoPupilKonstruktor.pdb

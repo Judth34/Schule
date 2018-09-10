@@ -1,0 +1,9 @@
+        static bool TestCase_Enqueue()
+        {
+            SimpleQueue Queue1 = new SimpleQueue(1);
+            int NumbertoQueue = 1;
+
+            Queue1.Enqueue(NumbertoQueue);
+
+            return (Queue1.GetElement() == NumbertoQueue);
+        }

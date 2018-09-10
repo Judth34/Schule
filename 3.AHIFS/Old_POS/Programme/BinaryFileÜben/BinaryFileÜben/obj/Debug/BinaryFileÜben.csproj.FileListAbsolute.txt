@@ -1,0 +1,6 @@
+C:\Users\Andii\Documents\Schule\HTL 2.Klasse\POS 2AHIFS\Programme\BinaryFileÜben\BinaryFileÜben\bin\Debug\BinaryFileÜben.exe.config
+C:\Users\Andii\Documents\Schule\HTL 2.Klasse\POS 2AHIFS\Programme\BinaryFileÜben\BinaryFileÜben\bin\Debug\BinaryFileÜben.exe
+C:\Users\Andii\Documents\Schule\HTL 2.Klasse\POS 2AHIFS\Programme\BinaryFileÜben\BinaryFileÜben\bin\Debug\BinaryFileÜben.pdb
+C:\Users\Andii\Documents\Schule\HTL 2.Klasse\POS 2AHIFS\Programme\BinaryFileÜben\BinaryFileÜben\obj\Debug\BinaryFileÜben.csprojResolveAssemblyReference.cache
+C:\Users\Andii\Documents\Schule\HTL 2.Klasse\POS 2AHIFS\Programme\BinaryFileÜben\BinaryFileÜben\obj\Debug\BinaryFileÜben.exe
+C:\Users\Andii\Documents\Schule\HTL 2.Klasse\POS 2AHIFS\Programme\BinaryFileÜben\BinaryFileÜben\obj\Debug\BinaryFileÜben.pdb

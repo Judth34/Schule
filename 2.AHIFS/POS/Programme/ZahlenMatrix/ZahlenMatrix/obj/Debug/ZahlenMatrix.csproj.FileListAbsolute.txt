@@ -1,0 +1,12 @@
+C:\Users\Andii\Documents\HTL\ZahlenMatrix\ZahlenMatrix\bin\Debug\ZahlenMatrix.exe.config
+C:\Users\Andii\Documents\HTL\ZahlenMatrix\ZahlenMatrix\obj\Debug\ZahlenMatrix.csprojResolveAssemblyReference.cache
+C:\Users\Andii\Documents\HTL\ZahlenMatrix\ZahlenMatrix\bin\Debug\ZahlenMatrix.exe
+C:\Users\Andii\Documents\HTL\ZahlenMatrix\ZahlenMatrix\bin\Debug\ZahlenMatrix.pdb
+C:\Users\Andii\Documents\HTL\ZahlenMatrix\ZahlenMatrix\obj\Debug\ZahlenMatrix.exe
+C:\Users\Andii\Documents\HTL\ZahlenMatrix\ZahlenMatrix\obj\Debug\ZahlenMatrix.pdb
+C:\Users\Andii\Documents\HTL 2.Klasse\ZahlenMatrix\ZahlenMatrix\bin\Debug\ZahlenMatrix.exe.config
+C:\Users\Andii\Documents\HTL 2.Klasse\ZahlenMatrix\ZahlenMatrix\obj\Debug\ZahlenMatrix.exe
+C:\Users\Andii\Documents\HTL 2.Klasse\ZahlenMatrix\ZahlenMatrix\obj\Debug\ZahlenMatrix.pdb
+C:\Users\Andii\Documents\HTL 2.Klasse\ZahlenMatrix\ZahlenMatrix\bin\Debug\ZahlenMatrix.exe
+C:\Users\Andii\Documents\HTL 2.Klasse\ZahlenMatrix\ZahlenMatrix\bin\Debug\ZahlenMatrix.pdb
+C:\Users\Andii\Documents\HTL 2.Klasse\ZahlenMatrix\ZahlenMatrix\obj\Debug\ZahlenMatrix.csprojResolveAssemblyReference.cache

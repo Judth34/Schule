@@ -1,0 +1,101 @@
+select level, child, SYS_CONNECT_BY_PATH(child, '/') "path"
+from scott.geotree
+start with parent = 'Earth'
+connect by prior child = parent
+order siblings by child;
+
+
+select level, child, CONNECT_BY_isLeaf 
+from scott.geotree
+start with parent = 'Earth'
+connect by prior child = parent
+order siblings by child;
+
+
+select * from scott.geotree;
+select * from scott.geoobj;
+
+
+select level, child, CONNECT_BY_isLeaf, '1' "is town", geotype
+from scott.geotree
+inner join scott.geoobj on child = name 
+where connect_by_isLeaf = 1 
+and geotype = 'TOWN'
+start with parent = 'Earth'
+connect by prior child = parent 
+order siblings by child;
+
+union
+
+select level, child, CONNECT_BY_isLeaf, '0' "is town", geotype
+from scott.geotree
+inner join scott.geoobj on child = name 
+where connect_by_isLeaf = 1 
+and geotype != 'TOWN'
+start with parent = 'Earth'
+connect by prior child = parent
+order siblings by child;
+
+
+select connect_by_root child, child
+from vgeotree
+start with parent = 'Earth'
+connect by prior child = parent;
+
+select * from vgeotree;
+
+
+select connect_by_root child  from vgeotree 
+where child = 'Toronto'
+start with parent = 'Earth'
+connect by prior child = parent
+order siblings by child
+;
+
+create view torontoParent as
+select connect_by_root child as Child from vgeotree 
+where child = 'Toronto'
+start with parent = 'Earth'
+connect by prior child = parent
+order siblings by child
+;
+
+
+select connect_by_root child, child
+from vgeotree
+start with parent = (select * from torontoParent)
+connect by prior child = parent;
+
+create or replace view abc as
+select child
+from vgeotree
+connect by prior child = parent
+start with child = (
+select connect_by_root child
+from vgeotree
+where child = 'Toronto'
+start with parent = 'Earth'
+connect by prior child = parent
+);
+
+select * from abc;
+
+create or replace view viewtowns as
+select child, SYS_CONNECT_BY_PATH(child, '/') "path"
+from vgeotree
+start with parent = (select * from torontoParent)
+connect by prior child = parent;
+
+select * from viewtowns; 
+
+select viewtowns.child, states.name from viewtowns
+inner join scott.states on instr("path", states.name) > 0;
+
+
+select * from scott.states;
+
+
+select instr("path", '')
+from viewtowns;
+
+

@@ -1,0 +1,16 @@
+C:\Users\Julian\Desktop\POS\BaumV1\BaumV1\bin\Debug\BaumV1.exe.config
+C:\Users\Julian\Desktop\POS\BaumV1\BaumV1\bin\Debug\BaumV1.exe
+C:\Users\Julian\Desktop\POS\BaumV1\BaumV1\bin\Debug\BaumV1.pdb
+C:\Users\Julian\Desktop\POS\BaumV1\BaumV1\obj\Debug\BaumV1.csprojResolveAssemblyReference.cache
+C:\Users\Julian\Desktop\POS\BaumV1\BaumV1\obj\Debug\BaumV1.exe
+C:\Users\Julian\Desktop\POS\BaumV1\BaumV1\obj\Debug\BaumV1.pdb
+G:\BaumV1\BaumV1\bin\Debug\BaumV1.exe.config
+G:\BaumV1\BaumV1\obj\Debug\BaumV1.exe
+G:\BaumV1\BaumV1\obj\Debug\BaumV1.pdb
+G:\BaumV1\BaumV1\bin\Debug\BaumV1.exe
+G:\BaumV1\BaumV1\bin\Debug\BaumV1.pdb
+G:\BaumV1\BaumV1\obj\Debug\BaumV1.csprojResolveAssemblyReference.cache
+D:\KONTROLLE\LAST PLF 2A\12_Kopeinig_Marcel\BaumV1\bin\Debug\BaumV1.exe.config
+D:\KONTROLLE\LAST PLF 2A\12_Kopeinig_Marcel\BaumV1\obj\Debug\BaumV1.exe
+D:\KONTROLLE\LAST PLF 2A\12_Kopeinig_Marcel\BaumV1\obj\Debug\BaumV1.pdb
+D:\KONTROLLE\LAST PLF 2A\12_Kopeinig_Marcel\BaumV1\obj\Debug\BaumV1.csprojResolveAssemblyReference.cache

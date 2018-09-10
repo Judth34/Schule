@@ -1,0 +1,18 @@
+D:\tmp\ConsoleApplication11\ConsoleApplication11\bin\Debug\ConsoleApplication11.exe.config
+D:\tmp\ConsoleApplication11\ConsoleApplication11\bin\Debug\ConsoleApplication11.exe
+D:\tmp\ConsoleApplication11\ConsoleApplication11\bin\Debug\ConsoleApplication11.pdb
+D:\tmp\ConsoleApplication11\ConsoleApplication11\obj\Debug\ConsoleApplication11.csprojResolveAssemblyReference.cache
+D:\tmp\ConsoleApplication11\ConsoleApplication11\obj\Debug\ConsoleApplication11.exe
+D:\tmp\ConsoleApplication11\ConsoleApplication11\obj\Debug\ConsoleApplication11.pdb
+\\gandalf\Kommunikationschueler\2AHIFS\POS\Stoffwiederholung PLF2 2A HIFS\ConsoleApplication11\bin\Debug\ConsoleApplication11.exe.config
+\\gandalf\Kommunikationschueler\2AHIFS\POS\Stoffwiederholung PLF2 2A HIFS\ConsoleApplication11\obj\Debug\ConsoleApplication11.exe
+\\gandalf\Kommunikationschueler\2AHIFS\POS\Stoffwiederholung PLF2 2A HIFS\ConsoleApplication11\obj\Debug\ConsoleApplication11.pdb
+\\gandalf\Kommunikationschueler\2AHIFS\POS\Stoffwiederholung PLF2 2A HIFS\ConsoleApplication11\bin\Debug\ConsoleApplication11.exe
+\\gandalf\Kommunikationschueler\2AHIFS\POS\Stoffwiederholung PLF2 2A HIFS\ConsoleApplication11\bin\Debug\ConsoleApplication11.pdb
+\\gandalf\Kommunikationschueler\2AHIFS\POS\Stoffwiederholung PLF2 2A HIFS\ConsoleApplication11\obj\Debug\ConsoleApplication11.csprojResolveAssemblyReference.cache
+\\gandalf.htl-villach.at\Kommunikationschueler\2AHIFS\POS\Stoffwiederholung PLF2 2A HIFS\ConsoleApplication11\bin\Debug\ConsoleApplication11.exe.config
+\\gandalf.htl-villach.at\Kommunikationschueler\2AHIFS\POS\Stoffwiederholung PLF2 2A HIFS\ConsoleApplication11\obj\Debug\ConsoleApplication11.exe
+\\gandalf.htl-villach.at\Kommunikationschueler\2AHIFS\POS\Stoffwiederholung PLF2 2A HIFS\ConsoleApplication11\obj\Debug\ConsoleApplication11.pdb
+\\gandalf.htl-villach.at\Kommunikationschueler\2AHIFS\POS\Stoffwiederholung PLF2 2A HIFS\ConsoleApplication11\bin\Debug\ConsoleApplication11.exe
+\\gandalf.htl-villach.at\Kommunikationschueler\2AHIFS\POS\Stoffwiederholung PLF2 2A HIFS\ConsoleApplication11\bin\Debug\ConsoleApplication11.pdb
+\\gandalf.htl-villach.at\Kommunikationschueler\2AHIFS\POS\Stoffwiederholung PLF2 2A HIFS\ConsoleApplication11\obj\Debug\ConsoleApplication11.csprojResolveAssemblyReference.cache

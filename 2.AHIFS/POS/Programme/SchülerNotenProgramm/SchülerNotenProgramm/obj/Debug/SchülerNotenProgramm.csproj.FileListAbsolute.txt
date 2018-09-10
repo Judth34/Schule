@@ -1,0 +1,24 @@
+C:\Users\Andii\Documents\HTL\SchülerNotenProgramm\SchülerNotenProgramm\bin\Debug\SchülerNotenProgramm.exe.config
+C:\Users\Andii\Documents\HTL\SchülerNotenProgramm\SchülerNotenProgramm\obj\Debug\SchülerNotenProgramm.csprojResolveAssemblyReference.cache
+C:\Users\Andii\Documents\HTL\SchülerNotenProgramm\SchülerNotenProgramm\bin\Debug\SchülerNotenProgramm.exe
+C:\Users\Andii\Documents\HTL\SchülerNotenProgramm\SchülerNotenProgramm\bin\Debug\SchülerNotenProgramm.pdb
+C:\Users\Andii\Documents\HTL\SchülerNotenProgramm\SchülerNotenProgramm\obj\Debug\SchülerNotenProgramm.exe
+C:\Users\Andii\Documents\HTL\SchülerNotenProgramm\SchülerNotenProgramm\obj\Debug\SchülerNotenProgramm.pdb
+C:\Users\Andii\Documents\HTL 2.Klasse\SchülerNotenProgramm\SchülerNotenProgramm\bin\Debug\SchülerNotenProgramm.exe.config
+C:\Users\Andii\Documents\HTL 2.Klasse\SchülerNotenProgramm\SchülerNotenProgramm\obj\Debug\SchülerNotenProgramm.exe
+C:\Users\Andii\Documents\HTL 2.Klasse\SchülerNotenProgramm\SchülerNotenProgramm\obj\Debug\SchülerNotenProgramm.pdb
+C:\Users\Andii\Documents\HTL 2.Klasse\POS 2AHIFS\Programme\SchülerNotenProgramm\SchülerNotenProgramm\bin\Debug\SchülerNotenProgramm.exe.config
+C:\Users\Andii\Documents\HTL 2.Klasse\POS 2AHIFS\Programme\SchülerNotenProgramm\SchülerNotenProgramm\obj\Debug\SchülerNotenProgramm.exe
+C:\Users\Andii\Documents\HTL 2.Klasse\POS 2AHIFS\Programme\SchülerNotenProgramm\SchülerNotenProgramm\obj\Debug\SchülerNotenProgramm.pdb
+C:\Users\Andii\Documents\HTL 2.Klasse\POS 2AHIFS\Programme\SchülerNotenProgramm\SchülerNotenProgramm\bin\Debug\SchülerNotenProgramm.exe
+C:\Users\Andii\Documents\HTL 2.Klasse\POS 2AHIFS\Programme\SchülerNotenProgramm\SchülerNotenProgramm\bin\Debug\SchülerNotenProgramm.pdb
+C:\Users\Andii\Documents\HTL 2.Klasse\POS 2AHIFS\Programme\SchülerNotenProgramm\SchülerNotenProgramm\obj\Debug\SchülerNotenProgramm.csprojResolveAssemblyReference.cache
+C:\Users\Andii\Documents\Schule\HTL 2.Klasse\POS 2AHIFS\Programme\SchülerNotenProgramm\SchülerNotenProgramm\bin\Debug\SchülerNotenProgramm.exe.config
+C:\Users\Andii\Documents\Schule\HTL 2.Klasse\POS 2AHIFS\Programme\SchülerNotenProgramm\SchülerNotenProgramm\obj\Debug\SchülerNotenProgramm.exe
+C:\Users\Andii\Documents\Schule\HTL 2.Klasse\POS 2AHIFS\Programme\SchülerNotenProgramm\SchülerNotenProgramm\obj\Debug\SchülerNotenProgramm.pdb
+C:\Users\Andii\Documents\Schule\HTL 2.Klasse\POS 2AHIFS\Programme\SchülerNotenProgramm\SchülerNotenProgramm\bin\Debug\SchülerNotenProgramm.exe
+C:\Users\Andii\Documents\Schule\HTL 2.Klasse\POS 2AHIFS\Programme\SchülerNotenProgramm\SchülerNotenProgramm\bin\Debug\SchülerNotenProgramm.pdb
+C:\Users\Andii\Documents\Schule\HTL 2.Klasse\POS 2AHIFS\Programme\SchülerNotenProgramm\SchülerNotenProgramm\obj\Debug\SchülerNotenProgramm.csprojResolveAssemblyReference.cache
+C:\Users\Marcel Judth\Documents\Schule\Old_POS\Programme\SchülerNotenProgramm\SchülerNotenProgramm\bin\Debug\SchülerNotenProgramm.exe.config
+C:\Users\Marcel Judth\Documents\Schule\Old_POS\Programme\SchülerNotenProgramm\SchülerNotenProgramm\obj\Debug\SchülerNotenProgramm.exe
+C:\Users\Marcel Judth\Documents\Schule\Old_POS\Programme\SchülerNotenProgramm\SchülerNotenProgramm\obj\Debug\SchülerNotenProgramm.pdb

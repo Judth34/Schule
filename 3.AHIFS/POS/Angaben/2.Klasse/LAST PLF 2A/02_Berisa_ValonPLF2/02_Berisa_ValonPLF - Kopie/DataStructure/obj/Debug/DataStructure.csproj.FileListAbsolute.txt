@@ -1,0 +1,5 @@
+C:\Users\schueler\Desktop\02_Berisa_ValonPLF - Kopie\DataStructure\bin\Debug\DataStructure.dll
+C:\Users\schueler\Desktop\02_Berisa_ValonPLF - Kopie\DataStructure\bin\Debug\DataStructure.pdb
+C:\Users\schueler\Desktop\02_Berisa_ValonPLF - Kopie\DataStructure\obj\Debug\DataStructure.dll
+C:\Users\schueler\Desktop\02_Berisa_ValonPLF - Kopie\DataStructure\obj\Debug\DataStructure.pdb
+C:\Users\schueler\Desktop\02_Berisa_ValonPLF - Kopie\DataStructure\obj\Debug\DataStructure.csprojResolveAssemblyReference.cache

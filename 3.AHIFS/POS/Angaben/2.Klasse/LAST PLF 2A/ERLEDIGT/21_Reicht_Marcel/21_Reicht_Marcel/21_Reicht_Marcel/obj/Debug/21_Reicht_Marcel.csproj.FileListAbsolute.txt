@@ -1,0 +1,3 @@
+d:\wpf\21_Reicht_Marcel\21_Reicht_Marcel\bin\Debug\21_Reicht_Marcel.exe.config
+D:\KONTROLLE\LAST PLF 2A\21_Reicht_Marcel\21_Reicht_Marcel\21_Reicht_Marcel\bin\Debug\21_Reicht_Marcel.exe.config
+\\gandalf.htl-villach.at\Kommunikationschueler\2AHIFS\POS\LAST PLF 2A\ERLEDIGT\21_Reicht_Marcel\21_Reicht_Marcel\21_Reicht_Marcel\bin\Debug\21_Reicht_Marcel.exe.config

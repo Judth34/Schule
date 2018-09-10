@@ -1,0 +1,13 @@
+drop TABLE flugzeug CASCADE CONSTRAINTS;
+drop TABLE tatsaechlFlug CASCADE CONSTRAINTS;
+
+
+create TABLE flugzeug
+{
+	id INTEGER
+}
+
+create TABLE tatsaechlFlug
+{
+	
+}

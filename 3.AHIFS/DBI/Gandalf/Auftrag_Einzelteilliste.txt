@@ -1,0 +1,29 @@
+Create or replace procedure bestellen (anr varchar2, bmenge number) as
+
+Procedure ermittle_einzelteile( anr  varchar2, emenge number) ; --Prototyp
+
+Procedure ermittle_einzelteile( anr varchar2, emenge number) as  -- Implementierung
+Cursor c1 select * from struktur where o_a_nr = anr;
+Begin
+	Flag := 0;
+	For c1_rec in C1 loop
+		Flag := 1;
+		-- hier Menge berechnen
+		Ermittle_einzelteile(c1_rec.u_a_nr, menge_neu);
+	End loop;
+	If flag = 0 then 
+	-- Insert into lieferliste  oder  update lieferliste …..
+	End if;
+End;
+
+Begin
+	-- hier neuen Augtrag einfügen
+	Ermittle_einzelteile(…);
+	commit;
+Exception
+	When others then
+		-- Meldung
+		Rollback;
+End;
+
+

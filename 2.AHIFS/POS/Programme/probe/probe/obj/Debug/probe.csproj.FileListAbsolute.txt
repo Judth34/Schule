@@ -1,0 +1,6 @@
+C:\Users\Andii\Documents\HTL\probe\probe\bin\Debug\probe.exe.config
+C:\Users\Andii\Documents\HTL\probe\probe\bin\Debug\probe.exe
+C:\Users\Andii\Documents\HTL\probe\probe\bin\Debug\probe.pdb
+C:\Users\Andii\Documents\HTL\probe\probe\obj\Debug\probe.csprojResolveAssemblyReference.cache
+C:\Users\Andii\Documents\HTL\probe\probe\obj\Debug\probe.exe
+C:\Users\Andii\Documents\HTL\probe\probe\obj\Debug\probe.pdb

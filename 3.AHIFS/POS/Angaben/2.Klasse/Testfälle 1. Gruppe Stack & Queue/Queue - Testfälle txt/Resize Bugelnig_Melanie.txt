@@ -1,0 +1,7 @@
+private static bool RunTestCaseResize()     //Bugelnig Melanie
+        {
+            SimpleQueue q1 = new SimpleQueue();
+            int newCapacity = 1000;
+
+            return q1.Resize(newCapacity);
+        }

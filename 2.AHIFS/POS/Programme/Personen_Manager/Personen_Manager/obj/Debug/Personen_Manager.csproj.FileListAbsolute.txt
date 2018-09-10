@@ -1,0 +1,6 @@
+C:\Users\Andii\Documents\Schule\HTL 2.Klasse\POS 2AHIFS\Programme\Personen_Manager\Personen_Manager\bin\Debug\Personen_Manager.exe.config
+C:\Users\Andii\Documents\Schule\HTL 2.Klasse\POS 2AHIFS\Programme\Personen_Manager\Personen_Manager\bin\Debug\Personen_Manager.exe
+C:\Users\Andii\Documents\Schule\HTL 2.Klasse\POS 2AHIFS\Programme\Personen_Manager\Personen_Manager\bin\Debug\Personen_Manager.pdb
+C:\Users\Andii\Documents\Schule\HTL 2.Klasse\POS 2AHIFS\Programme\Personen_Manager\Personen_Manager\obj\Debug\Personen_Manager.csprojResolveAssemblyReference.cache
+C:\Users\Andii\Documents\Schule\HTL 2.Klasse\POS 2AHIFS\Programme\Personen_Manager\Personen_Manager\obj\Debug\Personen_Manager.exe
+C:\Users\Andii\Documents\Schule\HTL 2.Klasse\POS 2AHIFS\Programme\Personen_Manager\Personen_Manager\obj\Debug\Personen_Manager.pdb
