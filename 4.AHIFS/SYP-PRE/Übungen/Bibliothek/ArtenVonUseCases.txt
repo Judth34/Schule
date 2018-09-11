@@ -1,0 +1,19 @@
+Use-Cases:
+ - ausleihen
+ - Leihgebühr bezahlen
+ - Name Anschrift und Datum festhalten
+ - Frist ausdehene (80 Tage)
+ - Ausleihfrist überschreiten 
+ - Errinerungsschreiben aushändigen
+ - Ausweisen vor ersten Ausleihung
+ - Entleihungsausweis aushändigen
+ - Eintleihungsausweis verlängern (nach 1 Jahr)
+ - Bedarfsanalysen durchführen
+ - Aufbewahren von Informationen vom Ausleihvorgang
+ - Ausleihgegenstände verscherbeln
+ - Ausleihgegenstände nachbestellen
+ - Reservierung vornehmen (4 Wochen lang)
+ - erhalten einer Reservierungsbestätigung
+ - Rückgabe
+ - auf Unversehrtheit prüfen
+ - auf Reservierung prüfen

@@ -1,0 +1,14 @@
+﻿  stdafx.cpp
+  ViewTree.cpp
+  PropertiesWnd.cpp
+  OutputWnd.cpp
+  MainFrm.cpp
+  FileView.cpp
+  ClassView.cpp
+  ChildFrm.cpp
+  001 First ApplicationView.cpp
+  001 First ApplicationDoc.cpp
+  001 First Application.cpp
+  Generating Code...
+  001 First Application.vcxproj -> C:\Users\Marcel Judth\Documents\Schule\4.AHIFS\NVS(PRRL)\Programme\001 First Application\Debug\001 First Application.exe
+  001 First Application.vcxproj -> C:\Users\Marcel Judth\Documents\Schule\4.AHIFS\NVS(PRRL)\Programme\001 First Application\Debug\001 First Application.pdb (Partial PDB)

@@ -1,0 +1,59 @@
+Im Informatik Netz:
+Eigentlich bekommt man Adressen automtaisch vom DHCP Server zugewiesen
+Adresse 192.168.x.y   
+SubnetMask 255.255.0.0
+Gateway 192.168.0.254
+DNS: 192.168.128.252 und 192.168.128.253 - bei Problemen mit externen Seiten evtl einen davon ersetzen durch 8.8.8.8
+Wenn man eine fixe IP-Adresse haben will am besten 192.168.Raumnummer_der_Klasse.Katalognummer verwenden
+
+
+gandalf (Fileserver EDVO):
+dns: 	gandalf.htl-villach.at	
+ip extern:	212.152.179.122	  
+ip intern:	192.168.128.253
+
+Auf die Laufwerke kann von außen zugegriffen werden, in dem im Datei-Explorer
+\\gandalf.htl-villach.at\Freigabe oder \\212.152.179.122\Freigabe eingebeben wird. 
+Login mit: benutzername@htl-vil.local und Schulkennwort oder mit htl-vil.local\benutzername und Kennwort
+vorhandene Freigaben:
+\\gandalf.htl-villach.at\public
+\\gandalf.htl-villach.at\kommunikationschueler
+\\gandalf.htl-villach.at\benutzername$		... Homelaufwerk von benutzer ($ anhängen nicht vergessen!!!)
+\\gandalf.htl-villach.at\Schüler			... Übersichtsordner
+
+
+klio (interner Projektserver mit php-mysql für die Webprojekte)
+dns: 	klio.htl-villach.at 	    
+ip extern: 	212.152.179.123	 
+ip intern:	192.168.142.245
+
+aceto (Übungsserver für die Linux shells)
+dns: 	nicht eingetragen
+ip extern:	212.152.179.125 (mit putty oder mit ssh aufmachen, evtl noch bash eingeben falls Cursor-Tasten nicht funktionieren)
+ip intern:	192.168.142.191
+
+aphrodite4 (Oracle server, ip Adresse im oracle Client eintragen)
+dns: 	nicht eingetragen
+ip extern:	212.152.179.117
+ip intern:	192.168.128.152
+
+
+herkules (Fileserver)
+dns: 		nicht eingetragen
+ip extern:	nur vo nder Schule aus erreichbar
+ip intern:	192.168.196.213
+
+------------------------------------------------------------------------
+Zugriff auf Drucker innerhalb der Schule
+
+im Dateiexplorer: \\demeter7\  eingeben
+als Benutzernamen den Schulaccount eingeben aber full qualified, also 
+htl-vil.local\benutzername
+einen Drucker auswählen
+Druckertreiber sollte installiert werden, dazu muss man am lokalen Rechner admin sein
+auf den PCs in der Schule ist .\schueler der admin
+
+im KS1 am besten auf dem Canon-Drucker drucken:
+\\digitalis\K1-Drucker
+und mit htl-vil\benutzername und Kennwort einsteigen
+

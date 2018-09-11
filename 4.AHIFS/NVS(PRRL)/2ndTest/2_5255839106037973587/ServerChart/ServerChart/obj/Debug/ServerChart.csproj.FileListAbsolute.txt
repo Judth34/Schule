@@ -1,0 +1,17 @@
+C:\Users\Sandro\Desktop\Schule 2017\NVS\ServerChart\ServerChart\bin\Debug\ServerChart.exe.config
+C:\Users\Sandro\Desktop\Schule 2017\NVS\ServerChart\ServerChart\bin\Debug\ServerChart.exe
+C:\Users\Sandro\Desktop\Schule 2017\NVS\ServerChart\ServerChart\bin\Debug\ServerChart.pdb
+C:\Users\Sandro\Desktop\Schule 2017\NVS\ServerChart\ServerChart\obj\Debug\ServerChart.csprojResolveAssemblyReference.cache
+C:\Users\Sandro\Desktop\Schule 2017\NVS\ServerChart\ServerChart\obj\Debug\MainWindow.g.cs
+C:\Users\Sandro\Desktop\Schule 2017\NVS\ServerChart\ServerChart\obj\Debug\App.g.cs
+C:\Users\Sandro\Desktop\Schule 2017\NVS\ServerChart\ServerChart\obj\Debug\ServerChart_MarkupCompile.cache
+C:\Users\Sandro\Desktop\Schule 2017\NVS\ServerChart\ServerChart\obj\Debug\ServerChart_MarkupCompile.lref
+C:\Users\Sandro\Desktop\Schule 2017\NVS\ServerChart\ServerChart\obj\Debug\MainWindow.baml
+C:\Users\Sandro\Desktop\Schule 2017\NVS\ServerChart\ServerChart\obj\Debug\ServerChart.g.resources
+C:\Users\Sandro\Desktop\Schule 2017\NVS\ServerChart\ServerChart\obj\Debug\ServerChart.Properties.Resources.resources
+C:\Users\Sandro\Desktop\Schule 2017\NVS\ServerChart\ServerChart\obj\Debug\ServerChart.csproj.GenerateResource.Cache
+C:\Users\Sandro\Desktop\Schule 2017\NVS\ServerChart\ServerChart\obj\Debug\ServerChart.exe
+C:\Users\Sandro\Desktop\Schule 2017\NVS\ServerChart\ServerChart\obj\Debug\ServerChart.pdb
+C:\Users\Marcel Judth\Documents\Schule\4.AHIFS\NVS(PRRL)\2ndTest\2_5255839106037973587\ServerChart\ServerChart\bin\Debug\ServerChart.exe.config
+C:\Users\Marcel Judth\Documents\Schule\4.AHIFS\NVS(PRRL)\2ndTest\2_5255839106037973587\ServerChart\ServerChart\obj\Debug\ServerChart.exe
+C:\Users\Marcel Judth\Documents\Schule\4.AHIFS\NVS(PRRL)\2ndTest\2_5255839106037973587\ServerChart\ServerChart\obj\Debug\ServerChart.pdb

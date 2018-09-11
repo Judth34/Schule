@@ -1,0 +1,14 @@
+C:\Users\Marcel Judth\Documents\Schule\4.AHIFS\NVS(PRRL)\Programme\006Arduino\006Arduino\bin\Debug\006Arduino.exe.config
+C:\Users\Marcel Judth\Documents\Schule\4.AHIFS\NVS(PRRL)\Programme\006Arduino\006Arduino\bin\Debug\006Arduino.exe
+C:\Users\Marcel Judth\Documents\Schule\4.AHIFS\NVS(PRRL)\Programme\006Arduino\006Arduino\bin\Debug\006Arduino.pdb
+C:\Users\Marcel Judth\Documents\Schule\4.AHIFS\NVS(PRRL)\Programme\006Arduino\006Arduino\obj\Debug\006Arduino.csprojResolveAssemblyReference.cache
+C:\Users\Marcel Judth\Documents\Schule\4.AHIFS\NVS(PRRL)\Programme\006Arduino\006Arduino\obj\Debug\MainWindow.g.cs
+C:\Users\Marcel Judth\Documents\Schule\4.AHIFS\NVS(PRRL)\Programme\006Arduino\006Arduino\obj\Debug\App.g.cs
+C:\Users\Marcel Judth\Documents\Schule\4.AHIFS\NVS(PRRL)\Programme\006Arduino\006Arduino\obj\Debug\006Arduino_MarkupCompile.cache
+C:\Users\Marcel Judth\Documents\Schule\4.AHIFS\NVS(PRRL)\Programme\006Arduino\006Arduino\obj\Debug\006Arduino_MarkupCompile.lref
+C:\Users\Marcel Judth\Documents\Schule\4.AHIFS\NVS(PRRL)\Programme\006Arduino\006Arduino\obj\Debug\MainWindow.baml
+C:\Users\Marcel Judth\Documents\Schule\4.AHIFS\NVS(PRRL)\Programme\006Arduino\006Arduino\obj\Debug\006Arduino.g.resources
+C:\Users\Marcel Judth\Documents\Schule\4.AHIFS\NVS(PRRL)\Programme\006Arduino\006Arduino\obj\Debug\_006Arduino.Properties.Resources.resources
+C:\Users\Marcel Judth\Documents\Schule\4.AHIFS\NVS(PRRL)\Programme\006Arduino\006Arduino\obj\Debug\006Arduino.csproj.GenerateResource.Cache
+C:\Users\Marcel Judth\Documents\Schule\4.AHIFS\NVS(PRRL)\Programme\006Arduino\006Arduino\obj\Debug\006Arduino.exe
+C:\Users\Marcel Judth\Documents\Schule\4.AHIFS\NVS(PRRL)\Programme\006Arduino\006Arduino\obj\Debug\006Arduino.pdb

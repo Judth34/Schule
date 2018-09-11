@@ -1,0 +1,19 @@
+﻿<Window x:Class="ServerChart.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:ServerChart"
+        mc:Ignorable="d"
+        Title="MainWindow" Height="350" Width="525">
+    <Grid>
+        <TextBox x:Name="ServerInfo" HorizontalAlignment="Left" Margin="10,56,0,0" TextWrapping="Wrap" Text="TextBox" Width="497" Height="233" VerticalAlignment="Top"/>
+        <TextBox x:Name="portnr" HorizontalAlignment="Left" Height="21" Margin="48,14,0,0" TextWrapping="Wrap" Text="9501" VerticalAlignment="Top" Width="87" />
+        <Label x:Name="label" Content="Port:" HorizontalAlignment="Left" Height="25" Margin="10,10,0,0" VerticalAlignment="Top" Width="38"/>
+        <Button x:Name="btnStartServer" Content="Start" HorizontalAlignment="Left" Height="21" Margin="154,14,0,0" VerticalAlignment="Top" Width="70" Click="btnStartServer_Click"/>
+        <Button x:Name="button" Content="Send Data" HorizontalAlignment="Left" Height="21" Margin="229,14,0,0" VerticalAlignment="Top" Width="120" Click="button_Click"/>
+        <Button x:Name="button1" Content="Start 2 Server" HorizontalAlignment="Left" Height="21" Margin="422,14,0,0" VerticalAlignment="Top" Width="85" Click="button1_Click"/>
+        <TextBox x:Name="textBox" HorizontalAlignment="Left" Height="25" Margin="349,10,0,0" TextWrapping="Wrap" Text="9500" VerticalAlignment="Top" Width="68"/>
+
+    </Grid>
+</Window>

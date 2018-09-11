@@ -1,0 +1,14 @@
+C:\Users\Marcel Judth\Documents\Schule\4.AHIFS\NVS(PRRL)\Programme\008_tcp_async\008_tcp_async\bin\Debug\008_tcp_async.exe.config
+C:\Users\Marcel Judth\Documents\Schule\4.AHIFS\NVS(PRRL)\Programme\008_tcp_async\008_tcp_async\bin\Debug\008_tcp_async.exe
+C:\Users\Marcel Judth\Documents\Schule\4.AHIFS\NVS(PRRL)\Programme\008_tcp_async\008_tcp_async\bin\Debug\008_tcp_async.pdb
+C:\Users\Marcel Judth\Documents\Schule\4.AHIFS\NVS(PRRL)\Programme\008_tcp_async\008_tcp_async\obj\Debug\008_tcp_async.csprojResolveAssemblyReference.cache
+C:\Users\Marcel Judth\Documents\Schule\4.AHIFS\NVS(PRRL)\Programme\008_tcp_async\008_tcp_async\obj\Debug\MainWindow.g.cs
+C:\Users\Marcel Judth\Documents\Schule\4.AHIFS\NVS(PRRL)\Programme\008_tcp_async\008_tcp_async\obj\Debug\App.g.cs
+C:\Users\Marcel Judth\Documents\Schule\4.AHIFS\NVS(PRRL)\Programme\008_tcp_async\008_tcp_async\obj\Debug\008_tcp_async_MarkupCompile.cache
+C:\Users\Marcel Judth\Documents\Schule\4.AHIFS\NVS(PRRL)\Programme\008_tcp_async\008_tcp_async\obj\Debug\008_tcp_async_MarkupCompile.lref
+C:\Users\Marcel Judth\Documents\Schule\4.AHIFS\NVS(PRRL)\Programme\008_tcp_async\008_tcp_async\obj\Debug\MainWindow.baml
+C:\Users\Marcel Judth\Documents\Schule\4.AHIFS\NVS(PRRL)\Programme\008_tcp_async\008_tcp_async\obj\Debug\008_tcp_async.g.resources
+C:\Users\Marcel Judth\Documents\Schule\4.AHIFS\NVS(PRRL)\Programme\008_tcp_async\008_tcp_async\obj\Debug\_008_tcp_async.Properties.Resources.resources
+C:\Users\Marcel Judth\Documents\Schule\4.AHIFS\NVS(PRRL)\Programme\008_tcp_async\008_tcp_async\obj\Debug\008_tcp_async.csproj.GenerateResource.Cache
+C:\Users\Marcel Judth\Documents\Schule\4.AHIFS\NVS(PRRL)\Programme\008_tcp_async\008_tcp_async\obj\Debug\008_tcp_async.exe
+C:\Users\Marcel Judth\Documents\Schule\4.AHIFS\NVS(PRRL)\Programme\008_tcp_async\008_tcp_async\obj\Debug\008_tcp_async.pdb

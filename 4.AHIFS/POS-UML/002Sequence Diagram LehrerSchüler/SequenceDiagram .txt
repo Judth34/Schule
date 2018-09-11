@@ -1,0 +1,12 @@
+linke: https://www.websequencediagrams.com/
+
+title Schüler Lehrer Sequence
+
+Lehrer->Termin: erstellt/ändern/löschen
+Termin->Schüler: gilt für
+Termin->Klasse: gilt für (default)
+Schüler->Termin: akzeptiert
+Schüler->Termin: teilnehmen
+Lehrer->Beurteilung: beurlteilt
+Beurteilung->Schüler: gilt für
+Beurteilung->System: festhalten
