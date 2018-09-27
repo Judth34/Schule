@@ -5,8 +5,9 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:_001_BLOB_Browser"
         mc:Ignorable="d"
-        Title="MainWindow" Height="350" Width="525">
+        Title="MainWindow" Height="481.233" Width="670.569">
     <Grid>
-        
+        <Button x:Name="btnFileDialog" Content="Button" HorizontalAlignment="Left" Height="21" Margin="27,23,0,0" VerticalAlignment="Top" Width="79" Click="btnFileDialog_Click"/>
+
     </Grid>
 </Window>
