@@ -45,7 +45,10 @@ namespace _001_ImageFilter
                 int bw = image.PixelWidth;
                 int bh = image.PixelHeight;
                 int bytesperpixel = image.Format.BitsPerPixel / 8;
-                int stride = 
+                int stride = bw * bytesperpixel;
+                int anzahl = stride * image.PixelHeight;
+                byte[] imgBytes = new byte[stride * image.PixelHeight];
+                image.CopyPixels(imgBytes, stride, 0);
             }
         }
     }
