@@ -1,0 +1,14 @@
+Erklären sie folgende konfigurationseinstellungen
+[webprojects]			...Section header line
+#comment = 			...Comment line
+path = /var/www			...Verzeichnis auf das Zugriff gewährt wird
+guest ok = no			...Es wird ein Passwort benötigt
+available = yes			...Service ist verfügbar
+browseable = yes		...Share ersichtlich in der Liste der verfügbaren Shares in einer Net View und in der Browse List
+writeable = yes			...Schreiben erlaubt (Gegenteil von read only)
+create mask = 0775		...Wenn eine Datei erstellt wird hat user r-w-x (7), group r-w-x (7) und other r-x Rechte (5)
+force create mode = 0775	...Neu erstellte Dateien werden gezwungen r-w-x für den user, r-w-x für die group und r-x für other zu haben
+force directory mode = 0775	...Neu erstellte Ordner werden gezwungen r-w-x für den user, r-w-x für die group und r-x für other zu haben
+directory mask = 0775		...Wenn ein Ordner erstellt wird hat user r-w-x, group r-w-x und other r-x
+force user = schueler		...Nachdem eine Verbindung zum Service hergestellt wurde, werden alle Operationen als user "schueler" durchgeführt
+force group = www-data		...Alle user werden der group "www-data" zugeordnet

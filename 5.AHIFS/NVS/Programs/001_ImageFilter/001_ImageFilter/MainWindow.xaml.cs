@@ -39,16 +39,16 @@ namespace _001_ImageFilter
             if (result == true)
             {
                 string filename = openFileDialog.FileName;
-                BitmapImage image = new BitmapImage(new Uri(filename, UriKind.Absolute));
+                BitmapImage image = new BitmapImage();
+                image.BeginInit();
+                image.UriSource = new Uri(filename);
                 image.EndInit();
                 imgOriginal.Source = image;
-                int bw = image.PixelWidth;
-                int bh = image.PixelHeight;
                 int bytesperpixel = image.Format.BitsPerPixel / 8;
-                int stride = bw * bytesperpixel;
-                int anzahl = stride * image.PixelHeight;
-                byte[] imgBytes = new byte[stride * image.PixelHeight];
-                image.CopyPixels(imgBytes, stride, 0);
+                int stride = image.PixelWidth * bytesperpixel;
+                byte[] pixels = new byte[stride * image.PixelHeight];
+                image.CopyPixels(pixels, stride, 0);
+                System.Diagnostics.Debug.WriteLine("finished!");
             }
         }
     }

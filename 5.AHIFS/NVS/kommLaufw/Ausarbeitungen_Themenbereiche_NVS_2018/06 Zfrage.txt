@@ -1,0 +1,23 @@
+Erkäre den Sourcecode: (siehe Ausarbeitung Frage 23)
+
+		while (gesamtzeit<T)
+		{
+			gesamtzeit=gesamtzeit+dt;   
+			while (azeit <= gesamtzeit) 
+			{
+				n++;		
+				a=exporand(lambda);
+				azeit = azeit + a; 
+			}
+			
+			while (bzeit <= gesamtzeit && n>0) 
+			{
+				n--;		
+				b=exporand(mu);
+				bzeit = bzeit + b; 
+			}
+			if(azeit>bzeit&&n==0) bzeit=azeit;  
+			N = N + n;
+			steps++;
+		}
+		N = N / steps;

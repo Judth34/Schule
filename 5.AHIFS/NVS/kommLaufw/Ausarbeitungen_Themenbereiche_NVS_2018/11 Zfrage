@@ -1,0 +1,39 @@
+Erkläre die folgenden Scriptzeilen:
+
+a.)
+
+Set fso = CreateObject("Scripting.FileSystemObject")
+
+for  i = 0 to ubound(Klasse)
+	Set oTargetOU = GetObject("LDAP://ou="& Klasse(i),ou=EDVO,ou=Schueler,ou=Benutzer,dc=htl-vil,dc=local")
+
+	oTargetOU.Filter = Array("user")
+	
+	For each usr in oTargetOU
+
+		if instr(usr.SamAccountName, "$") = 0 then
+			BenutzerName=usr.SamAccountName
+....
+
+
+b.)
+chcp 1252
+NET SHARE apeltm$="u:\schüler\home\APELT Moritz" /GRANT:Everyone,FULL /CACHE:None
+
+
+....
+
+c.)
+; *** Home-Laufwerke für Schüler verbinden
+if ingroup("Schüler") OR ingroup("SchülerITNT")
+	at (5,8) "verbinde Netzlaufwerk H: ...                       "
+	if ($abteilung = "EDVO")
+		use h: "\\gandalf\@userid$" 
+		$home = "gandalf"
+	endif
+	if ($abteilung = "IT")
+		use h: "\\triton\@userid$" 
+		$home = "triton"
+	endif
+endif
+

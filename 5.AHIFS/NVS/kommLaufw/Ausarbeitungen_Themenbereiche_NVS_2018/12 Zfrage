@@ -1,0 +1,23 @@
+Erkläre den folgenden Code
+Wie wird er ausgeführt
+
+#!/bin/bash
+for ((i=1;i<=35;i++)) do
+(
+ username=user$i
+ echo $username
+ echo $username >dat.txt
+ echo $username >>dat.txt
+ sudo useradd -m $username
+ sudo passwd $username <dat.txt
+ sudo usermod -aG www-data $username
+) done
+
+erzeugt in der Schleife Zeichenketten in denen user1, user2 usw steht
+Schreibt die Zeichenkette zweimal in dei Datei dat,txt
+legt Benutzer mit user1 user2 usw an und erzeugt home-Verzeichniss für sie (mit -m)
+setzt das Passwort auf user1 user2 usw in dem es das kennwort und seine Bestätigung  nicht von der tastatur einleist, sondern von deer Datei dat.txt wo es vorher 2mal reingeschreiben wurde
+wenn amn (( )) verwendet kann mkan dazwischen c-Code schreiben, zumindest in der bash, deren Verantwortung für dei Ausführung oben erzwungen wird
+eigentlich ist #.. eine Kommentarzeile, der Interpreter leist sei aber und satrtet dann das Script in der bash
+$ vor der Varaible ist ein bißchen wie der Inhaltsoperator bei Pointern in C
+usermod fügt den Benutzer zur Gruppe www-data hinzu, was zB bei apache Servern wichtig ist
