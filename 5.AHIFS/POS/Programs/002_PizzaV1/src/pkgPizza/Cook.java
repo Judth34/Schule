@@ -18,15 +18,15 @@ public class Cook extends Thread implements ISubject{
     private final String name;
     private final Semaphore semBarFree;
     private final Semaphore semaPizzaOnBar;
-    private final Semaphore semaCustIsHungry;
+    private final Semaphore semaOrderExists;
     private boolean isEnd;
     private final Bar bar;
 
-    public Cook(String name, Bar bar, Semaphore semBarFree, Semaphore semaPizzaOnBar, Semaphore semaCustIsHungry) {
+    public Cook(String name, Bar bar, Semaphore semBarFree, Semaphore semaPizzaOnBar, Semaphore semaOrderExists) {
         this.name = name;
         this.semBarFree = semBarFree;
         this.semaPizzaOnBar = semaPizzaOnBar;
-        this.semaCustIsHungry = semaCustIsHungry;
+        this.semaOrderExists = semaOrderExists;
         this.bar = bar;
         this.isEnd = false;
     }
@@ -37,20 +37,23 @@ public class Cook extends Thread implements ISubject{
             this.semBarFree.acquire();
             while(!isEnd){
                 System.out.println(this.getClass().getName() + " " + this.getName() + ": is waiting for next order");
-                this.semaCustIsHungry.acquire();
-
+                this.semaOrderExists.acquire();
+                Order o = this.bar.getNextOrder();
+                Pizza p = new Pizza("Pizza");
                 
-//                System.out.println(this.getClass().getName() + " " + this.getName() + ": is waiting for next order");
-//                this.semaCustIsHungry.acquire();
-//                Pizza p = new Pizza("Pizza");
-//                System.out.println(this.getClass().getName() + " " + this.getName() + ": starts creating "  + p.toString());
-//                this.bar.addPizza(p);
-//                Thread.sleep(2000);
-//                System.out.println(this.getClass().getName() + " " + this.getName() + ": finished creating "  + p.toString());
-//                System.out.println(this.getClass().getName() + " " + this.getName() + ": starts waiting for free bar");
-//                this.semaPizzaOnBar.acquire();
-//                System.out.println(this.getClass().getName() + " " + this.getName() + ": laying on bar " + p.toString());
-//                this.semBarFree.release();
+                System.out.println(this.getClass().getName() + " " + this.getName() + ": starts creating "  + p.toString());
+                Thread.sleep(1000);
+                o.setPizza(p);
+                
+                System.out.println(this.getClass().getName() + " " + this.getName() + ": finished creating "  + p.toString());
+                
+                System.out.println(this.getClass().getName() + " " + this.getName() + ": starts waiting for free bar");
+                
+                this.semaPizzaOnBar.acquire();
+                this.bar.addFinishedOrder(o);
+
+                System.out.println(this.getClass().getName() + " " + this.getName() + ": laying on bar " + p.toString());
+                this.semBarFree.release();
                }
         } catch (Exception ex) {
             Logger.getLogger(Cook.class.getName()).log(Level.SEVERE, null, ex);
@@ -61,7 +64,7 @@ public class Cook extends Thread implements ISubject{
     public void setEnd() {
         this.isEnd = true;
         this.semaPizzaOnBar.release();
-        this.semaCustIsHungry.release();
+        this.semaOrderExists.release();
     }
     
 }

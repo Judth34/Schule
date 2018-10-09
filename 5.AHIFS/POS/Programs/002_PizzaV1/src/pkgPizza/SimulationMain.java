@@ -31,23 +31,7 @@ public class SimulationMain {
         Semaphore semBarFree = new Semaphore(1);
         Semaphore semaCustIsHungry = new Semaphore(1);
         semaCustIsHungry.acquire();
-        Bar b = new Bar();
-        
-        
-        
-//        semaPizzaOnBar.acquire();
-//        System.out.println("first acquired");
-//        semaPizzaOnBar.acquire();
-//        System.out.println("second acquired");
-//
-//        semaPizzaOnBar.release();
-//        semaPizzaOnBar.release();
-//        semaPizzaOnBar.release();
-//        semaPizzaOnBar.acquire();
-//        System.out.println("third acquired");
-
-        
-
+        Bar b = new Bar();       
         
         Customer c1 = new Customer("Ameise", b, semBarFree, semaPizzaOnBar, semaCustIsHungry);
 //        Customer c2 = new Customer("Bmeise", b, semBarFree, semaPizzaOnBar, semaCustIsHungry);
@@ -59,8 +43,8 @@ public class SimulationMain {
 ////        c2.start();
 ////        c3.start();
 //
-//        Thread.sleep(10000);
-        c1.setEnd();
+        Thread.sleep(10000);
+//        c1.setEnd();
 ////        c2.setEnd();
 ////        c3.setEnd();
 //        
@@ -69,7 +53,7 @@ public class SimulationMain {
 ////        c3.join();
 //        
         System.out.println("Waiting for end!");
-        Thread.sleep(1000);
+        Thread.sleep(10000);
         c.setEnd();
     }
     

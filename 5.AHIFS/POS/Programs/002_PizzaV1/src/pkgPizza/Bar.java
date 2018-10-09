@@ -27,8 +27,23 @@ public class Bar {
         this.currentOrders.add(o);
     }
     
-    public void addFinishedOrder(Order o) {
-        
+    public Order getNextOrder() throws Exception{
+        if(this.currentOrders.size() == 0)
+            throw new Exception("No current orders!");
+        return this.currentOrders.first();
+    }
+    
+    public void addFinishedOrder(Order order) throws Exception {
+        boolean found = false;
+        for(Order o : this.currentOrders){
+            if(o.getId() == order.getId()){
+                this.finishedOrders.add(order);
+                this.currentOrders.remove(o);
+                found = true;
+            }
+        }
+        if(!found)
+            throw new Exception("Order " + order.toString() + " is not in List!");
     }
     
     public Pizza getPizza(Order o) throws Exception{
@@ -42,5 +57,17 @@ public class Bar {
         if(p == null)
             throw new Exception("Order " + o.toString() + " is not finished!!");
         return p;
+    }
+
+    public boolean hasOrder() {
+        return this.currentOrders.size() != 0;
+    }
+
+    public boolean orderIsFinished(Order order) {
+        for(Order o : this.finishedOrders){
+            if(o.getId() == order.getId())
+                return true;
+        }
+        return false;
     }
 }

@@ -39,19 +39,20 @@ public class Customer extends Thread implements ISubject {
                 Order order = new Order(this);
                 this.bar.addOrder(order);
                 this.semaCustIsHungry.release();
-                this.semaCustIsHungry.release();
                 System.out.println(this.getClass().getName() + " " + this.name + ": starts waiting for pizza");
+                System.out.println(this.getClass().getName() + " " + this.name + ": created Order " + order.toString());
+                while(!this.bar.orderIsFinished(order)){
+
+                }
+                System.out.println("öalsdf");
                 this.semBarFree.acquire();
+
+                Pizza p = this.bar.getPizza(order);
+
+                System.out.println(this.getClass().getName() + " " + this.name + ": got pizza from order " + order.toString());
                 
-                
-                
-//                this.semBarFree.acquire();
-//                if(!this.semaPizzaOnBar.tryAcquire()){
-//                    System.out.println(this.getClass().getName() + " " + this.name + ": starts eating pizza");
-//                    Pizza p = this.bar.getPizza(order);
-//                    this.semaPizzaOnBar.release();
-//                    System.out.println(this.getClass().getName() + " " + this.name + ": finished eating pizza");
-//                }
+                this.semBarFree.release();
+                this.semaPizzaOnBar.release();
             }
         } catch (Exception ex) {
             Logger.getLogger(Customer.class.getName()).log(Level.SEVERE, null, ex);

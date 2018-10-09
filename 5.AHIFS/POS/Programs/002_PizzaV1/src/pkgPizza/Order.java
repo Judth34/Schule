@@ -7,9 +7,9 @@ package pkgPizza;
 
 /**
  *
- * @author Marcel Judth
+ * @author Marcel Judtha
  */
-public class Order {
+public class Order implements Comparable<Order>{
     private static int OrderID = 1;
     private int id;
     private Customer customer;
@@ -39,6 +39,18 @@ public class Order {
 
     public void setPizza(Pizza pizza) {
         this.pizza = pizza;
+    }
+
+    @Override
+    public String toString() {
+        if(this.pizza == null)
+            return "Order{" + "customer=" + customer + ", pizza= not in work yet]";
+        return "Order{" + "customer=" + customer + ", pizza=" + pizza + '}';
+    }
+
+    @Override
+    public int compareTo(Order o) {
+        return this.getId() - o.getId();
     }
     
 }
