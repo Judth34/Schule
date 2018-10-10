@@ -39,6 +39,7 @@ public class Cook extends Thread implements ISubject{
                 System.out.println(this.getClass().getName() + " " + this.getName() + ": is waiting for next order");
                 this.semaOrderExists.acquire();
                 Order o = this.bar.getNextOrder();
+                System.out.println(this.getClass().getName() + " " + this.getName() + ": got order " + o.toString());
                 Pizza p = new Pizza("Pizza");
                 
                 System.out.println(this.getClass().getName() + " " + this.getName() + ": starts creating "  + p.toString());

@@ -27,6 +27,7 @@ public class SimulationMain {
     }
     
     private static void simulationMain() throws InterruptedException{
+        System.out.println("*******start simulation");
         Semaphore semaPizzaOnBar = new Semaphore(2);
         Semaphore semBarFree = new Semaphore(1);
         Semaphore semaCustIsHungry = new Semaphore(1);
@@ -34,27 +35,28 @@ public class SimulationMain {
         Bar b = new Bar();       
         
         Customer c1 = new Customer("Ameise", b, semBarFree, semaPizzaOnBar, semaCustIsHungry);
-//        Customer c2 = new Customer("Bmeise", b, semBarFree, semaPizzaOnBar, semaCustIsHungry);
-////        Customer c3 = new Customer("Cmeise", b, semBarFree, semaPizzaOnBar, semaCustIsHungry);
+        Customer c2 = new Customer("Bmeise", b, semBarFree, semaPizzaOnBar, semaCustIsHungry);
+//        Customer c3 = new Customer("Cmeise", b, semBarFree, semaPizzaOnBar, semaCustIsHungry);
 //
         Cook c = new Cook("Arnold", b, semBarFree, semaPizzaOnBar, semaCustIsHungry);
         c.start();
         c1.start();
-////        c2.start();
-////        c3.start();
+        c2.start();
+//        c3.start();
 //
         Thread.sleep(10000);
 //        c1.setEnd();
-////        c2.setEnd();
-////        c3.setEnd();
+//        c2.setEnd();
+//        c3.setEnd();
 //        
         c1.join();
-////        c2.join();
-////        c3.join();
+        c2.join();
+//        c3.join();
 //        
         System.out.println("Waiting for end!");
         Thread.sleep(10000);
         c.setEnd();
+        System.out.println("*******end simulation");
     }
     
 }
