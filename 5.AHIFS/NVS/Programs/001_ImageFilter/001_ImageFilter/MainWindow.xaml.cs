@@ -43,30 +43,32 @@ namespace _001_ImageFilter
                 image.BeginInit();
                 image.UriSource = new Uri(filename);
                 image.EndInit();
-                //imgOriginal.Source = image;
                 int bytesperpixel = image.Format.BitsPerPixel / 8;
                 int stride = image.PixelWidth * bytesperpixel;
                 byte[] pixels = new byte[stride * image.PixelHeight];
                 image.CopyPixels(pixels, stride, 0);
 
-                byte[] r = new byte[image.PixelHeight];
-                byte[] g = new byte[image.PixelHeight];
-                byte[] b = new byte[image.PixelHeight];
+                
+
+                byte[] r = new byte[pixels.Length];
+                byte[] g = new byte[pixels.Length];
+                byte[] b = new byte[pixels.Length];
                 int counter = 0;
 
-                for (int i = 0; i < pixels.Length; i = i + 4)
+                for (int i = 0; i < pixels.Length; i = i + 3)
                 {
                     r[counter] = pixels[i];
-                    r[counter + 1] = pixels[i + 1];
-                    r[counter + 2] = pixels[i + 2];
+                    g[counter] = pixels[i + 1];
+                    b[counter] = pixels[i + 2];
                     counter++;
                 }
 
+                WriteableBitmap image2 = new WriteableBitmap((int)image.PixelWidth, (int)image.PixelHeight, image.DpiX, image.DpiY, image.Format, null);
+                var rect = new Int32Rect(0, 0, (int)image.PixelWidth, (int)image.PixelHeight);
+                image2.WritePixels(rect, r, stride, 0);
+                this.imgOriginal.Source = image2;
+
                 System.Diagnostics.Debug.WriteLine("finished!");
-                WriteableBitmap image2 = new WriteableBitmap((int)image.Width, (int)image.Height, 96, 96, PixelFormats.Bgr32, null);
-                var rect = new Int32Rect(0, 0, (int)imgOriginal.ActualWidth, (int)imgOriginal.ActualHeight);
-                image2.WritePixels(rect, pixels, stride, 0);
-                imgOriginal.Source = image2;
             }
         }
     }

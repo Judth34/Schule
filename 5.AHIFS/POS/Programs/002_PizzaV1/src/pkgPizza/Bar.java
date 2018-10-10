@@ -5,9 +5,7 @@
  */
 package pkgPizza;
 
-import java.util.Set;
 import java.util.TreeSet;
-
 
 /**
  *
@@ -15,30 +13,31 @@ import java.util.TreeSet;
  */
 public class Bar {
     private final int pizzaCapacity = 2;
-    private TreeSet<Order> currentOrders;
-    private TreeSet<Order> finishedOrders;
+    private static TreeSet<Order> currentOrders;
+    private static TreeSet<Order> finishedOrders;
     
     public Bar() {
-        this.currentOrders = new TreeSet<>();
-        this.finishedOrders = new TreeSet<>();
+        Bar.currentOrders = new TreeSet<>();
+        Bar.finishedOrders = new TreeSet<>();
     }
     
     public void addOrder(Order o) throws Exception{
-        this.currentOrders.add(o);
+        Bar.currentOrders.add(o);
     }
     
     public Order getNextOrder() throws Exception{
-        if(this.currentOrders.size() == 0)
+        if(Bar.currentOrders.isEmpty())
             throw new Exception("No current orders!");
-        return this.currentOrders.first();
+        return Bar.currentOrders.first();
     }
     
     public void addFinishedOrder(Order order) throws Exception {
         boolean found = false;
-        for(Order o : this.currentOrders){
+        for(int idx = 0; idx < Bar.currentOrders.size(); idx++){
+            Order o = (Order)Bar.currentOrders.toArray()[idx];
             if(o.getId() == order.getId()){
-                this.finishedOrders.add(order);
-                this.currentOrders.remove(o);
+                Bar.finishedOrders.add(order);
+                Bar.currentOrders.remove(o);
                 found = true;
             }
         }
@@ -48,10 +47,10 @@ public class Bar {
     
     public Pizza getPizza(Order o) throws Exception{
         Pizza p = null;
-        for(Order order : this.finishedOrders){
+        for(Order order : Bar.finishedOrders){
             if(order.getId() == o.getId()){
                 p = order.getPizza();
-                this.finishedOrders.remove(order);
+                Bar.finishedOrders.remove(order);
             }
         }
         if(p == null)
@@ -60,11 +59,14 @@ public class Bar {
     }
 
     public boolean hasOrder() {
-        return this.currentOrders.size() != 0;
+        return !Bar.currentOrders.isEmpty();
     }
 
-    public boolean orderIsFinished(Order order) {
-        for(Order o : this.finishedOrders){
+    public boolean orderIsFinished(Order order)  {
+//        System.out.println(Bar.finishedOrders.toString());
+        for(int idx = 0; idx < Bar.finishedOrders.size(); idx++){
+            Order o = (Order)Bar.finishedOrders.toArray()[idx];
+//            System.out.println((Order)Bar.finishedOrders.toArray()[idx]);
             if(o.getId() == order.getId())
                 return true;
         }
