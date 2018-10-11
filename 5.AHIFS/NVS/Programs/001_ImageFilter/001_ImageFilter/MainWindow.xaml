@@ -9,5 +9,6 @@
     <Grid>
         <Image x:Name="imgOriginal" HorizontalAlignment="Left" Height="282" Margin="51,124,0,0" VerticalAlignment="Top" Width="232"/>
         <Button x:Name="btnFileChooser" Content="Browse" HorizontalAlignment="Left" Height="28" Margin="37,33,0,0" VerticalAlignment="Top" Width="108" Click="btnFileChooser_Click"/>
+        <ComboBox x:Name="cmbFilters" HorizontalAlignment="Left" Height="28" Margin="214,33,0,0" VerticalAlignment="Top" Width="99" SelectionChanged="cmbFilters_SelectionChanged"/>
     </Grid>
 </Window>

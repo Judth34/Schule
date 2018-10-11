@@ -21,10 +21,13 @@ namespace _001_ImageFilter
     /// </summary>
     public partial class MainWindow : Window
     {
+        string[] colors = { "Red", "Green", "Blue" }; 
 
         public MainWindow()
         {
             InitializeComponent();
+
+            this.cmbFilters.Items.Add(colors);
         }
 
         private void btnFileChooser_Click(object sender, RoutedEventArgs e)
@@ -53,23 +56,28 @@ namespace _001_ImageFilter
                 byte[] r = new byte[pixels.Length];
                 byte[] g = new byte[pixels.Length];
                 byte[] b = new byte[pixels.Length];
-                int counter = 0;
 
-                for (int i = 0; i < pixels.Length; i = i + 3)
+                for (int i = 0; i < pixels.Length; i = i + bytesperpixel)
                 {
-                    r[counter] = pixels[i];
-                    g[counter] = pixels[i + 1];
-                    b[counter] = pixels[i + 2];
-                    counter++;
+                    r[i] = pixels[i];
+                    g[i + 1] = pixels[i + 1];
+                    b[i + 2] = pixels[i + 2];
+                    r[i + 3] = pixels[i + 3];
+                    g[i + 3] = pixels[i + 3];
+                    b[i + 3] = pixels[i + 3];
                 }
 
                 WriteableBitmap image2 = new WriteableBitmap((int)image.PixelWidth, (int)image.PixelHeight, image.DpiX, image.DpiY, image.Format, null);
                 var rect = new Int32Rect(0, 0, (int)image.PixelWidth, (int)image.PixelHeight);
-                image2.WritePixels(rect, r, stride, 0);
+                image2.WritePixels(rect, b, stride, 0);
                 this.imgOriginal.Source = image2;
-
                 System.Diagnostics.Debug.WriteLine("finished!");
             }
+        }
+
+        private void cmbFilters_SelectionChanged(object sender, SelectionChangedEventArgs e)
+        {
+            
         }
     }
 }

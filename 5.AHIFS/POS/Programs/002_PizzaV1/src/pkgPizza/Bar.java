@@ -21,8 +21,9 @@ public class Bar {
         Bar.finishedOrders = new TreeSet<>();
     }
     
-    public void addOrder(Order o) throws Exception{
+    public synchronized void addOrder(Order o) throws Exception{
         Bar.currentOrders.add(o);
+        System.out.println(Bar.currentOrders.toString());
     }
     
     public Order getNextOrder() throws Exception{
@@ -36,8 +37,10 @@ public class Bar {
         for(int idx = 0; idx < Bar.currentOrders.size(); idx++){
             Order o = (Order)Bar.currentOrders.toArray()[idx];
             if(o.getId() == order.getId()){
+                System.out.println("before removing" + Bar.currentOrders.toString());
                 Bar.finishedOrders.add(order);
                 Bar.currentOrders.remove(o);
+                System.out.println("after removing" + Bar.currentOrders.toString());
                 found = true;
             }
         }
@@ -62,7 +65,7 @@ public class Bar {
         return !Bar.currentOrders.isEmpty();
     }
 
-    public boolean orderIsFinished(Order order)  {
+    public synchronized boolean orderIsFinished(Order order)  {
 //        System.out.println(Bar.finishedOrders.toString());
         for(int idx = 0; idx < Bar.finishedOrders.size(); idx++){
             Order o = (Order)Bar.finishedOrders.toArray()[idx];
