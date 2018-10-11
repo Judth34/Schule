@@ -14,6 +14,8 @@ using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
 
+using _001_ImageFilter_Lib;
+
 namespace _001_ImageFilter
 {
     /// <summary>
@@ -23,11 +25,12 @@ namespace _001_ImageFilter
     {
         string[] colors = { "Red", "Green", "Blue" };
         BitmapImage originalImage;
+        ImageFilter imageFilter;
 
         public MainWindow()
         {
             InitializeComponent();
-
+            this.imageFilter = new ImageFilter();
             this.cmbFilters.Items.Add(colors);
         }
 
@@ -48,6 +51,8 @@ namespace _001_ImageFilter
                 originalImage.UriSource = new Uri(filename);
                 originalImage.EndInit();
                 this.imgOriginal.Source = originalImage;
+                this.imageFilter.setImage(originalImage);
+                this.imgFiltered.Source = null;
             }
         }
 
@@ -58,60 +63,37 @@ namespace _001_ImageFilter
 
         private void btnFilter_Click(object sender, RoutedEventArgs e)
         {
-            int bytesperpixel = originalImage.Format.BitsPerPixel / 8;
-            int stride = originalImage.PixelWidth * bytesperpixel;
-            byte[] pixels = new byte[stride * originalImage.PixelHeight];
-            originalImage.CopyPixels(pixels, stride, 0);
+            ImageFilter.colors colorType = ImageFilter.colors.normal;
+            ImageFilter.filterTypes filterType = ImageFilter.filterTypes.none;
 
-
-
-            byte[] r = new byte[pixels.Length];
-            byte[] g = new byte[pixels.Length];
-            byte[] b = new byte[pixels.Length];
-
-            for (int i = 0; i < pixels.Length; i = i + bytesperpixel)
-            {
-                b[i] = pixels[i];
-                g[i + 1] = pixels[i + 1];
-                r[i + 2] = pixels[i + 2];
-                r[i + 3] = pixels[i + 3];
-                g[i + 3] = pixels[i + 3];
-                b[i + 3] = pixels[i + 3];
-            }
-
-            WriteableBitmap filteredImage = new WriteableBitmap((int)originalImage.PixelWidth, (int)originalImage.PixelHeight, originalImage.DpiX, originalImage.DpiY, originalImage.Format, null);
-            var rect = new Int32Rect(0, 0, (int)originalImage.PixelWidth, (int)originalImage.PixelHeight);
             if ((bool)rBNormal.IsChecked)
             {
-                filteredImage.WritePixels(rect, pixels, stride, 0);
+                colorType = ImageFilter.colors.normal;
             }
             else
             {
                 if ((bool)rBRed.IsChecked)
                 {
-                    filteredImage.WritePixels(rect, r, stride, 0);
+                    colorType = ImageFilter.colors.red;
                 }
                 else
                 {
                     if ((bool)rBGreen.IsChecked)
                     {
-                        filteredImage.WritePixels(rect, g, stride, 0);
+                        colorType = ImageFilter.colors.green;
                     }
                     else
                     {
                         if ((bool)rBBlue.IsChecked)
                         {
-                            filteredImage.WritePixels(rect, b, stride, 0);
+                            colorType = ImageFilter.colors.blue;
                         }
                     }
                 }
             }
 
-
-
-
+            WriteableBitmap filteredImage = imageFilter.filterImage(colorType, filterType);
             this.imgFiltered.Source = filteredImage;
-            System.Diagnostics.Debug.WriteLine("finished!");
         }
     }
 }

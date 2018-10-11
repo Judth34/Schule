@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import java.lang.*?>
+<?import java.util.*?>
+<?import javafx.scene.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+
+
+<Pane xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="pkgGUI.FXMLMainController">
+   <children>
+      <AnchorPane id="AnchorPane" prefHeight="730.0" prefWidth="1128.0">
+         <children>
+            <MenuBar layoutX="-3.0" layoutY="-4.0" prefHeight="24.0" prefWidth="250.0">
+              <menus>
+                <Menu mnemonicParsing="false" text="Simulation">
+                  <items>
+                    <MenuItem mnemonicParsing="false" text="Create Images" />
+                        <MenuItem mnemonicParsing="false" text="Start" />
+                        <MenuItem mnemonicParsing="false" text="Stop" />
+                  </items>
+                </Menu>
+                <Menu mnemonicParsing="false" text="Help">
+                  <items>
+                    <MenuItem mnemonicParsing="false" text="About" />
+                  </items>
+                </Menu>
+              </menus>
+            </MenuBar>
+         </children>
+      </AnchorPane>
+   </children>
+</Pane>
