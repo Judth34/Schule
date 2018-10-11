@@ -8,7 +8,13 @@
         Title="MainWindow" Height="469.378" Width="657.887">
     <Grid>
         <Image x:Name="imgOriginal" HorizontalAlignment="Left" Height="282" Margin="51,124,0,0" VerticalAlignment="Top" Width="232"/>
-        <Button x:Name="btnFileChooser" Content="Browse" HorizontalAlignment="Left" Height="28" Margin="37,33,0,0" VerticalAlignment="Top" Width="108" Click="btnFileChooser_Click"/>
-        <ComboBox x:Name="cmbFilters" HorizontalAlignment="Left" Height="28" Margin="214,33,0,0" VerticalAlignment="Top" Width="99" SelectionChanged="cmbFilters_SelectionChanged"/>
+        <Button x:Name="btnFileChooser" Content="Browse" HorizontalAlignment="Left" Height="28" Margin="37,33,0,0" VerticalAlignment="Top" Width="78" Click="btnFileChooser_Click"/>
+        <ComboBox x:Name="cmbFilters" HorizontalAlignment="Left" Height="28" Margin="412,33,0,0" VerticalAlignment="Top" Width="99" SelectionChanged="cmbFilters_SelectionChanged"/>
+        <RadioButton x:Name="rBNormal" Content="normal" HorizontalAlignment="Left" IsChecked="True" Margin="139,40,0,0" VerticalAlignment="Top"/>
+        <RadioButton x:Name="rBRed" Content="red" HorizontalAlignment="Left" Margin="219,40,0,0" VerticalAlignment="Top" RenderTransformOrigin="1.546,1.263"/>
+        <RadioButton x:Name="rBGreen" Content="green" HorizontalAlignment="Left" Margin="270,40,0,0" VerticalAlignment="Top" RenderTransformOrigin="1.546,1.263"/>
+        <RadioButton x:Name="rBBlue" Content="blue" HorizontalAlignment="Left" Margin="335,40,0,0" VerticalAlignment="Top" RenderTransformOrigin="1.546,1.263"/>
+        <Button x:Name="btnFilter" Content="Filter" HorizontalAlignment="Left" Height="28" Margin="548,32,0,0" VerticalAlignment="Top" Width="78" Click="btnFilter_Click"/>
+        <Image x:Name="imgFiltered" HorizontalAlignment="Left" Height="282" Margin="382,124,0,0" VerticalAlignment="Top" Width="232"/>
     </Grid>
 </Window>
