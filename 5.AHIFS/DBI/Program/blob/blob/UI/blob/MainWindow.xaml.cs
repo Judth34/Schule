@@ -56,7 +56,7 @@ namespace blob
 
         private void fillListBlobs()
         {
-            this.list_blobs.Items.Clear(); 
+            this.list_blobs.Items.Clear();
             foreach (DataAccess.Blob blob in DataAccess.Blob.get())
             {
                 this.list_blobs.Items.Add(blob);
