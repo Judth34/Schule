@@ -5,9 +5,17 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:_001_BLOB_Browser"
         mc:Ignorable="d"
-        Title="MainWindow" Height="481.233" Width="670.569">
+        Title="MainWindow" Height="481.233" Width="670.569"
+        Background="Gray">
     <Grid>
-        <Button x:Name="btnFileDialog" Content="Button" HorizontalAlignment="Left" Height="21" Margin="27,23,0,0" VerticalAlignment="Top" Width="79" Click="btnFileDialog_Click"/>
+        <Button x:Name="btnFileDialog" Content="insert File" HorizontalAlignment="Left" Height="21" Margin="27,23,0,0" VerticalAlignment="Top" Width="79" Click="btnFileDialog_Click"/>
+        <Border BorderBrush="Black" BorderThickness="1"  HorizontalAlignment="Left" Height="43" Margin="5,400,0,0" VerticalAlignment="Top" Width="645" >
+            <ScrollViewer>
+                <TextBlock x:Name="txtMessage" TextAlignment="Center" TextWrapping="Wrap" Text="..." Margin="0,0,-0.429,-0.143"/>
+            </ScrollViewer>
+        </Border>
+        <ListBox x:Name="listBlobs" HorizontalAlignment="Left" Height="332" Margin="41,63,0,0" VerticalAlignment="Top" Width="243" SelectionChanged="listBlobs_SelectionChanged"/>
+        <Image x:Name="imgBlob" HorizontalAlignment="Left" Height="314" Margin="331,63,0,0" VerticalAlignment="Top" Width="290"/>
 
     </Grid>
 </Window>

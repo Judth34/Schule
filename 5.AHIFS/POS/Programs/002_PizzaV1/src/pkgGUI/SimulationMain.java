@@ -27,12 +27,12 @@ public class SimulationMain extends Application{
      * @param args the command line arguments
      */
     public static void main(String[] args) {
-        launch(args);
-//        try {
-//            simulationMain();
-//        } catch (InterruptedException ex) {
-//            Logger.getLogger(SimulationMain.class.getName()).log(Level.SEVERE, null, ex);
-//        }
+//        launch(args);
+        try {
+            simulationMain();
+        } catch (InterruptedException ex) {
+            Logger.getLogger(SimulationMain.class.getName()).log(Level.SEVERE, null, ex);
+        }
     }
     
     private static void simulationMain() throws InterruptedException {
@@ -45,26 +45,34 @@ public class SimulationMain extends Application{
         
         Customer c1 = new Customer("Ameise", b, semBarFree, semaPizzaOnBar, semaCustIsHungry);
         Customer c2 = new Customer("Bmeise", b, semBarFree, semaPizzaOnBar, semaCustIsHungry);
-//        Customer c3 = new Customer("Cmeise", b, semBarFree, semaPizzaOnBar, semaCustIsHungry);
-//
-        Cook c = new Cook("Arnold", b, semBarFree, semaPizzaOnBar, semaCustIsHungry);
-        c.start();
+        Customer c3 = new Customer("Cmeise", b, semBarFree, semaPizzaOnBar, semaCustIsHungry);
+
+        Cook cook = new Cook("Adam", b, semBarFree, semaPizzaOnBar, semaCustIsHungry);
+        Cook cook2 = new Cook("Eva", b, semBarFree, semaPizzaOnBar, semaCustIsHungry);
+//        Cook cook3 = new Cook("Moses", b, semBarFree, semaPizzaOnBar, semaCustIsHungry);
+
+        cook.start();
+        cook2.start();
         c1.start();
         c2.start();
-//        c3.start();
-//
+        c3.start();
+
         Thread.sleep(10000);
-//        c1.setEnd();
-//        c2.setEnd();
-//        c3.setEnd();
-//        
+        System.out.println("Waiting for end!");
+        c1.setEnd();
+        c2.setEnd();
+        c3.setEnd();
+        
         c1.join();
         c2.join();
-//        c3.join();
-//        
-        System.out.println("Waiting for end!");
-        Thread.sleep(10000);
-        c.setEnd();
+        c3.join();
+        
+        cook.setEnd();
+        cook2.setEnd();
+//        cook3.setEnd();
+        cook.join();
+        cook2.join();
+//        cook3.join();
         System.out.println("*******end simulation");
     }    
 

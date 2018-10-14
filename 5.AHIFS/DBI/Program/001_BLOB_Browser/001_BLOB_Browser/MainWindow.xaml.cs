@@ -1,21 +1,10 @@
-﻿using Microsoft.Win32;
-using Oracle.DataAccess.Client;
+﻿using _001_BLOB_Browser_Lib;
+using Microsoft.Win32;
 using System;
 using System.Collections.Generic;
-using System.Data.SqlClient;
 using System.IO;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows;
-using System.Windows.Controls;
-using System.Windows.Data;
-using System.Windows.Documents;
-using System.Windows.Input;
-using System.Windows.Media;
 using System.Windows.Media.Imaging;
-using System.Windows.Navigation;
-using System.Windows.Shapes;
 
 namespace _001_BLOB_Browser
 {
@@ -24,27 +13,61 @@ namespace _001_BLOB_Browser
     /// </summary>
     public partial class MainWindow : Window
     {
-        OracleConnection connection;
+        DataAccess dataAccess;
         public MainWindow()
         {
-            InitializeComponent();
+            try
+            {
+                InitializeComponent();
+                this.dataAccess = new DataAccess();
+                this.insertBlobsInList();
+            }catch(Exception ex)
+            {
+                this.txtMessage.Text = ex.ToString();
+            }
+            
+        }
+
+        private void insertBlobsInList()
+        {
+            List<DataAccess.Blob> blobs = this.dataAccess.get();
+            foreach(DataAccess.Blob b in blobs)
+            {
+                this.listBlobs.Items.Add(b);
+            }
         }
 
         private void btnFileDialog_Click(object sender, RoutedEventArgs e)
         {
-            OpenFileDialog openFileDialog = new OpenFileDialog();
-            openFileDialog.InitialDirectory = @"C:\Users\Marcel Judth\Documents\GitHub\Schule\5.AHIFS\NVS\Programs\001_ImageFilter\001_ImageFilter\bin\Debug\Data";
-            openFileDialog.Title = "Browse images";
-            openFileDialog.CheckFileExists = true;
-            openFileDialog.CheckPathExists = true;
-            openFileDialog.Filter = "Image files (*.jpg, *.bmp, *.png) | *.jpg; *.bmp; *.png";
-            var result = openFileDialog.ShowDialog();
-            if (result == true)
+            try
             {
-                string filename = openFileDialog.FileName;
-                string connectionStringOracle = "Data Source=192.168.128.152/ora11g;PERSIST SECURITY INFO=True;User Id = d4a06; Password = d4a;";
-                connection = new OracleConnection(connectionStringOracle);
-                connection.Open();
+                this.txtMessage.Text = "select file!";
+                OpenFileDialog openFileDialog = new OpenFileDialog();
+                openFileDialog.InitialDirectory = @"C:\Users\Marcel Judth\Documents\GitHub\Schule\5.AHIFS\NVS\Programs\001_ImageFilter\001_ImageFilter\bin\Debug\Data";
+                openFileDialog.Title = "Browse images";
+                openFileDialog.CheckFileExists = true;
+                openFileDialog.CheckPathExists = true;
+                openFileDialog.Filter = "Image files Pdf Files |*.pdf";
+                var result = openFileDialog.ShowDialog();
+                if (result == true)
+                {
+                    this.dataAccess.insert(openFileDialog.FileName);
+                    this.txtMessage.Text = "succesfully inserted!";
+                }
+            }catch(Exception ex)
+            {
+                this.txtMessage.Text = ex.Message;
+            }
+        }
+
+        private void listBlobs_SelectionChanged(object sender, System.Windows.Controls.SelectionChangedEventArgs e)
+        {
+            try
+            {
+                DataAccess.Blob b = (DataAccess.Blob)this.listBlobs.SelectedItem;
+            }catch(Exception ex)
+            {
+                this.txtMessage.Text = ex.ToString();
             }
         }
     }

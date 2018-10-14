@@ -31,29 +31,33 @@ public class Cook extends Thread implements ISubject{
         this.isEnd = false;
     }
     
+    
     @Override
     public void run() {
         try {
             this.semBarFree.acquire();
             while(!isEnd){
-                System.out.println(this.getClass().getName() + " " + this.getName() + ": is waiting for next order");
+                System.out.println(this.getClass().getName() + " " + this.name + ": is waiting for next order");
                 this.semaOrderExists.acquire();
-                Order o = this.bar.getNextOrder();
-                System.out.println(this.getClass().getName() + " " + this.getName() + ": got order " + o.toString());
-                Pizza p = new Pizza("Pizza");
-                System.out.println(this.getClass().getName() + " " + this.getName() + ": starts creating "  + p.toString());
-                Thread.sleep(1000);
-                o.setPizza(p);
-                System.out.println(this.getClass().getName() + " " + this.getName() + ": finished creating "  + p.toString());
-                
-                System.out.println(this.getClass().getName() + " " + this.getName() + ": starts waiting for free bar");
-                
-                this.semaPizzaOnBar.acquire();
-                this.bar.addFinishedOrder(o);
+                if(!isEnd){
+                    Order o = this.bar.getNextOrder();
+                    System.out.println(this.getClass().getName() + " " + this.name + ": got order " + o.toString());
+                    Pizza p = new Pizza("Pizza");
+                    System.out.println(this.getClass().getName() + " " + this.name + ": starts creating "  + p.toString());
+                    Thread.sleep(1000);
+                    o.setPizza(p);
+                    System.out.println(this.getClass().getName() + " " + this.name + ": finished creating "  + p.toString());
 
-                System.out.println(this.getClass().getName() + " " + this.getName() + ": laying on bar " + p.toString());
-                this.semBarFree.release();
+                    System.out.println(this.getClass().getName() + " " + this.name + ": starts waiting for free bar");
+
+                    this.semaPizzaOnBar.acquire();
+                    this.bar.addFinishedOrder(o);
+
+                    System.out.println(this.getClass().getName() + " " + this.name + ": laying on bar " + p.toString());
+                    this.semBarFree.release();
+                }
                }
+            System.out.println(this.getClass().getName() + " " + this.name + ": has finished");
         } catch (Exception ex) {
             Logger.getLogger(Cook.class.getName()).log(Level.SEVERE, null, ex);
         }

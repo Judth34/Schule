@@ -47,13 +47,13 @@ public class Customer extends Thread implements ISubject {
                     if(!orderIsFinished)
                         this.semBarFree.release();
                 }
-                Pizza p = this.bar.getPizza(order);
-
+                Pizza p = order.getPizza();
                 System.out.println(this.getClass().getName() + " " + this.name + ": got pizza from order " + order.toString());
                 this.semBarFree.release();
                 this.semaPizzaOnBar.release();
                 Thread.sleep((long)(Math.random() * 1000));
             }
+            System.out.println(this.getClass().getName() + " " + this.name + " has finished ");
         } catch (Exception ex) {
             Logger.getLogger(Customer.class.getName()).log(Level.SEVERE, null, ex);
         }
@@ -63,4 +63,9 @@ public class Customer extends Thread implements ISubject {
     public void setEnd(){
         this.isEnd = true;
     }        
+
+    @Override
+    public String toString() {
+        return "Customer{" + "name=" + name + '}';
+    }
 }
