@@ -70,5 +70,21 @@ namespace _001_BLOB_Browser
                 this.txtMessage.Text = ex.ToString();
             }
         }
+
+        private void btnSaveBlob_Click(object sender, RoutedEventArgs e)
+        {
+            try
+            {
+                DataAccess.Blob selectedBlob = (DataAccess.Blob)this.listBlobs.SelectedItem;
+                if (selectedBlob == null)
+                    throw new Exception("No File selected in List!");
+                this.txtMessage.Text = "saving File into " + selectedBlob.filename;
+                this.dataAccess.save(selectedBlob);
+                this.txtMessage.Text = "saved sucessfully";
+            }catch(Exception ex)
+            {
+                this.txtMessage.Text = ex.Message;
+            }
+        }
     }
 }

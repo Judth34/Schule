@@ -1,0 +1,16 @@
+select REL.DIM_MATERIAL.DMA_MATERIALNAME, sum(REL.fkt_sales.AMOUNT), REL.DIM_DATE.YEAR  from REL.fkt_sales
+inner join REL.DIM_DATE on REL.fkt_sales.Date_ID = REL.DIM_DATE.DATE_ID
+inner join REL.DIM_MATERIAL on REL.fkt_sales.DMA_ID = REL.DIM_MATERIAL.DMA_ID
+where REL.DIM_DATE.YEAR = 2000
+group by REL.DIM_MATERIAL.DMA_MATERIALNAME, REL.DIM_DATE.YEAR;
+
+
+
+
+
+
+select sum(REL.fkt_sales.AMOUNT), quarter, REL.DIM_COLOUR.DCL_COLOURNAME, REL.DIM_DATE.YEAR  from REL.fkt_sales
+inner join REL.DIM_DATE on REL.fkt_sales.Date_ID = REL.DIM_DATE.DATE_ID
+inner join REL.DIM_COLOUR on REL.fkt_sales.DCL_ID = REL.DIM_COLOUR.DCL_ID
+group by REL.DIM_COLOUR.DCL_COLOURNAME, REL.DIM_DATE.Quarter, REL.DIM_DATE.YEAR
+order by REL.DIM_DATE.YEAR, REL.DIM_DATE.Quarter;

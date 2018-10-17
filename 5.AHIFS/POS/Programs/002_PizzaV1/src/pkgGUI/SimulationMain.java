@@ -41,7 +41,7 @@ public class SimulationMain extends Application{
         Semaphore semBarFree = new Semaphore(1);
         Semaphore semaCustIsHungry = new Semaphore(1);
         semaCustIsHungry.acquire();
-        Bar b = new Bar();       
+        Bar b = new Bar();
         
         Customer c1 = new Customer("Ameise", b, semBarFree, semaPizzaOnBar, semaCustIsHungry);
         Customer c2 = new Customer("Bmeise", b, semBarFree, semaPizzaOnBar, semaCustIsHungry);
@@ -74,6 +74,7 @@ public class SimulationMain extends Application{
         cook2.join();
 //        cook3.join();
         System.out.println("*******end simulation");
+        System.exit(0);
     }    
 
     @Override

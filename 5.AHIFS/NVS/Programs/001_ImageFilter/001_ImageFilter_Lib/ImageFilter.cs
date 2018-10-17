@@ -19,7 +19,7 @@ namespace _001_ImageFilter_Lib
             this.originalImage = newImage;
         }
 
-        public WriteableBitmap filterImage(colors colorType, filterTypes filterType)
+        public WriteableBitmap filterImage(colors colorType, filterTypes filterType, int m, int n)
         {
             int bytesperpixel = originalImage.Format.BitsPerPixel / 8;
             int stride = originalImage.PixelWidth * bytesperpixel;
@@ -42,6 +42,10 @@ namespace _001_ImageFilter_Lib
                 b[i + 3] = pixels[i + 3];
             }
 
+            for
+
+
+
             WriteableBitmap filteredImage = new WriteableBitmap((int)originalImage.PixelWidth, (int)originalImage.PixelHeight, originalImage.DpiX, originalImage.DpiY, originalImage.Format, null);
             var rect = new Int32Rect(0, 0, (int)originalImage.PixelWidth, (int)originalImage.PixelHeight);
 
@@ -62,6 +66,11 @@ namespace _001_ImageFilter_Lib
             }
 
             return filteredImage;
+        }
+
+        public BitmapImage getImage()
+        {
+            return this.originalImage.Clone();
         }
     }
 }

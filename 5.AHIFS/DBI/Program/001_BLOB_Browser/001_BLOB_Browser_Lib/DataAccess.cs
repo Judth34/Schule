@@ -54,6 +54,13 @@ namespace _001_BLOB_Browser_Lib
             }
             return result;
         }
+
+        public void save(Blob blob)
+        {
+            if (blob == null)
+                throw new Exception("Blob is null!!");
+            this.convert(blob.filename, blob.bytes);
+        }
         #endregion
 
 
@@ -72,6 +79,17 @@ namespace _001_BLOB_Browser_Lib
             fs.Close();
             reader.Close();
             return bytes;
+        }
+
+        public void convert(string filepath, byte[] data)
+        {
+            if (File.Exists(filepath))
+                File.Delete(filepath);
+            FileStream fs = new FileStream(filepath, FileMode.Create, FileAccess.Write);
+            BinaryWriter writer = new BinaryWriter(fs);
+            writer.Write(data);
+            fs.Close();
+            writer.Close();
         }
         #endregion
 

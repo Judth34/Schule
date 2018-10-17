@@ -23,7 +23,7 @@ namespace _001_ImageFilter
     /// </summary>
     public partial class MainWindow : Window
     {
-        string[] colors = { "Red", "Green", "Blue" };
+        string[] filterTypes = { "Normal", "Median"};
         BitmapImage originalImage;
         ImageFilter imageFilter;
 
@@ -31,7 +31,9 @@ namespace _001_ImageFilter
         {
             InitializeComponent();
             this.imageFilter = new ImageFilter();
-            this.cmbFilters.Items.Add(colors);
+            foreach (string filterName in this.filterTypes)
+                this.cmbFilters.Items.Add(filterName);
+            this.cmbFilters.SelectedIndex = 0;
         }
 
         private void btnFileChooser_Click(object sender, RoutedEventArgs e)
@@ -63,37 +65,49 @@ namespace _001_ImageFilter
 
         private void btnFilter_Click(object sender, RoutedEventArgs e)
         {
-            ImageFilter.colors colorType = ImageFilter.colors.normal;
-            ImageFilter.filterTypes filterType = ImageFilter.filterTypes.none;
+            try
+            {
+                if (this.imageFilter.getImage() == null)
+                    throw new Exception("please select a image!");
+                ImageFilter.colors colorType = ImageFilter.colors.normal;
+                ImageFilter.filterTypes filterType = ImageFilter.filterTypes.none;
 
-            if ((bool)rBNormal.IsChecked)
-            {
-                colorType = ImageFilter.colors.normal;
-            }
-            else
-            {
-                if ((bool)rBRed.IsChecked)
+                if (this.cmbFilters.SelectedIndex == 1)
+                    filterType = ImageFilter.filterTypes.Median;
+
+
+                if ((bool)rBNormal.IsChecked)
                 {
-                    colorType = ImageFilter.colors.red;
+                    colorType = ImageFilter.colors.normal;
                 }
                 else
                 {
-                    if ((bool)rBGreen.IsChecked)
+                    if ((bool)rBRed.IsChecked)
                     {
-                        colorType = ImageFilter.colors.green;
+                        colorType = ImageFilter.colors.red;
                     }
                     else
                     {
-                        if ((bool)rBBlue.IsChecked)
+                        if ((bool)rBGreen.IsChecked)
                         {
-                            colorType = ImageFilter.colors.blue;
+                            colorType = ImageFilter.colors.green;
+                        }
+                        else
+                        {
+                            if ((bool)rBBlue.IsChecked)
+                            {
+                                colorType = ImageFilter.colors.blue;
+                            }
                         }
                     }
                 }
-            }
 
-            WriteableBitmap filteredImage = imageFilter.filterImage(colorType, filterType);
-            this.imgFiltered.Source = filteredImage;
+                WriteableBitmap filteredImage = imageFilter.filterImage(colorType, filterType);
+                this.imgFiltered.Source = filteredImage;
+            }catch(Exception ex)
+            {
+                this.txtMessage.Text = ex.Message;
+            }
         }
     }
 }
