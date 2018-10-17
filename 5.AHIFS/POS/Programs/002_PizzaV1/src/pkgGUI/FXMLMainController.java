@@ -5,9 +5,14 @@
  */
 package pkgGUI;
 
+import java.awt.Label;
+import java.awt.MenuItem;
+import java.awt.event.ActionEvent;
 import java.net.URL;
 import java.util.ResourceBundle;
+import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
+import javafx.scene.image.ImageView;
 
 /**
  * FXML Controller class
@@ -16,12 +21,34 @@ import javafx.fxml.Initializable;
  */
 public class FXMLMainController implements Initializable {
 
-    /**
-     * Initializes the controller class.
-     */
+    @FXML
+    private Label txtMessage;
+
+    @FXML
+    private MenuItem menueItemCreateImages;
+
+    @FXML
+    private MenuItem menuItemStop;
+
+    @FXML
+    private MenuItem menuItemStart;
+    
+    @FXML
+    private ImageView imgCook1;
+
+    @FXML
+    private ImageView imgCook2;
+    
+    @FXML
+    private ImageView imgCook3;
+
     @Override
     public void initialize(URL url, ResourceBundle rb) {
-        // TODO
-    }    
+        
+    }        
     
+    @FXML
+    void actionPerform(ActionEvent event) {
+            
+    }
 }

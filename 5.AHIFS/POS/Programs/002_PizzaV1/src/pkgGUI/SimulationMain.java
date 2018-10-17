@@ -27,7 +27,7 @@ public class SimulationMain extends Application{
      * @param args the command line arguments
      */
     public static void main(String[] args) {
-//        launch(args);
+        launch(args);
         try {
             simulationMain();
         } catch (InterruptedException ex) {
@@ -81,8 +81,8 @@ public class SimulationMain extends Application{
     public void start(Stage primaryStage) throws Exception {
         Parent root = FXMLLoader.load(getClass().getResource("FXMLMain.fxml"));
     
-        Scene scene = new Scene(root, 300, 275);
-    
+        Scene scene = new Scene(root);
+        
         primaryStage.setTitle("FXML Welcome");
         primaryStage.setScene(scene);
         primaryStage.show();
