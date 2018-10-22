@@ -5,11 +5,13 @@
  */
 package pkgPizza;
 
+import javafx.concurrent.Task;
+
 /**
  *
  * @author Marcel Judth
  */
-public interface ISubject {
+public interface ISubject{
     public void setEnd();
     public void start();
 }

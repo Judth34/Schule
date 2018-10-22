@@ -29,8 +29,9 @@ public class SimulationMain extends Application{
     public static void main(String[] args) {
         launch(args);
         try {
+            System.out.println("asödfk");
             simulationMain();
-        } catch (InterruptedException ex) {
+        } catch (Exception ex) {
             Logger.getLogger(SimulationMain.class.getName()).log(Level.SEVERE, null, ex);
         }
     }
@@ -51,11 +52,11 @@ public class SimulationMain extends Application{
         Cook cook2 = new Cook("Eva", b, semBarFree, semaPizzaOnBar, semaCustIsHungry);
 //        Cook cook3 = new Cook("Moses", b, semBarFree, semaPizzaOnBar, semaCustIsHungry);
 
-        cook.start();
-        cook2.start();
-        c1.start();
-        c2.start();
-        c3.start();
+        new Thread(cook).start();
+        new Thread(cook2).start();
+        new Thread(c1).start();
+        new Thread(c2).start();
+        new Thread(c3).start();
 
         Thread.sleep(10000);
         System.out.println("Waiting for end!");
@@ -63,15 +64,13 @@ public class SimulationMain extends Application{
         c2.setEnd();
         c3.setEnd();
         
-        c1.join();
-        c2.join();
-        c3.join();
+//        c1.join();
+//        c2.join();
+//        c3.join();
         
         cook.setEnd();
         cook2.setEnd();
 //        cook3.setEnd();
-        cook.join();
-        cook2.join();
 //        cook3.join();
         System.out.println("*******end simulation");
         System.exit(0);
@@ -79,11 +78,8 @@ public class SimulationMain extends Application{
 
     @Override
     public void start(Stage primaryStage) throws Exception {
-        Parent root = FXMLLoader.load(getClass().getResource("FXMLMain.fxml"));
-    
+        Parent root = FXMLLoader.load(getClass().getResource("FXMLSimulation.fxml"));
         Scene scene = new Scene(root);
-        
-        primaryStage.setTitle("FXML Welcome");
         primaryStage.setScene(scene);
         primaryStage.show();
     }

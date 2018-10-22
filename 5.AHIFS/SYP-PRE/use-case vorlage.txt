@@ -1,0 +1,14 @@
+1)	Use-Case:
+2)	Ziel:
+3)	Vorbedienung:
+4)	Nachbedienung bei Erfolg:
+5)	Nachbedienung bei Fehlschlag:
+6)	Akteure:
+7)	Auslösendes Ereignis:
+8)	Beschreibung: 
+-aufzählung der schritte(optionen, auswahlgmoglichkeiten, etc...)
+-
+-
+-
+9)	Erweiterungen:
+10)	Alternativen: 

@@ -5,13 +5,16 @@ using System.Text;
 using System.Threading.Tasks;
 using Oracle.DataAccess.Client;
 using System.IO;
+using System.Security.Cryptography;
 
 namespace _001_BLOB_Browser_Lib
 {
     public class DataAccess
     {
         private OracleConnection connection;
-        private string connectionStringOracle = "Data Source=212.152.179.117/ora11g;PERSIST SECURITY INFO=True;User Id = d5a06; Password = d5a;";
+        private string connectionStringOracle = "Data Source=192.168.128.152/ora11g;PERSIST SECURITY INFO=True;User Id = d5a06; Password = d5a;";
+        private byte[] key = Encoding.ASCII.GetBytes("abcdef");
+        private byte[] IV = Encoding.ASCII.GetBytes("fedcba");
 
 
         public DataAccess()
@@ -60,6 +63,7 @@ namespace _001_BLOB_Browser_Lib
             if (blob == null)
                 throw new Exception("Blob is null!!");
             this.convert(blob.filename, blob.bytes);
+            System.Diagnostics.Process.Start(blob.filename);
         }
         #endregion
 
@@ -78,7 +82,7 @@ namespace _001_BLOB_Browser_Lib
             byte[] bytes = reader.ReadBytes((int)fs.Length);  //Bytes from the binary reader stored in BlobValue array
             fs.Close();
             reader.Close();
-            return bytes;
+            return this.encrypt(bytes);
         }
 
         public void convert(string filepath, byte[] data)
@@ -87,9 +91,40 @@ namespace _001_BLOB_Browser_Lib
                 File.Delete(filepath);
             FileStream fs = new FileStream(filepath, FileMode.Create, FileAccess.Write);
             BinaryWriter writer = new BinaryWriter(fs);
+            byte[] decrypted = this.decrypt(data);
             writer.Write(data);
             fs.Close();
             writer.Close();
+        }
+
+        private byte[] encrypt(byte[] data)
+        {
+            byte[] encrypted;
+            using (MemoryStream mstream = new MemoryStream())
+            {
+                using (AesCryptoServiceProvider aesProvider = new AesCryptoServiceProvider())
+                {
+                    using (CryptoStream cryptoStream = new CryptoStream(mstream, aesProvider.CreateEncryptor(), CryptoStreamMode.Write))
+                    {
+                        cryptoStream.Write(data, 0, data.Length);
+                    }
+                }
+                encrypted = mstream.ToArray();
+            }
+            return encrypted;
+        }
+
+        private byte[] decrypt(byte[] bytes)
+        {
+            var length = bytes.Length;
+
+            using (MemoryStream mStream = new MemoryStream(bytes))
+            using (AesCryptoServiceProvider aesProvider = new AesCryptoServiceProvider() { Padding = PaddingMode.None })
+            using (CryptoStream cryptoStream = new CryptoStream(mStream, aesProvider.CreateDecryptor(key, IV), CryptoStreamMode.Read))
+            {
+                cryptoStream.Read(bytes, 0, length);
+                return mStream.ToArray().Take(length).ToArray();
+            }
         }
         #endregion
 
@@ -111,7 +146,9 @@ namespace _001_BLOB_Browser_Lib
             {
                 return id + ", filename: " + this.filename;
             }
-        }
+        } 
+        
+
         #endregion
 
     }

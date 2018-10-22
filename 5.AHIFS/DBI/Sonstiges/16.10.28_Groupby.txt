@@ -14,3 +14,30 @@ inner join REL.DIM_DATE on REL.fkt_sales.Date_ID = REL.DIM_DATE.DATE_ID
 inner join REL.DIM_COLOUR on REL.fkt_sales.DCL_ID = REL.DIM_COLOUR.DCL_ID
 group by REL.DIM_COLOUR.DCL_COLOURNAME, REL.DIM_DATE.Quarter, REL.DIM_DATE.YEAR
 order by REL.DIM_DATE.YEAR, REL.DIM_DATE.Quarter;
+
+
+
+create or replace view salesPerQuater as 
+select REL.DIM_COLOUR.DCL_ID, sum(REL.fkt_sales.AMOUNT)"first", quarter "second", REL.DIM_COLOUR.DCL_COLOURNAME "third", REL.DIM_DATE.YEAR "fourth"  from REL.fkt_sales
+inner join REL.DIM_DATE on REL.fkt_sales.Date_ID = REL.DIM_DATE.DATE_ID
+inner join REL.DIM_COLOUR on REL.fkt_sales.DCL_ID = REL.DIM_COLOUR.DCL_ID
+group by REL.DIM_COLOUR.DCL_ID, REL.DIM_COLOUR.DCL_COLOURNAME, REL.DIM_DATE.Quarter, REL.DIM_DATE.YEAR
+order by REL.DIM_DATE.YEAR, REL.DIM_DATE.Quarter;
+
+
+
+select * from salesPerQuater;
+
+select * from salesPerQuater
+inner join SALESPERCOLOUR on SALESPERCOLOUR.DCL_ID = SALESPERCOLOUR.DCL_ID;
+
+select * from salesPerColour;
+
+select * from REL.FKT_SALES;
+select * from REL.DIM_COLOUR;
+
+create or replace view salesPerColour as
+select REL.DIM_COLOUR.DCL_ID, REL.DIM_COLOUR.DCL_COLOURNAME "colourname", sum(REL.fkt_sales.AMOUNT)"amount"  from REL.fkt_sales
+inner join REL.DIM_DATE on REL.fkt_sales.Date_ID = REL.DIM_DATE.DATE_ID
+inner join REL.DIM_COLOUR on REL.fkt_sales.DMA_ID = REL.DIM_COLOUR.DCL_ID
+group by REL.DIM_COLOUR.DCL_ID, REL.DIM_COLOUR.DCL_COLOURNAME;

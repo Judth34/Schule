@@ -23,16 +23,16 @@ namespace _001_ImageFilter
     /// </summary>
     public partial class MainWindow : Window
     {
-        string[] filterTypes = { "Normal", "Median"};
         BitmapImage originalImage;
-        ImageFilter imageFilter;
 
         public MainWindow()
         {
             InitializeComponent();
-            this.imageFilter = new ImageFilter();
-            foreach (string filterName in this.filterTypes)
-                this.cmbFilters.Items.Add(filterName);
+
+            foreach (var item in Enum.GetValues(typeof(ImageFilter.filterTypes)))
+            {
+                this.cmbFilters.Items.Add(item);
+            }
             this.cmbFilters.SelectedIndex = 0;
         }
 
@@ -53,27 +53,20 @@ namespace _001_ImageFilter
                 originalImage.UriSource = new Uri(filename);
                 originalImage.EndInit();
                 this.imgOriginal.Source = originalImage;
-                this.imageFilter.setImage(originalImage);
+                ImageFilter.setImage(originalImage);
                 this.imgFiltered.Source = null;
             }
-        }
-
-        private void cmbFilters_SelectionChanged(object sender, SelectionChangedEventArgs e)
-        {
-            
         }
 
         private void btnFilter_Click(object sender, RoutedEventArgs e)
         {
             try
             {
-                if (this.imageFilter.getImage() == null)
+                if (ImageFilter.getImage() == null)
                     throw new Exception("please select a image!");
                 ImageFilter.colors colorType = ImageFilter.colors.normal;
                 ImageFilter.filterTypes filterType = ImageFilter.filterTypes.none;
-
-                if (this.cmbFilters.SelectedIndex == 1)
-                    filterType = ImageFilter.filterTypes.Median;
+                filterType = (ImageFilter.filterTypes)this.cmbFilters.SelectedItem;
 
 
                 if ((bool)rBNormal.IsChecked)
@@ -101,13 +94,15 @@ namespace _001_ImageFilter
                         }
                     }
                 }
-
-                WriteableBitmap filteredImage = imageFilter.filterImage(colorType, filterType);
+                   
+                WriteableBitmap filteredImage = ImageFilter.filterImage(colorType, filterType);
                 this.imgFiltered.Source = filteredImage;
+                this.txtMessage.Text = "finished filtering!";
             }catch(Exception ex)
             {
                 this.txtMessage.Text = ex.Message;
             }
         }
+        
     }
 }
