@@ -31,7 +31,7 @@ namespace graphicalUI
         {
             OpenFileDialog openFileDialog1 = new OpenFileDialog();
             openFileDialog1.Title = "Select a File";
-            2
+            
             // Show the Dialog.  
             // If the user clicked OK in the dialog and  
             // a .CUR file was selected, open it.  

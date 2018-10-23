@@ -9,7 +9,7 @@
 <?import javafx.scene.control.*?>
 <?import javafx.scene.layout.*?>
 
-<AnchorPane id="AnchorPane" prefHeight="824.0" prefWidth="1438.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="pkgGUI.FXMLSimulationController">
+<AnchorPane id="AnchorPane" fx:id="anchorPane" prefHeight="824.0" prefWidth="1438.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="pkgGUI.FXMLSimulationController">
    <children>
       <Pane layoutX="71.0" layoutY="748.0" prefHeight="71.0" prefWidth="1317.0" style="-fx-background-color: lightgray;">
          <children>
@@ -21,8 +21,8 @@
             <Menu mnemonicParsing="false" text="Simulation">
                <items>
                   <MenuItem id="menuItemCreateImages" fx:id="menueItemCreateImages" mnemonicParsing="false" onAction="#actionPerform" text="Create Images" />
-                  <MenuItem id="menuItemStart" fx:id="menuItemStart" mnemonicParsing="false" text="Start" />
-                  <MenuItem id="menuItemStop" fx:id="menuItemStop" mnemonicParsing="false" text="Stop" />
+                  <MenuItem id="menuItemStart" fx:id="menuItemStart" mnemonicParsing="false" onAction="#actionPerform" text="Start" />
+                  <MenuItem id="menuItemStop" fx:id="menuItemStop" mnemonicParsing="false" onAction="#actionPerform" text="Stop" />
                </items>
             </Menu>
             <Menu mnemonicParsing="false" text="Help">
@@ -65,32 +65,6 @@
                             <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
                             <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
                           </rowConstraints>
-                           <children>
-                              <ImageView id="imgCook3" fx:id="imgCook3" fitHeight="126.0" fitWidth="124.0" pickOnBounds="true" preserveRatio="true">
-                                 <image>
-                                    <Image url="@../res/cook.jpg" />
-                                 </image>
-                                 <GridPane.margin>
-                                    <Insets bottom="20.0" left="20.0" right="20.0" top="20.0" />
-                                 </GridPane.margin>
-                              </ImageView>
-                              <ImageView id="imgCook1" fx:id="imgCook1" fitHeight="126.0" fitWidth="124.0" pickOnBounds="true" preserveRatio="true" GridPane.rowIndex="1">
-                                 <image>
-                                    <Image url="@../res/cook.jpg" />
-                                 </image>
-                                 <GridPane.margin>
-                                    <Insets bottom="20.0" left="20.0" right="20.0" top="20.0" />
-                                 </GridPane.margin>
-                              </ImageView>
-                              <ImageView id="imgCook2" fx:id="imgCook2" fitHeight="126.0" fitWidth="124.0" pickOnBounds="true" preserveRatio="true" GridPane.rowIndex="2">
-                                 <image>
-                                    <Image url="@../res/cook.jpg" />
-                                 </image>
-                                 <GridPane.margin>
-                                    <Insets bottom="20.0" left="20.0" right="20.0" top="20.0" />
-                                 </GridPane.margin>
-                              </ImageView>
-                           </children>
                         </GridPane>
                      </children>
                   </Pane>
@@ -155,42 +129,6 @@
                   <Label alignment="CENTER" prefHeight="71.0" prefWidth="140.0" text="waiting for Pizza" textAlignment="CENTER" wrapText="true" GridPane.columnIndex="2" GridPane.rowIndex="1" />
                   <Label alignment="CENTER" prefHeight="75.0" prefWidth="144.0" text="taking Pizza" textAlignment="CENTER" wrapText="true" GridPane.columnIndex="3" GridPane.rowIndex="1" />
                   <Label alignment="CENTER" prefHeight="75.0" prefWidth="144.0" text="eating" textAlignment="CENTER" wrapText="true" GridPane.columnIndex="4" GridPane.rowIndex="1" />
-                  <GridPane alignment="CENTER" prefHeight="436.0" prefWidth="123.0">
-                     <children>
-                        <ImageView id="imgCustomer1" fx:id="imgCook31" fitHeight="126.0" fitWidth="124.0" pickOnBounds="true" preserveRatio="true">
-                           <image>
-                              <Image url="@../res/customer.jpg" />
-                           </image>
-                           <GridPane.margin>
-                              <Insets bottom="20.0" left="20.0" right="20.0" top="20.0" />
-                           </GridPane.margin>
-                        </ImageView>
-                        <ImageView id="imgCustomer2" fx:id="imgCook11" fitHeight="126.0" fitWidth="124.0" pickOnBounds="true" preserveRatio="true" GridPane.rowIndex="1">
-                           <image>
-                              <Image url="@../res/customer.jpg" />
-                           </image>
-                           <GridPane.margin>
-                              <Insets bottom="20.0" left="20.0" right="20.0" top="20.0" />
-                           </GridPane.margin>
-                        </ImageView>
-                        <ImageView id="imgCustomer3" fx:id="imgCook21" fitHeight="126.0" fitWidth="124.0" pickOnBounds="true" preserveRatio="true" GridPane.rowIndex="2">
-                           <image>
-                              <Image url="@../res/customer.jpg" />
-                           </image>
-                           <GridPane.margin>
-                              <Insets bottom="20.0" left="20.0" right="20.0" top="20.0" />
-                           </GridPane.margin>
-                        </ImageView>
-                     </children>
-                     <columnConstraints>
-                        <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
-                     </columnConstraints>
-                     <rowConstraints>
-                        <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
-                        <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
-                        <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
-                     </rowConstraints>
-                  </GridPane>
                </children>
                <columnConstraints>
                   <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />

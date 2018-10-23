@@ -5,6 +5,7 @@
  */
 package pkgPizza;
 
+import java.util.Random;
 import java.util.concurrent.Semaphore;
 import javafx.beans.property.DoubleProperty;
 import javafx.beans.property.SimpleDoubleProperty;
@@ -25,6 +26,8 @@ public class Person extends Task<String> implements ISubject{
     protected final Bar bar;
     protected StringProperty stringProperty = new SimpleStringProperty();
     protected DoubleProperty doubleProperty = new SimpleDoubleProperty();
+    protected static final Random RND = new Random();
+
 
 
     public Person(String name, Bar bar, Semaphore semBarFree, Semaphore semaPizzaOnBar, Semaphore semaOrderExists) {

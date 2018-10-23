@@ -23,11 +23,9 @@ public class Bar {
     
     public synchronized void addOrder(Order o) throws Exception{
         Bar.currentOrders.add(o);
-        System.out.println("after adding " + currentOrders.size());
     }
     
-    public Order getNextOrder() throws Exception{
-        System.out.println("before next" + currentOrders.size());
+    public synchronized Order getNextOrder() throws Exception{
         if(Bar.currentOrders.isEmpty())
             throw new Exception("No current orders!");
         Order o = Bar.currentOrders.first();

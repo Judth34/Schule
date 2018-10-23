@@ -6,8 +6,6 @@
 package pkgGUI;
 
 import java.util.concurrent.Semaphore;
-import java.util.logging.Level;
-import java.util.logging.Logger;
 import javafx.application.Application;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Parent;
@@ -28,12 +26,6 @@ public class SimulationMain extends Application{
      */
     public static void main(String[] args) {
         launch(args);
-        try {
-            System.out.println("asödfk");
-            simulationMain();
-        } catch (Exception ex) {
-            Logger.getLogger(SimulationMain.class.getName()).log(Level.SEVERE, null, ex);
-        }
     }
     
     private static void simulationMain() throws InterruptedException {
@@ -42,6 +34,7 @@ public class SimulationMain extends Application{
         Semaphore semBarFree = new Semaphore(1);
         Semaphore semaCustIsHungry = new Semaphore(1);
         semaCustIsHungry.acquire();
+        semBarFree.acquire();
         Bar b = new Bar();
         
         Customer c1 = new Customer("Ameise", b, semBarFree, semaPizzaOnBar, semaCustIsHungry);
@@ -50,7 +43,7 @@ public class SimulationMain extends Application{
 
         Cook cook = new Cook("Adam", b, semBarFree, semaPizzaOnBar, semaCustIsHungry);
         Cook cook2 = new Cook("Eva", b, semBarFree, semaPizzaOnBar, semaCustIsHungry);
-//        Cook cook3 = new Cook("Moses", b, semBarFree, semaPizzaOnBar, semaCustIsHungry);
+        Cook cook3 = new Cook("Moses", b, semBarFree, semaPizzaOnBar, semaCustIsHungry);
 
         new Thread(cook).start();
         new Thread(cook2).start();
@@ -64,14 +57,9 @@ public class SimulationMain extends Application{
         c2.setEnd();
         c3.setEnd();
         
-//        c1.join();
-//        c2.join();
-//        c3.join();
-        
         cook.setEnd();
         cook2.setEnd();
-//        cook3.setEnd();
-//        cook3.join();
+        cook3.setEnd();
         System.out.println("*******end simulation");
         System.exit(0);
     }    
