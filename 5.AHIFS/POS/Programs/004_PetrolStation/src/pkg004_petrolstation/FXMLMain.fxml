@@ -1,0 +1,71 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.*?>
+<?import java.lang.*?>
+<?import java.util.*?>
+<?import javafx.scene.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+
+<AnchorPane id="AnchorPane" prefHeight="815.0" prefWidth="1210.0" stylesheets="@../res/bootstrap.css" xmlns:fx="http://javafx.com/fxml/1" xmlns="http://javafx.com/javafx/8" fx:controller="pkg004_petrolstation.FXMLMainController">
+   <children>
+      <GridPane layoutX="11.0" layoutY="23.0" prefHeight="781.0" prefWidth="1188.0">
+        <columnConstraints>
+          <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+        </columnConstraints>
+        <rowConstraints>
+          <RowConstraints maxHeight="255.0" minHeight="0.0" prefHeight="0.0" vgrow="SOMETIMES" />
+          <RowConstraints maxHeight="652.0" minHeight="10.0" prefHeight="652.0" vgrow="SOMETIMES" />
+          <RowConstraints maxHeight="139.0" minHeight="10.0" prefHeight="14.0" vgrow="SOMETIMES" />
+        </rowConstraints>
+         <children>
+            <ListView prefHeight="348.0" prefWidth="1188.0" GridPane.rowIndex="1" />
+            <Pane prefHeight="200.0" prefWidth="200.0" style="-fx-background-color: lightgray;" GridPane.rowIndex="2">
+               <children>
+                  <Label fx:id="lblMessage" layoutX="570.0" layoutY="20.0" text="..." wrapText="true" />
+               </children>
+            </Pane>
+            <GridPane>
+              <columnConstraints>
+                <ColumnConstraints hgrow="SOMETIMES" maxWidth="243.0" minWidth="10.0" prefWidth="243.0" />
+                  <ColumnConstraints hgrow="SOMETIMES" maxWidth="142.0" minWidth="10.0" prefWidth="100.0" />
+                  <ColumnConstraints hgrow="SOMETIMES" maxWidth="258.0" minWidth="10.0" prefWidth="239.0" />
+                  <ColumnConstraints hgrow="SOMETIMES" maxWidth="269.0" minWidth="10.0" prefWidth="100.0" />
+                  <ColumnConstraints hgrow="SOMETIMES" maxWidth="330.0" minWidth="10.0" prefWidth="180.0" />
+                  <ColumnConstraints hgrow="SOMETIMES" maxWidth="343.0" minWidth="10.0" prefWidth="100.0" />
+                  <ColumnConstraints hgrow="SOMETIMES" maxWidth="147.0" minWidth="10.0" prefWidth="80.0" />
+                <ColumnConstraints hgrow="SOMETIMES" maxWidth="116.0" minWidth="10.0" prefWidth="104.0" />
+              </columnConstraints>
+              <rowConstraints>
+                <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+              </rowConstraints>
+               <children>
+                  <Button fx:id="btnEnd" mnemonicParsing="false" onAction="#actionPerform" styleClass="danger" text="end" GridPane.columnIndex="7" />
+                  <Button fx:id="btnStart" mnemonicParsing="false" onAction="#actionPerform" styleClass="success" text="start" GridPane.columnIndex="6" />
+                  <Label prefHeight="58.0" prefWidth="257.0" text="pump service time (min):" wrapText="true" />
+                  <TextField fx:id="txtPumpServiceTime" prefHeight="45.0" prefWidth="23.0" GridPane.columnIndex="1">
+                     <opaqueInsets>
+                        <Insets top="10.0" />
+                     </opaqueInsets>
+                     <GridPane.margin>
+                        <Insets bottom="15.0" left="15.0" right="15.0" top="15.0" />
+                     </GridPane.margin>
+                  </TextField>
+                  <Label text="time between car arrival:" GridPane.columnIndex="2" />
+                  <TextField fx:id="txtTimeCarArr" GridPane.columnIndex="3">
+                     <GridPane.margin>
+                        <Insets bottom="15.0" left="15.0" right="15.0" top="15.0" />
+                     </GridPane.margin>
+                  </TextField>
+                  <Label text="# of petrol pumps:" GridPane.columnIndex="4" />
+                  <TextField fx:id="txtNumberOfPumps" GridPane.columnIndex="5">
+                     <GridPane.margin>
+                        <Insets bottom="15.0" left="15.0" right="15.0" top="15.0" />
+                     </GridPane.margin>
+                  </TextField>
+               </children>
+            </GridPane>
+         </children>
+      </GridPane>
+   </children>
+</AnchorPane>
