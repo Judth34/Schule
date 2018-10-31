@@ -19,12 +19,7 @@
           <RowConstraints maxHeight="139.0" minHeight="10.0" prefHeight="14.0" vgrow="SOMETIMES" />
         </rowConstraints>
          <children>
-            <ListView prefHeight="348.0" prefWidth="1188.0" GridPane.rowIndex="1" />
-            <Pane prefHeight="200.0" prefWidth="200.0" style="-fx-background-color: lightgray;" GridPane.rowIndex="2">
-               <children>
-                  <Label fx:id="lblMessage" layoutX="570.0" layoutY="20.0" text="..." wrapText="true" />
-               </children>
-            </Pane>
+            <ListView fx:id="listLog" prefHeight="348.0" prefWidth="1188.0" GridPane.rowIndex="1" />
             <GridPane>
               <columnConstraints>
                 <ColumnConstraints hgrow="SOMETIMES" maxWidth="243.0" minWidth="10.0" prefWidth="243.0" />
@@ -42,7 +37,7 @@
                <children>
                   <Button fx:id="btnEnd" mnemonicParsing="false" onAction="#actionPerform" styleClass="danger" text="end" GridPane.columnIndex="7" />
                   <Button fx:id="btnStart" mnemonicParsing="false" onAction="#actionPerform" styleClass="success" text="start" GridPane.columnIndex="6" />
-                  <Label prefHeight="58.0" prefWidth="257.0" text="pump service time (min):" wrapText="true" />
+                  <Label alignment="CENTER_RIGHT" contentDisplay="RIGHT" prefHeight="58.0" prefWidth="257.0" text="pump service time (min):" wrapText="true" GridPane.valignment="CENTER" />
                   <TextField fx:id="txtPumpServiceTime" prefHeight="45.0" prefWidth="23.0" GridPane.columnIndex="1">
                      <opaqueInsets>
                         <Insets top="10.0" />
@@ -51,13 +46,13 @@
                         <Insets bottom="15.0" left="15.0" right="15.0" top="15.0" />
                      </GridPane.margin>
                   </TextField>
-                  <Label text="time between car arrival:" GridPane.columnIndex="2" />
+                  <Label alignment="CENTER_RIGHT" contentDisplay="RIGHT" prefHeight="31.0" prefWidth="261.0" text="time between car arrival:" GridPane.columnIndex="2" />
                   <TextField fx:id="txtTimeCarArr" GridPane.columnIndex="3">
                      <GridPane.margin>
                         <Insets bottom="15.0" left="15.0" right="15.0" top="15.0" />
                      </GridPane.margin>
                   </TextField>
-                  <Label text="# of petrol pumps:" GridPane.columnIndex="4" />
+                  <Label alignment="CENTER_RIGHT" contentDisplay="RIGHT" prefHeight="31.0" prefWidth="278.0" text="# of petrol pumps:" GridPane.columnIndex="4" />
                   <TextField fx:id="txtNumberOfPumps" GridPane.columnIndex="5">
                      <GridPane.margin>
                         <Insets bottom="15.0" left="15.0" right="15.0" top="15.0" />
@@ -65,6 +60,7 @@
                   </TextField>
                </children>
             </GridPane>
+            <Label fx:id="lblMessage" alignment="CENTER" prefHeight="47.0" prefWidth="1188.0" style="-fx-background-color: yellowgreen; -fx-background-radius: 20;" text="..." wrapText="true" GridPane.rowIndex="2" />
          </children>
       </GridPane>
    </children>

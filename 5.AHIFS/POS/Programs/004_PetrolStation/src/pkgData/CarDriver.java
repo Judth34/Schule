@@ -30,11 +30,13 @@ public class CarDriver extends Task<String>{
 
     public String getName() {
         return name;
-    }
+    }   
     
     @Override
     protected String call() throws Exception {
-        return "";
+        System.out.println("driver " + name + ": driving in petrol station");
+        this.obsList.add("driver " + name + ": driving in petrol station");
+        return this.name + " has finished";
     }
     
     public long getRespondTime(){
