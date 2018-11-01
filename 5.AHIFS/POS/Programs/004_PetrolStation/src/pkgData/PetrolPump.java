@@ -5,6 +5,7 @@
  */
 package pkgData;
 
+import java.util.Random;
 import javafx.collections.ObservableList;
 
 /**
@@ -13,7 +14,7 @@ import javafx.collections.ObservableList;
  */
 public class PetrolPump {
     private static long serviceTime;
-    private final int DEVIATION = 1;
+    private final int DEVIATION = 20;
     private String name;
     private boolean free;
     ObservableList<String> obsList;
@@ -21,10 +22,21 @@ public class PetrolPump {
     public PetrolPump(String name, ObservableList<String> obsList) {
         this.name = name;
         this.obsList = obsList;
+        this.free = true;
     }
     
-    private void doFuelUp(){
-        
+    public void doFuelUp() throws Exception{
+        this.setFree(false);
+        Random rand = new Random();
+        double percentage = rand.nextInt(DEVIATION) / 100;
+        System.out.println(serviceTime * percentage);
+        long fuelUpTime = serviceTime + serviceTime * (rand.nextInt(DEVIATION) / 100);
+        System.out.println(this.getClass().getName() + " " + this.getName() + ": starts filling: " + fuelUpTime);
+        this.obsList.add(this.getClass().getName() + " " + this.getName() + ": starts filling: " + fuelUpTime);
+        Thread.sleep(fuelUpTime);
+        System.out.println(this.getClass().getName() + " " + this.getName() + ": ends filling");
+        this.obsList.add(this.getClass().getName() + " " + this.getName() + ": ends filling");
+        this.setFree(true);
     }
 
     public String getName() {

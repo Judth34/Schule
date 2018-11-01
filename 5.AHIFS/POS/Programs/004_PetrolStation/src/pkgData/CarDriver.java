@@ -36,6 +36,14 @@ public class CarDriver extends Task<String>{
     protected String call() throws Exception {
         System.out.println("driver " + name + ": driving in petrol station");
         this.obsList.add("driver " + name + ": driving in petrol station");
+        this.obsList.add("driver " + name + ": waiting for free pump");
+        this.semaPetrolPumpFree.acquire();
+        PetrolPump pump = this.petrolStation.getFreePump();
+        this.obsList.add("driver " + name + ": got free pump with name: " + pump.getName());
+        this.obsList.add("driver " + name + ": starts pumping");       
+        pump.doFuelUp();
+        this.obsList.add("driver " + name + ": ends pumping");   
+        this.semaPetrolPumpFree.release();
         return this.name + " has finished";
     }
     

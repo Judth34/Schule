@@ -47,6 +47,6 @@ public class CarGenerator extends Task<String>{
     }
 
     public void setEnd() {
-        this.end = false;
+        this.end = true;
     }
 }

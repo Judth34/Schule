@@ -59,7 +59,6 @@ public class FXMLMainController implements Initializable {
                     this.endSimulation();
         }catch(Exception ex){
             this.lblMessage.setText(ex.toString());
-            ex.printStackTrace();
         }
     }
     
@@ -122,8 +121,11 @@ public class FXMLMainController implements Initializable {
         });
     }
 
-    private void startSimulation() {
-        ObservableList<String> obs = FXCollections.observableArrayList();
+    private void startSimulation() throws Exception {
+        if(this.txtNumberOfPumps.getText().equals("") || this.txtPumpServiceTime.getText().equals("") || this.txtTimeCarArr.getText().equals(""))
+            throw new Exception("Please enter all textfields!!");
+        
+        ObservableList<String> obs = FXCollections.synchronizedObservableList(FXCollections.observableArrayList());
         this.listLog.setItems(obs);
         this.carGenerator = new CarGenerator(4000, 2000, 1, obs);
         new Thread(this.carGenerator).start();
