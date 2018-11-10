@@ -27,11 +27,11 @@ public class CarGenerator extends Task<String>{
         this.timeBetweenArrival = timeBetweenArrival;
         this.obsList = obsList;
         this.end = false;
-        this.semaPertrolPumpFree = new Semaphore(1);
+        this.semaPertrolPumpFree = new Semaphore(numberOfPP);
         this.petrolstation = new PetrolStation();
         PetrolPump.setServiceTime(servicetime);
         for(int i = 0; i < numberOfPP; i++)
-            this.petrolstation.add(new PetrolPump("PP" + i, this.obsList));
+            this.petrolstation.add(new PetrolPump("PP " + i, this.obsList));
     }
 
     @Override
@@ -41,7 +41,7 @@ public class CarGenerator extends Task<String>{
         while(!this.end){
             Thread.sleep(this.timeBetweenArrival);
             System.out.println("next cardirver is generated");
-            new Thread(new CarDriver("driver" + countDriver++, this.petrolstation, this.semaPertrolPumpFree, this.obsList)).start();
+            new Thread(new CarDriver("driver " + countDriver++, this.petrolstation, this.semaPertrolPumpFree, this.obsList)).start();
         }
         return "finished!";
     }

@@ -6,6 +6,7 @@
 package pkgData;
 
 import java.util.Random;
+import javafx.application.Platform;
 import javafx.collections.ObservableList;
 
 /**
@@ -28,14 +29,12 @@ public class PetrolPump {
     public void doFuelUp() throws Exception{
         this.setFree(false);
         Random rand = new Random();
-        double percentage = rand.nextInt(DEVIATION) / 100;
-        System.out.println(serviceTime * percentage);
-        long fuelUpTime = serviceTime + serviceTime * (rand.nextInt(DEVIATION) / 100);
+        long fuelUpTime = (long) (serviceTime + serviceTime * (((double)rand.nextInt(DEVIATION)) / 100));
+        this.fillObsList(this.getClass().getName() + " " + this.getName() + ": starts filling: " + fuelUpTime);
         System.out.println(this.getClass().getName() + " " + this.getName() + ": starts filling: " + fuelUpTime);
-        this.obsList.add(this.getClass().getName() + " " + this.getName() + ": starts filling: " + fuelUpTime);
         Thread.sleep(fuelUpTime);
+        this.fillObsList(this.getClass().getName() + " " + this.getName() + ": ends filling");
         System.out.println(this.getClass().getName() + " " + this.getName() + ": ends filling");
-        this.obsList.add(this.getClass().getName() + " " + this.getName() + ": ends filling");
         this.setFree(true);
     }
 
@@ -63,5 +62,11 @@ public class PetrolPump {
         PetrolPump.serviceTime = serviceTime;
     }
     
-    
+    private void fillObsList(String value){
+        Platform.runLater(new Runnable() {
+            public void run() {
+                obsList.add(value);
+            }
+        });
+    }
 }
