@@ -10,12 +10,12 @@ package pkgData;
  * @author Marcel Judth
  */
 public interface AnimCoordinates {
-    public static final int START_Y = 200;
-    public static final int HEIGHT = 200;
-    public static final int WIDTH = 200;
-    public static final int LANE_WIDTH = 100;
-    public static final int XCOO_START = 100;
+    public static final int START_Y = 100;
+    public static final int HEIGHT = 20;
+    public static final int WIDTH = 40;
+    public static final int LANE_WIDTH = 25;
+    public static final int XCOO_START = 0;
     public static final int XCOO_WAITING_PUMP = 100;
-    public static final int XCOO_PUMPING = 100;
-    public static final int XCOO_EXIT = 100;
+    public static final int XCOO_PUMPING = 0;
+    public static final int XCOO_EXIT = 1200;
 }

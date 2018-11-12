@@ -5,37 +5,20 @@
  */
 package pkgService;
 
-import javax.jws.WebService;
-import javax.jws.WebMethod;
-import javax.jws.WebParam;
-import javax.ejb.Stateless;
+import javax.ws.rs.GET;
+import javax.ws.rs.Path;
+import javax.ws.rs.Produces;
 
 /**
  *
  * @author Marcel Judth
  */
-@WebService(serviceName = "CalculatorWS")
-@Stateless()
+@Path("/Calculator")
 public class CalculatorWS {
-
-    /**
-     * This is a sample web service operation
-     */
-    @WebMethod(operationName = "hello")
-    public String hello(@WebParam(name = "name") String txt) {
-        return "Hello " + txt + " !";
-    }
-
-    @WebMethod(operationName = "GET")
-    public String get(){
-        return "hello World";
-    }
-    /**
-     * Web service operation
-     */
-    @WebMethod(operationName = "add")
-    public String add(@WebParam(name = "firstNumber") String firstNumber, @WebParam(name = "secondNumber") String secondNumber) {
-        //TODO write your implementation code here:
-        return firstNumber + secondNumber;
+    @GET
+    @Path("/info/")
+    @Produces("application/json")
+    public String getCalculationInfo(){
+        return "Hello this is the Calculator";
     }
 }

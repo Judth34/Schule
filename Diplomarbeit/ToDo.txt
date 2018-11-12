@@ -1,0 +1,3 @@
+List of things to do:
+
+	- Test the difference with a picture which has a small resolution and the otherone has a big resultion
