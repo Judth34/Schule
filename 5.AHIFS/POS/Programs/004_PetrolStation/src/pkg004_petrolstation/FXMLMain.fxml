@@ -62,7 +62,7 @@
                   </TextField>
                </children>
             </GridPane>
-            <Label fx:id="lblMessage" alignment="CENTER" prefHeight="47.0" prefWidth="1188.0" style="-fx-background-color: yellowgreen; -fx-background-radius: 20;" text="..." wrapText="true" GridPane.rowIndex="3">
+            <Label fx:id="lblMessage" alignment="CENTER" prefHeight="47.0" prefWidth="1188.0" style="-fx-background-color: sandybrown; -fx-background-radius: 20;" text="..." wrapText="true" GridPane.rowIndex="3">
                <GridPane.margin>
                   <Insets top="10.0" />
                </GridPane.margin></Label>
@@ -82,12 +82,12 @@
                         <Insets bottom="20.0" left="20.0" right="20.0" top="20.0" />
                      </GridPane.margin>
                   </Pane>
-                  <Pane prefHeight="200.0" prefWidth="200.0" style="-fx-background-color: aliceblue;" GridPane.columnIndex="1">
+                  <Pane prefHeight="200.0" prefWidth="200.0" style="-fx-background-color: LIGHTGREEN;" GridPane.columnIndex="1">
                      <GridPane.margin>
                         <Insets bottom="20.0" left="20.0" right="20.0" top="20.0" />
                      </GridPane.margin>
                   </Pane>
-                  <Pane prefHeight="200.0" prefWidth="200.0" style="-fx-background-color: lightblue;" GridPane.columnIndex="2">
+                  <Pane prefHeight="200.0" prefWidth="200.0" style="-fx-background-color: INDIANRED;" GridPane.columnIndex="2">
                      <GridPane.margin>
                         <Insets bottom="10.0" left="600.0" right="10.0" top="10.0" />
                      </GridPane.margin>

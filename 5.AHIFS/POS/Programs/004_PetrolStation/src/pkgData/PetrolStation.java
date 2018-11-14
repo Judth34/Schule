@@ -12,7 +12,7 @@ import java.util.ArrayList;
  * @author Marcel Judth
  */
 public class PetrolStation {
-    private ArrayList<PetrolPump> colPetrolPumps;
+    private final ArrayList<PetrolPump> colPetrolPumps;
 
     public PetrolStation() {
         this.colPetrolPumps = new ArrayList<>();
@@ -28,5 +28,13 @@ public class PetrolStation {
                 return p;
         }
         return null;
+    }
+
+    public double calculateUsageRate() {
+        long usageTimesPercentage = 0;
+        for(PetrolPump pump : this.colPetrolPumps){
+            usageTimesPercentage += pump.getUsageTimePercentage();
+        }
+        return (usageTimesPercentage / this.colPetrolPumps.size());
     }
 }

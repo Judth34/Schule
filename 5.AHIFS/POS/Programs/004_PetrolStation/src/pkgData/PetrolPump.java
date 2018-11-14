@@ -5,7 +5,7 @@
  */
 package pkgData;
 
-import java.util.Random;
+import java.util.Date;
 import javafx.application.Platform;
 import javafx.collections.ObservableList;
 
@@ -19,27 +19,35 @@ public class PetrolPump {
     private String name;
     private boolean free;
     ObservableList<String> obsList;
+    private long usageTime;
+    private long startTime;
 
     public PetrolPump(String name, ObservableList<String> obsList) {
+        
+        this.usageTime = 0;
         this.name = name;
         this.obsList = obsList;
         this.free = true;
+        this.startTime = new Date().getTime();
     }
     
     public void doFuelUp() throws Exception{
         this.setFree(false);
-        Random rand = new Random();
-        long fuelUpTime = (long) (serviceTime + serviceTime * (((double)rand.nextInt(DEVIATION)) / 100));
-        this.fillObsList(this.getClass().getName() + " " + this.getName() + ": starts filling: " + fuelUpTime);
-        System.out.println(this.getClass().getName() + " " + this.getName() + ": starts filling: " + fuelUpTime);
+        long fuelUpTime = TimeGenerator.getRandomTime(serviceTime, DEVIATION);
+        this.informUser(this.getClass().getName() + " " + this.getName() + ": starts filling: " + fuelUpTime);
         Thread.sleep(fuelUpTime);
-        this.fillObsList(this.getClass().getName() + " " + this.getName() + ": ends filling");
-        System.out.println(this.getClass().getName() + " " + this.getName() + ": ends filling");
+        this.informUser(this.getClass().getName() + " " + this.getName() + ": ends filling");
         this.setFree(true);
+        this.usageTime = this.usageTime + fuelUpTime;
     }
 
     public String getName() {
         return name;
+    }
+
+    public double getUsageTimePercentage() {
+        long exsistingTime = new Date().getTime() - this.startTime;
+        return (double) this.usageTime / exsistingTime * 100;
     }
 
     public void setName(String name) {
@@ -61,8 +69,14 @@ public class PetrolPump {
     public static void setServiceTime(long serviceTime) {
         PetrolPump.serviceTime = serviceTime;
     }
+
+    @Override
+    public String toString() {
+        return "PetrolPump{" + "name=" + name + ", free=" + free + ", usageTime=" + usageTime + '}';
+    }
     
-    private void fillObsList(String value){
+    private void informUser(String value){
+        System.out.println(value);
         Platform.runLater(new Runnable() {
             public void run() {
                 obsList.add(value);

@@ -34,16 +34,13 @@ import javafx.util.Duration;
 import pkgData.AnimCoordinates;
 import pkgData.CarDriver;
 import pkgData.CarGenerator;
+import pkgData.TimeGenerator;
 
 /**
  *
  * @author Marcel Judth
  */
 public class FXMLMainController implements Initializable, AnimCoordinates {
-
-    @FXML
-    private ImageView imgCar;
-
     @FXML
     private AnchorPane anchorPane;
 
@@ -70,7 +67,7 @@ public class FXMLMainController implements Initializable, AnimCoordinates {
 
     private final static int ANIMATION_DURATION = 1000;
     private final static int MAX_CARS = 20;
-    private final static String IMAGE_CAR_PATH = "..\\res\\car.png";
+    private final static String IMAGE_CAR_PATH = "/res/car.png";
 
 
 
@@ -87,6 +84,7 @@ public class FXMLMainController implements Initializable, AnimCoordinates {
             }
         } catch (Exception ex) {
             this.lblMessage.setText(ex.toString());
+            java.util.logging.Logger.getLogger(this.getClass().getName()).log(Level.SEVERE, null, ex);
         }
     }
 
@@ -95,7 +93,6 @@ public class FXMLMainController implements Initializable, AnimCoordinates {
         // TODO
         this.addListener();
         CarDriver.setController(this);
-        this.initOtherStuff();
     }
 
     private void addListener() {
@@ -152,9 +149,9 @@ public class FXMLMainController implements Initializable, AnimCoordinates {
         if (this.txtNumberOfPumps.getText().equals("") || this.txtPumpServiceTime.getText().equals("") || this.txtTimeCarArr.getText().equals("")) {
             throw new Exception("Please enter all textfields!!");
         }
-        this.initOtherStuff();
-        int timeBetweenArrival = Integer.parseInt(this.txtTimeCarArr.getText()) * 1000;
-        int servicetime = Integer.parseInt(this.txtPumpServiceTime.getText()) * 1000;
+        this.collImages = new ArrayList<>();
+        int timeBetweenArrival = Integer.parseInt(this.txtTimeCarArr.getText());
+        int servicetime = Integer.parseInt(this.txtPumpServiceTime.getText());
         int numberOfPP = Integer.parseInt(this.txtNumberOfPumps.getText());
         ObservableList<String> obs = FXCollections.synchronizedObservableList(FXCollections.observableArrayList());
         this.listLog.setItems(obs);
@@ -170,7 +167,6 @@ public class FXMLMainController implements Initializable, AnimCoordinates {
         ImageView iv = this.collImages.get(cd.getId());
         Path path = new Path();
         path.getElements().add(new MoveTo(cd.getOldCooX(), START_Y + LANE_WIDTH * cd.getId()));
-        System.out.println("in move: " + cd.toString());
         path.getElements().add(new HLineTo(cd.getCurrentCooX()));
         PathTransition pathTransition = new PathTransition();
         pathTransition.setDuration(Duration.millis(ANIMATION_DURATION));
@@ -180,14 +176,10 @@ public class FXMLMainController implements Initializable, AnimCoordinates {
         pathTransition.play();
     }
 
-    private void initOtherStuff() {
-        this.collImages = new ArrayList<>();
-    }
-
     public void addNewCarImage(int id) {
         try{
             ImageView imageView = new ImageView();
-            imageView.setImage(new Image(getClass().getResource("/res/car.png").toExternalForm()));
+            imageView.setImage(new Image(getClass().getResource(IMAGE_CAR_PATH).toExternalForm()));
             imageView.setFitWidth(40);
             imageView.setFitHeight(20);
             imageView.setX(AnimCoordinates.XCOO_START);

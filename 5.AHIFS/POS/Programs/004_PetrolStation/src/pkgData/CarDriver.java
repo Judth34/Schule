@@ -54,24 +54,19 @@ public class CarDriver extends Task<String> implements AnimCoordinates{
         this.oldCooX = XCOO_START;
         this.currentCooX = XCOO_WAITING_PUMP;
         this.moveCar();
-        this.fillObsList("driver " + name + ": driving in petrol station");
-        System.out.println("driver " + name + ": driving in petrol station");
-        this.fillObsList("driver " + name + ": waiting for free pump");
-        System.out.println("driver " + name + ": waiting for free pump");
+        this.informUser("driver " + name + ": driving in petrol station");
+        this.informUser("driver " + name + ": waiting for free pump");
         this.semaPetrolPumpFree.acquire();
         this.oldCooX = XCOO_WAITING_PUMP;
         this.currentCooX = XCOO_PUMPING;
         this.moveCar();
         PetrolPump pump = this.petrolStation.getFreePump();
-        this.fillObsList("driver " + name + ": got free pump with name: " + pump.getName());
-        System.out.println("driver " + name + ": got free pump with name: " + pump.getName());
-        this.fillObsList("driver " + name + ": starts pumping");
+        this.informUser("driver " + name + ": got free pump with name: " + pump.getName());
+        this.informUser("driver " + name + ": starts pumping");
         System.out.println("driver " + name + ": starts pumping");
         pump.doFuelUp();
-        this.fillObsList("driver " + name + ": ends pumping");
-        System.out.println("driver " + name + ": ends pumping");
-        this.fillObsList("driver " + name + ": leaving petrol station with responsetime: " + (System.currentTimeMillis() - startTime));
-        System.out.println("driver " + name + ": leaving petrol station with responsetime: " + (System.currentTimeMillis() - startTime));
+        this.informUser("driver " + name + ": ends pumping");
+        this.informUser("driver " + name + ": leaving petrol station with responsetime: " + (System.currentTimeMillis() - startTime));
         this.currentCooX = XCOO_EXIT;
         this.oldCooX = XCOO_PUMPING;
         this.moveCar();
@@ -95,14 +90,6 @@ public class CarDriver extends Task<String> implements AnimCoordinates{
         return oldCooX;
     }
     
-    private void fillObsList(String value){
-        Platform.runLater(new Runnable() {
-            public void run() {
-                obsList.add(value);
-            }
-        });
-    }
-    
     private void moveCar(){
         Platform.runLater(() -> {
             try {
@@ -116,5 +103,14 @@ public class CarDriver extends Task<String> implements AnimCoordinates{
     @Override
     public String toString() {
         return "CarDriver{" + "id=" + id + ", name=" + name + ", currentCooX=" + currentCooX + ", oldCooX=" + oldCooX + '}';
+    }
+    
+    private void informUser(String value){
+        System.out.println(value);
+        Platform.runLater(new Runnable() {
+            public void run() {
+                obsList.add(value);
+            }
+        });
     }
 }
