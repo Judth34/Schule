@@ -1,0 +1,20 @@
+string connectionString = "Provider=OraOLEDB.Oracle;Data Source=192.168.128.152/ora11g;User Id=d5a06; Password=d5a;";
+void connect()
+        {
+            using (OleDbConnection conn = new OleDbConnection(connectionString))
+            {
+                try
+                {
+                    conn.Open();
+                    //MessageBox.Show("erfolgreich");
+                }
+                catch (Exception e)
+                {
+                    MessageBox.Show(e.Message);
+                }
+                finally
+                {
+                    conn.Close();
+                }
+            }
+        }
