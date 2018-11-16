@@ -1,0 +1,3 @@
+Pre-Order: Verarbeitung-Links-Rechts
+In-Order: Links-Verarbeitung-Rechts
+Post-Order: Lins-Rechts-Verarbeitungs

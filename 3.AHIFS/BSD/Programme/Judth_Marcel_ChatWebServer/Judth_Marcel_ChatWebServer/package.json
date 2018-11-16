@@ -1,0 +1,9 @@
+{
+  "name": "judth_marcel_chat-web-server",
+  "version": "0.0.0",
+  "description": "Judth_Marcel_ChatWebServer",
+  "main": "server.js",
+  "author": {
+    "name": "Marcel Judth"
+  }
+}

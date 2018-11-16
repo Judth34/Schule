@@ -1,0 +1,9 @@
+{
+  "name": "07_judth_marcel",
+  "version": "0.0.0",
+  "description": "07_Judth_Marcel",
+  "main": "server.js",
+  "author": {
+    "name": "Marcel Judth"
+  }
+}

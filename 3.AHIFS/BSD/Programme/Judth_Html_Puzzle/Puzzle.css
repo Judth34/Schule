@@ -1,0 +1,47 @@
+﻿body
+{
+}
+
+h1{
+    text-align:center;
+    color:green;
+}
+
+#BildPuzzle{
+    height:500px;
+    width:700px;
+    
+}
+
+.splittetpic{
+    float:left;
+    height:100px;
+    width:150px;
+    margin:5px;
+
+}
+
+.puzzlePic{
+    height:100px;
+    width:150px;
+    border:2px solid;
+}
+
+#haken{
+    height:70px;
+    width:90px;
+    float:right;
+    display:none;
+}
+#x{
+    height:50px;
+    width:50px;
+    float:right;
+    display:none;
+}
+#outputInput{
+    float:right;
+    position:absolute;
+    top:200px;
+    left:500px;
+}

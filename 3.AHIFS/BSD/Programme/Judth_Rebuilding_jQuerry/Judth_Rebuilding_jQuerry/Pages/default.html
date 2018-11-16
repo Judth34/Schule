@@ -1,0 +1,28 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <title></title>
+	<meta charset="utf-8" />
+    <script src="../Scripts/RebuildjQuerry.js"></script>
+</head>
+<body>
+    <input type="button" value="Hide Button" onclick="$('p').hide();" />
+    <input type="button" value="Show Button" onclick="$('p').show();" />
+    <p id="p">hide button drücken</p>
+    <p>andere p tag</p>
+    <p>noch ein anderer p tag</p>
+
+    <input type="button" value="last element" onclick="$('li').last();" />
+    <ul>
+        <li>list item 1</li>
+        <li>list item 2</li>
+        <li>list item 3</li>
+        <li>list item 4</li>
+        <li>list item 5</li>
+    </ul>
+    
+    <p id="hallo">Hier soll Hallo kommen:</p>
+
+    <input type="button" value="append" onclick="$('hallo').append('<p>hallo<p>')" />
+</body>
+</html>

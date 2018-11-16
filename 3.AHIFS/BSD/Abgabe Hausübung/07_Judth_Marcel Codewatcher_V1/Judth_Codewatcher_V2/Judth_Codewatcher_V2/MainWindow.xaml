@@ -1,0 +1,21 @@
+﻿<Window x:Class="Judth_Codewatcher_V2.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:Judth_Codewatcher_V2"
+        mc:Ignorable="d"
+        Title="Code Watcher Version 1" Height="401.44" Width="718.898">
+    <Grid RenderTransformOrigin="0.495,0.525" Margin="0,0,0.143,0" Height="379" VerticalAlignment="Top">
+        <Grid.RowDefinitions>
+            <RowDefinition/>
+        </Grid.RowDefinitions>
+        <Button x:Name="btn_SourceFile" Content="Load Source File" HorizontalAlignment="Left" Margin="42,73,0,0" VerticalAlignment="Top" Width="144" Height="23" Click="btn_SourceFile_Click"/>
+        <TextBox x:Name="tblogs" HorizontalAlignment="Left" Margin="23,281,0,18.857" TextWrapping="Wrap" IsReadOnly="True" Text="" Width="465" RenderTransformOrigin="0.503,0.532"/>
+        <Button x:Name="btn_TargetFile" Content="Load Target File" HorizontalAlignment="Left" Margin="42,125,0,0" VerticalAlignment="Top" Width="144" Height="23" Click="btn_TargetFile_Click"/>
+        <TextBox x:Name="tbSourceFilename" HorizontalAlignment="Left" Height="23" Margin="238,104,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="223"/>
+        <TextBlock x:Name="textBlock" HorizontalAlignment="Left" Margin="238,83,0,0" TextWrapping="Wrap" Text="Enter your source Filename:" VerticalAlignment="Top" Width="202"/>
+        <Button x:Name="btn_GenerateHtmlFile" Content="Generate Html File" HorizontalAlignment="Left" Margin="42,210,0,0" VerticalAlignment="Top" Width="144" Height="39" Click="btn_GenerateHtmlFile_Click"/>
+        <ListBox x:Name="listBox" Margin="506,20,19,129.857"/>
+    </Grid>
+</Window>

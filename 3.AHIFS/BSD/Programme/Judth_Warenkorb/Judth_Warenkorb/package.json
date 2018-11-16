@@ -1,0 +1,9 @@
+{
+  "name": "judth_warenkorb",
+  "version": "0.0.0",
+  "description": "Judth_Warenkorb",
+  "main": "server.js",
+  "author": {
+    "name": "Marcel Judth"
+  }
+}

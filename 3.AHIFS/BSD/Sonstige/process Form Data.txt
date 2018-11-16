@@ -1,0 +1,29 @@
+funtion _ processFormData (req, res, onSucess, onError){
+
+req.on('end', function(){
+var formDAta = qsLib.parse(requestBody);
+onSucess(req, res, formData);
+}
+
+req.on('error', function(){
+onError(req, res);
+}
+
+}
+
+
+
+
+
+_processFormData(req, res, 
+//onsucess
+(req, res, formData) => {
+var customerId;
+...
+...
+...
+}), 
+//onERror
+(req, res, formData) => {
+	myWebServer.redirect(req, res, "/LoginFailed.html");
+});

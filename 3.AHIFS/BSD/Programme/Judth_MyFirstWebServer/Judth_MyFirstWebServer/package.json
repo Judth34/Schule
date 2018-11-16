@@ -1,0 +1,9 @@
+{
+  "name": "judth_my-first-web-server",
+  "version": "0.0.0",
+  "description": "Judth_MyFirstWebServer",
+  "main": "server.js",
+  "author": {
+    "name": "Marcel Judth"
+  }
+}

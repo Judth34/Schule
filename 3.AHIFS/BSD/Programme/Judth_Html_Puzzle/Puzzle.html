@@ -1,0 +1,79 @@
+﻿<!DOCTYPE html>
+
+<html lang="en" xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <meta charset="utf-8" />
+    <title>Puzzle</title>
+    <script language="javascript" type="text/javascript" src="Puzzle.js"></script>
+    <link rel="stylesheet" href="Puzzle.css">
+</head>
+<body>
+    <h1>Html-Puzzle Game</h1>
+
+    <div id="dropZone">
+        <table>
+            <tr>
+                <td>
+                    <div class="puzzlePic" id="0-0" ondrop="drop(event)" ondragover="allowDrop(event)"></div>
+                </td>
+                <td>
+                    <div class="puzzlePic" id="0-1" ondrop="drop(event)" ondragover="allowDrop(event)"></div>
+                </td>
+                <td>
+                    <div class="puzzlePic" id="0-2" ondrop="drop(event)" ondragover="allowDrop(event)"></div>
+                </td>
+            </tr>
+
+            <tr>
+                <td>
+                    <div class="puzzlePic" id="1-0" ondrop="drop(event)" ondragover="allowDrop(event)"></div>
+                </td>
+                <td>
+                    <div class="puzzlePic" id="1-1" ondrop="drop(event)" ondragover="allowDrop(event)"></div>
+                </td>
+                <td>
+                    <div class="puzzlePic" id="1-2" ondrop="drop(event)" ondragover="allowDrop(event)"></div>
+                </td>
+            </tr>
+
+            <tr>
+                <td>
+                    <div class="puzzlePic" id="2-0" ondrop="drop(event)" ondragover="allowDrop(event)"></div>
+                </td>
+                <td>
+                    <div class="puzzlePic" id="2-1" ondrop="drop(event)" ondragover="allowDrop(event)"></div>
+                </td>
+                <td>
+                    <div class="puzzlePic" id="2-2" ondrop="drop(event)" ondragover="allowDrop(event)"></div>
+                </td>
+            </tr>
+        </table>
+    </div>
+    
+    <div id="outputInput">
+        <div id="input">
+            <input id="button" type="button" value="check" onclick="checkPuzzle()" />
+        </div>
+
+        <div id="output">
+            <img id="haken" src=".\Bilder\haken.png" alt="error beim laden" />
+            <img id="x" src=".\Bilder\x.png" alt="error beim laden" />
+        </div>
+    </div>
+    
+    
+
+    <div id="dragZone">
+        <img id="0" draggable="true" ondragstart="drag(event)" class="splittetpic" src=".\Bilder\Stanley_Cup-0-0.jpeg" alt="selfhtml" onclick="    setPicture(" .\Bilder\Stanley_Cup-0-0.jpeg ") />
+        <img id="8" class="splittetpic" draggable="true" ondragstart="drag(event)" src=".\Bilder\Stanley_Cup-2-2.jpeg" alt="selfhtml" onclick="makepieces()" />
+        <img id="3" class="splittetpic" draggable="true" ondragstart="drag(event)" src=".\Bilder\Stanley_Cup-1-0.jpeg" alt="selfhtml" onclick="makepieces()" />
+        <img id="2" class="splittetpic" draggable="true" ondragstart="drag(event)" src=".\Bilder\Stanley_Cup-0-2.jpeg" alt="selfhtml" onclick="makepieces()" />
+        <img id="1" class="splittetpic" draggable="true" ondragstart="drag(event)" src=".\Bilder\Stanley_Cup-0-1.jpeg" alt="selfhtml" onclick="makepieces()" />
+        <img id="7" class="splittetpic" draggable="true" ondragstart="drag(event)" src=".\Bilder\Stanley_Cup-2-1.jpeg" alt="selfhtml" onclick="makepieces()" />
+        <img id="6" class="splittetpic" draggable="true" ondragstart="drag(event)" src=".\Bilder\Stanley_Cup-2-0.jpeg" alt="selfhtml" onclick="makepieces()" />
+        <img id="5" class="splittetpic" draggable="true" ondragstart="drag(event)" src=".\Bilder\Stanley_Cup-1-2.jpeg" alt="selfhtml" onclick="makepieces()" />
+        <img id="4" class="splittetpic" draggable="true" ondragstart="drag(event)" src=".\Bilder\Stanley_Cup-1-1.jpeg" alt="selfhtml" onclick="makepieces()" />
+    </div>
+
+</body>
+</html>

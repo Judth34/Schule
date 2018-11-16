@@ -1,0 +1,9 @@
+{
+  "name": "judth_functional-jsworkshop",
+  "version": "0.0.0",
+  "description": "Judth_functionalJSWorkshop",
+  "main": "app.js",
+  "author": {
+    "name": "Marcel Judth"
+  }
+}

@@ -1,0 +1,313 @@
+﻿body {
+    background-color:gray;
+}
+
+h1{
+    font-family: Palatino Linotype;
+    width:500px;
+    position:relative;
+    left:10%;    
+    font-size:40px; 
+}
+
+header{
+    background-color:indianred;
+    border-radius:15px;
+    font-family: Palatino Linotype;
+    width:50%;
+    background-color:#404040;
+    color:snow;
+}
+
+#nameAvailableArticle{
+    position: center;
+    font-size:17px;
+}
+
+#quantityAvailableArticle{
+    position:relative;
+    top:40px;
+    left:-20px;
+}
+
+#priceAvailableArticle{
+    position:center;
+    left:-75px;
+    font-size:17px;
+}
+
+.availableItemText{
+}
+
+#loginLogout{
+    width:49%;
+    float:right;
+    background-color:black;
+    position:relative;
+    top:-83px;
+    height:55px;
+    background-color:indianred;
+    border-radius:15px;
+    font-family: Palatino Linotype;
+    background-color:#404040;
+    color:snow;
+}
+
+.button {
+    display: inline-block;
+    position: relative;
+    margin: 10px;
+    padding: 0 20px;
+    text-align: center;
+    text-decoration: none;
+    font: bold 12px/25px Arial, sans-serif;
+ 
+    text-shadow: 1px 1px 1px rgba(255,255,255, .22);
+ 
+    -webkit-border-radius: 30px;
+    -moz-border-radius: 30px;
+    border-radius: 30px;
+ 
+    -webkit-box-shadow: 1px 1px 1px rgba(0,0,0, .29), inset 1px 1px 1px rgba(255,255,255, .44);
+    -moz-box-shadow: 1px 1px 1px rgba(0,0,0, .29), inset 1px 1px 1px rgba(255,255,255, .44);
+    box-shadow: 1px 1px 1px rgba(0,0,0, .29), inset 1px 1px 1px rgba(255,255,255, .44);
+ 
+    -webkit-transition: all 0.15s ease;
+    -moz-transition: all 0.15s ease;
+    -o-transition: all 0.15s ease;
+    transition: all 0.15s ease;
+}
+
+
+.gray {
+    color: #515151;
+ 
+    background: #d3d3d3; /* Old browsers */
+    background: -moz-linear-gradient(top,  #d3d3d3 0%, #8a8a8a 100%); /* FF3.6+ */
+    background: -webkit-gradient(linear, left top, left bottom, color-stop(0%,#d3d3d3), color-stop(100%,#8a8a8a)); /* Chrome,Safari4+ */
+    background: -webkit-linear-gradient(top,  #d3d3d3 0%,#8a8a8a 100%); /* Chrome10+,Safari5.1+ */
+    background: -o-linear-gradient(top,  #d3d3d3 0%,#8a8a8a 100%); /* Opera 11.10+ */
+    background: linear-gradient(top,  #d3d3d3 0%,#8a8a8a 100%); /* W3C */
+}
+
+.button:hover {
+    -webkit-box-shadow: 1px 1px 1px rgba(0,0,0,.29), inset 0px 0px 2px rgba(0,0,0, .5);
+    -moz-box-shadow: 1px 1px 1px rgba(0,0,0,.29), inset 0px 0px 2px rgba(0,0,0, .5);
+    box-shadow: 1px 1px 1px rgba(0,0,0,.29), inset 0px 0px 2px rgba(0,0,0, .5);
+}
+
+#buttonsLoginLogout{
+    position:relative;
+    left:40px;
+    top:5%;
+    width:40%;
+}
+
+#alredyLoggedIn{
+    width:50%;
+    float:right;
+    position:relative;
+    top:-55%;
+
+}
+
+#AvailableArticles overflow{
+    scrollbar-arrow-color:blueviolet;
+}
+
+#style-1::-webkit-scrollbar-track
+{
+	-webkit-box-shadow: inset 0 0 6px rgba(0,0,0,0.3);
+	border-radius: 10px;
+	background-color: #F5F5F5;
+}
+
+#style-1{
+    width:600px;
+    height:400px;
+
+}
+
+.scrollbar
+{
+	margin-left: 30px;
+	float: left;
+	height: 300px;
+	width: 65px;
+	background: #F5F5F5;
+	overflow-y: scroll;
+	margin-bottom: 25px;
+}
+
+#style-1::-webkit-scrollbar
+{
+	width: 12px;
+	background-color: #F5F5F5;
+}
+
+#style-1::-webkit-scrollbar-thumb
+{
+	border-radius: 10px;
+	-webkit-box-shadow: inset 0 0 6px rgba(0,0,0,.3);
+	background-color: #555;
+}
+#style-2::-webkit-scrollbar
+{
+	width: 12px;
+	background-color: #F5F5F5;
+}
+
+#style-2::-webkit-scrollbar-thumb
+{
+	border-radius: 10px;
+	-webkit-box-shadow: inset 0 0 6px rgba(0,0,0,.3);
+	background-color: #555;
+}
+
+#style-2{
+    width:600px;
+    height:400px;
+
+}
+
+#style-2::-webkit-scrollbar-track
+{
+	-webkit-box-shadow: inset 0 0 6px rgba(0,0,0,0.3);
+	border-radius: 10px;
+	background-color: #F5F5F5;
+}
+
+.availableItemText{
+    position:relative;
+    top:-40px;  
+    left: 30px;
+    font-weight:bold;
+}
+
+#AvailableArticles{
+    width:600px;
+    height:500px;
+    border-radius: 15px;
+    padding: 10px;
+}
+
+
+#buttonLoad{
+    position:relative;
+    top: -30px;
+    background-color:darkgrey;
+}
+
+.availableItem img{
+    width:100px;
+    height: 100px;
+}
+
+.availableItem {
+    width:500px;
+    position:relative;
+    left:20px;
+}
+
+h2{
+    color: white;
+    background-color: dimgray;
+    font-family: Palatino Linotype;
+    width:240px;
+    height:35px;
+    text-align:center;
+    border-radius: 15px;
+}
+
+#shoppingCart{
+    float: right;
+    position:relative;
+    top: -510px;
+}
+
+header p{
+    font-family: Palatino Linotype;
+    font-weight:bold;
+    font-size:18px;
+}
+
+
+ol {
+    counter-reset: li; /* Initiate a counter */
+    list-style: none; /* Remove default numbering */
+    *list-style: decimal; /* Keep using default numbering for IE6/7 */
+    font: 15px 'trebuchet MS', 'lucida sans';
+    padding: 0;
+    margin-bottom: 4em;
+    text-shadow: 0 1px 0 rgba(255,255,255,.5);
+}
+
+.rounded-list li{
+    position: relative;
+    display: block;
+    padding: .4em .4em .4em 2em;
+    *padding: .4em;
+    margin: .5em 0;
+    background: #ddd;
+    color: #444;
+    text-decoration: none;
+    border-radius: .3em;
+    transition: all .3s ease-out;  
+     
+}
+
+main{
+    background-color:yellowgreen;
+    border-radius: 15px;
+    padding:20px;
+    padding-right:50px;
+    height:auto;
+
+}
+
+.rounded-list li:hover{
+    background: #eee;
+}
+
+.rounded-list li:hover:before{
+    transform: rotate(360deg);  
+}
+
+.availableItem :before{
+    
+}
+
+.rounded-list li:before{
+    content: counter(li);
+    counter-increment: li;
+    position: absolute; 
+    left: -1.3em;
+    top: 50%;
+    margin-top: -1.3em;
+    background: #87ceeb;
+    height: 2em;
+    width: 2em;
+    line-height: 2em;
+    border: .3em solid #fff;
+    text-align: center;
+    font-weight: bold;
+    border-radius: 2em;
+    transition: all .3s ease-out;
+}
+
+
+footer{
+    background-color:#404040;
+    color:snow;
+    height:30px;
+    text-align: center;
+    border-radius:10px;
+    font-family: Palatino Linotype;
+    font-size:17px;
+    font-weight:bold;   
+}
+footer p{
+    position:relative;
+    left:25%;   
+    top:10%;
+}

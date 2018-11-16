@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ul>
+	<li>Inhalte von:</li>
+        <li>002 Notenprogram</li>
+	<ul IsRepeated="true">
+        	<li>{FullPupilName:0}</li>
+            	<ul>
+                	<li>Program.cs 3kb, 15.092015</li>
+                	<li>Note.cs, 1kb, 15.09.2015</li>
+        	</ul>    	
+	</ul>
+	<ul IsRepeated="true">
+        	<li>{FullPupilName:1}</li>
+            	<ul>
+                	<li>Program.cs 3kb, 15.092015</li>
+                	<li>Note.cs, 1kb, 15.09.2015</li>
+        	</ul>    	
+	</ul><ul IsRepeated="true">
+        	<li>{FullPupilName:2}</li>
+            	<ul>
+                	<li>Program.cs 3kb, 15.092015</li>
+                	<li>Note.cs, 1kb, 15.09.2015</li>
+        	</ul>    	
+	</ul>
+	<ul IsRepeated="true">
+        	<li>{FullPupilName:3}</li>
+            	<ul>
+                	<li>Program.cs 3kb, 15.092015</li>
+                	<li>Note.cs, 1kb, 15.09.2015</li>
+        	</ul>    	
+	</ul>
+        </li>
+</ul>

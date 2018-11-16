@@ -1,0 +1,68 @@
+﻿<!DOCTYPE html>
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <script src="WebShopClientLogic.js"></script>
+    <link href="WebShopStyleSheet.css" rel="stylesheet" />
+    <meta charset="utf-8" />
+    <title>SPA Web Shop V1</title>
+</head>
+<body>
+    <header>
+        <h1>MyWebShop</h1>
+    </header>
+    <div id="loginLogout">
+        <div id="buttonsLoginLogout">
+            <input type="button" value="Login" class="button gray"/>
+            <input type="button" value="Logout" class="button gray" />
+        </div>
+        <div id="alredyLoggedIn">
+            <label>Already logged in:</label>
+            <label id="alreadyLoggedInUserName">_________________</label>
+        </div>
+    </div>
+    <main>
+            <section id="AvailableArticles">
+                <h2>Available articles:</h2>
+                <div class="scrollbar" id="style-1">
+                    <ol id="ItemsavailableArticles" class="rounded-list">
+                        <li class="availableItem">nothing available</li>
+                    </ol>
+                    <div class="force-overflow"></div>
+
+                </div>
+                
+            </section>
+
+            <section id="shoppingCart">
+                <h2>Your shopping cart:</h2>
+                <div class="scrollbar" id="style-2">
+                    <ol id="ItemsavailableArticles" class="rounded-list">
+                        <li class="availableItem">empty cart</li>
+                    </ol>
+                    <div id="addAvailableArticle">
+                        <p>Add new available Article:</p>
+                        <form id="myForm">
+                            <label>Article Name: </label><input type="text" name="articleName" id="articleName" /><br />
+                            <label>Article Price: </label><input type="text" name="price" id="articlePrice" /><br />
+                            <label>Article Quantity: </label><input type="text" name="quantity" id="articleQuantity" /><br />
+                            <label>Img Url: </label><input type="text" id="articleImgUrl"name="imgUrl" /><br />
+                            <input type="button" id="btnAddAvailArticleMultiPart" value="Add multiPartFormat" class="button gray" />
+                            <input type="button" id="btnAddAvailArticleJson" value="Add Json Format" class="button gray" />
+                            <input type="button" id="btnAddAvailArticleUrl" value="Add wwwUrlFormat" class="button gray" />
+                        </form>
+                            
+                        
+                    </div>
+                    
+                    <div class="force-overflow"></div>
+
+                </div>
+            </section>
+    </main>
+    <footer>
+        <p>written by Marcel Judth 3.AHIFS</p>
+    </footer>
+
+</body>
+</html>

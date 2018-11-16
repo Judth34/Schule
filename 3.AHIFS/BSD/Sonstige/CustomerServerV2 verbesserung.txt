@@ -1,0 +1,8 @@
+1.) File muss synchron gelesen werden bei jedem Request
+2.) Robustheit gegen korruptes File
+	- User Meldung
+	- Admin meldung 
+3.) keine Style info pro Code
+	- Alternative: Css hooks
+4.) li tag richtig strukturieren
+	--> Price title image in eigene tags

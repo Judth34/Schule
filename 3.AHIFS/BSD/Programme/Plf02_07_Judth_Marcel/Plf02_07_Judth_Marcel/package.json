@@ -1,0 +1,9 @@
+{
+  "name": "plf02_07_judth_marcel",
+  "version": "0.0.0",
+  "description": "Plf02_07_Judth_Marcel",
+  "main": "app.js",
+  "author": {
+    "name": "Marcel Judth"
+  }
+}

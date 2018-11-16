@@ -1,0 +1,22 @@
+﻿<Window x:Class="Judth_Marcel_PLF01_GUI.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:Judth_Marcel_PLF01_GUI"
+        mc:Ignorable="d"
+        Title="MainWindow" Height="350" Width="525">
+    <Grid>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="159*"/>
+            <ColumnDefinition Width="101*"/>
+        </Grid.ColumnDefinitions>
+        <ListBox x:Name="myListBox" HorizontalAlignment="Left" Margin="316,32,0,27.143" Width="171" Grid.ColumnSpan="2"/>
+        <Button x:Name="btnLoadSourceFile" Content="Load Source File" HorizontalAlignment="Left" Margin="21,48,0,0" VerticalAlignment="Top" Width="124" Height="43" RenderTransformOrigin="-0.367,-1.659" Click="btnLoadSourceFile_Click"/>
+        <Button x:Name="btnPrintInListbox" Content="Add to Listbox" Margin="97,121,96.714,0" VerticalAlignment="Top" Height="43" Click="btnPrintInListbox_Click"/>
+        <TextBox x:Name="tblogs" IsReadOnly="True" HorizontalAlignment="Left" Height="86" Margin="21,208,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="272"/>
+        <TextBox x:Name="tbselectedFile" IsReadOnly="True" HorizontalAlignment="Left" Height="43" Margin="158,48,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="135"/>
+        <TextBlock x:Name="textBlock" HorizontalAlignment="Left" Margin="158,32,0,0" TextWrapping="Wrap" Text="Selected File" VerticalAlignment="Top"/>
+
+    </Grid>
+</Window>

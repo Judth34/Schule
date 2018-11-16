@@ -1,0 +1,9 @@
+{
+  "name": "my-app",
+  "version": "0.0.0",
+  "description": "MyApp",
+  "main": "server.js",
+  "author": {
+    "name": "Marcel Judth"
+  }
+}
