@@ -1,0 +1,21 @@
+﻿<Window x:Class="SPO_Geometry.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:SPO_Geometry"
+        mc:Ignorable="d"
+        Title="MainWindow" Height="380" Width="525">
+    <Grid Margin="0,0,0,-3">
+        <Button x:Name="bttnDrawCurch" Content="Draw every building with visitors" HorizontalAlignment="Left" Margin="202,243,0,0" VerticalAlignment="Top" Width="305" Click="bttnDrawCurch_Click"  Height="26" Background="BlanchedAlmond"/>
+        <Label x:Name="lbbChurhc" Content="Data of each building:" HorizontalAlignment="Left" Margin="10,10,0,0" VerticalAlignment="Top" Height="28" Width="187"/>
+        <ScrollViewer HorizontalAlignment="Left" Margin="10,43,0,0" VerticalAlignment="Top" Height="135" Width="187"  >
+            <TextBlock x:Name="txtBlockCurch" TextWrapping="Wrap" Background="GreenYellow" />
+        </ScrollViewer>
+        <Canvas x:Name="myCan" HorizontalAlignment="Left" Height="228" VerticalAlignment="Top" Width="305" Margin="202,10,0,0" Background="Yellow"  Cursor="None"/>
+        <Label x:Name="lbbChurhc_Copy" Content="Visitors Data inside of each Building:" HorizontalAlignment="Left" Margin="0,183,0,0" VerticalAlignment="Top" Height="28" Width="202"/>
+        <TextBlock x:Name="txtBlockVisitors" HorizontalAlignment="Left" Margin="10,216,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Height="126" Width="187" Background="GreenYellow"/>
+        <TextBlock x:Name="txtBlockInfo" HorizontalAlignment="Left" Margin="202,274,0,0" TextWrapping="Wrap" Text="To trigger the onchangelistener please add a visitor in database. Visitor is also inside building if he is a small piece outside. see db function" VerticalAlignment="Top" Height="48" Width="305" Background="LightCyan" />
+
+    </Grid>
+</Window>

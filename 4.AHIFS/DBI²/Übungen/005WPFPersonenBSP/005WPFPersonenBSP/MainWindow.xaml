@@ -1,0 +1,36 @@
+﻿<Window x:Class="_005WPFPersonenBSP.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:_005WPFPersonenBSP"
+        mc:Ignorable="d"
+        Title="MainWindow" Height="440.495" Width="861.506">
+    <Grid Background="DarkGray" Margin="0,0,-6,0" Height="411" VerticalAlignment="Top">
+        <Label x:Name="lblName" Content="Name:"  HorizontalAlignment="Left" Margin="588,69,0,0" VerticalAlignment="Top"/>
+        <TextBox x:Name="txtName" HorizontalAlignment="Left" Height="23" Margin="691,71,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="120"/>
+        <TextBox x:Name="txtDate" HorizontalAlignment="Left" Height="23" Margin="691,103,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="120"/>
+        <TextBox x:Name="txtSal" HorizontalAlignment="Left" Height="23" Margin="691,135,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="120"/>
+        <Label x:Name="lblDate" Content="Birthdate (DD-MON-YYYY):"  HorizontalAlignment="Left" Margin="539,101,0,0" VerticalAlignment="Top"/>
+        <Label x:Name="lblSal" Content="Salary:"  HorizontalAlignment="Left" Margin="588,133,0,0" VerticalAlignment="Top"/>
+        <Button x:Name="btnUpdate" Content="Update" HorizontalAlignment="Left" Margin="558,178,0,0" VerticalAlignment="Top" Width="75" Click="btnUpdate_Click"/>
+        <ListView x:Name="listPersons" HorizontalAlignment="Left" Height="291" Margin="10,10,0,0" VerticalAlignment="Top" Width="515">
+            <ListView.View>
+                <GridView>
+                    <GridViewColumn Header="Nr" Width="60" DisplayMemberBinding="{Binding nr}" />
+                    <GridViewColumn Header="Name" Width="170" DisplayMemberBinding="{Binding Name}" />
+                    <GridViewColumn Header="Birthdate" Width="180" DisplayMemberBinding="{Binding date}" />
+                    <GridViewColumn Header="Salary" Width="100" DisplayMemberBinding="{Binding gehalt}" />
+                </GridView>
+            </ListView.View>
+        </ListView>
+        <TextBox x:Name="lblMessage" Height="66" IsReadOnly="True" Margin="10,316,10,0" TextWrapping="Wrap" Text="..." VerticalAlignment="Top"/>
+        <Button x:Name="btnDelete" Content="Delete" HorizontalAlignment="Left" Margin="656,178,0,0" VerticalAlignment="Top" Width="75" Click="btnDelete_Click"/>
+        <Button x:Name="btnInsert" Content="Insert" HorizontalAlignment="Left" Margin="760,179,0,0" VerticalAlignment="Top" Width="75" Click="btnInsert_Click"/>
+        <TextBox x:Name="txtNr" HorizontalAlignment="Left" Height="23" Margin="691,41,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="120"/>
+        <Label x:Name="lblNr" Content="Nr:"  HorizontalAlignment="Left" Margin="588,40,0,0" VerticalAlignment="Top"/>
+        <Button x:Name="btnreadCommited" Content="Read-commited-Mode" HorizontalAlignment="Left" Margin="560,243,0,0" VerticalAlignment="Top" Width="133" Height="33" Click="btnreadCommited_Click"/>
+        <Button x:Name="btnSerializeable" Content="Serializable-Mode" HorizontalAlignment="Left" Margin="702,243,0,0" VerticalAlignment="Top" Width="133" Height="33" Click="btnSerializeable_Click"/>
+
+    </Grid>
+</Window>

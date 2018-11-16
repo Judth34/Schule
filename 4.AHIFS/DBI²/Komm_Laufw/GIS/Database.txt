@@ -1,0 +1,106 @@
+using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+//using System.Data.OracleClient;
+using Oracle.DataAccess.Client;
+using System.Windows;
+using System.Threading;
+using System.Collections.ObjectModel;
+using System.ComponentModel;
+using System.Runtime.CompilerServices;
+
+namespace OraListener
+{
+    public class Database
+    {
+        private static OracleConnection conn;
+
+        OracleDependency dep = null;
+        
+        public void Connect()
+        {
+            try
+            {
+                 //conn = new OracleConnection(
+                 //     "Data Source=192.168.128.152:1521/ora11g;PERSIST SECURITY INFO=True;User ID=rel;Password=rel");
+                 // conn = new OracleConnection(
+                 //     "Data Source=212.152.179.117:1521/ora11g;PERSIST SECURITY INFO=True;User ID=rel;Password=rel");
+                conn = new OracleConnection(
+                        "Data Source=oraschueler/ora11g;PERSIST SECURITY INFO=True;User ID=rel;Password=rel");
+
+                 var cmd = new OracleCommand("select * from t1", conn);
+
+                conn.Open();
+                OracleDependency.Port = -1;
+
+                dep = new OracleDependency(cmd);
+                dep.QueryBasedNotification = false;
+                cmd.Notification.IsNotifiedOnce = false;
+
+                dep.OnChange += new OnChangeEventHandler(dep_OnChange);
+              
+                cmd.ExecuteNonQuery();
+
+               /*
+                // Updating emp table so that a notification can be received when
+                // the emp table is updated.
+                // Start a transaction to update emp table
+                OracleTransaction txn = conn.BeginTransaction();
+                // Create a new command which will update emp table
+                string updateCmdText =
+                  "update t1 set name = 'ooooxxxxooo'";
+                OracleCommand updateCmd = new OracleCommand(updateCmdText, conn);
+                // Update the emp table
+                updateCmd.ExecuteNonQuery();
+                //When the transaction is committed, a notification will be sent from
+                //the database
+                txn.Commit();
+                */
+
+            
+            }
+            catch(Exception e)
+            {
+                MessageBox.Show(e.Message);
+            }
+
+        }
+
+        void dep_OnChange(object sender, OracleNotificationEventArgs eventArgs)
+        {
+            w.WinDispatcher.Invoke(w.Refresh);
+
+        }
+
+        MainWindowViewModel w;
+        public Database(MainWindowViewModel mw)
+        { w = mw; }
+
+        public ObservableCollection<t1> GetT1()
+        {
+            ObservableCollection< t1> l = new ObservableCollection< t1>();
+            try
+            {
+                OracleCommand cmd = conn.CreateCommand();
+                cmd.CommandText = "SELECT * from t1";
+                OracleDataReader reader = cmd.ExecuteReader();
+
+                while (reader.Read())
+                {
+                    l.Add(new t1() { Nr = Convert.ToInt32(reader["nr"].ToString()), Name = (String)reader["name"], Email = (String)reader["Email"] });
+
+                }
+
+            }
+            catch (System.Exception _e)
+            {
+                MessageBox.Show(_e.Message);
+            }
+          
+            return l; 
+        }
+
+    }
+}

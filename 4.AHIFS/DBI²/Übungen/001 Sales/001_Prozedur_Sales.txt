@@ -1,0 +1,163 @@
+create or replace PROCEDURE PROCEDURE1 AS 
+cursor c is select * from sales 
+order by loc_id, cust_id, PRD_ID;
+C_rec C%ROWTYPE;
+var_locid int := -1;
+var_custid int := -1;
+var_sum int := 0;
+var_sumlocal int := 0;
+var_prdid int := 0;
+var_sumprd int := 0;
+BEGIN
+  for c_rec in c loop
+      if (var_locid = -1) then
+          DBMS_OUTPUT.PUT_LINE('*************Bundesland: ' || c_rec.loc_id || '*************');
+          var_locid := c_rec.loc_id;  
+      end if;
+      if (var_locid != c_rec.loc_id) then
+      DBMS_OUTPUT.PUT_LINE('*************Summe: ' || var_sumlocal || '*************');      
+      DBMS_OUTPUT.PUT_LINE('*************Bundesland: ' || c_rec.loc_id || '*************');
+      var_sum := var_sum + var_sumlocal;
+      var_sumlocal := 0;
+      var_locid := c_rec.loc_id;  
+      end if;
+      
+      if (var_custid = -1) then
+        var_custid := c_rec.cust_id;
+        DBMS_OUTPUT.PUT_LINE('***Customer: ' || c_rec.cust_id);     
+      end if;
+      if(var_custid != c_rec.cust_id) then
+        DBMS_OUTPUT.PUT_LINE('***Customer: ' || c_rec.cust_id);   
+        var_custid := c_rec.cust_id;
+      end if;
+      
+      
+      
+      if(c_rec.prd_id != var_prdid) then
+         DBMS_OUTPUT.PUT_LINE('**Product: ' || var_prdid);
+        var_prdid := var_prdid + 1;  
+      else
+         DBMS_OUTPUT.PUT_LINE('**Product: ' || c_rec.prd_id);
+      end if;
+      
+      
+      
+            
+      DBMS_OUTPUT.PUT_LINE('sales: ' || c_rec.amount);
+      var_sumlocal := var_sumlocal + c_rec.amount;
+      var_prdid := c_rec.prd_id;
+  end loop;
+  
+  DBMS_OUTPUT.PUT_LINE('*************Summe: ' || var_sumlocal || '*************');  
+  var_sum := var_sum + var_sumlocal;
+  DBMS_OUTPUT.PUT_LINE('*************Totale Summe: ' || var_sum || '*************');      
+
+END PROCEDURE1;
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+*************Bundesland: 1*************
+***Customer: 6
+**Product: 0
+sales: 1000
+**Product: 5
+sales: 1000
+***Customer: 7
+**Product: 5
+sales: 5000
+**Product: 1
+sales: 5000
+*************Summe: 12000*************
+*************Bundesland: 2*************
+**Product: 1
+sales: 4000
+**Product: 4
+sales: 4000
+*************Summe: 8000*************
+*************Bundesland: 3*************
+***Customer: 2
+**Product: 4
+sales: 3500
+**Product: 4
+sales: 3500
+**Product: 4
+sales: 2050
+***Customer: 4
+**Product: 5
+sales: 500
+**Product: 5
+sales: 500
+***Customer: 5
+**Product: 5
+sales: 800
+**Product: 1
+sales: 800
+**Product: 1
+sales: 850
+**Product: 2
+sales: 850
+*************Summe: 13350*************
+*************Bundesland: 4*************
+***Customer: 1
+**Product: 2
+sales: 1000
+**Product: 1
+sales: 8000
+**Product: 1
+sales: 8000
+**Product: 1
+sales: 1000
+**Product: 1
+sales: 9500
+**Product: 2
+sales: 9500
+**Product: 2
+sales: 900
+**Product: 3
+sales: 900
+***Customer: 3
+**Product: 3
+sales: 5100
+**Product: 2
+sales: 5100
+***Customer: 4
+**Product: 2
+sales: 750
+**Product: 4
+sales: 750
+***Customer: 5
+**Product: 4
+sales: 6000
+*************Summe: 56500*************
+*************Totale Summe: 89850*************

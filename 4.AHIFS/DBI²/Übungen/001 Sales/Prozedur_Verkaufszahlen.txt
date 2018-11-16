@@ -1,0 +1,40 @@
+create or replace PROCEDURE PROCEDURE1 AS 
+cursor c is select * from sales order by loc_id, cust_id;
+C_rec C%ROWTYPE;
+var_locid int := -1;
+var_custid int := -1;
+var_sum int := 0;
+var_sumlocal int := 0;
+BEGIN
+  for c_rec in c loop
+      if (var_locid = -1) then
+          DBMS_OUTPUT.PUT_LINE('*************Bundesland: ' || c_rec.loc_id || '*************');
+          var_locid := c_rec.loc_id;  
+      end if;
+      if (var_locid != c_rec.loc_id) then
+      DBMS_OUTPUT.PUT_LINE('*************Summe: ' || var_sumlocal || '*************');      
+      DBMS_OUTPUT.PUT_LINE('*************Bundesland: ' || c_rec.loc_id || '*************');
+      var_sum := var_sum + var_sumlocal;
+      var_sumlocal := 0;
+      var_locid := c_rec.loc_id;  
+      end if;
+      
+      if (var_custid = -1) then
+        var_custid := c_rec.cust_id;
+        DBMS_OUTPUT.PUT_LINE('***Customer: ' || c_rec.cust_id);     
+      end if;
+      if(var_custid != c_rec.cust_id) then
+        DBMS_OUTPUT.PUT_LINE('***Customer: ' || c_rec.cust_id);   
+        var_custid := c_rec.cust_id;
+      end if;
+      
+      DBMS_OUTPUT.PUT_LINE('sales: ' || c_rec.amount);
+      var_sumlocal := var_sumlocal + c_rec.amount;
+      
+  end loop;
+  
+  DBMS_OUTPUT.PUT_LINE('*************Summe: ' || var_sumlocal || '*************');  
+  var_sum := var_sum + var_sumlocal;
+  DBMS_OUTPUT.PUT_LINE('*************Totale Summe: ' || var_sum || '*************');      
+
+END PROCEDURE1;
