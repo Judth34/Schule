@@ -1,0 +1,81 @@
+// server.js
+
+// BASE SETUP
+// =============================================================================
+
+// call the packages we need
+var express    = require('express');        // call express
+var app        = express();                 // define our app using express
+var bodyParser = require('body-parser');
+var sessionManager = require('./BL/sessionRaterBl');
+var APILink = 'http://localhost:8080/api';
+sessionManager.createTestData();
+
+// configure app to use bodyParser()
+// this will let us get the data from a POST
+app.use(bodyParser.urlencoded({ extended: true }));
+app.use(bodyParser.json());
+
+var port = process.env.PORT || 8080;        // set our port
+
+// ROUTES FOR OUR API
+// =============================================================================
+var defaultRouter = express.Router();              // get an instance of the express Router
+var sessionRouter = express.Router();
+var ratingRouter = express.Router({mergeParams: true});
+
+// test route to make sure everything is working (accessed at GET http://localhost:8080/api)
+defaultRouter.get('/', function(req, res) {
+    res.json({ message: 'API Session Rater Backend',
+               sessions: APILink + '/sessions'
+    });   
+});
+
+sessionRouter.get('/', function(req, res){
+    res.json(sessionManager.getSessions());
+});
+
+sessionRouter.get('/:id', function(req, res){
+    res.json(sessionManager.getSessionByID(req.params.id));
+});
+
+sessionRouter.post('/', function(req, res){
+    var newSessionObject = req.body;
+    var newSession = sessionManager.createSession(newSessionObject.title, newSessionObject.speaker);
+    var sessionLink = APILink + '/sessions/' + newSession.ID;
+    res.status(201).json({session : sessionLink});
+});
+
+sessionRouter.delete('/:id', function(req, res){
+    console.log(typeof(req.params.id));
+    sessionManager.deleteSession(parseInt(req.params.id));
+    res.json({message: 'Session with id: ' + req.params.id + ' deleted!',
+              sessions: APILink + '/sessions'
+    });
+});
+
+ratingRouter.get('/', function(req, res){
+    res.json(sessionManager.getSessionByID(req.params.id).getRatings());
+});
+
+ratingRouter.post('/', function(req, res){
+    var newRating = req.body;
+    var sessionId = parseInt(req.params.id);
+    sessionManager.rateSession(sessionId, newRating.ratingValue, newRating.evaluator);
+    var ratingLink = APILink + '/sessions/' + sessionId + '/ratings';
+    res.status(201).json({
+        ratingLink: ratingLink
+    });
+});
+
+// more routes for our API will happen here
+
+// REGISTER OUR ROUTES -------------------------------
+// all of our routes will be prefixed with /api
+app.use('/api', defaultRouter);
+defaultRouter.use('/sessions', sessionRouter);
+sessionRouter.use('/:id/ratings', ratingRouter);
+// START THE SERVER
+// =============================================================================
+app.listen(port);
+console.log('Magic happens on port ' + port);

@@ -1,0 +1,53 @@
+﻿"use strict";
+
+var Rating              = require("./Rating.js");
+var SessionException    = require("./SessionException.js");
+var SessionState        = require("./SessionState.js");
+
+function Session(ID,title, speaker) {
+
+    //private fields
+    var ratings  = [];
+    var ID = ID;
+    var title;
+    var speaker;
+    var currentSessionState = SessionState.CREATED;
+
+    //private methods
+    function _rate(rating) {
+      if(!(rating instanceof Rating))
+        throw new SessionException("given param is not type of object","Rating Session Exception");
+      currentSessionState = SessionState.EVALUATED;
+      ratings.push(rating);
+    }
+
+    function _toString() {
+        return "{ ID :  " + ID + " , title : " + title + " , speaker : " + speaker + " }";
+    }
+
+    function _getClass() {
+        return "session";
+    }
+
+    function _getAll() {
+      return ratings;
+    }
+
+    function _getID() {
+      return ID;
+    }
+
+    //public fields
+    this.title = title;
+    this.speaker = speaker;
+
+    //methods
+    this.rate = _rate;
+    this.toString = _toString;
+    this.getClass = _getClass;
+    this.getRatings = _getAll;
+    this.getID = _getID;
+
+}
+
+module.exports = Session;

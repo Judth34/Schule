@@ -1,0 +1,44 @@
+﻿<Window
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:Judth_Blaschke_SessionRater"
+        xmlns:SessionRaterModel="clr-namespace:SessionRaterModel;assembly=SessionRaterModel" x:Class="Judth_Blaschke_SessionRater.MainWindow"
+        mc:Ignorable="d"
+        Title="Session Rater V1" Height="468.75" Width="750">
+    <Grid Margin="0,0,-6,0" RenderTransformOrigin="0.501,0.542" Height="490" VerticalAlignment="Top" Background="#FFFFDADA">
+        <Border HorizontalAlignment="Left" BorderBrush="Cornsilk" BorderThickness="1"  Height="206" Margin="10,79,0,0"  VerticalAlignment="Top" Width="264">
+            <Grid Margin="-0.8,-0.8,1.2,-40.4">
+                <Label x:Name="lbl_Thema" Content="Topic" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="0,62,0,0" Height="30"/>
+                <Label x:Name="lbl_Vortragender" Content="Speaker:" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="0,97,0,0"/>
+                <Label x:Name="lbl_Datum" Content="date:" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="0,135,0,0" RenderTransformOrigin="0.504,4.808"/>
+                <DatePicker x:Name="date" HorizontalAlignment="Left" Margin="95,137,0,0" VerticalAlignment="Top" Width="159"/>
+                <Button x:Name="btn_createSession" Content="Create" HorizontalAlignment="Left" Height="28" Margin="95,208,0,0" VerticalAlignment="Top" Width="157" Click="btn_createSession_Click" Background="#FFFFB2B2"/>
+                <TextBox x:Name="txtBox_Thema" HorizontalAlignment="Left" Height="20" Margin="95,67,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="159"/>
+                <TextBox x:Name="txtBox_Vortragender" HorizontalAlignment="Left" Height="20" Margin="95,103,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="159"/>
+                <Label x:Name="label3" Content="Add new Sessions" HorizontalAlignment="Left" FontSize="18px" FontWeight="Bold" Height="39" Margin="28.857,12.857,0,0" VerticalAlignment="Top" Width="212" Background="#FFFAB4B4"/>
+
+            </Grid>
+        </Border>
+        <Grid HorizontalAlignment="Left" Height="471" Margin="294,29,0,0" VerticalAlignment="Top" Width="429">
+            <Label x:Name="label"  Content="Sessions:" FontSize="18px" FontWeight="Bold" HorizontalAlignment="Left" Margin="0,46,0,0" VerticalAlignment="Top" Width="190" Height="38" Background="#FFFAB4B4"/>
+            <ListBox x:Name="listBox_Sessions" HorizontalAlignment="Right" Height="305" Margin="0,89,10,0" VerticalAlignment="Top" Width="409" SelectionChanged="listBox_Sessions_SelectionChanged">
+                <ListBoxItem MouseDoubleClick="ListBoxItem_MouseDoubleClick">
+                    <ListBoxItem.DataContext>
+                        <SessionRaterModel:SessionState>Created</SessionRaterModel:SessionState>
+                    </ListBoxItem.DataContext>
+                </ListBoxItem>
+                <ListBox.ContextMenu>
+                    <ContextMenu>
+                        <MenuItem x:Name="mntm_rate_Session" Header="Rate Session" Click="mntm_rate_Session_Click"/>
+                        <MenuItem x:Name="mntm_close_Session" Header="Close Session" Click="mntm_close_Session_Click"/>
+                    </ContextMenu>
+                </ListBox.ContextMenu>
+            </ListBox>
+
+        </Grid>
+        <Label x:Name="heading" Content="Session Rater V1" Foreground="#FF6E0000" FontSize="30px" HorizontalAlignment="Left" Margin="239,0,0,0" VerticalAlignment="Top" FontFamily="Kozuka Gothic Pro H"/>
+
+    </Grid>
+</Window>

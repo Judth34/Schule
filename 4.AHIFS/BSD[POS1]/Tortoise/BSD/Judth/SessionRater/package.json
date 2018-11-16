@@ -1,0 +1,10 @@
+{
+    "name": "sessionrater-api-judth-blaschke",
+    "main": "sessionRaterMain.js",
+    "version": "0.0.1",
+    "dependencies": {
+        "express": "~4.15.5",
+        "mongoose": "~4.11.13",
+        "body-parser": "~1.18.2"
+    }
+}

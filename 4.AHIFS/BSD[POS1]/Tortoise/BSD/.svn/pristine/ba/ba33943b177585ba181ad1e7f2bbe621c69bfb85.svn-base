@@ -1,0 +1,46 @@
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <meta http-equiv="X-UA-Compatible" content="ie=edge">
+        <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.4/angular.min.js"></script>
+        <script src="../scripts/clientLogic3.js"></script>
+        <title>default</title>
+    </head>
+    <body>
+        <div>
+            <h1>Version 3 - Inegrated Http calls</h1>
+        </div>
+        <div ng-app="myApp" ng-controller="sessionCtrl"> 
+            
+            <button ng-click="loadSessions()">Load Sessions</button>
+            <button ng-click="loadSpeakers()">Load Speakers</button>
+            <br>
+            <br>
+            <form>
+                Session Title: <input type="text" value="new session Title" ng-model="sessionToCreate.title"></input>
+                Session Speaker: <input type="number" value="3" ng-model="sessionToCreate.speaker"></input>
+                <button ng-click="createSession()">Create Session</button>
+                
+            </form>
+            <table>
+                <tr ng-repeat="session in sessions">
+                    <td>{{ session.SessionId }}</td>    
+                    <td>{{ session.Title }}</td>
+                </tr>
+                <tr ng-repeat="speaker in speakers">
+                    <td>{{ speaker.Name }}</td>
+                </tr>
+            </table>
+
+            <div>
+                    {{errors}}
+            </div>
+            
+        </div>
+            
+            <script>
+             
+            </script>
+    </body>
+    </html>

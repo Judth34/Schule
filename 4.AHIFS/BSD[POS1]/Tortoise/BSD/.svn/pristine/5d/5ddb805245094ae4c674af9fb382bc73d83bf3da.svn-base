@@ -1,0 +1,162 @@
+<!DOCTYPE HTML>
+<!--
+	Full Motion by TEMPLATED
+	templated.co @templatedco
+	Released for free under the Creative Commons Attribution 3.0 license (templated.co/license)
+-->
+<html>
+	<head>
+		<title>Full Motion</title>
+		<meta charset="utf-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1" />
+		<link rel="stylesheet" href="assets/css/main.css" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <meta http-equiv="X-UA-Compatible" content="ie=edge">
+        <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.4/angular.min.js"></script>
+		<script src="../../scripts/clientLogic3.js"></script>
+	</head>
+	<body id="top" onload="loadSessions()">
+
+			<!-- Banner -->
+			<!--
+				To use a video as your background, set data-video to the name of your video without
+				its extension (eg. images/banner). Your video must be available in both .mp4 and .webm
+				formats to work correctly.
+			-->
+				<section id="banner" data-video="images/banner">
+					<div class="inner">
+						<header>
+							<h1>BSD - 2017/2018</h1>
+							<p>Business Software Development<br />
+							created by Marcel Judth</p>
+						</header>
+						<a href="#main" class="more">Learn More</a>
+					</div>
+				</section>
+				<div ng-app="myApp" ng-controller="sessionCtrl"> 
+			<!-- Main -->
+			<div id="main">
+				
+				<div id="form">
+					<table style="width: 50%; float: right; ">
+							<thead>
+								<tr>
+									<th>All Speakers:</th>
+								</tr>
+									<tr>
+									   <th>SpeakerId</th>
+									   <th>Speaker name</th>
+									</tr>
+							</thead>
+							<tfoot>
+								<tr ng-repeat="speaker in speakers">
+										<td>{{speaker.SpeakerId }}</td>
+										<td>{{ speaker.Name }}</td>
+								</tr>
+							</tfoot>
+							
+					</table>
+					<form>
+							Session Title: <input type="text" style="width: 20%" class="sessionTxt" value="new session Title" ng-model="sessionToCreate.title"></input>
+							Session Speaker: <input  type="text" style="width: 20%" value="3" ng-model="sessionToCreate.speaker"></input>
+						<br>
+
+						<button ng-click="createSession()">Create Session</button>	
+					</form>
+
+					<br>
+					<br>
+					<div id="selectBoxs">
+							<p>select Session to show Ratings:</p>
+	
+							<select ng-options="session as session.SessionId for session in sessions" 
+							ng-model="selectedItem" ng-change="updateRatings()" name="SessionSelect" id="SessionSelect" style="width: 20%; background: rgba(144, 144, 144, 0.075);">
+								<option value=""></option>
+								<option ng-repeat="session in sessions" value="">{{ session.SessionId }}, {{ session.Title }}</option>
+							</select>
+						</div>
+
+					<table style="width: 50%; float: right; ">
+							<thead>
+								<tr>
+									<th>All Ratings:</th>
+								</tr>
+									<tr>
+									   <th>RatingId</th>
+									   <th>Value</th>
+									   <th>Date</th>
+									   <th>SessionId</th>
+									</tr>
+							</thead>
+							<tfoot>
+								<tr ng-repeat="rating in ratings">
+										<td>{{rating.RatingId }}</td>
+										<td>{{ rating.Value }}</td>
+										<td>{{ rating.Date }}</td>
+										<td>{{ rating.SessionId }}</td>
+								</tr>
+							</tfoot>
+							
+					</table>
+
+					<br><br><br><br>	
+					<form>
+							Id of Session to delete: <input type="text" style="width: 20%;" value="Session id" ng-model="sessionToDelete.sessionId"></input>
+							
+							<button ng-click="deleteSession()">Delete Session</button>	
+						</form>
+
+					
+				</div>
+
+				
+
+				<div class="inner">
+						<button ng-click="loadSessions()">Load Sessions</button>
+
+
+					
+				<!-- Boxes -->
+					<div class="thumbnails">
+
+						<div class="box" ng-repeat="session in sessions">
+							<a href="https://youtu.be/s6zR2T9vn2c" class="image fit"><img src="images/pic02.jpg" alt="" /></a>
+							<div class="inner">
+								<h3>Nr: {{ session.SessionId }}, "{{ session.Title }}"</h3>
+								<p> from Speaker Number {{ session.SpeakerId }}</p>
+								<button class="button style2 fit" data-poptrox="youtube,800x400">show Ratings</button>
+							</div>
+						</div>
+					</div>
+						</div>
+
+
+				</div>
+			</div>
+		</div>
+			<!-- Footer -->
+				<footer id="footer">
+					<div class="inner">
+						<h2>SessionRater</h2>
+						<p>For rating Sessions</p>
+
+						<ul class="icons">
+							<li><a href="#" class="icon fa-twitter"><span class="label">Twitter</span></a></li>
+							<li><a href="#" class="icon fa-facebook"><span class="label">Facebook</span></a></li>
+							<li><a href="#" class="icon fa-instagram"><span class="label">Instagram</span></a></li>
+							<li><a href="#" class="icon fa-envelope"><span class="label">Email</span></a></li>
+						</ul>
+						<p class="copyright">&copy; Untitled. Design: <a href="https://templated.co">TEMPLATED</a>. Images: <a href="https://unsplash.com/">Unsplash</a>. Videos: <a href="http://coverr.co/">Coverr</a>.</p>
+					</div>
+				</footer>
+
+		<!-- Scripts -->
+			<script src="assets/js/jquery.min.js"></script>
+			<script src="assets/js/jquery.scrolly.min.js"></script>
+			<script src="assets/js/jquery.poptrox.min.js"></script>
+			<script src="assets/js/skel.min.js"></script>
+			<script src="assets/js/util.js"></script>
+			<script src="assets/js/main.js"></script>
+
+	</body>
+</html>

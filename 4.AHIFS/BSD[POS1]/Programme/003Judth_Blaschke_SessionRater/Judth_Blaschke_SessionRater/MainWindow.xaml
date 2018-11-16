@@ -1,0 +1,49 @@
+﻿<Window x:Class="Judth_Blaschke_SessionRater.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:Judth_Blaschke_SessionRater"
+        mc:Ignorable="d"
+        Title="Session Rater V1" Height="570" Width="750">
+    <Grid Margin="0,0,-6,-1.286" RenderTransformOrigin="0.501,0.542" Background="#2E2E2E">
+        <Border HorizontalAlignment="Left" CornerRadius="13" BorderBrush="#2E9AFE" BorderThickness="1"  Height="200" Margin="10,117,0,0"  VerticalAlignment="Top" Width="264">
+            <Grid Margin="-0.143,0.857">
+                <Label x:Name="lbl_Title" Content="Title:" FontSize="15px" HorizontalAlignment="Left" Foreground="#EFFBFB" VerticalAlignment="Top" Margin="0,62,0,0" Height="30"/>
+                <Label x:Name="lbl_Speaker" Content="Speaker:" FontSize="15px" HorizontalAlignment="Left" Foreground="#EFFBFB" VerticalAlignment="Top" Margin="0,97,0,0"/>
+                <TextBox x:Name="txtBox_Title" Background="#585858" FontSize="14px" Foreground="#EFFBFB" HorizontalAlignment="Left" Height="20" Margin="95,67,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="159"/>
+                <TextBox x:Name="txtBox_Speaker" Background="#585858" FontSize="14px" Foreground="#EFFBFB" HorizontalAlignment="Left" Height="20" Margin="95,103,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="159"/>
+                <Label x:Name="label3" Content="Add new Sessions" Foreground="#2E9AFE" HorizontalAlignment="Left" FontSize="18px" FontWeight="Bold" Height="39" Margin="28.857,12.857,0,0" VerticalAlignment="Top" Width="212"/>
+                <Button Cursor="Hand" x:Name="btn_createSession" BorderBrush="Transparent" Background="White" Foreground="Black" FontSize="18" HorizontalAlignment="Left"
+                Content="ADD" FontWeight="Bold"  RenderTransformOrigin="0.844,0.439" Width="91" Margin="95,144,0,20" Click="btn_createSession_Click">
+                    <Button.Effect>
+                        <DropShadowEffect BlurRadius="15" ShadowDepth="0"/>
+                    </Button.Effect>
+                    <Button.Resources>
+                        <Style TargetType="{x:Type Border}">
+                            <Setter Property="CornerRadius" Value="10"/>
+                            <Setter Property="Padding" Value="10,2,10,3"/>
+                            <Setter Property="Background" Value="White"/>
+                        </Style>
+                    </Button.Resources>
+                </Button>
+
+            </Grid>
+        </Border>
+        <Grid HorizontalAlignment="Left" Height="471" Margin="294,29,0,0" VerticalAlignment="Top" Width="429">
+            <Label x:Name="label"  Content="Sessions:" Foreground="#2E9AFE" FontSize="18px" FontWeight="Bold" HorizontalAlignment="Left" Margin="0,46,0,0" VerticalAlignment="Top" Width="190" Height="38"/>
+            <ListBox x:Name="listBox_Sessions" HorizontalAlignment="Left" FontSize="14px" Foreground="#EFFBFB" Background="#585858" Height="395" Margin="0,89,0,-13" VerticalAlignment="Top" Width="429" >
+
+                <ListBox.ContextMenu>
+                    <ContextMenu>
+                        <MenuItem Header="Rate" Click="rate_Session_Click"/>
+                        <MenuItem Header="Close" Click="close_Session_Click"/>
+                        <MenuItem Header="Delete" Click="delete_Session_Click"/>
+                    </ContextMenu>
+                </ListBox.ContextMenu>
+
+            </ListBox>
+        </Grid>
+        <Label x:Name="label1" Content="Session Rater" FontWeight="Bold" Foreground="#2E9AFE" FontSize="34px" Margin="257,8,257,0" VerticalAlignment="Top"/>
+    </Grid>
+</Window>

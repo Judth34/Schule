@@ -1,0 +1,16 @@
+﻿var sessionManager =    require("./SessionRaterBL.js");
+var Session =           require("./Session.js");
+var SessionException =  require("./SessionException.js");
+var SessionState =      require("./SessionState.js");
+
+   
+//Referenzen ? 
+
+try {
+    var newSession = sessionManager.createtestData();
+
+    console.log(sessionManager.closeSession(6));
+    console.log(sessionManager.rateSession(6,4,"judth"));
+} catch (ex) {
+    console.log(ex.toString());
+}

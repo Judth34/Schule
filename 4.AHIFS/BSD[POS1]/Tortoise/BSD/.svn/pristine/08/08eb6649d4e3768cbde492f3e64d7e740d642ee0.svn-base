@@ -1,0 +1,14 @@
+﻿"use strict";
+
+function Rating(ratingValue, Evaluator, EvaluatedSession) {
+
+    //fields
+    this.ratingValue = ratingValue;
+    this.Evaluator = Evaluator;
+    this.EvaluatedSession = EvaluatedSession;
+
+    //methods
+
+}
+
+module.exports = Rating;

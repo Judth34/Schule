@@ -1,0 +1,31 @@
+{
+        "version": "0.2.0",
+        "compounds": [
+            {
+                "name" : "Launch & Debug Backend and Frontend",
+                "configurations" : ["START Backend","START Frontend Chrome"]
+            }
+        ],
+        "configurations": [
+            
+            {
+                "type" : "chrome",
+                "request" : "launch",
+                "name" : "START Frontend Chrome",
+                "url" : "http://localhost:8080/api/",
+                "webRoot" : "$(workspaceRoot}"
+            },
+            {
+                "type": "node",
+                "request": "launch",
+                "name": "START Backend",
+                "program": "${workspaceRoot}\\Backend_blaschkj\\Backend\\sessionRaterMain.js"
+            },  
+            {
+                "type": "node",
+                "request": "launch",
+                "name": "START SQL",
+                "program": "${workspaceRoot}/SQLTESTConnection/app"
+            }
+        ]
+    }
