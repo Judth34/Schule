@@ -1,0 +1,256 @@
+--1
+----------------------------------------------------------------------------------------------------------------------------------------
+select decode(grouping_id(c.CNAME),1,'==all c.',c.cname) as caller, decode(grouping_id(r.REGION_NAME),1,'==all r.',r.region_name) as region, 
+decode(grouping_id(TO_CHAR(s.call_date,'MM')),1,'==all m.',TO_CHAR(s.call_date,'MM')) as month, sum(duration) as duration
+from calls2017 s join caller c on s.T_CNR = c.T_CNR join region r on s.T_REGION_ID = r.T_region_id
+GROUP BY CUBE(c.cname, r.region_name, TO_CHAR(s.call_date,'MM')) order by c.cname, r.region_name,TO_CHAR(s.call_date,'MM');
+
+CALLER               REGION               MONTH      DURATION
+-------------------- -------------------- -------- ----------
+Dreistein            Austria              03               10 
+Dreistein            Austria              ==all m.         10 
+Dreistein            Germany              03              110 
+Dreistein            Germany              04               10 
+Dreistein            Germany              ==all m.        120 
+Dreistein            Great Britain        02              410 
+Dreistein            Great Britain        03               10 
+Dreistein            Great Britain        05              340 
+Dreistein            Great Britain        ==all m.        760 
+Dreistein            ==all r.             02              410 
+Dreistein            ==all r.             03              130 
+Dreistein            ==all r.             04               10 
+Dreistein            ==all r.             05              340 
+Dreistein            ==all r.             ==all m.        890 
+Einstein             Austria              01              100 
+Einstein             Austria              02              230 
+Einstein             Austria              03              130 
+Einstein             Austria              04              110 
+Einstein             Austria              ==all m.        570 
+Einstein             Germany              03              120 
+Einstein             Germany              04               30 
+Einstein             Germany              ==all m.        150 
+Einstein             Great Britain        02               40 
+Einstein             Great Britain        03               50 
+Einstein             Great Britain        04              150 
+Einstein             Great Britain        ==all m.        240 
+Einstein             ==all r.             01              100 
+Einstein             ==all r.             02              270 
+Einstein             ==all r.             03              300 
+Einstein             ==all r.             04              290 
+Einstein             ==all r.             ==all m.        960 
+Vierstein            Austria              03               10 
+Vierstein            Austria              04               10 
+Vierstein            Austria              ==all m.         20 
+Vierstein            Germany              04               20 
+Vierstein            Germany              ==all m.         20 
+Vierstein            Great Britain        02              120 
+Vierstein            Great Britain        03               20 
+Vierstein            Great Britain        04               10 
+Vierstein            Great Britain        ==all m.        150 
+Vierstein            ==all r.             02              120 
+Vierstein            ==all r.             03               30 
+Vierstein            ==all r.             04               40 
+Vierstein            ==all r.             ==all m.        190 
+Zweistein            Austria              05               20 
+Zweistein            Austria              06              120 
+Zweistein            Austria              08               20 
+Zweistein            Austria              ==all m.        160 
+Zweistein            Great Britain        02              180 
+Zweistein            Great Britain        03               20 
+Zweistein            Great Britain        04               60 
+Zweistein            Great Britain        ==all m.        260 
+Zweistein            ==all r.             02              180 
+Zweistein            ==all r.             03               20 
+Zweistein            ==all r.             04               60 
+Zweistein            ==all r.             05               20 
+Zweistein            ==all r.             06              120 
+Zweistein            ==all r.             08               20 
+Zweistein            ==all r.             ==all m.        420 
+==all c.             Austria              01              100 
+==all c.             Austria              02              230 
+==all c.             Austria              03              150 
+==all c.             Austria              04              120 
+==all c.             Austria              05               20 
+==all c.             Austria              06              120 
+==all c.             Austria              08               20 
+==all c.             Austria              ==all m.        760 
+==all c.             Germany              03              230 
+==all c.             Germany              04               60 
+==all c.             Germany              ==all m.        290 
+==all c.             Great Britain        02              750 
+==all c.             Great Britain        03              100 
+==all c.             Great Britain        04              220 
+==all c.             Great Britain        05              340 
+==all c.             Great Britain        ==all m.       1410 
+==all c.             ==all r.             01              100 
+==all c.             ==all r.             02              980 
+==all c.             ==all r.             03              480 
+==all c.             ==all r.             04              400 
+==all c.             ==all r.             05              360 
+==all c.             ==all r.             06              120 
+==all c.             ==all r.             08               20 
+==all c.             ==all r.             ==all m.       2460 
+----------------------------------------------------------------------------------------------------------------------------------------
+--2
+select TO_CHAR(s.call_date,'MM'),sum(duration),
+FIRST_VALUE(SUM(duration)) OVER (ORDER BY TO_CHAR(s.call_date,'MM') ROWS BETWEEN 1 PRECEDING AND 0 FOLLOWING) AS SALES_PRE,
+TO_CHAR((SUM(duration) * 100/ FIRST_VALUE(SUM(duration)) 
+OVER (ORDER BY TO_CHAR(s.call_date,'MM') ROWS 
+BETWEEN 1 PRECEDING AND 0 FOLLOWING) - 100),'9999')
+||' %' AS CHANGE
+from calls2017 s join caller c on s.T_CNR = c.T_CNR 
+join region r on s.T_REGION_ID = r.T_region_id where r.REGION_NAME like 'Great Britain' group by TO_CHAR(s.call_date,'MM') order by TO_CHAR(s.call_date,'MM');
+
+TO_CHAR(S.CALL_DATE,'MM') SUM(DURATION)  SALES_PRE CHANGE
+------------------------- ------------- ---------- -------
+02                                  750        750     0 % 
+03                                  100        750   -87 % 
+04                                  220        100   120 % 
+05                                  340        220    55 % 
+---------------------------------------------------------------------------------------------------------------------------------------- 
+--3
+drop view v;
+create view v as select TO_CHAR(s.call_date,'MM') as month,sum(duration) as duration,
+FIRST_VALUE(SUM(duration)) OVER (ORDER BY TO_CHAR(s.call_date,'MM') ROWS BETWEEN 1 PRECEDING AND 0 FOLLOWING) AS SALES_PRE,
+TO_CHAR((SUM(duration) * 100/ FIRST_VALUE(SUM(duration)) 
+OVER (ORDER BY TO_CHAR(s.call_date,'MM') ROWS 
+BETWEEN 1 PRECEDING AND 0 FOLLOWING) - 100),'9999')
+||' %' AS CHANGE
+from calls2017 s join caller c on s.T_CNR = c.T_CNR 
+join region r on s.T_REGION_ID = r.T_region_id where r.REGION_NAME like 'Great Britain' group by TO_CHAR(s.call_date,'MM') order by TO_CHAR(s.call_date,'MM');
+select * from v where change = (select max(change) from v);
+
+MONTH   DURATION  SALES_PRE CHANGE
+----- ---------- ---------- -------
+04           220        100   120 %
+----------------------------------------------------------------------------------------------------------------------------------------
+--4
+drop view v;
+create view v as select r.REGION_NAME as region, c.CNAME as name, sum(duration)as duration,RANK() OVER (PARTITION BY r.region_name ORDER BY SUM(duration) DESC,-3) AS rank from calls2017 s join caller c on s.T_CNR = c.T_CNR 
+join region r on s.T_REGION_ID = r.T_region_id group by r.REGION_NAME, c.cname;
+select * from v where rank IN (1,2);
+
+REGION               NAME                   DURATION       RANK
+-------------------- -------------------- ---------- ----------
+Austria              Einstein                    570          1 
+Austria              Zweistein                   160          2 
+Germany              Einstein                    150          1 
+Germany              Dreistein                   120          2 
+Great Britain        Dreistein                   760          1 
+Great Britain        Zweistein                   260          2 
+----------------------------------------------------------------------------------------------------------------------------------------
+----------------------------------------------------------------------------------------------------------------------------------------
+drop table caller cascade constraints;
+drop table region cascade constraints;
+drop table calls2017 cascade constraints;
+drop sequence seq_calls2017;
+
+create sequence seq_calls2017;
+
+create table caller(t_cnr integer primary key, cname varchar2(20));
+create table region (t_region_id integer primary key, region_name varchar2(20));
+
+create table calls2017(t_call_nr integer,  t_cnr integer references caller(t_cnr),
+	t_region_id integer references region (t_region_id),
+	duration integer,
+	call_date date);
+
+	
+insert into caller values (1,'Einstein');
+insert into caller values (2,'Zweistein');
+insert into caller values (3,'Dreistein');
+insert into caller values (4,'Vierstein');
+
+insert into region values (0043,'Austria');
+insert into region values (0044,'Great Britain');
+insert into region values (0046,'Germany');
+
+insert into calls2017 values(seq_calls2017.NEXTVAL,1,0043,100,'01.01.2017');
+insert into calls2017 values(seq_calls2017.NEXTVAL,1,0043,100,'01.02.2017');
+insert into calls2017 values(seq_calls2017.NEXTVAL,1,0043,100,'01.02.2017');
+insert into calls2017 values(seq_calls2017.NEXTVAL,2,0044,10,'01.02.2017');
+insert into calls2017 values(seq_calls2017.NEXTVAL,2,0044,10,'01.03.2017');
+insert into calls2017 values(seq_calls2017.NEXTVAL,3,0046,10,'01.03.2017');
+insert into calls2017 values(seq_calls2017.NEXTVAL,3,0046,100,'01.03.2017');
+insert into calls2017 values(seq_calls2017.NEXTVAL,3,0044,100,'01.02.2017');
+insert into calls2017 values(seq_calls2017.NEXTVAL,2,0044,100,'01.02.2017');
+insert into calls2017 values(seq_calls2017.NEXTVAL,4,0044,100,'01.02.2017');
+insert into calls2017 values(seq_calls2017.NEXTVAL,4,0044,10,'01.02.2017');
+insert into calls2017 values(seq_calls2017.NEXTVAL,4,0044,10,'01.03.2017');
+insert into calls2017 values(seq_calls2017.NEXTVAL,1,0046,10,'01.03.2017');
+insert into calls2017 values(seq_calls2017.NEXTVAL,1,0046,100,'01.03.2017');
+
+insert into calls2017 values(seq_calls2017.NEXTVAL,1,0043,10,'01.02.2017');
+insert into calls2017 values(seq_calls2017.NEXTVAL,1,0043,10,'01.02.2017');
+insert into calls2017 values(seq_calls2017.NEXTVAL,1,0043,10,'01.02.2017');
+insert into calls2017 values(seq_calls2017.NEXTVAL,1,0043,10,'01.03.2017');
+insert into calls2017 values(seq_calls2017.NEXTVAL,1,0043,10,'01.03.2017');
+insert into calls2017 values(seq_calls2017.NEXTVAL,1,0043,10,'01.03.2017');
+insert into calls2017 values(seq_calls2017.NEXTVAL,1,0046,10,'01.03.2017');
+
+insert into calls2017 values(seq_calls2017.NEXTVAL,1,0044,10,'01.03.2017');
+insert into calls2017 values(seq_calls2017.NEXTVAL,1,0044,10,'01.03.2017');
+insert into calls2017 values(seq_calls2017.NEXTVAL,1,0044,10,'01.03.2017');
+insert into calls2017 values(seq_calls2017.NEXTVAL,1,0044,10,'01.03.2017');
+insert into calls2017 values(seq_calls2017.NEXTVAL,1,0044,100,'01.04.2017');
+insert into calls2017 values(seq_calls2017.NEXTVAL,1,0043,100,'01.04.2017');
+insert into calls2017 values(seq_calls2017.NEXTVAL,1,0046,10,'01.04.2017');
+
+insert into calls2017 values(seq_calls2017.NEXTVAL,1,0044,10,'01.04.2017');
+insert into calls2017 values(seq_calls2017.NEXTVAL,1,0044,10,'01.04.2017');
+insert into calls2017 values(seq_calls2017.NEXTVAL,1,0044,10,'01.04.2017');
+insert into calls2017 values(seq_calls2017.NEXTVAL,1,0044,10,'01.04.2017');
+insert into calls2017 values(seq_calls2017.NEXTVAL,1,0044,10,'01.04.2017');
+insert into calls2017 values(seq_calls2017.NEXTVAL,1,0043,10,'01.04.2017');
+insert into calls2017 values(seq_calls2017.NEXTVAL,1,0046,10,'01.04.2017');
+
+insert into calls2017 values(seq_calls2017.NEXTVAL,1,0044,10,'01.02.2017');
+insert into calls2017 values(seq_calls2017.NEXTVAL,1,0044,10,'01.02.2017');
+insert into calls2017 values(seq_calls2017.NEXTVAL,1,0044,10,'01.02.2017');
+insert into calls2017 values(seq_calls2017.NEXTVAL,1,0044,10,'01.02.2017');
+insert into calls2017 values(seq_calls2017.NEXTVAL,1,0044,10,'01.03.2017');
+insert into calls2017 values(seq_calls2017.NEXTVAL,1,0043,100,'01.03.2017');
+insert into calls2017 values(seq_calls2017.NEXTVAL,1,0046,10,'01.04.2017');
+
+insert into calls2017 values(seq_calls2017.NEXTVAL,2,0044,10,'01.02.2017');
+insert into calls2017 values(seq_calls2017.NEXTVAL,2,0044,10,'01.02.2017');
+insert into calls2017 values(seq_calls2017.NEXTVAL,2,0044,10,'01.02.2017');
+insert into calls2017 values(seq_calls2017.NEXTVAL,2,0044,10,'01.02.2017');
+insert into calls2017 values(seq_calls2017.NEXTVAL,2,0044,10,'01.03.2017');
+insert into calls2017 values(seq_calls2017.NEXTVAL,2,0044,10,'01.04.2017');
+insert into calls2017 values(seq_calls2017.NEXTVAL,2,0044,10,'01.04.2017');
+insert into calls2017 values(seq_calls2017.NEXTVAL,2,0043,10,'01.05.2017');
+insert into calls2017 values(seq_calls2017.NEXTVAL,2,0043,10,'01.05.2017');
+insert into calls2017 values(seq_calls2017.NEXTVAL,2,0043,10,'01.06.2017');
+insert into calls2017 values(seq_calls2017.NEXTVAL,2,0043,10,'01.06.2017');
+insert into calls2017 values(seq_calls2017.NEXTVAL,2,0043,10,'01.06.2017');
+insert into calls2017 values(seq_calls2017.NEXTVAL,2,0043,70,'01.06.2017');
+insert into calls2017 values(seq_calls2017.NEXTVAL,2,0043,20,'01.06.2017');
+insert into calls2017 values(seq_calls2017.NEXTVAL,2,0043,10,'01.08.2017');
+insert into calls2017 values(seq_calls2017.NEXTVAL,2,0043,10,'01.08.2017');
+
+insert into calls2017 values(seq_calls2017.NEXTVAL,2,0044,10,'01.04.2017');
+insert into calls2017 values(seq_calls2017.NEXTVAL,2,0044,10,'01.04.2017');
+insert into calls2017 values(seq_calls2017.NEXTVAL,2,0044,10,'01.04.2017');
+insert into calls2017 values(seq_calls2017.NEXTVAL,2,0044,10,'01.04.2017');
+insert into calls2017 values(seq_calls2017.NEXTVAL,4,0044,10,'01.04.2017');
+insert into calls2017 values(seq_calls2017.NEXTVAL,4,0043,10,'01.04.2017');
+insert into calls2017 values(seq_calls2017.NEXTVAL,4,0046,10,'01.04.2017');
+
+insert into calls2017 values(seq_calls2017.NEXTVAL,2,0044,10,'01.02.2017');
+insert into calls2017 values(seq_calls2017.NEXTVAL,2,0044,10,'01.02.2017');
+insert into calls2017 values(seq_calls2017.NEXTVAL,2,0044,10,'01.02.2017');
+insert into calls2017 values(seq_calls2017.NEXTVAL,4,0044,10,'01.02.2017');
+insert into calls2017 values(seq_calls2017.NEXTVAL,4,0044,10,'01.03.2017');
+insert into calls2017 values(seq_calls2017.NEXTVAL,4,0043,10,'01.03.2017');
+insert into calls2017 values(seq_calls2017.NEXTVAL,4,0046,10,'01.04.2017');
+
+insert into calls2017 values(seq_calls2017.NEXTVAL,3,0044,100,'01.02.2017');
+insert into calls2017 values(seq_calls2017.NEXTVAL,3,0044,100,'01.02.2017');
+insert into calls2017 values(seq_calls2017.NEXTVAL,3,0044,100,'01.02.2017');
+insert into calls2017 values(seq_calls2017.NEXTVAL,3,0044,10,'01.02.2017');
+insert into calls2017 values(seq_calls2017.NEXTVAL,3,0044,10,'01.03.2017');
+insert into calls2017 values(seq_calls2017.NEXTVAL,3,0043,10,'01.03.2017');
+insert into calls2017 values(seq_calls2017.NEXTVAL,3,0046,10,'01.04.2017');
+insert into calls2017 values(seq_calls2017.NEXTVAL,3,0044,240,'01.05.2017');
+insert into calls2017 values(seq_calls2017.NEXTVAL,3,0044,100,'01.05.2017');

@@ -1,0 +1,77 @@
+Tables:
+
+drop table caller cascade constraints;
+drop table region cascade constraints;
+drop table calls2017 cascade constraints;
+drop sequence seq_calls2017;
+
+create sequence seq_calls2017;
+
+create table caller(cnr_poi integer primary key, cname_poi varchar2(20));
+create table region (region_id_poi integer primary key, region_name_poi varchar2(20));
+
+create table calls2017(call_nr integer,  cnr integer references caller(cnr),
+	region_id_poi integer references region (region_id_poi),
+	duration_poi integer,
+	call_date_poi date);
+
+
+Selects:
+
+1.)
+select decode(grouping_id(c2.cname_poi), 1, '==all callers', c2.cname_poi)  as caller,
+decode(grouping_id(r.region_name_poi), 1, '==all regions', r.region_name_poi) as region,
+decode(grouping_id(to_char(c1.CALL_DATE, 'MM')), 1, '==all months', to_char(c1.CALL_DATE, 'MM')) as cmonth,
+SUM(duration_poi)
+FROM calls2017 c1 
+JOIN caller c2 on c1.CNR = c2.cnr
+JOIN region r on c1.region_id_poi = r.region_id_poi
+GROUP BY CUBE (c2.cname_poi, r.region_name_poi, to_char(c1.CALL_DATE, 'MM'))
+HAVING grouping_id (c2.cname_poi, r.region_name_poi, to_char(c1.CALL_DATE, 'MM')) <> 1 
+ORDER BY c2.cname_poi ASC, r.region_name_poi, to_char(c1.CALL_DATE, 'MM');
+
+Ausgabe: ORA-01950: keine Berechtigungen für Tablespace 'TSP_SCHUELER'
+
+2.)
+SELECT to_char(call_date_poi, 'MM') as month, duration_poi,
+  FIRST_VALUE(duration_poi) OVER (ORDER BY to_char(call_date_poi, 'MM') ROWS BETWEEN 1 PRECEDING AND 0 FOLLOWING ) AS "Duration former month",
+  to_char(
+  duration_poi -
+  FIRST_VALUE(duration_poi) OVER (ORDER BY to_char(call_date_poi, 'MM') ROWS BETWEEN 1 PRECEDING AND 0 FOLLOWING )
+  ,'999999.9') || ' C' AS "change"
+  FROM calls2017 
+  where call_region = 'Great Britain';
+
+Ausgabe: ORA-01950: keine Berechtigungen für Tablespace 'TSP_SCHUELER'
+
+3.) 
+CREATE VIEW x AS
+select to_char(call_date_poi, 'MM') as "month",
+duration_poi,
+FIRST_VALUE(duration_poi) over (order by calls2017.call_date ROWS BETWEEN 1 PRECEDING AND 0 FOLLOWING) AS "formerDuration",
+duration - FIRST_VALUE(duration_poi) over (order by calls2017.call_date_poi rows between 1 preceding and 0 following) as "change"
+from calls2017 where r_id = (select r_id from region where region_name = 'Great Britain');
+
+SELECT * FROM x
+WHERE "change" = (SELECT Max("change") FROM x);
+
+DROP VIEW x;
+
+Ausgabe: ORA-01950: keine Berechtigungen für Tablespace 'TSP_SCHUELER'
+
+4.)
+
+CREATE VIEW x AS
+select region_name_poi, p_cname, duration_poi,
+DENSE_RANK() OVER (ORDER BY duration DESC) AS rank from calls2017 c
+join region reg on c.cnr = reg.cnr join caller p on p.p_nummer = c.p_nummer
+GROUP BY region_name_poi, p_cname, duration_poi
+ORDER BY region_name_poi, rank;
+
+SELECT * FROM x
+WHERE rank < 3;
+
+DROP VIEW x;
+
+Ausgabe: ORA-01950: keine Berechtigungen für Tablespace 'TSP_SCHUELER'
+

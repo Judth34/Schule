@@ -1,0 +1,130 @@
+1. Informationen:
+
+	- Summe der Anrufdauer für: caller, region, month
+	-                      für: all c., region, month
+	-                      für: all c., all r. , month
+	-                      für: caller, all r. , all m.
+	-                                 total
+
+SELECT 
+     decode(grouping_id(cname),1,'==all callers',cname) as caller,
+		 decode(grouping_id(region_name),1,'==all  countries',region_name) as region,
+		decode(grouping_id(to_char(call_date,'MM')),1,'==all  months',to_char(call_date,'MM')) as month,
+		SUM(duration) as "duration"
+  FROM calls2017 JOIN caller ON caller.cnr = calls2017.cnr join region on calls2017.region_id = region.region_id
+  GROUP BY CUBE(cname,region_NAME,to_char(call_date,'MM'))
+  HAVING grouping_id(cname,region_name,to_char(call_date,'MM')) in (0,4,6,3,7);
+ 
+
+CALLER               REGION               MONTH           duration
+-------------------- -------------------- ------------- ----------
+Einstein             Austria              01                   100 
+Einstein             Austria              02                   230 
+Einstein             Great Britain        02                    40 
+Dreistein            Great Britain        02                   410 
+Vierstein            Great Britain        02                   120 
+Zweistein            Great Britain        02                   180 
+Einstein             Austria              03                   130 
+Dreistein            Austria              03                    10 
+Vierstein            Austria              03                    10 
+Einstein             Germany              03                   120 
+Dreistein            Germany              03                   110 
+Einstein             Great Britain        03                    50 
+Dreistein            Great Britain        03                    10 
+Vierstein            Great Britain        03                    20 
+Zweistein            Great Britain        03                    20 
+Einstein             Austria              04                   110 
+Vierstein            Austria              04                    10 
+Einstein             Germany              04                    30 
+Dreistein            Germany              04                    10 
+Vierstein            Germany              04                    20 
+Einstein             Great Britain        04                   150 
+Vierstein            Great Britain        04                    10 
+Zweistein            Great Britain        04                    60 
+Zweistein            Austria              05                    20 
+Dreistein            Great Britain        05                   340 
+Zweistein            Austria              06                   120 
+Zweistein            Austria              08                    20 
+==all callers        Austria              01                   100 
+==all callers        ==all  countries     01                   100 
+==all callers        Austria              02                   230 
+==all callers        Great Britain        02                   750 
+==all callers        ==all  countries     02                   980 
+==all callers        Austria              03                   150 
+==all callers        Germany              03                   230 
+==all callers        Great Britain        03                   100 
+==all callers        ==all  countries     03                   480 
+==all callers        Austria              04                   120 
+==all callers        Germany              04                    60 
+==all callers        Great Britain        04                   220 
+==all callers        ==all  countries     04                   400 
+==all callers        Austria              05                    20 
+==all callers        Great Britain        05                   340 
+==all callers        ==all  countries     05                   360 
+==all callers        Austria              06                   120 
+==all callers        ==all  countries     06                   120 
+==all callers        Austria              08                    20 
+==all callers        ==all  countries     08                    20 
+Dreistein            ==all  countries     ==all  months        890 
+Einstein             ==all  countries     ==all  months        960 
+Vierstein            ==all  countries     ==all  months        190 
+Zweistein            ==all  countries     ==all  months        420 
+==all callers        ==all  countries     ==all  months       2460 
+
+
+2. Information: Monatliche Änderungen der gesamten Anrufdauer innerhalb Great Britain
+	
+	month,  Duration,  Duration former Month,  Change
+
+  SELECT to_char(call_date,'MM')as month, sum(duration) as duration,
+  FIRST_VALUE(sum(duration)) OVER (ORDER BY to_char(call_date,'MM') ROWS BETWEEN 1 PRECEDING AND 0 FOLLOWING ) AS "former month",
+  to_number(
+  sum(duration) -
+  FIRST_VALUE(sum(duration)) OVER (ORDER BY to_char(call_date,'MM') ROWS BETWEEN 1 PRECEDING AND 0 FOLLOWING )
+  ,'999999.9') AS "change"
+  FROM calls2017 INNER JOIN region on calls2017.region_id = region.region_id where region_name ='Great Britain'
+  group by to_char(call_date,'MM');
+
+02	750	750	0
+03	100	750	-650
+04	220	100	120
+05	340	220	120
+
+3. Information: In welchen Monaten gibt es die größte Veränderung der Anrufdauer 
+   zum Positiven in Great Britain?
+
+	month, Duration,  Duration former Month,  Change
+
+
+ with v as(
+SELECT to_char(call_date,'MM') as month, sum(duration) as duration,
+  FIRST_VALUE(sum(duration)) OVER (ORDER BY to_char(call_date,'MM') ROWS BETWEEN 1 PRECEDING AND 0 FOLLOWING ) AS "former month",
+  to_number(
+  sum(duration) -
+  FIRST_VALUE(sum(duration)) OVER (ORDER BY to_char(call_date,'MM') ROWS BETWEEN 1 PRECEDING AND 0 FOLLOWING )
+  ,'999999.9') AS "change"
+  FROM calls2017 INNER JOIN region on calls2017.region_id = region.region_id where region_name ='Great Britain' 
+  group by to_char(call_date,'MM'))
+select * from v where "change" = (select max("change") from v);
+
+04	220	100	120
+05	340	220	120
+
+4. Information: Pro Land die Top 2 Caller nach Anrufdauer
+	
+	region, caller, Duration, Rank
+
+with v AS(
+SELECT region_name, cname, sum(duration) as duration,
+  RANK() OVER (PARTITION BY region_name ORDER BY sum(duration) DESC ) AS "rank"
+  FROM calls2017 INNER JOIN region on calls2017.region_id = region.region_id JOIN caller ON caller.cnr = calls2017.cnr
+  GROUP BY region_name, cname)
+SELECT * FROM V
+WHERE "rank" <=2;
+
+Austria	Einstein	570	1
+Austria	Zweistein	160	2
+Germany	Einstein	150	1
+Germany	Dreistein	120	2
+Great Britain	Dreistein	760	1
+Great Britain	Zweistein	260	2

@@ -1,0 +1,229 @@
+--original tabellen
+create sequence seq_calls2017;
+
+create table caller(cnr integer primary key, cname varchar2(20));
+create table region (region_id integer primary key, region_name varchar2(20));
+
+create table calls2017(call_nr integer,  cnr integer references caller(cnr),
+	region_id integer references region (region_id),
+	duration integer,
+	call_date date);
+
+
+--tables mit geänderten Namen:
+
+drop table caller cascade constraints;
+drop table region cascade constraints;
+drop table calls2017 cascade constraints;
+drop sequence seq_calls2017;
+
+create sequence seq_calls2017;
+
+create table caller(calnr integer primary key, calname varchar2(20));
+create table region (regionid integer primary key, regionname varchar2(20));
+
+create table calls2017(callnr integer,  cnr integer references caller(calnr),
+	regionid integer references region (regionid),
+	duration integer,
+	call_date date);
+
+
+--select anweisungen
+
+-- 1.)
+
+select decode(grouping_id(c2.calname), 1, '==all c.', c2.calname)  as caller,
+decode(grouping_id(r.regionname), 1, '==all r.', r.regionname) as region,
+decode(grouping_id(to_char(c1.CALL_DATE, 'MM')), 1, '==all m.', to_char(c1.CALL_DATE, 'MM')) as cmonth,
+SUM(duration) FROM calls2017 c1 JOIN caller c2 on c1.CNR = c2.calnr JOIN region r on c1.regionid = r.regionid
+GROUP BY CUBE (c2.calname, r.regionname, to_char(c1.CALL_DATE, 'MM'))
+HAVING grouping_id (c2.calname, r.regionname, to_char(c1.CALL_DATE, 'MM')) <> 1 
+ORDER BY c2.calname ASC, r.regionname, to_char(c1.CALL_DATE, 'MM');
+
+
+-- Ausgabe:
+
+Dreistein	Austria	03	10
+Dreistein	Germany	03	110
+Dreistein	Germany	04	10
+Dreistein	Great Britain	02	410
+Dreistein	Great Britain	03	10
+Dreistein	Great Britain	05	340
+Dreistein	==all r.	02	410
+Dreistein	==all r.	03	130
+Dreistein	==all r.	04	10
+Dreistein	==all r.	05	340
+Dreistein	==all r.	==all m.	890
+Einstein	Austria	01	100
+Einstein	Austria	02	230
+Einstein	Austria	03	130
+Einstein	Austria	04	110
+Einstein	Germany	03	120
+Einstein	Germany	04	30
+Einstein	Great Britain	02	40
+Einstein	Great Britain	03	50
+Einstein	Great Britain	04	150
+Einstein	==all r.	01	100
+Einstein	==all r.	02	270
+Einstein	==all r.	03	300
+Einstein	==all r.	04	290
+Einstein	==all r.	==all m.	960
+Vierstein	Austria	03	10
+Vierstein	Austria	04	10
+Vierstein	Germany	04	20
+Vierstein	Great Britain	02	120
+Vierstein	Great Britain	03	20
+Vierstein	Great Britain	04	10
+Vierstein	==all r.	02	120
+Vierstein	==all r.	03	30
+Vierstein	==all r.	04	40
+Vierstein	==all r.	==all m.	190
+Zweistein	Austria	05	20
+Zweistein	Austria	06	120
+Zweistein	Austria	08	20
+Zweistein	Great Britain	02	180
+Zweistein	Great Britain	03	20
+Zweistein	Great Britain	04	60
+Zweistein	==all r.	02	180
+Zweistein	==all r.	03	20
+Zweistein	==all r.	04	60
+Zweistein	==all r.	05	20
+Zweistein	==all r.	06	120
+Zweistein	==all r.	08	20
+Zweistein	==all r.	==all m.	420
+==all c.	Austria	01	100
+==all c.	Austria	02	230
+==all c.	Austria	03	150
+==all c.	Austria	04	120
+==all c.	Austria	05	20
+==all c.	Austria	06	120
+==all c.	Austria	08	20
+==all c.	Austria	==all m.	760
+==all c.	Germany	03	230
+==all c.	Germany	04	60
+==all c.	Germany	==all m.	290
+==all c.	Great Britain	02	750
+==all c.	Great Britain	03	100
+==all c.	Great Britain	04	220
+==all c.	Great Britain	05	340
+==all c.	Great Britain	==all m.	1410
+==all c.	==all r.	01	100
+==all c.	==all r.	02	980
+==all c.	==all r.	03	480
+==all c.	==all r.	04	400
+==all c.	==all r.	05	360
+==all c.	==all r.	06	120
+==all c.	==all r.	08	20
+==all c.	==all r.	==all m.	2460
+
+
+-- 2.)
+
+create view v as
+select to_char(call_date, 'MM') as "month",
+duration as "duration",
+FIRST_VALUE(duration) over (order by call_date ROWS BETWEEN 1 PRECEDING AND 0 FOLLOWING) AS "formerDuration",
+duration - FIRST_VALUE(duration) over (order by call_date rows between 1 preceding and 0 following) as "change"
+from calls2017 where cnr = (select cnr from region where region.regionname = 'Great Britain');
+
+select "month", "duration", "durationformermonth", "change" FROM v;
+
+(monate sind in zahlen und nicht ausgeschrieben)
+
+02	10	10	0
+02	10	10	0
+02	10	10	0
+02	10	10	0
+02	10	10	0
+02	10	10	0
+02	10	10	0
+02	10	10	0
+02	10	10	0
+02	10	10	0
+02	10	10	0
+02	10	10	0
+02	10	10	0
+02	10	10	0
+02	10	10	0
+02	100	10	90
+02	100	100	0
+02	100	100	0
+02	10	100	-90
+02	100	10	90
+03	10	100	-90
+03	10	10	0
+03	100	10	90
+03	10	100	-90
+03	10	10	0
+03	100	10	90
+03	10	100	-90
+03	10	10	0
+03	10	10	0
+03	10	10	0
+03	10	10	0
+03	10	10	0
+03	10	10	0
+03	10	10	0
+03	10	10	0
+03	100	10	90
+03	10	100	-90
+03	10	10	0
+03	10	10	0
+03	10	10	0
+03	10	10	0
+04	10	10	0
+04	10	10	0
+04	10	10	0
+04	10	10	0
+04	10	10	0
+04	10	10	0
+04	10	10	0
+04	10	10	0
+04	10	10	0
+04	10	10	0
+04	10	10	0
+04	10	10	0
+04	10	10	0
+04	100	10	90
+04	100	100	0
+04	10	100	-90
+04	10	10	0
+04	10	10	0
+04	10	10	0
+04	10	10	0
+04	10	10	0
+04	10	10	0
+05	10	10	0
+05	10	10	0
+05	240	10	230
+05	100	240	-140
+06	20	100	-80
+06	70	20	50
+06	10	70	-60
+06	10	10	0
+06	10	10	0
+08	10	10	0
+08	10	10	0
+
+-- 3.)
+select * from v where "change" = (select max("change") from v);
+
+drop view v;
+
+--Ausgabe:
+05	240	10	230
+
+
+--4.)
+
+select * from (
+select regionname, calname, duration, 
+DENSE_RANK() OVER (PARTITION by regionname order by duration desc) as rank
+from calls2017 call
+join region r on call.regionid = r.regionid join caller cal on cal.cnr = call.cnr
+group by regionname, calname, duration
+order by regionname, rank)
+where rank <= 2;
+
+-- leider nicht fertig geworden um fehler auszumerzen( Keine ausgabe) sollte normal aber passen , 
+

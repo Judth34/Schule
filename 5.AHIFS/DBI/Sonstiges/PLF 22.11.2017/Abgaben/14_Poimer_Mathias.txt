@@ -1,0 +1,205 @@
+drop table person cascade constraints;
+drop table country cascade constraints;
+drop table calls cascade constraints;
+drop sequence seq_calls;
+
+create sequence seq_calls;
+
+create table person(pnr_pm integer primary key, pname varchar2(20));
+
+create table country (country_id_pm integer primary key, country_name varchar2(20));
+
+create table calls(call_nr_pm integer,  pnr integer references person(pnr_pm),
+	country_id integer references country (country_id_pm),
+	duration integer,
+	call_date date);
+
+-------------------------------------------------------------------------------------------------------------------
+
+Aufgaben:
+
+1.
+
+select decode(grouping_id(pname),1,'all P.', pname) 
+as Person, decode(grouping_id(country_name),1,'all C.', country_name) 
+as Country, decode(grouping_id(to_char(call_date, 'YYYY')),1,'all Y.', to_char(call_date, 'YYYY')) 
+as Year,sum(duration) as Durat from calls c join person p 
+on c.pnr = p.pnr_pm join country co
+on c.country_id = co.country_id_pm group by cube(pname, country_name, to_char(call_date, 'YYYY')) 
+order by year DESC, country_name;
+
+-------------------------------------------------------------------------------------------------------------------
+
+2.
+
+SELECT to_char(call_date, 'MM') 
+as MONTH, DURATION, FIRST_VALUE(duration) OVER (ORDER BY to_char(call_date, 'MM') 
+ROWS BETWEEN 1 PRECEDING AND 0 FOLLOWING ) 
+AS "Duration former Month", to_char(duration - FIRST_VALUE(duration) OVER (ORDER BY to_char(call_date, 'MM') 
+ROWS BETWEEN 1 PRECEDING AND 0 FOLLOWING ), '999999') 
+AS "Change" FROM calls 
+where to_char(call_date, 'YYYY') = '2017';
+
+-------------------------------------------------------------------------------------------------------------------
+
+3.
+
+CREATE VIEW vieww AS
+select to_char(call_date, 'MM') 
+as "month", duration, FIRST_VALUE(duration) 
+over (order by calls.call_date ROWS BETWEEN 1 PRECEDING AND 0 FOLLOWING) 
+AS "Duration former Month", duration - FIRST_VALUE(duration) 
+over (order by calls.call_date rows between 1 preceding and 0 following) 
+as "Change" from calls 
+where country_id = 
+(select country_id_pm from country where country_name = 'Austria') 
+AND to_char(call_date, 'YYYY') = 2017;
+
+SELECT * FROM vieww
+WHERE "Change" = (SELECT MIN("Change") FROM vieww);
+
+DROP VIEW vieww;
+
+-------------------------------------------------------------------------------------------------------------------
+
+4.
+
+drop view v;
+
+create view v 
+as select cy.COUNTRY_NAME as country, p.pname 
+as person, sum(duration) as duration,RANK() 
+OVER (PARTITION BY cy.country_name ORDER BY SUM(duration) DESC,-3) 
+AS rank from calls c join country cy on c.country_id = cy.COUNTRY_ID_PM 
+join person p on c.pnr = p.pnr_pm group by cy.country_name, p.pname;
+
+select * from v where rank < 3;
+
+-------------------------------------------------------------------------------------------------------------------
+
+Ergebnisse:
+
+1.
+
+PERSON               COUNTRY              YEAR        DURAT
+-------------------- -------------------- ------ ----------
+Einstein             Austria              2017          100 
+Zweistein            Austria              2017          160 
+Vierstein            Austria              2017           10 
+all P.               Austria              2017          280 
+Dreistein            Austria              2017           10 
+Vierstein            Germany              2017           10 
+Einstein             Germany              2017           10 
+all P.               Germany              2017           30 
+Dreistein            Germany              2017           10 
+Dreistein            Great Britain        2017          320 
+all P.               Great Britain        2017          420 
+Zweistein            Great Britain        2017           30 
+Einstein             Great Britain        2017           50 
+Vierstein            Great Britain        2017           20 
+Einstein             all C.               2017          160 
+Zweistein            all C.               2017          190 
+all P.               all C.               2017          730 
+Dreistein            all C.               2017          340 
+Vierstein            all C.               2017           40 
+Vierstein            Austria              2016           10 
+all P.               Austria              2016          480 
+Einstein             Austria              2016          470 
+Einstein             Germany              2016          250 
+Vierstein            Germany              2016           10 
+all P.               Germany              2016          260 
+Einstein             Great Britain        2016          530 
+all P.               Great Britain        2016          650 
+Zweistein            Great Britain        2016          110 
+Vierstein            Great Britain        2016           10 
+Vierstein            all C.               2016           30 
+Einstein             all C.               2016         1250 
+Zweistein            all C.               2016          110 
+all P.               all C.               2016         1390 
+all P.               Austria              all Y.        760 
+Vierstein            Austria              all Y.         20 
+Dreistein            Austria              all Y.         10 
+Zweistein            Austria              all Y.        160 
+Einstein             Austria              all Y.        570 
+all P.               Germany              all Y.        290 
+Vierstein            Germany              all Y.         20 
+Dreistein            Germany              all Y.         10 
+Einstein             Germany              all Y.        260 
+Vierstein            Great Britain        all Y.         30 
+all P.               Great Britain        all Y.       1070 
+Einstein             Great Britain        all Y.        580 
+Dreistein            Great Britain        all Y.        320 
+Zweistein            Great Britain        all Y.        140 
+Einstein             all C.               all Y.       1410 
+Vierstein            all C.               all Y.         70 
+Dreistein            all C.               all Y.        340 
+all P.               all C.               all Y.       2120 
+Zweistein            all C.               all Y.        300
+
+-------------------------------------------------------------------------------------------------------------------
+
+2.
+
+MONTH   DURATION Duration former Month Change
+----- ---------- --------------------- -------
+02            10                    10       0 
+02            10                    10       0 
+02            10                    10       0 
+02           100                    10      90 
+02           100                   100       0 
+02           100                   100       0 
+02            10                   100     -90 
+02            10                    10       0 
+02            10                    10       0 
+02            10                    10       0 
+02            10                    10       0 
+02            10                    10       0 
+03            10                    10       0 
+03           100                    10      90 
+03            10                   100     -90 
+03            10                    10       0 
+03            10                    10       0 
+03            10                    10       0 
+04            10                    10       0 
+04            10                    10       0 
+04            10                    10       0 
+05            10                    10       0 
+05            10                    10       0 
+06            10                    10       0 
+06            70                    10      60 
+06            10                    70     -60 
+06            20                    10      10 
+06            10                    20     -10 
+08            10                    10       0 
+08            10                    10       0 
+
+-------------------------------------------------------------------------------------------------------------------
+
+3.
+
+view VIEWW erstellt.
+month   DURATION Duration former Month     Change
+----- ---------- --------------------- ----------
+05            10                   100        -90 
+
+-------------------------------------------------------------------------------------------------------------------
+
+4.
+
+COUNTRY              PERSON                 DURATION       RANK
+-------------------- -------------------- ---------- ----------
+Austria              Einstein                    570          1 
+Austria              Zweistein                   160          2 
+Germany              Einstein                    260          1 
+Germany              Vierstein                    20          2 
+Great Britain        Einstein                    580          1 
+Great Britain        Dreistein                   320          2
+
+-------------------------------------------------------------------------------------------------------------------
+
+
+
+
+
+
+

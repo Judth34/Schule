@@ -1,0 +1,172 @@
+Gruppe 2 Julian Liemberger DBI PLF
+
+create sequence seq_calls2017;
+
+create table caller(cId integer primary key, cName varchar2(20));
+create table region (regionId integer primary key, regionName varchar2(20));
+
+create table calls2017(callId integer,  cId integer references caller(cId),
+	regionId integer references region (regionId),
+	duration integer,
+	callDate date);
+
+
+1.
+SELECT
+  decode(grouping_id(cName),1,'-all c.',cName) as caller,
+  decode(grouping_id(regionName), 1, '-all r.', regionName) as region,
+  decode(grouping_id(to_char(callDate,'Month')),1,'-all m.',to_char(callDate,'Month')) as month,
+  sum(duration) as duration 
+  FROM calls2017 INNER JOIN caller ON calls2017.cId = caller.cId INNER JOIN region on region.regionId = calls2017.regionId
+  GROUP BY CUBE(cName, regionName, to_char(callDate,'Month'))
+  HAVING grouping_id(cName,to_char(callDate,'Month')) <> 4;
+ 
+OUTPUT:
+-all c.	-all r.	-all m.	2460
+-all c.	-all r.	April    	400
+-all c.	-all r.	August   	20
+-all c.	-all r.	Februar  	980
+-all c.	-all r.	Januar   	100
+-all c.	-all r.	Juni     	120
+-all c.	-all r.	Mai      	360
+-all c.	-all r.	März     	480
+-all c.	Austria	-all m.	760
+-all c.	Austria	April    	120
+-all c.	Austria	August   	20
+-all c.	Austria	Februar  	230
+-all c.	Austria	Januar   	100
+-all c.	Austria	Juni     	120
+-all c.	Austria	Mai      	20
+-all c.	Austria	März     	150
+-all c.	Germany	-all m.	290
+-all c.	Germany	April    	60
+-all c.	Germany	März     	230
+-all c.	Great Britain	-all m.	1410
+-all c.	Great Britain	April    	220
+-all c.	Great Britain	Februar  	750
+-all c.	Great Britain	Mai      	340
+-all c.	Great Britain	März     	100
+Einstein	-all r.	-all m.	960
+Einstein	-all r.	April    	290
+Einstein	-all r.	Februar  	270
+Einstein	-all r.	Januar   	100
+Einstein	-all r.	März     	300
+Einstein	Austria	-all m.	570
+Einstein	Austria	April    	110
+Einstein	Austria	Februar  	230
+Einstein	Austria	Januar   	100
+Einstein	Austria	März     	130
+Einstein	Germany	-all m.	150
+Einstein	Germany	April    	30
+Einstein	Germany	März     	120
+Einstein	Great Britain	-all m.	240
+Einstein	Great Britain	April    	150
+Einstein	Great Britain	Februar  	40
+Einstein	Great Britain	März     	50
+Dreistein	-all r.	-all m.	890
+Dreistein	-all r.	April    	10
+Dreistein	-all r.	Februar  	410
+Dreistein	-all r.	Mai      	340
+Dreistein	-all r.	März     	130
+Dreistein	Austria	-all m.	10
+Dreistein	Austria	März     	10
+Dreistein	Germany	-all m.	120
+Dreistein	Germany	April    	10
+	
+2.
+SELECT
+  to_char(callDate, 'Month') as month,
+  duration,
+  FIRST_VALUE(duration) OVER (ORDER BY to_char(callDate, 'Month') ROWS BETWEEN 1 PRECEDING AND 0 FOLLOWING ) AS "Duration former month",
+  duration - FIRST_VALUE(duration) OVER (ORDER BY to_char(callDate, 'Month') ROWS BETWEEN 1 PRECEDING AND 0 FOLLOWING ) AS "change"
+  FROM calls2017
+  where regionId = 0044;
+ 
+OUTPUT:  
+April    	10	10	0
+April    	10	10	0
+April    	10	10	0
+April    	10	10	0
+April    	10	10	0
+April    	10	10	0
+April    	10	10	0
+April    	10	10	0
+April    	10	10	0
+April    	10	10	0
+April    	10	10	0
+April    	10	10	0
+April    	100	10	90
+Februar  	10	100	-90
+Februar  	10	10	0
+Februar  	10	10	0
+Februar  	10	10	0
+Februar  	10	10	0
+Februar  	10	10	0
+Februar  	10	10	0
+Februar  	10	10	0
+Februar  	10	10	0
+Februar  	10	10	0
+Februar  	10	10	0
+Februar  	10	10	0
+Februar  	100	10	90
+Februar  	100	100	0
+Februar  	100	100	0
+Februar  	10	100	-90
+Februar  	100	10	90
+Februar  	100	100	0
+Februar  	100	100	0
+Februar  	10	100	-90
+Februar  	10	10	0
+Mai      	240	10	230
+Mai      	100	240	-140
+März     	10	100	-90
+März     	10	10	0
+März     	10	10	0
+März     	10	10	0
+März     	10	10	0
+März     	10	10	0
+März     	10	10	0
+März     	10	10	0
+März     	10	10	0
+März     	10	10	0
+
+
+3.
+create view tmp as 
+SELECT
+  to_char(callDate, 'Month') as month,
+  duration,
+  FIRST_VALUE(duration) OVER (ORDER BY to_char(callDate, 'Month') ROWS BETWEEN 1 PRECEDING AND 0 FOLLOWING ) AS "Duration former month",
+  duration - FIRST_VALUE(duration) OVER (ORDER BY to_char(callDate, 'Month') ROWS BETWEEN 1 PRECEDING AND 0 FOLLOWING ) AS "change"
+  FROM calls2017
+  where regionId = 0044;
+SELECT * FROM tmp
+  WHERE "change" = (SELECT MAX("change") FROM tmp);
+DROP VIEW tmp;
+
+OUTPUT:
+Mai      	240	10	230
+
+4.
+SELECT * FROM (
+  select
+    regionName, cName, duration,
+    DENSE_RANK() OVER (PARTITION BY regionName ORDER BY duration DESC) AS rank from calls2017 call
+    join region r on call.regionId = r.regionId join caller c on c.cId = call.cId
+    GROUP BY regionName, cName, duration
+    ORDER BY regionName, rank)
+  WHERE rank <= 2;
+  
+OUTPUT:
+Austria	Einstein	100	1
+Austria	Zweistein	70	2
+Germany	Dreistein	100	1
+Germany	Einstein	100	1
+Germany	Einstein	10	2
+Germany	Vierstein	10	2
+Germany	Dreistein	10	2
+Great Britain	Dreistein	240	1
+Great Britain	Vierstein	100	2
+Great Britain	Einstein	100	2
+Great Britain	Dreistein	100	2
+Great Britain	Zweistein	100	2

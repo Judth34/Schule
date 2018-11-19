@@ -1,0 +1,170 @@
+-- 1
+SELECT 
+decode(GROUPING_ID(c2.cname_akca), 1, '==all callers', c2.cname_akca)  AS caller,
+decode(GROUPING_ID(r.region_name_akca), 1, '==all regions', r.region_name_akca) AS region,
+decode(GROUPING_ID(to_char(c1.CALL_DATE, 'MM')), 1, '==all months', to_char(c1.CALL_DATE, 'MM')) AS cmonth,
+SUM(duration_akca)
+FROM calls2017 c1 
+JOIN caller c2 ON c1.CNR = c2.cnr
+JOIN region r ON c1.region_id = r.region_id
+GROUP BY CUBE (c2.cname_akca, r.region_name_akca, to_char(c1.CALL_DATE, 'MM'))
+HAVING GROUPING_ID (c2.cname_akca, r.region_name_akca, to_char(c1.CALL_DATE, 'MM')) <> 4
+ORDER BY c2.cname_akca ASC, r.region_name_akca, to_char(c1.CALL_DATE, 'MM');
+
+-- Ausgabe 1
+Dreistein	Austria	03	10
+Dreistein	Austria	==all months	10
+Dreistein	Germany	03	110
+Dreistein	Germany	04	10
+Dreistein	Germany	==all months	120
+Dreistein	Great Britain	02	410
+Dreistein	Great Britain	03	10
+Dreistein	Great Britain	05	340
+Dreistein	Great Britain	==all months	760
+Dreistein	==all regions	02	410
+Dreistein	==all regions	03	130
+Dreistein	==all regions	04	10
+Dreistein	==all regions	05	340
+Dreistein	==all regions	==all months	890
+Einstein	Austria	01	100
+Einstein	Austria	02	230
+Einstein	Austria	03	130
+Einstein	Austria	04	110
+Einstein	Austria	==all months	570
+Einstein	Germany	03	120
+Einstein	Germany	04	30
+Einstein	Germany	==all months	150
+Einstein	Great Britain	02	40
+Einstein	Great Britain	03	50
+Einstein	Great Britain	04	150
+Einstein	Great Britain	==all months	240
+Einstein	==all regions	01	100
+Einstein	==all regions	02	270
+Einstein	==all regions	03	300
+Einstein	==all regions	04	290
+Einstein	==all regions	==all months	960
+Vierstein	Austria	03	10
+Vierstein	Austria	04	10
+Vierstein	Austria	==all months	20
+Vierstein	Germany	04	20
+Vierstein	Germany	==all months	20
+Vierstein	Great Britain	02	120
+Vierstein	Great Britain	03	20
+Vierstein	Great Britain	04	10
+Vierstein	Great Britain	==all months	150
+Vierstein	==all regions	02	120
+Vierstein	==all regions	03	30
+Vierstein	==all regions	04	40
+Vierstein	==all regions	==all months	190
+Zweistein	Austria	05	20
+Zweistein	Austria	06	120
+Zweistein	Austria	08	20
+Zweistein	Austria	==all months	160
+Zweistein	Great Britain	02	180
+Zweistein	Great Britain	03	20
+Zweistein	Great Britain	04	60
+Zweistein	Great Britain	==all months	260
+Zweistein	==all regions	02	180
+Zweistein	==all regions	03	20
+Zweistein	==all regions	04	60
+Zweistein	==all regions	05	20
+Zweistein	==all regions	06	120
+Zweistein	==all regions	08	20
+Zweistein	==all regions	==all months	420
+==all callers	Austria	==all months	760
+==all callers	Germany	==all months	290
+==all callers	Great Britain	==all months	1410
+==all callers	==all regions	01	100
+==all callers	==all regions	02	980
+==all callers	==all regions	03	480
+==all callers	==all regions	04	400
+==all callers	==all regions	05	360
+==all callers	==all regions	06	120
+==all callers	==all regions	08	20
+==all callers	==all regions	==all months	2460
+
+-- 2
+SELECT 
+to_char(CALL_DATE, 'MM') AS cmonth, 
+duration_akca AS DURATION,
+FIRST_VALUE(duration_akca) OVER (ORDER BY call_date ROWS BETWEEN 1 PRECEDING AND 0 FOLLOWING) AS formerDuration,
+duration_akca - FIRST_VALUE(duration_akca) over (order by call_date ROWS BETWEEN 1 PRECEDING AND 0 FOLLOWING) AS DurationChange
+FROM calls2017 
+WHERE cnr = (select cnr from region where region_name_akca = 'Great Britain')
+GROUP BY CALL_DATE, duration_akca
+ORDER BY cmonth, DurationChange, duration, formerDuration;
+
+-- Ausgabe 2
+01	100	100	0
+02	10	100	-90
+02	100	10	90
+03	10	100	-90
+03	100	10	90
+04	10	100	-90
+04	100	10	90
+05	10	100	-90
+05	100	10	90
+05	240	100	140
+06	10	240	-230
+06	20	10	10
+06	70	20	50
+08	10	70	-60
+
+-- 3
+DROP VIEW viewDurationAkca;
+
+CREATE VIEW viewDurationAkca AS
+SELECT to_char(call_date, 'MM') AS "month",
+duration_akca AS "duration",
+FIRST_VALUE(duration_akca) OVER (order by call_date ROWS BETWEEN 1 PRECEDING AND 0 FOLLOWING) AS "formerDuration",
+duration_akca - FIRST_VALUE(duration_akca) OVER (ORDER BY call_date ROWS BETWEEN 1 PRECEDING AND 0 FOLLOWING) AS "change"
+FROM calls2017 WHERE cnr = (SELECT cnr FROM region WHERE region.REGION_NAME_AKCA = 'Great Britain');
+
+SELECT * FROM viewDurationAkca WHERE "change" = (SELECT MAX("change") FROM viewDurationAkca);
+
+-- Ausgabe 3
+05	240	10	230
+
+-- 4
+DROP VIEW viewTopCallersAkca;
+
+CREATE VIEW viewTopCallersAkca AS
+SELECT 
+REGION_NAME_AKCA AS region,
+cname_akca AS name, 
+duration_akca AS duration,
+DENSE_RANK() OVER (ORDER BY duration_akca DESC) AS rank 
+FROM calls2017 c1
+JOIN region r ON c1.REGION_ID = r.REGION_ID 
+JOIN caller c2 ON c1.CNR = c2.CNR
+GROUP BY r.REGION_NAME_AKCA, cname_akca, duration_akca
+ORDER BY rank ASC, r.REGION_NAME_AKCA;
+
+SELECT region, name, duration, rank FROM viewTopCallersAkca WHERE RANK <= 2;
+
+-- Ausgabe 4
+Great Britain	Dreistein	240	1
+Austria	Einstein	100	2
+Germany	Dreistein	100	2
+Germany	Einstein	100	2
+Great Britain	Dreistein	100	2
+Great Britain	Einstein	100	2
+Great Britain	Vierstein	100	2
+Great Britain	Zweistein	100	2
+
+-- Tabellen
+
+drop table caller cascade constraints;
+drop table region cascade constraints;
+drop table calls2017 cascade constraints;
+drop sequence seq_calls2017;
+
+create sequence seq_calls2017;
+
+create table caller(cnr integer primary key, cname_akca varchar2(20));
+create table region (region_id integer primary key, region_name_akca varchar2(20));
+
+create table calls2017(call_nr integer,  cnr integer references caller(cnr),
+    region_id integer references region (region_id),
+	duration_akca integer,
+	call_date date);

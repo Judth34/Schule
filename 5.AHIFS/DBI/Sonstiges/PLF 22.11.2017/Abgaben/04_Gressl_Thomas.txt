@@ -1,0 +1,114 @@
+--Veränderte Tabellen
+drop table person cascade constraints;
+drop table country cascade constraints;
+drop table calls cascade constraints;
+drop sequence seq_calls;
+
+create sequence seq_calls;
+
+create table person( 
+pnr_gressl integer primary key,
+pname_gressl varchar2(20));
+
+create table country ( 
+country_id_gressl integer primary key,
+country_name_gressl varchar2(20));
+
+create table calls( 
+call_nr integer,
+pnr_gressl integer references person(pnr_gressl),
+country_id_gressl integer references country (country_id_gressl),
+duration_gressl integer,
+call_date_gressl date);
+
+
+1-----------------------------------------
+select nvl(decode(grouping_id(c.pname_gressl),1,'-all Persons to country',c.pname_gressl), 'no person') as Person, decode(grouping_id(s.country_id_gressl),1,'summiert',s.country_id_gressl) as Country, nvl(sum(s.duration_gressl),0) AS Duration 
+from calls s right join person c on s.pnr_gressl = c.pnr_gressl left join country r on s.country_id_gressl = r.country_id_gressl
+group by cube(c.pname_gressl, s.country_id_gressl)
+order by c.pname_gressl, s.country_id_gressl;
+
+Ausgabe:
+Person      Country     Duration
+Dreistein	43			10
+Dreistein	44			320
+Dreistein	46			10
+Dreistein	summiert	340
+Einstein	43			570
+Einstein	44			580
+Einstein	46			260
+Einstein	summiert	1410
+Vierstein	43			20
+Vierstein	44			30
+Vierstein	46			20
+Vierstein	summiert	70
+Zweistein	43			160
+Zweistein	44			140
+Zweistein	summiert	300
+-all Persons to country	43	760
+-all Persons to country	44	1070
+-all Persons to country	46	290
+-all Persons to country	summiert	2120
+
+2------------------------------------------------------
+SELECT to_char(call_date_gressl, 'MM') as month, duration_gressl As Duration,
+FIRST_VALUE(duration_gressl) OVER (ORDER BY to_char(call_date_gressl, 'MM') ROWS BETWEEN 1 PRECEDING AND 0 FOLLOWING ) AS "Former_Duration",
+to_char(
+duration_gressl -
+FIRST_VALUE(duration_gressl) OVER (ORDER BY to_char(call_date_gressl, 'MM') ROWS BETWEEN 1 PRECEDING AND 0 FOLLOWING )
+,'999999.9') AS "change"
+FROM calls 
+where to_char(call_date_gressl, 'YYYY') = '2017' AND country_id_gressl = (select country_id_gressl from country where country_name_gressl = 'Austria');
+
+Ausgabe:
+Month Duration Former_Duration change
+03		10		10	     	   .0
+03		10		10	    	   .0
+03		100		10	    	 90.0
+05		10		100	    	-90.0
+05		10		10	   	       .0
+06		70		10	  	     60.0
+06		10		70	  	    -60.0
+06		10		10	   	       .0
+06		10		10	     	   .0
+06		20		10	   	     10.0
+08		10		20	    	-10.0
+08		10		10	    	   .0
+
+3-------------------------------------------------------
+CREATE VIEW v AS
+select to_char(call_date_gressl, 'MM') as "month",
+duration_gressl As Duration,
+FIRST_VALUE(duration_gressl) over (order by calls.call_date_gressl ROWS BETWEEN 1 PRECEDING AND 0 FOLLOWING) AS "Former_Duration",
+duration_gressl - FIRST_VALUE(duration_gressl) over (order by calls.call_date_gressl rows between 1 preceding and 0 following) as "change"
+from calls where call_nr = (select call_nr from country where country_name_gressl = 'Austria') AND to_char(call_date_gressl, 'YYYY') = 2017;
+
+select * from v where "change" = (SELECT MIN("change") FROM v);
+
+Ausgabe:
+month Duration Former_Duration change
+ 02	     10 	100	            -90
+ 03	     10	    100	            -90
+ 
+4-------------------------------------------------------
+
+select * from (select country_name_gressl, pname_gressl, duration_gressl as Duration, rank() 
+over (partition by country_name_gressl order by duration_gressl desc) as rank
+from calls s join Person c on s.pnr_gressl = c.pnr_gressl left join country r on s.country_id_gressl = r.country_id_gressl GROUP BY country_name_gressl, pname_gressl, duration_gressl)
+where rank <= 2
+order by country_name_gressl, rank;
+
+Ausgabe:
+Country Name    P_Name		Duration   Rank
+Austria			Einstein	100			1
+Austria			Zweistein	70			2
+Germany			Einstein	100			1
+Germany			Dreistein	10			2
+Germany			Einstein	10			2
+Germany			Vierstein	10			2
+Great Britain	Dreistein	100			1
+Great Britain	Einstein	100			1
+ 
+ 
+ 
+ 

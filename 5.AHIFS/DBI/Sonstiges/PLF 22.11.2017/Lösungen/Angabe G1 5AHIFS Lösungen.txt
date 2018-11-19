@@ -1,0 +1,107 @@
+1. Informationen:
+
+	- Summe der Anrufdauer für: Person, Country, Year
+	-                      für: all P., Country, Year
+	-                      für: all P., all C. , Year
+	-                      für: Person, all C. , all Y.
+
+
+SELECT 
+     decode(grouping_id(pname),1,'==all Persons',pname) as person,
+		 decode(grouping_id(country_name),1,'==all  countries',country_name) as country,
+		decode(grouping_id(to_char(call_date,'YYYY')),1,'==all  years',to_char(call_date,'YYYY')) as year,
+		SUM(duration) as "duration"
+  FROM calls JOIN person ON person.pnr = calls.pnr join country on calls.country_id = country.country_id
+  GROUP BY CUBE(pname,country_NAME,to_char(call_date,'YYYY'))
+  HAVING grouping_id(pname,country_name,to_char(call_date,'YYYY')) in (0,4,6,3);
+ 
+PERSON               COUNTRY              YEAR           duration
+-------------------- -------------------- ------------ ----------
+Einstein             Austria              2016                470 
+Vierstein            Austria              2016                 10 
+Einstein             Germany              2016                250 
+Vierstein            Germany              2016                 10 
+Einstein             Great Britain        2016                530 
+Vierstein            Great Britain        2016                 10 
+Zweistein            Great Britain        2016                110 
+Einstein             Austria              2017                100 
+Dreistein            Austria              2017                 10 
+Vierstein            Austria              2017                 10 
+Zweistein            Austria              2017                160 
+Einstein             Germany              2017                 10 
+Dreistein            Germany              2017                 10 
+Vierstein            Germany              2017                 10 
+Einstein             Great Britain        2017                 50 
+Dreistein            Great Britain        2017                320 
+Vierstein            Great Britain        2017                 20 
+Zweistein            Great Britain        2017                 30 
+==all Persons        Austria              2016                480 
+==all Persons        Germany              2016                260 
+==all Persons        Great Britain        2016                650 
+==all Persons        ==all  countries     2016               1390 
+==all Persons        Austria              2017                280 
+==all Persons        Germany              2017                 30 
+==all Persons        Great Britain        2017                420 
+==all Persons        ==all  countries     2017                730 
+Einstein             ==all  countries     ==all  years       1410 
+Dreistein            ==all  countries     ==all  years        340 
+Vierstein            ==all  countries     ==all  years         70 
+Zweistein            ==all  countries     ==all  years        300 
+
+2. Information: Monatliche Änderungen der gesamten Anrufdauer innerhalb Austria im Jahre 2017
+	
+	Year.Month,  Duration,  Duration former Month,  Change
+
+  SELECT to_char(call_date,'YYYY.MM')as month, sum(duration) as duration,
+  FIRST_VALUE(sum(duration)) OVER (ORDER BY to_char(call_date,'YYYY.MM') ROWS BETWEEN 1 PRECEDING AND 0 FOLLOWING ) AS "former month",
+  to_number(
+  sum(duration) -
+  FIRST_VALUE(sum(duration)) OVER (ORDER BY to_char(call_date,'YYYY.MM') ROWS BETWEEN 1 PRECEDING AND 0 FOLLOWING )
+  ,'999999.9') AS "change"
+  FROM calls INNER JOIN country on calls.country_id = country.country_id where country_name ='Austria' and to_char(call_date,'YYYY') = 2017
+  group by to_char(call_date,'YYYY.MM');
+
+
+2017.03	120	120	0
+2017.05	20	120	-100
+2017.06	120	20	100
+2017.08	20	120	-100
+
+3. Information: In welchen Monaten gibt es die größte Veränderung der Anrufdauer 
+   zum Negativen in Austria im Jahre 2017?
+
+	Year.Month, Duration,  Duration former Month,  Change
+
+
+ with v as(
+SELECT to_char(call_date,'YYYY.MM') as month, sum(duration) as duration,
+  FIRST_VALUE(sum(duration)) OVER (ORDER BY to_char(call_date,'YYYY.MM') ROWS BETWEEN 1 PRECEDING AND 0 FOLLOWING ) AS "former month",
+  to_number(
+  sum(duration) -
+  FIRST_VALUE(sum(duration)) OVER (ORDER BY to_char(call_date,'YYYY.MM') ROWS BETWEEN 1 PRECEDING AND 0 FOLLOWING )
+  ,'999999.9') AS "change"
+  FROM calls INNER JOIN country on calls.country_id = country.country_id where country_name ='Austria' and to_char(call_date,'YYYY') = 2017
+  group by to_char(call_date,'YYYY.MM'))
+select * from v where "change" = (select min("change") from v);
+
+2017.05	20	120	-100
+2017.08	20	120	-100
+
+4. Information: Pro Land die Top 2 Personen nach Anrufdauer
+	
+	Country, Person, Duration, Rank
+
+with v AS(
+SELECT country_name, pname, sum(duration) as duration,
+  RANK() OVER (PARTITION BY country_name ORDER BY sum(duration) DESC ) AS "rank"
+  FROM calls INNER JOIN country on calls.country_id = country.country_id JOIN person ON person.pnr = calls.pnr
+  GROUP BY country_name, pname)
+SELECT * FROM V
+WHERE "rank" <=2;
+
+Austria	Einstein	570	1
+Austria	Zweistein	160	2
+Germany	Einstein	260	1
+Germany	Vierstein	20	2
+Great Britain	Einstein	580	1
+Great Britain	Dreistein	320	2
