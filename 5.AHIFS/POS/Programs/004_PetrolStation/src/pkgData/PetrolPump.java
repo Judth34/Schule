@@ -23,7 +23,6 @@ public class PetrolPump {
     private long startTime;
 
     public PetrolPump(String name, ObservableList<String> obsList) {
-        
         this.usageTime = 0;
         this.name = name;
         this.obsList = obsList;
@@ -70,6 +69,10 @@ public class PetrolPump {
         PetrolPump.serviceTime = serviceTime;
     }
 
+    public long getUsageTime() {
+        return usageTime;
+    }
+    
     @Override
     public String toString() {
         return "PetrolPump{" + "name=" + name + ", free=" + free + ", usageTime=" + usageTime + '}';

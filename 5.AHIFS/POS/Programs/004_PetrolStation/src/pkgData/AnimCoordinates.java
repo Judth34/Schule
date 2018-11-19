@@ -17,5 +17,7 @@ public interface AnimCoordinates {
     public static final int XCOO_START = 0;
     public static final int XCOO_WAITING_PUMP = 100;
     public static final int XCOO_PUMPING = 300;
+    public static final int XCOO_WAITING_PAYMENT = 450;
+    public static final int XCOO_PAYMENT = 550;
     public static final int XCOO_EXIT = 1100;
 }

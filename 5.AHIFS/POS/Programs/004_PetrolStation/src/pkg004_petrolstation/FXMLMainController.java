@@ -6,6 +6,7 @@
 package pkg004_petrolstation;
 
 import java.net.URL;
+import java.text.DecimalFormat;
 import java.util.ArrayList;
 import java.util.ResourceBundle;
 import java.util.logging.Level;
@@ -17,9 +18,7 @@ import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
-import javafx.fxml.FXMLLoader;
 import javafx.fxml.Initializable;
-import javafx.scene.Parent;
 import javafx.scene.control.Button;
 import javafx.scene.control.Label;
 import javafx.scene.control.ListView;
@@ -34,7 +33,6 @@ import javafx.util.Duration;
 import pkgData.AnimCoordinates;
 import pkgData.CarDriver;
 import pkgData.CarGenerator;
-import pkgData.TimeGenerator;
 
 /**
  *
@@ -64,9 +62,30 @@ public class FXMLMainController implements Initializable, AnimCoordinates {
 
     @FXML
     private ListView<String> listLog;
+    
+    @FXML
+    private TextField txtCashServiceTime;
 
+    @FXML
+    private TextField txtNumberOfCash;
+
+    @FXML
+    private Label lblWaitingPP;
+
+    @FXML
+    private Label lblPumping;
+
+    @FXML
+    private Label lblWaitingCR;
+
+    @FXML
+    private Label lblPayment;
+    
+    @FXML
+    private Label lblExitTime;
+
+    
     private final static int ANIMATION_DURATION = 1000;
-    private final static int MAX_CARS = 20;
     private final static String IMAGE_CAR_PATH = "/res/car.png";
 
 
@@ -90,7 +109,6 @@ public class FXMLMainController implements Initializable, AnimCoordinates {
 
     @Override
     public void initialize(URL url, ResourceBundle rb) {
-        // TODO
         this.addListener();
         CarDriver.setController(this);
     }
@@ -143,6 +161,38 @@ public class FXMLMainController implements Initializable, AnimCoordinates {
             }
 
         });
+        
+        this.txtNumberOfCash.lengthProperty().addListener(new ChangeListener<Number>() {
+            @Override
+            public void changed(ObservableValue<? extends Number> observable, Number oldValue, Number newValue) {
+                if (newValue.intValue() > oldValue.intValue()) {
+                    char ch = txtNumberOfCash.getText().charAt(oldValue.intValue());
+
+                    //Check if the new character is the number or other's
+                    if (!(ch >= '0' && ch <= '9')) {
+                        //if it's not number then just setText to previous one
+                        txtNumberOfCash.setText(txtNumberOfCash.getText().substring(0, txtNumberOfCash.getText().length() - 1));
+                    }
+                }
+            }
+
+        });
+        
+        this.txtCashServiceTime.lengthProperty().addListener(new ChangeListener<Number>() {
+            @Override
+            public void changed(ObservableValue<? extends Number> observable, Number oldValue, Number newValue) {
+                if (newValue.intValue() > oldValue.intValue()) {
+                    char ch = txtCashServiceTime.getText().charAt(oldValue.intValue());
+
+                    //Check if the new character is the number or other's
+                    if (!(ch >= '0' && ch <= '9')) {
+                        //if it's not number then just setText to previous one
+                        txtCashServiceTime.setText(txtCashServiceTime.getText().substring(0, txtCashServiceTime.getText().length() - 1));
+                    }
+                }
+            }
+
+        });
     }
 
     private void startSimulation() throws Exception {
@@ -151,15 +201,25 @@ public class FXMLMainController implements Initializable, AnimCoordinates {
         }
         this.collImages = new ArrayList<>();
         int timeBetweenArrival = Integer.parseInt(this.txtTimeCarArr.getText());
-        int servicetime = Integer.parseInt(this.txtPumpServiceTime.getText());
+        int servicetimePP = Integer.parseInt(this.txtPumpServiceTime.getText());
         int numberOfPP = Integer.parseInt(this.txtNumberOfPumps.getText());
+        int serviceTimeCR = Integer.parseInt(this.txtCashServiceTime.getText());
+        int numberOfCR = Integer.parseInt(this.txtNumberOfCash.getText());
         ObservableList<String> obs = FXCollections.synchronizedObservableList(FXCollections.observableArrayList());
         this.listLog.setItems(obs);
-        this.carGenerator = new CarGenerator(timeBetweenArrival, servicetime, numberOfPP, obs);
+        this.carGenerator = new CarGenerator(timeBetweenArrival, servicetimePP, numberOfPP, serviceTimeCR, numberOfCR, obs);
         new Thread(this.carGenerator).start();
     }
 
     private void endSimulation() {
+        DecimalFormat f = new DecimalFormat("#0.00");
+        
+        this.lblPayment.setText("" + f.format(this.carGenerator.getAverageUsageTimeCR()) + "min, " + f.format(this.carGenerator.getAveragePercentagCR()) + "%");
+        this.lblPumping.setText("" + f.format(this.carGenerator.getAverageUsageTimePP())+ "min, " + f.format(this.carGenerator.getAveragePercentagPP()) + "%");
+        this.lblWaitingPP.setText("" + f.format(this.carGenerator.getWaitingPercentagePP()) + "min");
+        this.lblWaitingCR.setText("" + f.format(this.carGenerator.getWaitingPercentageCR()) + "min");
+        this.lblExitTime.setText("" + f.format(this.carGenerator.getAverageExitTime()) + "min");
+
         this.carGenerator.setEnd();
     }
 
