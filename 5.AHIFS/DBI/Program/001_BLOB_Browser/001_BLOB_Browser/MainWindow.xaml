@@ -5,11 +5,11 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:_001_BLOB_Browser"
         mc:Ignorable="d"
-        Title="MainWindow" Height="481.233" Width="670.569"
+        Title="MainWindow" Height="508.526" Width="670.569"
         Background="Gray">
     <Grid>
         <Button x:Name="btnFileDialog" Content="insert File" HorizontalAlignment="Left" Height="39" Margin="452,63,0,0" VerticalAlignment="Top" Width="127" Click="btnFileDialog_Click"/>
-        <Border BorderBrush="Black" BorderThickness="1"  HorizontalAlignment="Left" Height="43" Margin="5,400,0,0" VerticalAlignment="Top" Width="645" >
+        <Border BorderBrush="Black" BorderThickness="1"  HorizontalAlignment="Left" Height="70" Margin="5,400,0,0" VerticalAlignment="Top" Width="645" >
             <ScrollViewer>
                 <TextBlock x:Name="txtMessage" TextAlignment="Center" TextWrapping="Wrap" Text="..." Margin="0,0,-0.429,-0.143"/>
             </ScrollViewer>

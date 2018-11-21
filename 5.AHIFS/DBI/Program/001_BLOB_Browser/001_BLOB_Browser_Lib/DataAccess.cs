@@ -12,7 +12,8 @@ namespace _001_BLOB_Browser_Lib
     public class DataAccess
     {
         private OracleConnection connection;
-        private string connectionStringOracle = "Data Source=192.168.128.152/ora11g;PERSIST SECURITY INFO=True;User Id = d5a06; Password = d5a;";
+        private string connectionStringOracle = "Data Source=212.152.179.117/ora11g;PERSIST SECURITY INFO=True;User Id = d5a06; Password = d5a;";
+        //private string connectionStringOracle = "Data Source=192.168.128.152/ora11g;PERSIST SECURITY INFO=True;User Id = d5a06; Password = d5a;";
         private byte[] key = Encoding.ASCII.GetBytes("abcdef");
         private byte[] IV = Encoding.ASCII.GetBytes("fedcba");
 
@@ -22,7 +23,8 @@ namespace _001_BLOB_Browser_Lib
             try
             {
                 this.connect();
-            }catch(Exception ex)
+            }
+            catch (Exception ex)
             {
                 throw ex;
             }
@@ -131,7 +133,7 @@ namespace _001_BLOB_Browser_Lib
         #region inner-class
         public class Blob
         {
-            public int id { get; set; } 
+            public int id { get; set; }
             public byte[] bytes { get; set; }
             public string filename { get; set; }
 
@@ -146,8 +148,8 @@ namespace _001_BLOB_Browser_Lib
             {
                 return id + ", filename: " + this.filename;
             }
-        } 
-        
+        }
+
 
         #endregion
 
