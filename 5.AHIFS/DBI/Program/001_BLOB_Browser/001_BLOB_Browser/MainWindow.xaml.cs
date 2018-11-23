@@ -21,6 +21,7 @@ namespace _001_BLOB_Browser
                 InitializeComponent();
                 this.dataAccess = new DataAccess();
                 this.insertBlobsInList();
+                this.fillCmBLocations();
             }catch(Exception ex)
             {
                 this.txtMessage.Text = ex.ToString();
@@ -28,10 +29,33 @@ namespace _001_BLOB_Browser
             
         }
 
+        private void fillCmBLocations()
+        {
+            List<DataAccess.Location> locs = this.dataAccess.getLocations();
+
+            foreach(DataAccess.Location location in locs)
+            {
+                this.cmBLocations.Items.Add(location);
+            }
+
+            this.cmBLocations.SelectedIndex = 0;
+        }
+
         private void insertBlobsInList()
         {
+            this.listBlobs.Items.Clear();
             List<DataAccess.Blob> blobs = this.dataAccess.get();
             foreach(DataAccess.Blob b in blobs)
+            {
+                this.listBlobs.Items.Add(b);
+            }
+        }
+
+        private void insertBlobsInList(string searchtext)
+        {
+            this.listBlobs.Items.Clear();
+            List<DataAccess.Blob> blobs = this.dataAccess.SearchInDoc(searchtext);
+            foreach (DataAccess.Blob b in blobs)
             {
                 this.listBlobs.Items.Add(b);
             }
@@ -43,16 +67,17 @@ namespace _001_BLOB_Browser
             {
                 this.txtMessage.Text = "select file!";
                 OpenFileDialog openFileDialog = new OpenFileDialog();
-                openFileDialog.InitialDirectory = @"C:\Users\Marcel Judth\Documents\GitHub\Schule\5.AHIFS\NVS\Programs\001_ImageFilter\001_ImageFilter\bin\Debug\Data";
+                openFileDialog.InitialDirectory = @"C:";
                 openFileDialog.Title = "Browse images";
                 openFileDialog.CheckFileExists = true;
                 openFileDialog.CheckPathExists = true;
-                openFileDialog.Filter = "Image files Pdf Files |*.pdf";
+                openFileDialog.Filter = "txt files (*.txt)|*.txt|All files (*.*)|*.*";
                 var result = openFileDialog.ShowDialog();
                 if (result == true)
                 {
-                    this.dataAccess.insert(openFileDialog.FileName);
+                    this.dataAccess.insert(openFileDialog.FileName, openFileDialog.SafeFileName, (DataAccess.Location) this.cmBLocations.SelectedItem);
                     this.txtMessage.Text = "succesfully inserted!";
+                    this.insertBlobsInList();
                 }
             }catch(Exception ex)
             {
@@ -75,15 +100,39 @@ namespace _001_BLOB_Browser
         {
             try
             {
-                DataAccess.Blob selectedBlob = (DataAccess.Blob)this.listBlobs.SelectedItem;
-                if (selectedBlob == null)
-                    throw new Exception("No File selected in List!");
-                this.txtMessage.Text = "saving File into " + selectedBlob.filename;
-                this.dataAccess.save(selectedBlob);
-                this.txtMessage.Text = "saved sucessfully";
-            }catch(Exception ex)
+                this.txtMessage.Text = "select file!";
+                OpenFileDialog openFileDialog = new OpenFileDialog();
+                openFileDialog.InitialDirectory = @"C:";
+                openFileDialog.Title = "Browse images";
+                openFileDialog.CheckFileExists = true;
+                openFileDialog.CheckPathExists = true;
+                openFileDialog.Filter = "txt files (*.txt)|*.txt|All files (*.*)|*.*";
+                var result = openFileDialog.ShowDialog();
+                if (result == true)
+                {
+                    DataAccess.Blob selectedBlob = (DataAccess.Blob)this.listBlobs.SelectedItem;
+                    if (selectedBlob == null)
+                        throw new Exception("No File selected in List!");
+                    this.txtMessage.Text = "saving File into " + selectedBlob.filename;
+                    this.dataAccess.save(selectedBlob, openFileDialog.FileName);
+                    this.txtMessage.Text = "saved sucessfully";
+                }
+            }
+            catch (Exception ex)
             {
                 this.txtMessage.Text = ex.Message;
+            }
+        }
+
+        private void txtSearch_TextChanged(object sender, System.Windows.Controls.TextChangedEventArgs e)
+        {
+            try
+            {
+                insertBlobsInList(this.txtMessage.Text);
+            }
+            catch (Exception ex)
+            {
+                this.txtMessage.Text = ex.ToString();
             }
         }
     }

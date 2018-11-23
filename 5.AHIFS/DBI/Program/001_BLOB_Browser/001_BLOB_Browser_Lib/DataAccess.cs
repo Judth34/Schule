@@ -12,8 +12,8 @@ namespace _001_BLOB_Browser_Lib
     public class DataAccess
     {
         private OracleConnection connection;
-        private string connectionStringOracle = "Data Source=212.152.179.117/ora11g;PERSIST SECURITY INFO=True;User Id = d5a06; Password = d5a;";
-        //private string connectionStringOracle = "Data Source=192.168.128.152/ora11g;PERSIST SECURITY INFO=True;User Id = d5a06; Password = d5a;";
+        //private string connectionStringOracle = "Data Source=212.152.179.117/ora11g;PERSIST SECURITY INFO=True;User Id = d5a06; Password = d5a;";
+        private string connectionStringOracle = "Data Source=192.168.128.152/ora11g;PERSIST SECURITY INFO=True;User Id = ctxsys; Password = ctxsys;";
         private byte[] key = Encoding.ASCII.GetBytes("abcdef");
         private byte[] IV = Encoding.ASCII.GetBytes("fedcba");
 
@@ -31,13 +31,15 @@ namespace _001_BLOB_Browser_Lib
         }
 
         #region public-mehtods
-        public void insert(string filename)
+        public void insert(string filename, string safeFilename, Location loc)
         {
             byte[] bytes = this.convert(filename);
             OracleCommand cmd = new OracleCommand();
-            cmd.CommandText = "insert into LARGEOBJECTS values(SEQ_LARGEOBJECTS.nextVal,:filename,:bytes)";
-            cmd.Parameters.Add(new OracleParameter("filename", filename));
+            cmd.CommandText = "insert into archive_06 values(SEQ_ARCHIVE_06.nextVal,:filename,:bytes, :locationid)";
+            cmd.Parameters.Add(new OracleParameter("filename", safeFilename));
             cmd.Parameters.Add(new OracleParameter("bytes", bytes));
+            cmd.Parameters.Add(new OracleParameter("locationid", loc.id));
+
             cmd.Connection = connection;
             cmd.ExecuteNonQuery();
         }
@@ -46,26 +48,63 @@ namespace _001_BLOB_Browser_Lib
         {
             List<Blob> result = new List<Blob>();
             OracleCommand cmd = new OracleCommand();
-            cmd.CommandText = "select id, filename, data from LARGEOBJECTS";
+            cmd.CommandText = "select id, filename, bytes, idLocation from archive_06";
             cmd.Connection = connection;
             OracleDataReader dr = cmd.ExecuteReader();
             if (dr.HasRows)
             {
                 while (dr.Read())
                 {
-                    Blob blob = new Blob(int.Parse(dr["id"].ToString()), Convert.ToString(dr["filename"]), (byte[])dr["Data"]);
+                    Blob blob = new Blob(int.Parse(dr["id"].ToString()), Convert.ToString(dr["filename"]), (byte[])dr["bytes"], int.Parse(dr["idLocation"].ToString()));
                     result.Add(blob);
                 }
             }
             return result;
         }
 
-        public void save(Blob blob)
+        public List<Location> getLocations()
+        {
+            List<Location> result = new List<Location>();
+            OracleCommand cmd = new OracleCommand();
+            cmd.CommandText = "select l.loc_id, l.loc_name, t.X, t.Y from docs_location_A06 l, TABLE(SDO_UTIL.GETVERTICES(l.loc)) t";
+            cmd.Connection = connection;
+            OracleDataReader dr = cmd.ExecuteReader();
+            if (dr.HasRows)
+            {
+                while (dr.Read())
+                {
+
+                    Location blob = new Location(int.Parse(dr["loc_id"].ToString()), Convert.ToString(dr["loc_name"]), int.Parse(dr["X"].ToString()), int.Parse(dr["Y"].ToString()));
+                    result.Add(blob);
+                }
+            }
+            return result;
+        }
+
+        public void save(Blob blob, string filename)
         {
             if (blob == null)
                 throw new Exception("Blob is null!!");
             this.convert(blob.filename, blob.bytes);
             System.Diagnostics.Process.Start(blob.filename);
+        }
+
+        public List<Blob> SearchInDoc(string suchtext)
+        {
+            List<Blob> result = new List<Blob>();
+            OracleCommand cmd = new OracleCommand();
+            cmd.CommandText = "select id, filename, bytes, idLocation from archive_06 where dbms_lob.instr(bytes, utl_raw.cast_to_raw('" + suchtext + "'), 1, 1) > 0;";
+            cmd.Connection = connection;
+            OracleDataReader dr = cmd.ExecuteReader();
+            if (dr.HasRows)
+            {
+                while (dr.Read())
+                {
+                    Blob blob = new Blob(int.Parse(dr["id"].ToString()), Convert.ToString(dr["filename"]), (byte[])dr["bytes"], int.Parse(dr["idLocation"].ToString()));
+                    result.Add(blob);
+                }
+            }
+            return result;
         }
         #endregion
 
@@ -84,7 +123,7 @@ namespace _001_BLOB_Browser_Lib
             byte[] bytes = reader.ReadBytes((int)fs.Length);  //Bytes from the binary reader stored in BlobValue array
             fs.Close();
             reader.Close();
-            return this.encrypt(bytes);
+            return bytes;
         }
 
         public void convert(string filepath, byte[] data)
@@ -93,7 +132,6 @@ namespace _001_BLOB_Browser_Lib
                 File.Delete(filepath);
             FileStream fs = new FileStream(filepath, FileMode.Create, FileAccess.Write);
             BinaryWriter writer = new BinaryWriter(fs);
-            byte[] decrypted = this.decrypt(data);
             writer.Write(data);
             fs.Close();
             writer.Close();
@@ -131,22 +169,53 @@ namespace _001_BLOB_Browser_Lib
         #endregion
 
         #region inner-class
+
+        public class Location
+        {
+            public int id { get; set; }
+            public string name { get; set; }
+            public int xCoo { get; set; }
+            public int yCoo { get; set; }
+
+            public Location(string name, int xCoo, int yCoo)
+            {
+                this.name = name;
+                this.xCoo = xCoo;
+                this.yCoo = yCoo;
+            }
+
+            public Location(int id, string name, int xCoo, int yCoo)
+            {
+                this.id = id;
+                this.name = name;
+                this.xCoo = xCoo;
+                this.yCoo = yCoo;
+            }
+
+            override public string ToString()
+            {
+                return id + ", location: " + this.name;
+            }
+        }
+
         public class Blob
         {
             public int id { get; set; }
             public byte[] bytes { get; set; }
             public string filename { get; set; }
+            public int locationId { get; set; }
 
-            public Blob(int id, string filename, byte[] bytes)
+            public Blob(int id, string filename, byte[] bytes, int locationId)
             {
                 this.id = id;
                 this.filename = filename;
                 this.bytes = bytes;
+                this.locationId = locationId;
             }
 
             override public string ToString()
             {
-                return id + ", filename: " + this.filename;
+                return id + ", filename: " + this.filename + ", locationID: " + this.locationId;
             }
         }
 
