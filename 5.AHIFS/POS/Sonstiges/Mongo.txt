@@ -1,0 +1,81 @@
+MONGO DB:
+
+use mydb
+
+
+show collections;
+
+
+
+db.Cars.find()
+
+
+db.Cars.drop()
+
+
+db.Cars.insert({_id: numberInt(10, name: "Isetta", hp: 16, ccm:500})
+
+
+db.Cars.find()
+
+
+db.Cars.insert({name: "next Isetta", hp: 16, ccm: 500})
+
+
+db.Cars.find()
+
+
+db.Cars.find(
+{hp: {$gte: 24},
+ccm: {$lt: 2500},
+{ccm: 1, hp: 1}
+)
+
+/*Select ccm, hp from Cars where hp >= 24 and ccm < 2500
+
+
+
+db.Cars.find(
+{$or: [
+{hp: 15.1},
+{cmm:1500}
+]
+},
+{ccm:1, hp:1}
+)
+
+
+
+
+db.Cars.find(
+{$or: [
+{hp: 15.1},
+{cmm:1500}
+]
+},
+{ccm:1, hp:1}
+).sort({hp:-1, name:1})
+
+
+
+
+db.Cars.update(
+{"_id" : ObjectId("5basdfkasd")},
+{"initial":"ORG"}
+)
+
+
+
+
+db.Cars.update(
+{ccm: 500},
+{$set: {ccm: 1001}},
+{multi: true},
+)
+
+
+
+
+
+
+
