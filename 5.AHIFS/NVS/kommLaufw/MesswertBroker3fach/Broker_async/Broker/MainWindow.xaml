@@ -1,0 +1,22 @@
+﻿<Window x:Class="TCP_Server_async.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:TCP_Server_async"
+        mc:Ignorable="d"
+        Title="MainWindow" Height="307.444" Width="402.543">
+    <Grid Margin="0,0,0,-0.2" HorizontalAlignment="Left" Width="439">
+        <Grid.RowDefinitions>
+            <RowDefinition Height="131*"/>
+            <RowDefinition Height="190*"/>
+        </Grid.RowDefinitions>
+        <TextBox x:Name="ServerInfo" HorizontalAlignment="Left" Margin="10,91,0,0" TextWrapping="Wrap" Text="TextBox" Width="372" Height="177" VerticalAlignment="Top" Grid.RowSpan="2"/>
+        <TextBox x:Name="portnrIn" HorizontalAlignment="Left" Height="21" Margin="129,21,0,0" TextWrapping="Wrap" Text="9500" VerticalAlignment="Top" Width="87" />
+        <Label x:Name="label" Content="MessPort" HorizontalAlignment="Left" Height="25" Margin="24,17,0,0" VerticalAlignment="Top" Width="100"/>
+        <Button x:Name="btnStartServer" Content="Starte Broker" HorizontalAlignment="Left" Height="47" Margin="242,21,0,0" VerticalAlignment="Top" Width="140" Click="btnStartServer_Click"/>
+        <TextBox x:Name="portnrOut" HorizontalAlignment="Left" Height="21" Margin="129,47,0,0" TextWrapping="Wrap" Text="9501" VerticalAlignment="Top" Width="87" />
+        <Label x:Name="label_Copy" Content="SubscriberPort" HorizontalAlignment="Left" Height="25" Margin="24,43,0,0" VerticalAlignment="Top" Width="100"/>
+
+    </Grid>
+</Window>
