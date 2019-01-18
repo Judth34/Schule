@@ -1,0 +1,18 @@
+Finanzierungsanalyse:
+ - Zahlungsmittel: Kassa, Bank
+ - Anfangsbestand u Endbestand gegeben
+ - Lieferungen an uns: Hw-Einkäufe
+ - Umsatz: Warenerlöse
+
+
+Liquiditätsanalyse:
+ - ARA: Akt. Rechn.-Abgr
+ - Cashflow: letzes Jahr - heuer
+ 
+
+Errfolswirtschaftliche Analyse:
+ - Fremdkapitalzinsen: Zinsaufwand
+ - investiertes kapital?
+
+
+

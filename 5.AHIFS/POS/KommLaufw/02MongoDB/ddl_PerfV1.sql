@@ -1,0 +1,12 @@
+DROP TABLE animals CASCADE CONSTRAINTS;
+DROP SEQUENCE seqAnimals;
+
+CREATE SEQUENCE seqAnimals INCREMENT BY 2;
+CREATE TABLE animals
+( aid INTEGER,
+  aname VARCHAR2(30),
+  adate DATE,
+  adetails CLOB,
+  CONSTRAINT pkAnimal PRIMARY KEY (aid)
+);
+
