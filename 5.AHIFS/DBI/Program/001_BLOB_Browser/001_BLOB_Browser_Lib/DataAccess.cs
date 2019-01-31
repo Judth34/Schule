@@ -12,8 +12,8 @@ namespace _001_BLOB_Browser_Lib
     public class DataAccess
     {
         private OracleConnection connection;
-        //private string connectionStringOracle = "Data Source=212.152.179.117/ora11g;PERSIST SECURITY INFO=True;User Id = d5a06; Password = d5a;";
-        private string connectionStringOracle = "Data Source=192.168.128.152/ora11g;PERSIST SECURITY INFO=True;User Id = ctxsys; Password = ctxsys;";
+        private string connectionStringOracle = "Data Source=212.152.179.117/ora11g;PERSIST SECURITY INFO=True;User Id = d5a06; Password = d5a;";
+        //private string connectionStringOracle = "Data Source=192.168.128.152/ora11g;PERSIST SECURITY INFO=True;User Id = ctxsys; Password = ctxsys;";
         private byte[] key = Encoding.ASCII.GetBytes("abcdef");
         private byte[] IV = Encoding.ASCII.GetBytes("fedcba");
 
