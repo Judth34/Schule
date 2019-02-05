@@ -1,0 +1,25 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 15
+VisualStudioVersion = 15.0.28010.2048
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ClobEditor", "ClobEditor\ClobEditor.csproj", "{88EB2D57-B0A6-47BA-BB9B-10D337C5D860}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{88EB2D57-B0A6-47BA-BB9B-10D337C5D860}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{88EB2D57-B0A6-47BA-BB9B-10D337C5D860}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{88EB2D57-B0A6-47BA-BB9B-10D337C5D860}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{88EB2D57-B0A6-47BA-BB9B-10D337C5D860}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {92EFFA63-2C8B-4B53-B24F-E463D5C317DE}
+	EndGlobalSection
+EndGlobal
