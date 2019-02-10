@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.StackPane?>
+<?import javafx.scene.layout.VBox?>
+
+
+<StackPane xmlns="http://javafx.com/javafx/8.0.111" xmlns:fx="http://javafx.com/fxml/1" fx:controller="Controllers.FXMLDocumentController">
+   <children>
+      <AnchorPane id="AnchorPane" prefHeight="433.0" prefWidth="693.0">
+         <children>
+            <VBox layoutX="28.0" layoutY="37.0" prefHeight="346.0" prefWidth="100.0" style="-fx-background-color: gray;">
+               <children>
+                  <Button fx:id="btn_nextCar" mnemonicParsing="false" onAction="#onSelectBtnNextCar" prefHeight="26.0" prefWidth="101.0" text="Next Car" />
+                  <Button fx:id="btn_lastCar" mnemonicParsing="false" onAction="#onSelectBtnLastCar" prefHeight="26.0" prefWidth="104.0" text="Last Car" />
+               </children>
+            </VBox>
+            <Label fx:id="lbl_message" layoutX="28.0" layoutY="393.0" prefHeight="26.0" prefWidth="637.0" style="-fx-background-color: orange;" text="..." />
+         </children>
+      </AnchorPane>
+   </children>
+</StackPane>

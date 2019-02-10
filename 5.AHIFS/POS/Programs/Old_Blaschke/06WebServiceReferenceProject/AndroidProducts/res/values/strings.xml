@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name">Product Administration V1</string>
+    <string name="act_product">Product Administration V1 (Product)</string>
+    <string name="Menu_FU">future use</string>
+    <string name="Menu_Load">Load</string>
+    <string name="Menu_Detail">Detail</string>
+    <string name="Menu_Update">Update</string>
+    <string name="Menu_Add">Add</string>
+    <string name="Menu_Save">Save</string>
+    <string name="Menu_Cancel">Cancel</string>
+</resources>

@@ -1,0 +1,25 @@
+/home/schueler/NetBeansProjects/Java5Kl/AndroidProducts/gen/org/prod/R.java \
+ : /home/schueler/NetBeansProjects/Java5Kl/AndroidProducts/res/values/strings.xml \
+/home/schueler/NetBeansProjects/Java5Kl/AndroidProducts/res/values/color.xml \
+/home/schueler/NetBeansProjects/Java5Kl/AndroidProducts/res/drawable-mdpi/ic_launcher.png \
+/home/schueler/NetBeansProjects/Java5Kl/AndroidProducts/res/drawable-mdpi/product.png \
+/home/schueler/NetBeansProjects/Java5Kl/AndroidProducts/res/layout/product.xml \
+/home/schueler/NetBeansProjects/Java5Kl/AndroidProducts/res/layout/main.xml \
+/home/schueler/NetBeansProjects/Java5Kl/AndroidProducts/res/drawable-hdpi/ic_launcher.png \
+/home/schueler/NetBeansProjects/Java5Kl/AndroidProducts/res/drawable-hdpi/product.png \
+/home/schueler/NetBeansProjects/Java5Kl/AndroidProducts/res/drawable-xhdpi/ic_launcher.png \
+/home/schueler/NetBeansProjects/Java5Kl/AndroidProducts/res/drawable-xhdpi/product.png \
+/home/schueler/NetBeansProjects/Java5Kl/AndroidProducts/res/menu/main_menu.xml \
+/home/schueler/NetBeansProjects/Java5Kl/AndroidProducts/res/menu/context_product_menu.xml \
+/home/schueler/NetBeansProjects/Java5Kl/AndroidProducts/res/menu/product_menu.xml \
+/home/schueler/NetBeansProjects/Java5Kl/AndroidProducts/res/drawable-ldpi/ic_launcher.png \
+/home/schueler/NetBeansProjects/Java5Kl/AndroidProducts/res/drawable-ldpi/product.png \
+/home/schueler/NetBeansProjects/Java5Kl/AndroidProducts/bin/res/drawable-mdpi/ic_launcher.png \
+/home/schueler/NetBeansProjects/Java5Kl/AndroidProducts/bin/res/drawable-mdpi/product.png \
+/home/schueler/NetBeansProjects/Java5Kl/AndroidProducts/bin/res/drawable-hdpi/ic_launcher.png \
+/home/schueler/NetBeansProjects/Java5Kl/AndroidProducts/bin/res/drawable-hdpi/product.png \
+/home/schueler/NetBeansProjects/Java5Kl/AndroidProducts/bin/res/drawable-xhdpi/ic_launcher.png \
+/home/schueler/NetBeansProjects/Java5Kl/AndroidProducts/bin/res/drawable-xhdpi/product.png \
+/home/schueler/NetBeansProjects/Java5Kl/AndroidProducts/bin/res/drawable-ldpi/ic_launcher.png \
+/home/schueler/NetBeansProjects/Java5Kl/AndroidProducts/bin/res/drawable-ldpi/product.png \
+/home/schueler/NetBeansProjects/Java5Kl/AndroidProducts/bin/AndroidManifest.xml \

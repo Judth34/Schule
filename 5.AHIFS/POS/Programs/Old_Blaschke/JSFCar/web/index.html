@@ -1,0 +1,39 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="http://java.sun.com/jsf/html">
+<h:head>
+	<title>Car V1.0 JSF</title>
+	<link rel="stylesheet" type="text/css" href="./css/car.css"/>
+</h:head>
+<h:body>
+<img src="./images/logo.gif" alt="logo"/>
+
+<div align="center">
+<h2>Login</h2>
+<p>
+</p>
+<fieldset>
+<legend>JSF Car Form</legend>
+<h:form>
+	<div id="main">
+		car name:<h:inputText name="name" size="25" value="Isetta"/><br/>
+		car owner:<h:inputText name="owner" size="25" value="Walter Roehrl"/>
+	</div>
+	<p/>
+	<p/>
+	<h:commandButton value="Login" />
+	<hr/>
+    <div id="message">
+    	<h:outputText class="classmessage" name="message" value="message line" size="120"/>
+   	</div>
+
+</h:form>
+	<h:commandButton value="Login" />
+    	<h:outputText class="classmessage" name="message" value="message line" size="120"/>
+
+</fieldset>
+
+</div>
+</h:body>
+</html>

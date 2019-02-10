@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+android:id="@+id/widget28"
+android:layout_width="fill_parent"
+android:layout_height="fill_parent"
+android:orientation="vertical"
+xmlns:android="http://schemas.android.com/apk/res/android"
+>
+<EditText
+android:id="@+id/txtURL"
+android:layout_width="match_parent"
+android:layout_height="wrap_content"
+android:text="http://192.168.196.185:8080/"
+android:background="@drawable/blue"
+>
+</EditText>
+<Spinner
+android:id="@+id/spProducer"
+android:layout_width="match_parent"
+android:layout_height="wrap_content"
+>
+</Spinner>
+<Spinner
+android:id="@+id/spProduct"
+android:layout_width="match_parent"
+android:layout_height="wrap_content"
+>
+</Spinner>
+<TextView
+android:id="@+id/txtMessage"
+android:layout_width="match_parent"
+android:layout_height="wrap_content"
+android:text="take your choice"
+android:background="@drawable/yellow"
+>
+</TextView>
+</LinearLayout>

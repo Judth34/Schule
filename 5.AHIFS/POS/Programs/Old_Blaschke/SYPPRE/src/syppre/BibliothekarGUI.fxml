@@ -1,0 +1,347 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.ComboBox?>
+<?import javafx.scene.control.DatePicker?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.SplitPane?>
+<?import javafx.scene.control.Tab?>
+<?import javafx.scene.control.TabPane?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.control.TitledPane?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.ColumnConstraints?>
+<?import javafx.scene.layout.GridPane?>
+<?import javafx.scene.layout.RowConstraints?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane id="AnchorPane" prefHeight="606.0" prefWidth="766.0" stylesheets="@../styles/bootstrap.css" xmlns="http://javafx.com/javafx/8.0.111" xmlns:fx="http://javafx.com/fxml/1" fx:controller="syppre.BibliothekarGUIController">
+   <children>
+      <TabPane layoutX="14.0" layoutY="14.0" prefHeight="453.0" prefWidth="738.0" styleClass="primary" tabClosingPolicy="UNAVAILABLE">
+        <tabs>
+          <Tab text="Ausweis">
+               <content>
+                  <SplitPane dividerPositions="0.1" orientation="VERTICAL" prefHeight="200.0" prefWidth="160.0">
+                    <items>
+                      <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="100.0" prefWidth="160.0">
+                           <children>
+                              <Label alignment="CENTER" layoutX="6.0" layoutY="6.0" prefHeight="28.0" prefWidth="725.0" text="Auweis">
+                                 <font>
+                                    <Font size="24.0" />
+                                 </font>
+                              </Label>
+                           </children>
+                        </AnchorPane>
+                      <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="100.0" prefWidth="160.0">
+                           <children>
+                              <TabPane prefHeight="370.0" prefWidth="738.0" tabClosingPolicy="UNAVAILABLE">
+                                <tabs>
+                                  <Tab text="Anlegen">
+                                       <content>
+                                          <SplitPane dividerPositions="0.12" orientation="VERTICAL" prefHeight="200.0" prefWidth="160.0">
+                                            <items>
+                                              <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="100.0" prefWidth="160.0">
+                                                   <children>
+                                                      <Label alignment="CENTER" layoutX="4.0" layoutY="2.0" prefHeight="31.0" prefWidth="730.0" text="Anlegen">
+                                                         <font>
+                                                            <Font size="20.0" />
+                                                         </font>
+                                                      </Label>
+                                                   </children>
+                                                </AnchorPane>
+                                              <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="100.0" prefWidth="160.0">
+                                                   <children>
+                                                      <SplitPane dividerPositions="0.298" prefHeight="294.0" prefWidth="738.0">
+                                                        <items>
+                                                          <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="292.0" prefWidth="111.0" />
+                                                          <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="160.0" prefWidth="100.0">
+                                                               <children>
+                                                                  <GridPane layoutY="5.0" prefHeight="236.0" prefWidth="512.0" style="-fx-background-color: lightgray;">
+                                                                    <columnConstraints>
+                                                                      <ColumnConstraints hgrow="SOMETIMES" maxWidth="250.0" minWidth="10.0" prefWidth="150.0" />
+                                                                      <ColumnConstraints hgrow="SOMETIMES" maxWidth="366.0" minWidth="10.0" prefWidth="362.0" />
+                                                                    </columnConstraints>
+                                                                    <rowConstraints>
+                                                                      <RowConstraints maxHeight="83.0" minHeight="10.0" prefHeight="83.0" vgrow="SOMETIMES" />
+                                                                      <RowConstraints maxHeight="117.0" minHeight="10.0" prefHeight="104.0" vgrow="SOMETIMES" />
+                                                                      <RowConstraints maxHeight="59.0" minHeight="10.0" prefHeight="26.0" vgrow="SOMETIMES" />
+                                                                    </rowConstraints>
+                                                                     <children>
+                                                                        <Label alignment="CENTER" prefHeight="16.0" prefWidth="310.0" text="Name:">
+                                                                           <font>
+                                                                              <Font size="16.0" />
+                                                                           </font>
+                                                                        </Label>
+                                                                        <Label alignment="CENTER" prefHeight="16.0" prefWidth="310.0" text="Anschrift:" GridPane.rowIndex="1">
+                                                                           <font>
+                                                                              <Font size="16.0" />
+                                                                           </font>
+                                                                        </Label>
+                                                                        <Label alignment="CENTER" prefHeight="16.0" prefWidth="310.0" text="Geburtsdatum:" GridPane.rowIndex="2">
+                                                                           <font>
+                                                                              <Font size="16.0" />
+                                                                           </font>
+                                                                        </Label>
+                                                                        <DatePicker prefWidth="370.0" GridPane.columnIndex="1" GridPane.rowIndex="2" />
+                                                                        <GridPane style="-fx-background-color: white;" GridPane.columnIndex="1" GridPane.rowIndex="1">
+                                                                          <columnConstraints>
+                                                                            <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+                                                                            <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+                                                                          </columnConstraints>
+                                                                          <rowConstraints>
+                                                                            <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                                                                            <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                                                                            <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                                                                          </rowConstraints>
+                                                                           <children>
+                                                                              <Label alignment="CENTER" prefHeight="16.0" prefWidth="137.0" text="PLZ" />
+                                                                              <Label alignment="CENTER" prefHeight="16.0" prefWidth="137.0" text="Ort" GridPane.rowIndex="1" />
+                                                                              <Label alignment="CENTER" prefHeight="16.0" prefWidth="137.0" text="Straße" GridPane.rowIndex="2" />
+                                                                              <TextField GridPane.columnIndex="1" GridPane.rowIndex="1" />
+                                                                              <TextField GridPane.columnIndex="1" />
+                                                                              <TextField GridPane.columnIndex="1" GridPane.rowIndex="2" />
+                                                                           </children>
+                                                                        </GridPane>
+                                                                        <GridPane style="-fx-background-color: white;" GridPane.columnIndex="1">
+                                                                          <columnConstraints>
+                                                                            <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+                                                                            <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+                                                                          </columnConstraints>
+                                                                          <rowConstraints>
+                                                                            <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                                                                            <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                                                                            <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                                                                          </rowConstraints>
+                                                                           <children>
+                                                                              <Label alignment="CENTER" prefHeight="16.0" prefWidth="137.0" text="Titel" />
+                                                                              <Label alignment="CENTER" prefHeight="16.0" prefWidth="137.0" text="Vorname" GridPane.rowIndex="1" />
+                                                                              <Label alignment="CENTER" prefHeight="16.0" prefWidth="137.0" text="Nachname" GridPane.rowIndex="2" />
+                                                                              <TextField GridPane.columnIndex="1" />
+                                                                              <TextField GridPane.columnIndex="1" GridPane.rowIndex="1" />
+                                                                              <TextField GridPane.columnIndex="1" GridPane.rowIndex="2" />
+                                                                           </children>
+                                                                        </GridPane>
+                                                                     </children>
+                                                                  </GridPane>
+                                                                  <Button layoutX="7.0" layoutY="248.0" mnemonicParsing="false" prefWidth="500.0" styleClass="success" text="Anlegen" />
+                                                               </children>
+                                                            </AnchorPane>
+                                                        </items>
+                                                      </SplitPane>
+                                                   </children>
+                                                </AnchorPane>
+                                            </items>
+                                          </SplitPane>
+                                       </content>
+                                    </Tab>
+                                  <Tab text="User Verwaltung">
+                                       <content>
+                                          <SplitPane dividerPositions="0.12" orientation="VERTICAL" prefHeight="200.0" prefWidth="160.0">
+                                             <items>
+                                                <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="100.0" prefWidth="160.0">
+                                                   <children>
+                                                      <Label alignment="CENTER" layoutX="4.0" layoutY="2.0" prefHeight="31.0" prefWidth="730.0" text="Verwaltung">
+                                                         <font>
+                                                            <Font size="20.0" />
+                                                         </font>
+                                                      </Label>
+                                                   </children>
+                                                </AnchorPane>
+                                                <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="100.0" prefWidth="160.0">
+                                                   <children>
+                                                      <SplitPane dividerPositions="0.298" prefHeight="294.0" prefWidth="738.0">
+                                                         <items>
+                                                            <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="292.0" prefWidth="111.0">
+                                                               <children>
+                                                                  <VBox layoutX="8.0" prefHeight="119.0" prefWidth="199.0" style="-fx-spacing: 15; -fx-padding: 10;">
+                                                                     <children>
+                                                                        <Button mnemonicParsing="false" prefWidth="203.0" styleClass="danger" text="Löschen" />
+                                                                        <Button mnemonicParsing="false" prefWidth="203.0" styleClass="warning" text="Verlängern" />
+                                                                        <Button fx:id="btn_ag" mnemonicParsing="false" onAction="#btn_actionPerformed" prefWidth="203.0" styleClass="primary" text="Ausleihgegenstände" />
+                                                                     </children>
+                                                                  </VBox>
+                                                               </children>
+                                                            </AnchorPane>
+                                                            <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="160.0" prefWidth="100.0">
+                                                               <children>
+                                                                  <TableView prefHeight="291.0" prefWidth="515.0">
+                                                                    <columns>
+                                                                      <TableColumn prefWidth="123.0" text="Name" />
+                                                                      <TableColumn prefWidth="117.0" text="Anschrift" />
+                                                                        <TableColumn prefWidth="148.0" text="Geburtsdatum" />
+                                                                        <TableColumn prefWidth="126.0" text="Status" />
+                                                                    </columns>
+                                                                  </TableView>
+                                                               </children>
+                                                            </AnchorPane>
+                                                         </items>
+                                                      </SplitPane>
+                                                   </children>
+                                                </AnchorPane>
+                                             </items>
+                                          </SplitPane>
+                                       </content>
+                                    </Tab>
+                                </tabs>
+                              </TabPane>
+                           </children>
+                        </AnchorPane>
+                    </items>
+                  </SplitPane>
+               </content>
+            </Tab>
+          <Tab text="Entleihgegenstand">
+               <content>
+                  <SplitPane dividerPositions="0.1" orientation="VERTICAL" prefHeight="200.0" prefWidth="160.0">
+                     <items>
+                        <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="100.0" prefWidth="160.0">
+                           <children>
+                              <Label alignment="CENTER" layoutX="6.0" layoutY="6.0" prefHeight="28.0" prefWidth="725.0" text="Entleihungsgegenstände verwalten">
+                                 <font>
+                                    <Font size="24.0" />
+                                 </font>
+                              </Label>
+                           </children>
+                        </AnchorPane>
+                        <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="100.0" prefWidth="160.0">
+                           <children>
+                              <TabPane prefHeight="370.0" prefWidth="738.0" tabClosingPolicy="UNAVAILABLE">
+                                 <tabs>
+                                    <Tab text="Verwaltung">
+                                       <content>
+                                          <SplitPane dividerPositions="0.12" orientation="VERTICAL" prefHeight="200.0" prefWidth="160.0">
+                                             <items>
+                                                <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="100.0" prefWidth="160.0">
+                                                   <children>
+                                                      <Label alignment="CENTER" layoutX="4.0" layoutY="2.0" prefHeight="31.0" prefWidth="730.0" text="Verwaltung">
+                                                         <font>
+                                                            <Font size="20.0" />
+                                                         </font>
+                                                      </Label>
+                                                   </children>
+                                                </AnchorPane>
+                                                <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="100.0" prefWidth="160.0">
+                                                   <children>
+                                                      <SplitPane dividerPositions="0.298" prefHeight="294.0" prefWidth="738.0">
+                                                         <items>
+                                                            <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="292.0" prefWidth="111.0">
+                                                               <children>
+                                                                  <VBox layoutX="8.0" prefHeight="134.0" prefWidth="199.0" style="-fx-spacing: 15; -fx-padding: 10;">
+                                                                     <children>
+                                                                        <Button mnemonicParsing="false" prefWidth="203.0" styleClass="danger" text="Entfernen" />
+                                                                        <Button mnemonicParsing="false" prefWidth="203.0" styleClass="warning" text="Nachbestellen" />
+                                                                        <Button mnemonicParsing="false" prefWidth="203.0" styleClass="warning" text="Reservieren" />
+                                                                     </children>
+                                                                  </VBox>
+                                                               </children>
+                                                            </AnchorPane>
+                                                            <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="160.0" prefWidth="100.0">
+                                                               <children>
+                                                                  <TableView prefHeight="291.0" prefWidth="515.0">
+                                                                     <columns>
+                                                                        <TableColumn prefWidth="130.0" text="Titel" />
+                                                                        <TableColumn prefWidth="129.0" text="Autor" />
+                                                                        <TableColumn prefWidth="97.0" text="Typ" />
+                                                                        <TableColumn prefWidth="77.0" text="Menge" />
+                                                                        <TableColumn prefWidth="91.0" text="Status" />
+                                                                     </columns>
+                                                                  </TableView>
+                                                               </children>
+                                                            </AnchorPane>
+                                                         </items>
+                                                      </SplitPane>
+                                                   </children>
+                                                </AnchorPane>
+                                             </items>
+                                          </SplitPane>
+                                       </content>
+                                    </Tab>
+                                    <Tab text="Anlegen">
+                                       <content>
+                                          <SplitPane dividerPositions="0.12" orientation="VERTICAL" prefHeight="200.0" prefWidth="160.0">
+                                             <items>
+                                                <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="100.0" prefWidth="160.0">
+                                                   <children>
+                                                      <Label alignment="CENTER" layoutX="4.0" layoutY="2.0" prefHeight="31.0" prefWidth="730.0" text="Anlegen">
+                                                         <font>
+                                                            <Font size="20.0" />
+                                                         </font>
+                                                      </Label>
+                                                   </children>
+                                                </AnchorPane>
+                                                <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="100.0" prefWidth="160.0">
+                                                   <children>
+                                                      <SplitPane dividerPositions="0.298" prefHeight="294.0" prefWidth="738.0">
+                                                         <items>
+                                                            <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="292.0" prefWidth="111.0" />
+                                                            <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="160.0" prefWidth="100.0">
+                                                               <children>
+                                                                  <GridPane layoutY="5.0" prefHeight="229.0" prefWidth="512.0" style="-fx-background-color: lightgray;">
+                                                                     <columnConstraints>
+                                                                        <ColumnConstraints hgrow="SOMETIMES" maxWidth="250.0" minWidth="10.0" prefWidth="150.0" />
+                                                                        <ColumnConstraints hgrow="SOMETIMES" maxWidth="366.0" minWidth="10.0" prefWidth="362.0" />
+                                                                     </columnConstraints>
+                                                                     <rowConstraints>
+                                                                        <RowConstraints maxHeight="83.0" minHeight="10.0" prefHeight="75.0" vgrow="SOMETIMES" />
+                                                                        <RowConstraints maxHeight="117.0" minHeight="10.0" prefHeight="71.0" vgrow="SOMETIMES" />
+                                                                        <RowConstraints maxHeight="117.0" minHeight="10.0" prefHeight="71.0" vgrow="SOMETIMES" />
+                                                                        <RowConstraints maxHeight="149.0" minHeight="10.0" prefHeight="84.0" vgrow="SOMETIMES" />
+                                                                     </rowConstraints>
+                                                                     <children>
+                                                                        <Label alignment="CENTER" prefHeight="16.0" prefWidth="310.0" text="Titel:">
+                                                                           <font>
+                                                                              <Font size="16.0" />
+                                                                           </font>
+                                                                        </Label>
+                                                                        <Label alignment="CENTER" prefHeight="16.0" prefWidth="310.0" text="Autor:" GridPane.rowIndex="1">
+                                                                           <font>
+                                                                              <Font size="16.0" />
+                                                                           </font>
+                                                                        </Label>
+                                                                        <Label alignment="CENTER" prefHeight="16.0" prefWidth="310.0" text="Typ:" GridPane.rowIndex="3">
+                                                                           <font>
+                                                                              <Font size="16.0" />
+                                                                           </font>
+                                                                        </Label>
+                                                                        <TextField GridPane.columnIndex="1" />
+                                                                        <TextField GridPane.columnIndex="1" GridPane.rowIndex="1" />
+                                                                        <ComboBox prefWidth="423.0" GridPane.columnIndex="1" GridPane.rowIndex="3" />
+                                                                        <Label alignment="CENTER" prefHeight="16.0" prefWidth="310.0" text="Menge:" GridPane.rowIndex="2">
+                                                                           <font>
+                                                                              <Font size="16.0" />
+                                                                           </font>
+                                                                        </Label>
+                                                                        <TextField GridPane.columnIndex="1" GridPane.rowIndex="2" />
+                                                                     </children>
+                                                                  </GridPane>
+                                                                  <Button layoutX="7.0" layoutY="248.0" mnemonicParsing="false" prefWidth="500.0" styleClass="success" text="Anlegen" />
+                                                               </children>
+                                                            </AnchorPane>
+                                                         </items>
+                                                      </SplitPane>
+                                                   </children>
+                                                </AnchorPane>
+                                             </items>
+                                          </SplitPane>
+                                       </content>
+                                    </Tab>
+                                 </tabs>
+                              </TabPane>
+                           </children>
+                        </AnchorPane>
+                     </items>
+                  </SplitPane>
+               </content>
+            </Tab>
+        </tabs>
+      </TabPane>
+      <TitledPane animated="false" layoutX="14.0" layoutY="475.0" prefHeight="119.0" prefWidth="738.0" styleClass="primary" text="Notifications">
+        <content>
+          <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0" />
+        </content>
+      </TitledPane>
+   </children>
+</AnchorPane>

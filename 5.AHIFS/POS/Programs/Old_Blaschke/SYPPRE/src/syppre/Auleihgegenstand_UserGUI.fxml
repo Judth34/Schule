@@ -1,0 +1,59 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.SplitPane?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.text.Font?>
+
+
+<AnchorPane id="AnchorPane" prefHeight="400.0" prefWidth="600.0" stylesheets="@../styles/bootstrap.css" xmlns:fx="http://javafx.com/fxml/1" xmlns="http://javafx.com/javafx/8.0.111" fx:controller="syppre.Auleihgegenstand_UserGUIController">
+   <children>
+      <SplitPane dividerPositions="0.29797979797979796" layoutX="14.0" layoutY="40.0" prefHeight="342.0" prefWidth="572.0">
+        <items>
+          <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="160.0" prefWidth="100.0">
+               <children>
+                  <VBox layoutX="14.0" layoutY="14.0" prefHeight="310.0" prefWidth="135.0" style="-fx-spacing: 15; -fx-padding: 10;">
+                     <children>
+                        <Button mnemonicParsing="false" prefWidth="126.0" styleClass="success" text="Rückgabe" />
+                        <Button mnemonicParsing="false" prefWidth="126.0" styleClass="warning" text="Verlängern" />
+                     </children>
+                  </VBox>
+               </children>
+            </AnchorPane>
+          <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="160.0" prefWidth="100.0">
+               <children>
+                  <SplitPane dividerPositions="0.12" layoutX="6.0" layoutY="5.0" orientation="VERTICAL" prefHeight="329.0" prefWidth="384.0">
+                    <items>
+                      <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="100.0" prefWidth="160.0">
+                           <children>
+                              <Label alignment="CENTER" layoutY="8.0" prefHeight="26.0" prefWidth="382.0" text="Ausgehliehene Gegenstände">
+                                 <font>
+                                    <Font size="17.0" />
+                                 </font>
+                              </Label>
+                           </children>
+                        </AnchorPane>
+                      <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="100.0" prefWidth="160.0">
+                           <children>
+                              <TableView layoutY="6.0" prefHeight="284.0" prefWidth="382.0">
+                                <columns>
+                                  <TableColumn prefWidth="122.0" text="Titel" />
+                                  <TableColumn prefWidth="84.0" text="Autor" />
+                                    <TableColumn prefWidth="97.0" text="Typ" />
+                                    <TableColumn prefWidth="78.0" text="Status" />
+                                </columns>
+                              </TableView>
+                           </children>
+                        </AnchorPane>
+                    </items>
+                  </SplitPane>
+               </children>
+            </AnchorPane>
+        </items>
+      </SplitPane>
+   </children>
+</AnchorPane>

@@ -1,0 +1,78 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.ComboBox?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.ListView?>
+<?import javafx.scene.control.Menu?>
+<?import javafx.scene.control.MenuBar?>
+<?import javafx.scene.control.MenuItem?>
+<?import javafx.scene.control.PasswordField?>
+<?import javafx.scene.control.ScrollPane?>
+<?import javafx.scene.control.SplitPane?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.control.TitledPane?>
+<?import javafx.scene.layout.AnchorPane?>
+
+<AnchorPane id="AnchorPane" prefHeight="694.0" prefWidth="756.0" stylesheets="@../styles/bootstrap.css" xmlns="http://javafx.com/javafx/8.0.111" xmlns:fx="http://javafx.com/fxml/1" fx:controller="pkg_controllers.AdminGUIController">
+   <children>
+      <SplitPane dividerPositions="0.15" layoutX="12.0" layoutY="52.0" orientation="VERTICAL" prefHeight="363.0" prefWidth="733.0">
+        <items>
+          <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="100.0" prefWidth="160.0">
+               <children>
+                  <TextField fx:id="txt_connString" layoutX="7.0" layoutY="14.0" prefWidth="409.0" text="jdbc:oracle:thin:@192.168.128.152:1521:ora11g" />
+                  <TextField fx:id="txt_user" layoutX="425.0" layoutY="14.0" prefWidth="148.0" text="d4a03" />
+                  <PasswordField fx:id="txt_pass" layoutX="579.0" layoutY="14.0" prefWidth="148.0" text="d4a" />
+               </children>
+            </AnchorPane>
+          <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="367.0" prefWidth="731.0">
+               <children>
+                  <TableView fx:id="table_product" editable="true" layoutX="8.0" layoutY="59.0" prefHeight="247.0" prefWidth="718.0">
+                    <columns>
+                      <TableColumn fx:id="tc_id" editable="false" onEditCommit="#tableColoumn_onEditPerformed" prefWidth="75.0" text="ID" />
+                      <TableColumn fx:id="tc_name" onEditCommit="#tableColoumn_onEditPerformed" prefWidth="124.0" text="NAME" />
+                        <TableColumn fx:id="tc_decOnStock" onEditCommit="#tableColoumn_onEditPerformed" prefWidth="135.0" text="DEC ON STOCK" />
+                        <TableColumn fx:id="tc_onStock" onEditCommit="#tableColoumn_onEditPerformed" prefWidth="125.0" text="ON STOCK" />
+                        <TableColumn fx:id="tc_price" onEditCommit="#tableColoumn_onEditPerformed" prefWidth="91.0" text="PRICE" />
+                        <TableColumn fx:id="tc_onmarket" onEditCommit="#tableColoumn_onEditPerformed" prefWidth="167.0" text="ON MARKET" />
+                    </columns>
+                  </TableView>
+                  <ComboBox fx:id="cb_proc" layoutX="9.0" layoutY="19.0" onAction="#cbox_actionPerformed" prefWidth="718.0" promptText="producers" />
+               </children>
+            </AnchorPane>
+        </items>
+      </SplitPane>
+      <TitledPane fx:id="tp_not" animated="false" layoutX="11.0" layoutY="570.0" prefHeight="113.0" prefWidth="733.0" styleClass="primary" text="notifications">
+        <content>
+          <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
+               <children>
+                  <ScrollPane prefHeight="71.0" prefWidth="731.0">
+                     <content>
+                        <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="68.0" prefWidth="726.0">
+                           <children>
+                              <Label fx:id="lbl_Message" alignment="CENTER" prefHeight="65.0" prefWidth="722.0" text="..." textOverrun="CENTER_WORD_ELLIPSIS" />
+                           </children>
+                        </AnchorPane>
+                     </content>
+                  </ScrollPane>
+               </children>
+            </AnchorPane>
+        </content>
+      </TitledPane>
+      <MenuBar layoutX="16.0" prefHeight="30.0" prefWidth="108.0">
+        <menus>
+          <Menu mnemonicParsing="false" text="Database">
+            <items>
+              <MenuItem fx:id="mntm_loadproc" mnemonicParsing="false" onAction="#mntm_actionPerformed" text="Load Procedures" />
+                  <MenuItem fx:id="mntm_update" mnemonicParsing="false" onAction="#mntm_actionPerformed" text="update &amp; commit" />
+                  <MenuItem fx:id="mntm_addProduct" mnemonicParsing="false" onAction="#mntm_actionPerformed" text="add Product" />
+                  <MenuItem fx:id="mntm_decOnStock" mnemonicParsing="false" onAction="#mntm_actionPerformed" text="decrease" />
+                  <MenuItem fx:id="mntm_commit" mnemonicParsing="false" onAction="#mntm_actionPerformed" text="commit" />
+            </items>
+          </Menu>
+        </menus>
+      </MenuBar>
+      <ListView fx:id="lv_orders" layoutX="14.0" layoutY="427.0" prefHeight="136.0" prefWidth="731.0" />
+   </children>
+</AnchorPane>
