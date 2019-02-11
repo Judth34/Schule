@@ -1,0 +1,58 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.SplitPane?>
+<?import javafx.scene.control.TitledPane?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane id="AnchorPane" prefHeight="538.0" prefWidth="783.0" style="-: ;" styleClass="primary" stylesheets="@../styles/bootstrap.css" xmlns="http://javafx.com/javafx/8.0.111" xmlns:fx="http://javafx.com/fxml/1" fx:controller="pkg_Controllers.MainController">
+   <children>
+      <TitledPane animated="false" layoutX="2.0" layoutY="416.0" prefHeight="122.0" prefWidth="797.0" style="-fx-background-color: gray;" styleClass="primary" text="notifications">
+        <content>
+          <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
+               <children>
+                  <Label fx:id="lbl_Message" alignment="CENTER" layoutX="14.0" layoutY="4.0" prefHeight="63.0" prefWidth="749.0" text="..." />
+               </children></AnchorPane>
+        </content>
+      </TitledPane>
+      <SplitPane dividerPositions="0.15" layoutX="-2.0" layoutY="-1.0" orientation="VERTICAL" prefHeight="412.0" prefWidth="799.0">
+        <items>
+          <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="10.0" prefWidth="158.0">
+               <children>
+                  <Label fx:id="lbl_title" alignment="CENTER" layoutY="4.0" prefHeight="45.0" prefWidth="781.0" style="-fx-text-fill: black;" styleClass="primary" text="Calc Alk">
+                     <font>
+                        <Font size="28.0" />
+                     </font>
+                  </Label>
+               </children>
+            </AnchorPane>
+          <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="374.0" prefWidth="781.0">
+               <children>
+                  <VBox fx:id="pane_content" layoutX="8.0" layoutY="8.0" prefHeight="180.0" prefWidth="136.0" style="-fx-spacing: 12px;">
+                     <children>
+                        <Button fx:id="btn_addProfile" mnemonicParsing="false" onAction="#onMenuSelection" prefHeight="50.0" prefWidth="172.0" styleClass="primary" text="add Profile" />
+                        <Button fx:id="btn_addDrinks" mnemonicParsing="false" onAction="#onMenuSelection" prefHeight="48.0" prefWidth="155.0" styleClass="primary" text="add Drinks" />
+                        <Button fx:id="btn_calculation" mnemonicParsing="false" onAction="#onMenuSelection" prefHeight="48.0" prefWidth="174.0" styleClass="primary" text="calculation" />
+                        <Button fx:id="btn_load" mnemonicParsing="false" onAction="#onMenuSelection" prefHeight="47.0" prefWidth="192.0" styleClass="info" text="Load" />
+                        <Button fx:id="btn_save" mnemonicParsing="false" onAction="#onMenuSelection" prefHeight="45.0" prefWidth="147.0" styleClass="info" text="Save" />
+                        <Button fx:id="btn_loadSql" mnemonicParsing="false" onAction="#onMenuSelection" prefHeight="45.0" prefWidth="223.0" styleClass="info" text="Load SQL" />
+                        <Button fx:id="btn_saveSql" mnemonicParsing="false" onAction="#onMenuSelection" prefHeight="45.0" prefWidth="223.0" styleClass="info" text="Save SQL" />
+                        <Button fx:id="btn_ListDrinks" mnemonicParsing="false" onAction="#onMenuSelection" prefHeight="45.0" prefWidth="223.0" styleClass="primary" text="List Drinks" />
+                     </children>
+                  </VBox>
+                  <ImageView fx:id="img_beer" fitHeight="180.0" fitWidth="184.0" layoutX="383.0" layoutY="51.0" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@../pkg_resource/schon-37-bier-decken-den-tagesbedarf-an-vitamin-c.jpg" />
+                     </image>
+                  </ImageView>
+               </children>
+            </AnchorPane>
+        </items>
+      </SplitPane>
+   </children>
+</AnchorPane>

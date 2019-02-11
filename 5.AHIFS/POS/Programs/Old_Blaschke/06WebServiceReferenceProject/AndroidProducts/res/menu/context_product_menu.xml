@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+    <item android:id="@+id/mitemDetail" android:title="@string/Menu_Detail" android:showAsAction="collapseActionView"></item>
+    <item android:id="@+id/mitemUpdate" android:title="@string/Menu_Update" android:showAsAction="collapseActionView"></item>
+    <item android:id="@+id/mitemAdd" android:title="@string/Menu_Add" android:showAsAction="collapseActionView"></item>
+</menu>

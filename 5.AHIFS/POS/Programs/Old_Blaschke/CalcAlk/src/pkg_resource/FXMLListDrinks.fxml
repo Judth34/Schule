@@ -1,0 +1,56 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.control.TitledPane?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.ColumnConstraints?>
+<?import javafx.scene.layout.GridPane?>
+<?import javafx.scene.layout.RowConstraints?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane id="AnchorPane" prefHeight="400.0" prefWidth="600.0" stylesheets="@../styles/bootstrap.css" xmlns="http://javafx.com/javafx/8.0.111" xmlns:fx="http://javafx.com/fxml/1" fx:controller="pkg_Controllers.ListDrinksController">
+   <children>
+      <GridPane layoutY="56.0" prefHeight="281.0" prefWidth="600.0">
+        <columnConstraints>
+          <ColumnConstraints hgrow="SOMETIMES" maxWidth="435.0" minWidth="10.0" prefWidth="435.0" />
+          <ColumnConstraints hgrow="SOMETIMES" maxWidth="292.0" minWidth="10.0" prefWidth="165.0" />
+        </columnConstraints>
+        <rowConstraints>
+          <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+        </rowConstraints>
+         <children>
+            <VBox prefHeight="200.0" prefWidth="100.0" GridPane.columnIndex="1">
+               <children>
+                  <Button fx:id="btn_LoadDrinks" mnemonicParsing="false" onAction="#btn_ActionPerformed" prefHeight="81.0" prefWidth="165.0" styleClass="primary" text="Load Drinks" />
+                  <Button fx:id="btn_AddDrink" mnemonicParsing="false" onAction="#btn_ActionPerformed" prefHeight="38.0" prefWidth="170.0" styleClass="success" text="Add Drink" />
+                  <Button fx:id="btn_Delete" mnemonicParsing="false" onAction="#btn_ActionPerformed" prefHeight="38.0" prefWidth="170.0" styleClass="danger" text="Delete Drink" />
+               </children>
+            </VBox>
+            <TableView fx:id="table_Drinks" editable="true" prefHeight="200.0" prefWidth="200.0">
+              <columns>
+                <TableColumn fx:id="col_name" onEditCommit="#onEditName" prefWidth="253.0" text="name" />
+                <TableColumn fx:id="col_alcohol" onEditCommit="#onEditAlcohol" prefWidth="181.0" text="\% vol" />
+              </columns>
+            </TableView>
+         </children>
+      </GridPane>
+      <TitledPane animated="false" layoutY="337.0" prefHeight="105.0" prefWidth="600.0" styleClass="primary" text="notification">
+        <content>
+          <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="85.0" prefWidth="598.0">
+               <children>
+                  <Label fx:id="lbl_Message" alignment="CENTER" layoutX="8.0" layoutY="6.0" prefHeight="49.0" prefWidth="581.0" text="..." />
+               </children>
+            </AnchorPane>
+        </content>
+      </TitledPane>
+      <Label alignment="CENTER" layoutX="230.0" layoutY="7.0" text="List Drinks">
+         <font>
+            <Font size="28.0" />
+         </font>
+      </Label>
+   </children>
+</AnchorPane>
