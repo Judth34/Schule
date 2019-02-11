@@ -1,5 +1,2 @@
 List of things to do:
-
-	- Test the difference with a picture which has a small resolution and the otherone has a big resultion
-	- cpselect automatically
-	- LOG
+ - https://de.mathworks.com/matlabcentral/answers/129645-rfid-read-when-the-card-touch
