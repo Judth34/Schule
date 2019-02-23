@@ -1,4 +1,5 @@
 ﻿
+using DataAccess;
 using Oracle.DataAccess.Client;
 using System;
 using System.Collections.Generic;
@@ -15,11 +16,8 @@ namespace ClobEditor
 {
     public partial class MainWindow : Window
     {
-        const string TABLE = "ctxsys.documents_06";
+        Database db;
 
-        OracleConnection connection;
-        OracleDependency dependency;
-        OracleTransaction transaction;
 
         public MainWindow()
         {
@@ -30,49 +28,31 @@ namespace ClobEditor
         private void InitializeDependency()
         {
             // connect
-            connect();
+            db = new Database();
+            db.connect();
 
-            // create dependency
-            OracleCommand command = new OracleCommand("select * from " + TABLE + "", connection);
-            dependency = new OracleDependency(command);
-            dependency.QueryBasedNotification = false;
-            command.Notification.IsNotifiedOnce = false;
 
-            dependency.OnChange += new OnChangeEventHandler(OnChange);
-            command.ExecuteNonQuery();
 
             // load files
-            LoadFiles();
+            listBox_files.ItemsSource = db.loadFiles();
 
             Log("Connected", "#000000");
         }
 
-        private void connect()
-        {
-            try
-            {
-                connection = new OracleConnection("Data Source=192.168.128.152:1521/ora11g;PERSIST SECURITY INFO=True;User ID=d5a06;Password=d5a");
-                connection.Open();
-            }
-            catch (OracleException e)
-            {
-                connection = new OracleConnection("Data Source=212.152.179.117:1521/ora11g;PERSIST SECURITY INFO=True;User ID=d5a06;Password=d5a");
-                connection.Open();
-            }
-        }
+        
 
-        private void OnChange(object sender, OracleNotificationEventArgs eventArgs)
+        public void OnChange(object sender, OracleNotificationEventArgs eventArgs)
         {
             Log("Database changed", "#000000");
             Dispatcher.Invoke(() =>
             {
                 try
                 {
-                    LoadFiles();
+                    listBox_files.ItemsSource = db.loadFiles();
                     string filename = listBox_files.SelectedItem as string;
                     if (filename != null)
                     {
-                        string content = LoadContent(filename);
+                        string content = db.LoadContent(filename);
                         Display(filename, content);
                     }
                 }
@@ -83,33 +63,7 @@ namespace ClobEditor
             });
         }
 
-        private void LoadFiles()
-        {
-            List<string> filenames = new List<string>();
-            OracleCommand command = connection.CreateCommand();
-            command.CommandText = "SELECT filename FROM " + TABLE + "";
-            OracleDataReader reader = command.ExecuteReader();
-
-            while (reader.Read())
-                filenames.Add(reader.GetString(0));
-
-            listBox_files.ItemsSource = filenames;
-        }
-
-        private string LoadContent(string filename)
-        {
-            string content = "";
-            OracleCommand command = connection.CreateCommand();
-            command.CommandText = "SELECT text FROM " + TABLE + " WHERE filename = :filename";
-            command.Parameters.Add(new OracleParameter(":filename", filename));
-            OracleDataReader reader = command.ExecuteReader();
-
-            if (reader.Read())
-                content = reader.GetString(0);
-
-
-            return content;
-        }
+        
 
 
         private void Log(string text, string hexcolor)
@@ -141,11 +95,7 @@ namespace ClobEditor
 
                     Log(path, "#000000");
 
-                    OracleCommand command = connection.CreateCommand();
-                    command.CommandText = "INSERT INTO " + TABLE + " VALUES(:filename, :filedata)";
-                    command.Parameters.Add(new OracleParameter(":filename", OracleDbType.Varchar2, filename, ParameterDirection.Input));
-                    command.Parameters.Add(new OracleParameter(":filedata", OracleDbType.Clob, content, ParameterDirection.Input));
-                    command.ExecuteNonQuery();
+                    db.addFile(filename, content);
                 }
             }
             catch (Exception ex)
@@ -161,7 +111,7 @@ namespace ClobEditor
                 if (listBox_files.SelectedItem != null)
                 {
                     string title = listBox_files.SelectedItem as string, 
-                        content = LoadContent(title);
+                        content = db.LoadContent(title);
 
                     Display(title, content);
                 }
@@ -191,14 +141,7 @@ namespace ClobEditor
             {
                 try
                 {
-                    transaction = connection.BeginTransaction(IsolationLevel.Serializable);
-
-              
-                    OracleCommand command = connection.CreateCommand();
-                    command.CommandText = "SELECT * FROM " + TABLE + " WHERE filename = :fn FOR UPDATE NOWAIT";
-                    command.Parameters.Add(":fn", listBox_files.SelectedItem as string);
-                    command.Transaction = transaction;
-                    command.ExecuteNonQuery();
+                    db.edit(listBox_files.SelectedItem as string);
 
                     button_save.IsEnabled = true;
                     button_edit.IsEnabled = false;
@@ -209,7 +152,7 @@ namespace ClobEditor
                 catch(Exception ex)
                 {
                     Log("somebody else is already editing " + listBox_files.SelectedItem as string, "#000000");
-                    transaction.Rollback();
+                    db.rollback();
                     Log(ex.Message + ex.StackTrace, "#000000");
                 }
             }
@@ -222,16 +165,9 @@ namespace ClobEditor
                 string filename = label_title.Content as string,
                     content = textBox_content.Text;
 
-                OracleCommand command = connection.CreateCommand();
-                command.CommandText = "UPDATE " + TABLE + " SET text = :content WHERE filename = :filename";
-                command.Parameters.Add(new OracleParameter(":content", OracleDbType.Clob, content, ParameterDirection.Input));
-                command.Parameters.Add(new OracleParameter(":filename", OracleDbType.Varchar2, filename, ParameterDirection.Input));
-                command.Transaction = transaction;
-                command.ExecuteNonQuery();
+                db.save(filename, content);
 
-                transaction.Commit();
-
-                syncIndex();
+                db.synchIdx();
 
 
                 button_save.IsEnabled = false;
@@ -255,17 +191,9 @@ namespace ClobEditor
         {
             try
             {
-                List<string> filenames = new List<string>();
-                OracleCommand command = connection.CreateCommand();
-                command.CommandText = "SELECT filename FROM " + TABLE + " WHERE CONTAINS(text, :searchstr, 1) > 0";
-                command.Parameters.Add(new OracleParameter(":searchstr", search));
+                
 
-                OracleDataReader reader = command.ExecuteReader();
-
-                while (reader.Read())
-                    filenames.Add(reader.GetString(0));
-
-                listBox_files.ItemsSource = filenames;
+                listBox_files.ItemsSource = db.filterFiles(search);
             }
             catch (Exception ex)
             {
@@ -276,20 +204,9 @@ namespace ClobEditor
         private void textBox_search_TextChanged(object sender, System.Windows.Controls.TextChangedEventArgs e)
         {
             if (textBox_search.Text == "")
-                LoadFiles();
+                db.loadFiles();
             else
                 FilterFiles(textBox_search.Text);
-        }
-
-        private void syncIndex()
-        {
-            OracleCommand cmd = connection.CreateCommand();
-            //cmd.Transaction = transaction;
-            cmd.CommandText = "ctx_ddl.sync_index";
-            cmd.CommandType = CommandType.StoredProcedure;
-            cmd.Parameters.Add("indexnameparam", "DOCS_IDX_06");
-            cmd.Parameters.Add("indexsizeparam", "2M");
-            cmd.ExecuteNonQuery();
         }
     }
 }
