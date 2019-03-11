@@ -10,7 +10,7 @@ namespace DataAccess
 {
     public class Database
     {
-        const string TABLE = "ctxsys.documents_06";
+        const string TABLE = "ctxsys.documents_18";
         OracleConnection connection;
         OracleDependency dependency;
         OracleTransaction transaction;
@@ -20,12 +20,12 @@ namespace DataAccess
         {
             try
             {
-                connection = new OracleConnection("Data Source=192.168.128.152:1521/ora11g;PERSIST SECURITY INFO=True;User ID=d5a06;Password=d5a");
+                connection = new OracleConnection("Data Source=192.168.128.152:1521/ora11g;PERSIST SECURITY INFO=True;User ID=d5a18;Password=d5a");
                 connection.Open();
             }
             catch (OracleException e)
             {
-                connection = new OracleConnection("Data Source=212.152.179.117:1521/ora11g;PERSIST SECURITY INFO=True;User ID=d5a06;Password=d5a");
+                connection = new OracleConnection("Data Source=212.152.179.117:1521/ora11g;PERSIST SECURITY INFO=True;User ID=d5a18;Password=d5a");
                 connection.Open();
             }
 
@@ -126,7 +126,7 @@ namespace DataAccess
             //cmd.Transaction = transaction;
             cmd.CommandText = "ctx_ddl.sync_index";
             cmd.CommandType = CommandType.StoredProcedure;
-            cmd.Parameters.Add("indexnameparam", "DOCS_IDX_06");
+            cmd.Parameters.Add("indexnameparam", "DOCS_IDX_18");
             cmd.Parameters.Add("indexsizeparam", "2M");
             cmd.ExecuteNonQuery();
         }
