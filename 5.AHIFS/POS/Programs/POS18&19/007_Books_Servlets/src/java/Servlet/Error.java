@@ -168,7 +168,7 @@ public class Error extends HttpServlet {
     @Override
     protected void doGet(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
-        String message = request.getSession().getAttribute("message").toString();
+        String message = request.getSession().getAttribute("sessionMessage").toString();
         processRequest(request, response, message);
     }
 

@@ -6,6 +6,7 @@
 package DataAccess;
 
 import Pojo.Book;
+import Pojo.Delivery;
 import Pojo.Order;
 import Pojo.User;
 import java.sql.Connection;
@@ -47,6 +48,17 @@ public class Database {
         
         return allBooks;
     }
+
+    public static ArrayList<Delivery> selectDeliveries() throws SQLException {
+        connect();
+        ArrayList<Delivery> allDeliveries = new ArrayList<>();
+        PreparedStatement statement = connection.prepareStatement("select * from deliveries");
+        ResultSet rs = statement.executeQuery();
+        while(rs.next())
+            allDeliveries.add(new Delivery(rs.getString("username"), rs.getDate("deldate").toLocalDate(), rs.getInt("deltotalprice")));
+        
+        return allDeliveries;
+    }
     
     private Database() throws SQLException{
         this.connect();
@@ -54,7 +66,7 @@ public class Database {
     
     private static void connect() throws SQLException{
         DriverManager.registerDriver(new oracle.jdbc.OracleDriver());
-        connection = DriverManager.getConnection(DB_URL ,USER,PASS);
+        connection = DriverManager.getConnection(DB_URL_EXT ,USER,PASS);
     }
 
     public static User login(String username, String password) throws SQLException{
@@ -87,6 +99,16 @@ public class Database {
         
         statement.setString(1, order.getUsername());
         statement.setInt(2, order.getBookid());
+        statement.executeUpdate();
+        connection.commit();
+    }
+    
+    public static void insert(User user) throws SQLException{
+        connect();
+        PreparedStatement statement = connection.prepareStatement("insert into users values(?, ?)");
+        
+        statement.setString(1, user.getUsername());
+        statement.setString(2, user.getPassword());
         statement.executeUpdate();
         connection.commit();
     }
