@@ -2,12 +2,6 @@
 <project-private xmlns="http://www.netbeans.org/ns/project-private/1">
     <editor-bookmarks xmlns="http://www.netbeans.org/ns/editor-bookmarks/2" lastBookmarkId="0"/>
     <open-files xmlns="http://www.netbeans.org/ns/projectui-open-files/2">
-        <group>
-            <file>file:/home/schueler/NetBeansProjects/NB_Test/008_Books_JSF/src/java/JSP/Login.java</file>
-            <file>file:/home/schueler/NetBeansProjects/NB_Test/008_Books_JSF/src/java/ManagedBeans/Login.java</file>
-            <file>file:/home/schueler/NetBeansProjects/NB_Test/008_Books_JSF/src/java/DataAccess/Database.java</file>
-            <file>file:/home/schueler/NetBeansProjects/NB_Test/008_Books_JSF/src/java/ManagedBeans/LoginBean.java</file>
-            <file>file:/home/schueler/NetBeansProjects/NB_Test/008_Books_JSF/web/Login.xhtml</file>
-        </group>
+        <group/>
     </open-files>
 </project-private>

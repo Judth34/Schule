@@ -8,6 +8,7 @@ package Data;
 import Controller.SimulationController;
 import helpers.AnimCoordinates;
 import helpers.TimeGenerator;
+import java.awt.Point;
 import java.util.HashMap;
 import java.util.concurrent.Semaphore;
 import java.util.logging.Level;
@@ -25,87 +26,44 @@ public class Car extends Task<String> implements AnimCoordinates {
     private static int nextID = 0;
     private int id;
     private String name;
-    private Place startPoint;
-    private Place destination;
+    private Town orgin;
+    private Town destination;
     private long waitingTime;
-    private int currentXCoo;
-    private int currentYCoo;
-    private int oldXCoo;
-    private int oldYCoo;
-    private HashMap<String, Integer> allCoo;
-    private Semaphore semaStreetSpittal;
-    private Semaphore semaStreetKlgft;
+    private Point currentLocation;
+    private Point oldLocation;
 
-    public Car(String name, Place startPoint, Place destination, long waitingTime, Semaphore semaStreetSpittal, Semaphore semaStreetKlgft) throws Exception {
+    public Car(String name, Town orgin, Town destination, long waitingTime) throws Exception {
         if (controller == null) {
             throw new Exception("Car Controller is null!");
         }
         this.id = getNextID();
         this.name = name;
+        this.orgin = orgin;
         this.destination = destination;
-        this.startPoint = startPoint;
         this.waitingTime = waitingTime;
-        this.allCoo = AnimCoordinates.getCoo();
-        this.currentXCoo = allCoo.get("START_X_" + this.startPoint.toString());
-        this.currentYCoo = allCoo.get("START_Y_" + this.startPoint.toString());
-        this.semaStreetSpittal = semaStreetSpittal;
-        this.semaStreetKlgft = semaStreetKlgft;
+        this.currentLocation = orgin.getStartPoint();
     }
 
     @Override
     protected String call() throws Exception {
-        controller.addNewCarImage(this);
-        this.oldXCoo = this.currentXCoo;
-        this.oldYCoo = this.currentYCoo;
-        this.currentXCoo = allCoo.get("CROSSING_X_" + this.startPoint.toString());
-        this.currentYCoo = allCoo.get("CROSSING_Y_" + this.startPoint.toString());
-        this.moveCar();
-        long rndTime = TimeGenerator.getRandomTime(this.waitingTime, DEVIATION);
-        Thread.sleep(rndTime);
-        if (this.startPoint == Place.KLAGENFURT) {
-            this.semaStreetSpittal.acquire();
-            if (this.destination == Place.UDINE) {
-                while(this.semaStreetKlgft.tryAcquire()){
-                    System.out.println("Waiting..." + this.toString());
-                }
-                this.semaStreetKlgft.acquire();
-                System.out.println("lets go");
-            }
-        } else if (this.startPoint == Place.SPITTAL) {
-            this.semaStreetKlgft.acquire();
-            if (this.destination == Place.AFRITZ) {
-                while(this.semaStreetSpittal.tryAcquire()){
-                    System.out.println("Waiting..." + this.toString());
-                }
-                System.out.println("lets go");
-                this.semaStreetSpittal.acquire();
-            }
-        }
-
-        this.oldXCoo = this.currentXCoo;
-        this.oldYCoo = this.currentYCoo;
-        this.currentXCoo = allCoo.get("MIDDEL_CROSSING_X");
-        this.currentYCoo = allCoo.get("MIDDEL_CROSSING_Y");
+        this.controller.addNewCarImage(this);
+        this.orgin.getDrivingPermit().acquire();
+        this.oldLocation = this.currentLocation;
+        this.currentLocation = this.orgin.getCrossingPoint();
         this.moveCar();
         Thread.sleep(1000);
-        this.oldXCoo = this.currentXCoo;
-        this.oldYCoo = this.currentYCoo;
-        this.currentXCoo = allCoo.get("START_X_" + this.destination.toString());
-        this.currentYCoo = allCoo.get("START_Y_" + this.destination.toString());
-        this.moveCar();
-        Thread.sleep(1000);
+        
+        this.orgin.getDrivingPermit().release();
         this.removeCar();
         return "finished!";
     }
 
     private void moveCar() {
-        Platform.runLater(() -> {
-            try {
-                controller.doAnimationMoving(Car.this);
-            } catch (Exception ex) {
-                java.util.logging.Logger.getLogger(Car.class.getName()).log(Level.SEVERE, null, ex);
-            }
-        });
+        try {
+            controller.doAnimationMoving(Car.this);
+        } catch (Exception ex) {
+            java.util.logging.Logger.getLogger(Car.class.getName()).log(Level.SEVERE, null, ex);
+        }
     }
 
     private void removeCar() {
@@ -127,36 +85,36 @@ public class Car extends Task<String> implements AnimCoordinates {
         Car.nextID = nextID;
     }
 
-    public int getCurrentYCoo() {
-        return currentYCoo;
+    public Town getOrgin() {
+        return orgin;
     }
 
-    public void setCurrentYCoo(int currentYCoo) {
-        this.currentYCoo = currentYCoo;
+    public void setOrgin(Town orgin) {
+        this.orgin = orgin;
     }
 
-    public Place getStartPoint() {
-        return startPoint;
+    public Town getDestination() {
+        return destination;
     }
 
-    public void setStartPoint(Place startPoint) {
-        this.startPoint = startPoint;
+    public void setDestination(Town destination) {
+        this.destination = destination;
     }
 
-    public int getOldYCoo() {
-        return oldYCoo;
+    public Point getCurrentLocation() {
+        return currentLocation;
     }
 
-    public void setOldYCoo(int oldYCoo) {
-        this.oldYCoo = oldYCoo;
+    public void setCurrentLocation(Point currentLocation) {
+        this.currentLocation = currentLocation;
     }
 
-    public int getCurrentXCoo() {
-        return currentXCoo;
+    public Point getOldLocation() {
+        return oldLocation;
     }
 
-    public int getOldXCoo() {
-        return oldXCoo;
+    public void setOldLocation(Point oldLocation) {
+        this.oldLocation = oldLocation;
     }
 
     public int getId() {
@@ -175,14 +133,6 @@ public class Car extends Task<String> implements AnimCoordinates {
         this.name = name;
     }
 
-    public Place getDestination() {
-        return destination;
-    }
-
-    public void setDestination(Place destination) {
-        this.destination = destination;
-    }
-
     public long getWaitingTime() {
         return waitingTime;
     }
@@ -197,7 +147,7 @@ public class Car extends Task<String> implements AnimCoordinates {
 
     @Override
     public String toString() {
-        return "Car{" + "id=" + id + ", name=" + name + ", startPoint=" + startPoint + ", destination=" + destination + ", waitingTime=" + waitingTime + ", currentXCoo=" + currentXCoo + ", currentYCoo=" + currentYCoo + ", oldXCoo=" + oldXCoo + ", oldYCoo=" + oldYCoo + '}';
+        return "Car{" + "id=" + id + ", name=" + name + ", orgin=" + orgin.getName() + ", destination=" + destination.getName() + ", waitingTime=" + waitingTime + ", currentLocation=" + currentLocation + ", oldLocation=" + oldLocation + '}';
     }
 
 }
