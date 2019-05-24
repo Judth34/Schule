@@ -9,7 +9,7 @@ defaultRouter.get('/', function(req, res) {
                sessions: APILink + '/sessions',
                ratings : host + '/ratings',
                speaker: host + '/speakers'
-    });   
+    });
 });
 
 module.exports = defaultRouter;

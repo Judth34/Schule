@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Explain</title>
+
+    <style>
+    #d{
+        margin: 0px;
+        text-align: center;
+
+        /*GRID*/
+        display: grid;
+        grid-template-areas: "Header Header"
+                             "Menu Content";
+
+        grid-template-columns:  1fr 4fr ;
+        grid-template-rows: 2fr 3fr;
+    }
+
+    .Header{
+        background-color: yellowgreen;
+        text-align: left;
+        padding-left: 10%;
+        /*GRID*/
+        grid-area: Header;
+    }
+
+    .Content{
+        background-color: lightgray;
+        text-align: left;
+        padding-left: 3%;
+        /*GRID*/
+        grid-area: Content;
+    }
+
+    .Menu{
+        background-color: orange;
+        /*GRID*/
+        grid-area: Menu;
+    }
+
+    @media screen and (max-width: 800px){
+        #d{
+            grid-template-areas: "Header Content"
+                                 "Menu Content";
+								 }
+								 }
+            
+    @media screen and (max-width: 600px){
+        #d{
+            grid-template-areas: "Header Header"
+                                 "Menu Menu"
+								 "Content Content";
+            
+        }
+    }
+    </style>
+</head>
+<body>
+
+<div id ="d">
+    <div class="Header">
+        <h1>Title</h1>
+    </div>
+
+    <div class="Content">
+        <p>Content</p>
+        <p>Content</p>
+        <p>Content</p>
+        <p>Content</p>
+    </div>
+
+    <div class="Menu">
+        <h3>Menu</h3>
+    </div>
+	</div>
+</body>
+</html>
